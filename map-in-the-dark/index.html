@@ -1,64 +1,58 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
-    <title>Map in the Dark — a daily geography game</title>
+    <title>Map in the Dark</title>
     <meta
       name="description"
-      content="A daily geography game. A dark map lights up piece by piece and every step adds a clue. Guess the country or city in as few steps as you can."
+      content="A daily city geography game. A real map opens up step by step around a hidden city, with a new clue at every step. Name the city in as few steps as you can."
     />
-    <meta name="theme-color" content="#050a14" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Map in the Dark" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Map in the Dark" />
-    <meta property="og:title" content="Map in the Dark — a daily geography game" />
+    <meta property="og:title" content="Map in the Dark" />
     <meta
       property="og:description"
-      content="A dark map lights up piece by piece. Six clues. Five targets a day. How few steps do you need?"
+      content="A real map opens up step by step around a hidden city. Six clues. Five cities a day. How few steps do you need?"
     />
     <meta property="og:image" content="./og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Map in the Dark — a glowing piece of a country on a dark globe" />
+    <meta property="og:image:alt" content="Map in the Dark: a real map excerpt with a green search circle" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Map in the Dark — a daily geography game" />
-    <meta name="twitter:description" content="A dark map lights up piece by piece. Six clues. Five targets a day." />
+    <meta name="twitter:title" content="Map in the Dark" />
+    <meta name="twitter:description" content="A real map opens up step by step around a hidden city. Five cities a day." />
     <meta name="twitter:image" content="./og-image.png" />
 
     <script>
-      // Apply the saved/OS theme before first paint to avoid a flash.
+      // Apply the saved reduced-motion preference before first paint.
       (function () {
-        var t = 'system', m = 'system';
+        var m = 'system';
         try {
-          var s = JSON.parse(localStorage.getItem('map-in-the-dark:v1') || '{}').settings || {};
-          t = s.theme || t;
-          m = s.motion || m;
+          m = (JSON.parse(localStorage.getItem('map-in-the-dark:v2') || '{}').settings || {}).motion || m;
         } catch (e) {}
-        var d = document.documentElement;
-        if (t === 'system') t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        d.setAttribute('data-theme', t);
         if (m === 'system') m = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'full';
-        d.setAttribute('data-motion', m === 'reduce' ? 'reduce' : 'full');
+        document.documentElement.setAttribute('data-motion', m === 'reduce' ? 'reduce' : 'full');
       })();
     </script>
     <style>
-      html { background: #050a14; }
-      html[data-theme='light'] { background: #eef3f9; }
+      html { background: #ffffff; }
     </style>
   </head>
   <body>
     <div id="app"></div>
     <noscript>
-      <p style="font-family: system-ui; color: #e9f2ff; padding: 24px">
+      <p style="font-family: system-ui; color: #15211a; padding: 24px">
         Map in the Dark needs JavaScript to draw the map. Please enable it and reload.
       </p>
     </noscript>

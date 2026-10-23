@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'preact/hooks';
 import { IconArrow, IconCopy, IconShare } from './Icons';
-import { targetName } from '../data';
+import { cityName, countryOfCity } from '../data';
 import { dailyNumber, formatCountdown } from '../game/dates';
-import { useCountdown } from '../lib/countdown';
 import { levelFromXp, resultSquare } from '../game/scoring';
-import { modeLabel, shareLine, shareText } from '../game/share';
-import type { Mode, QuestionResult, RoundKind } from '../game/types';
+import { shareLine, shareText } from '../game/share';
+import type { QuestionResult, RoundKind } from '../game/types';
+import { useCountdown } from '../lib/countdown';
 import { navigate } from '../lib/router';
 import { saveStore } from '../lib/storage';
 import { useStore } from '../lib/store';
 import { toast } from '../lib/ui';
 
 interface Props {
-  mode: Mode;
   kind: RoundKind;
   results: QuestionResult[];
   dateKey: string;
@@ -24,7 +23,7 @@ async function copy(text: string): Promise<boolean> {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    // Fallback for older browsers / insecure contexts.
+    // Fallback for older browsers / restricted contexts.
     try {
       const ta = document.createElement('textarea');
       ta.value = text;
@@ -42,40 +41,32 @@ async function copy(text: string): Promise<boolean> {
   }
 }
 
-export function Results({ mode, kind, results, dateKey, continent }: Props) {
+export function Results({ kind, results, dateKey, continent }: Props) {
   const save = useStore(saveStore);
   const ms = useCountdown();
-  const m = save.modes[mode];
   const score = results.reduce((a, r) => a + r.points, 0);
   const xp = results.reduce((a, r) => a + r.xp, 0);
   const lvl = levelFromXp(save.xp);
   const dayNo = dailyNumber(dateKey);
-  const otherBest = Object.entries(m.daily)
+  const otherBest = Object.entries(save.daily)
     .filter(([k]) => k !== dateKey)
     .reduce((a, [, r]) => Math.max(a, r.score), 0);
-  const isBest = kind === 'daily' && score > otherBest && Object.keys(m.daily).length > 1;
-  const line = shareLine(mode, kind, dayNo, results);
+  const isBest = kind === 'daily' && score > otherBest && Object.keys(save.daily).length > 1;
+  const line = shareLine(kind, dayNo, results);
   const url = location.href.split('#')[0];
   const text = shareText(line, score, url);
   const canShare = typeof navigator.share === 'function';
-  const otherMode: Mode = mode === 'countries' ? 'cities' : 'countries';
-  const otherDone = !!save.modes[otherMode].daily[dateKey];
   const [barW, setBarW] = useState(0);
   useEffect(() => {
     const t = setTimeout(() => setBarW(lvl.progress * 100), 120);
     return () => clearTimeout(t);
   }, [lvl.progress]);
 
-  const heading =
-    kind === 'daily'
-      ? `${modeLabel(mode)} · Daily #${dayNo}`
-      : kind === 'bonus'
-        ? `${modeLabel(mode)} · Bonus round`
-        : `${modeLabel(mode)} · ${continent}`;
+  const heading = kind === 'daily' ? `Daily #${dayNo}` : kind === 'bonus' ? 'Bonus round' : `Practice · ${continent}`;
 
   return (
     <div class="results">
-      <section class="glass result-hero" aria-labelledby="res-h">
+      <section class="card result-hero" aria-labelledby="res-h">
         <div class="eyebrow">{heading}</div>
         <h1 id="res-h" class="sr-only">
           Round complete
@@ -93,7 +84,7 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
         {kind === 'daily' && (
           <div class="hero-meta" style={{ justifyContent: 'center' }}>
             {isBest ? (
-              <span class="chip chip-gold">New personal best!</span>
+              <span class="chip chip-gold">New personal best</span>
             ) : (
               otherBest > 0 && (
                 <span class="chip">
@@ -102,18 +93,19 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
               )
             )}
             <span class="chip chip-accent">
-              Streak <strong class="mono">{m.streak.current}</strong>
+              Streak <strong class="mono">{save.streak.current}</strong>
             </span>
           </div>
         )}
       </section>
 
-      <section class="result-rows" aria-label="Questions">
+      <section class="result-rows" aria-label="Cities">
         {results.map((r, i) => (
           <div class="result-row" key={i}>
             <span aria-hidden="true">{resultSquare(r.solvedAt)}</span>
             <span class="rr-name">
-              {targetName(mode, r.id)}
+              {cityName(r.id)}
+              <span class="rr-country">, {countryOfCity(r.id)?.name}</span>
               {r.golden ? ' ★' : ''}
             </span>
             <span class="rr-step">{r.solvedAt ? `step ${r.solvedAt}` : 'lost'}</span>
@@ -122,7 +114,7 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
         ))}
       </section>
 
-      <section class="glass card" aria-label="Experience">
+      <section class="card" aria-label="Experience">
         <div class="stat-grid">
           <div class="stat">
             <div class="v gold mono">+{xp}</div>
@@ -133,8 +125,8 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
             <div class="l">Level</div>
           </div>
           <div class="stat">
-            <div class="v mono">×{Math.min(5, 1 + Math.floor(m.combo / 3))}</div>
-            <div class="l">Combo ({m.combo} in a row)</div>
+            <div class="v mono">×{Math.min(5, 1 + Math.floor(save.combo / 3))}</div>
+            <div class="l">Combo ({save.combo} in a row)</div>
           </div>
         </div>
         <div style={{ marginTop: '16px' }}>
@@ -162,7 +154,7 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
           <button
             class="btn"
             onClick={async () =>
-              toast((await copy(text)) ? 'Result copied to clipboard' : 'Could not copy — select and copy manually')
+              toast((await copy(text)) ? 'Result copied' : 'Could not copy. Select and copy it manually.')
             }
           >
             <IconCopy /> Copy result
@@ -182,18 +174,13 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
             </button>
           )}
         </div>
-        <button class="btn btn-gold btn-lg" onClick={() => navigate(`/bonus/${mode}?r=${Date.now().toString(36)}`)}>
+        <button class="btn btn-primary btn-lg" onClick={() => navigate(`/bonus?r=${Date.now().toString(36)}`)}>
           Bonus round <IconArrow />
         </button>
-        {kind === 'daily' && !otherDone && (
-          <button class="btn btn-primary btn-lg" onClick={() => navigate(`/play/${otherMode}`)}>
-            Play today’s {modeLabel(otherMode)}
-          </button>
-        )}
         <button class="btn btn-ghost" onClick={() => navigate('/')}>
           Back to start
         </button>
-        <p class="countdown" style={{ textAlign: 'center' }} aria-live="off">
+        <p class="countdown" style={{ textAlign: 'center' }}>
           Next daily round in <span class="mono">{formatCountdown(ms)}</span> (midnight UTC)
         </p>
       </section>
@@ -202,18 +189,18 @@ export function Results({ mode, kind, results, dateKey, continent }: Props) {
 }
 
 /** Route view for a finished daily round. */
-export function DailyResults({ mode }: { mode: Mode }) {
+export function DailyResults() {
   const save = useStore(saveStore);
   const today = new Date().toISOString().slice(0, 10);
-  const days = Object.keys(save.modes[mode].daily).sort();
-  const key = save.modes[mode].daily[today] ? today : days[days.length - 1];
-  const rec = key ? save.modes[mode].daily[key] : undefined;
+  const days = Object.keys(save.daily).sort();
+  const key = save.daily[today] ? today : days[days.length - 1];
+  const rec = key ? save.daily[key] : undefined;
   if (!rec) {
     return (
       <div class="page page-narrow">
         <h1>No results yet</h1>
-        <p class="lede">You haven’t finished a daily {modeLabel(mode)} round yet.</p>
-        <button class="btn btn-primary" onClick={() => navigate(`/play/${mode}`)}>
+        <p class="lede">You haven’t finished a daily round yet.</p>
+        <button class="btn btn-primary" onClick={() => navigate('/play')}>
           Play today’s round
         </button>
       </div>
@@ -221,7 +208,7 @@ export function DailyResults({ mode }: { mode: Mode }) {
   }
   return (
     <div class="page">
-      <Results mode={mode} kind="daily" results={rec.results} dateKey={key!} />
+      <Results kind="daily" results={rec.results} dateKey={key!} />
     </div>
   );
 }

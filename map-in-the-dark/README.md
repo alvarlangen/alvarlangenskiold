@@ -1,14 +1,17 @@
 # Map in the Dark
 
-A daily geography game. A dark map lights up piece by piece, and every step gives a new clue. Name the
-country or city in as few steps as you can.
+A daily city geography game. You see a real map around a hidden city; every step opens the map further and
+gives a new clue. Name the city in as few steps as you can.
 
-- **Two modes, two daily rounds** — Countries and Cities, each with its own daily round, streak, stats and share line.
-- **5 questions × 6 steps** — the map lights up 12 → 28 → 46 → 66 → 84 → 100 % and a clue is added each step.
-- **Type your answer** — tolerant matching (case, spaces, accents, one typo, exonyms such as UK, Holland, Burma, Bombay, Peking, Saigon).
-- **Rewards** — points per step (100/80/60/45/30/20), XP, combo multiplier ×1–×5, a golden question with 2× XP, levels.
+- **One daily round of 5 cities × 6 steps.** The visible map grows from 70 km to 1,400 km across; a green circle,
+  shrinking each step, always contains the city.
+- **Real maps**, drawn from Natural Earth 1:10m data: coastlines, lakes, rivers, built-up areas, motorways and main
+  roads, railways, country and province borders, and GeoNames towns as dots. No place names are shown.
+- **Type your answer** with tolerant matching (case, spaces, accents, one typo, exonyms such as Bombay, Peking,
+  Saigon, Kiev, New York).
+- **Rewards:** points per step (100/80/60/45/30/20), XP, combo ×1–×5, a golden city with 2× XP, levels, streaks.
 - **Unlimited bonus rounds** and **practice per continent**.
-- **Static site** — no backend, no tracking, works offline after the first visit (service worker).
+- **Static site:** no backend, no tracking, works offline after the first visit (service worker).
 
 ## Run locally
 
@@ -28,136 +31,106 @@ npm run dev        # http://localhost:5173
 | `npm test` | Unit tests (Vitest) |
 | `npm run lint` | ESLint, zero warnings allowed |
 | `npm run format` | Prettier |
-| `npm run data` | Rebuild all game data (see below) |
+| `npm run data` | Rebuild all game data and map tiles (see below) |
 | `npm run images` | Regenerate favicon, app icons and the Open Graph image |
 | `npm run qa` | Play full rounds in Chromium with Playwright and save screenshots to `qa-screens/` (run after `build`) |
 
 ## Deploy
 
-The build is a fully static folder with relative paths and hash routing (`#/play/countries`), so it can be
-served from any path on any static host.
+The build is a static folder with relative paths and hash routing (`#/play`), so it can be served from any path on any
+static host.
 
 - **Netlify / Vercel / Cloudflare Pages:** build command `npm run build`, base directory `map-in-the-dark`, output `dist`.
-- **GitHub Pages:** build and publish `dist/` (e.g. with `actions/upload-pages-artifact` + `actions/deploy-pages`).
-  `dist/404.html` provides a themed not-found page for unknown paths.
+- **GitHub Pages:** build and publish `dist/` (e.g. `actions/upload-pages-artifact` + `actions/deploy-pages`).
+
+## How the map works
+
+- `scripts/build-tiles.mjs` cuts the Natural Earth 1:10m layers into 10° × 10° tiles (`public/data/tiles/{x}_{y}.json`),
+  only where a city's map can reach: 272 tiles, about 12 MB raw / 4.5 MB gzipped in total, roughly 300 KB per city.
+  Geometry is clipped, simplified (~200–600 m tolerance) and stored as delta-encoded integers.
+- `src/map/AtlasView.ts` draws the tiles on a 2D canvas in Mercator, with a fog that hides everything outside the
+  current window, the green search circle, a scale bar and the answer pin. It redraws only while something moves.
+- `src/game/reveal.ts` decides, per question and seed, where the window and the search circle sit. The window is
+  centred slightly off the city; the circle contains the city but is offset in a seeded direction, so no single town
+  dot gives the answer away early. Sizes are in `src/game/config.ts` (`WINDOW_KM_BY_STEP`, `SEARCH_KM_BY_STEP`).
+
+Natural Earth is mapped at 1:10 million, so the close-up in step 1 shows the city's built-up area, main roads,
+rivers and coast, not individual streets. Street-level maps would need OpenStreetMap tiles loaded at runtime (see
+"Possible next steps").
 
 ## Project structure
 
 ```
 map-in-the-dark/
-  index.html              Entry, meta tags, Open Graph/Twitter cards
-  public/                 Static files: icons, OG image, manifest, flags/, data/world.json, data/pieces/*.json
-  scripts/                Data pipeline, image generation and QA (Node)
+  index.html            Entry, meta tags, Open Graph/Twitter cards
+  public/               Icons, OG image, manifest, flags/, data/tiles/
+  scripts/              Data pipeline, map tiles, images and QA (Node)
     data/cities-curated.mjs   Hand-curated city list with exonyms and facts
   src/
-    game/                 Pure game engine (no DOM): config, rng, selection, matching, clues, scoring, round, growth
-    map/                  Canvas renderer (d3-geo): 3D globe + flat map, lazy geometry loading
-    components/           Preact UI (landing, game, results, stats, settings, pages)
-    lib/                  Storage, theme, sound, haptics, router, progress persistence
-    data/                 Generated JSON (countries, cities), country facts, SOURCES.md
-    styles/               Design tokens (dark + light) and component styles
-    sw-template.js        Service worker template (filled in at build time)
-  tests/                  Vitest unit tests
+    game/               Pure game engine: config, rng, selection, matching, clues, reveal, scoring, round
+    map/                Tile loader and canvas atlas renderer
+    components/         Preact UI (landing, game, results, stats, settings, pages)
+    lib/                Storage, motion preference, sound, haptics, router, progress persistence
+    data/               Generated JSON (countries, cities, tile index), SOURCES.md
+    styles/             Design tokens (white + green) and component styles
+    sw-template.js      Service worker template (filled in at build time)
+  tests/                Vitest unit tests
 ```
-
-### Technical choices
-
-- **Vite + TypeScript + Preact** — small runtime (the landing page ships ~40 kB of gzipped JS; the game and its
-  data load on demand).
-- **Map: d3-geo on a 2D canvas.** The "3D globe" is an orthographic projection with an atmosphere glow; the flat map
-  is Mercator. No WebGL is needed, so it works on every phone and there is no separate fallback path. The renderer only
-  redraws while something moves.
-- **Pieces** are computed at build time: seeded points inside the country, Lloyd-relaxed Voronoi cells clipped to the
-  country polygon (24–40 pieces; 12 for microstates), with a Delaunay adjacency graph. At runtime a seeded,
-  contiguous growth order decides which pieces light up, so the silhouette grows instead of appearing as dots.
-  Lit areas smaller than ~18 px get a pulsing ring, so microstates are always visible.
-- **Cities** appear as a point of light among ~10 nearby real towns (decoys). In step 1 all lights are identical; from
-  step 2 the target's glow grows and the decoys fade.
-- The camera starts on a seeded off-centre view and glides to the lit area in step 3, not earlier.
 
 ## Game rules in code
 
-All tunable values live in [`src/game/config.ts`](src/game/config.ts): points per step, lit fractions, XP base,
-combo step and cap, golden multiplier, level curve, epoch date (Daily #1 = 2026-10-23) and difficulty tiers.
+All tunable values are in [`src/game/config.ts`](src/game/config.ts).
 
-- **Daily selection** (`src/game/selection.ts`): targets are ranked easiest → hardest and split into five tiers.
-  Each tier is walked through a seeded permutation (`daily:<mode>:tier<k>:cycle<c>`), one target per day, so every
-  player gets the same five targets on a UTC date, a target never repeats on consecutive days, and any date can be
-  computed offline. The reset is at midnight UTC.
-- **Name matching** (`src/game/matching.ts`): normalisation (case, spaces, punctuation, diacritics, "St." → "Saint",
-  leading "The"), exact match on names and alternatives, then Levenshtein ≤ 1 for names of ≥ 5 characters. Unknown
-  names are reported and not counted. Shared names (Valencia, Córdoba, Congo) are clarified in the suggestion list,
-  and either spelling counts if it names the answer.
-- **XP** = 20 × points/100 × combo × (2 if golden). Combo = 1 + ⌊streak/3⌋, capped at 5; a lost question resets it.
-  Level *n → n+1* needs 60 + 30·(n−1) XP.
+- **Daily selection** (`src/game/selection.ts`): cities are ranked easiest → hardest and split into five tiers. Each
+  tier is walked through a seeded permutation, one city per day, so every player gets the same five cities on a UTC
+  date, no city repeats on consecutive days, and any date can be computed offline. Daily #1 is 2026-10-23.
+- **Clues:** continent; country's language and currency; country's flag colors; first letter and length of the city
+  name; first letter and length of the country name; the country's neighbours (or nearest countries across the sea).
+- **Name matching** (`src/game/matching.ts`): normalisation, exact match on names and alternatives, then Levenshtein ≤ 1
+  for names of ≥ 5 characters. Unknown names are reported and not counted. Shared names (Valencia, Córdoba) are
+  clarified in the suggestion list.
+- **XP** = 20 × points/100 × combo × (2 if golden). Combo = 1 + ⌊streak/3⌋, capped at 5.
 
 ## Data
 
-Everything is bundled; nothing is fetched from third parties at runtime. Sources, licenses and the fetch date are
-listed in [`src/data/SOURCES.md`](src/data/SOURCES.md) and on the in-game Credits page.
+Everything is bundled; nothing is fetched from other services at runtime. See [`src/data/SOURCES.md`](src/data/SOURCES.md).
 
 | Source | Used for | License |
 | --- | --- | --- |
-| world-countries (mledoze/countries) | names, ISO codes, region, languages, currencies, borders, area, capitals | ODbL |
-| Natural Earth via world-atlas | country shapes, world map; population estimate for ranking only | Public domain |
-| GeoNames via all-the-cities | city coordinates, decoys; population for ranking only | CC BY 4.0 |
+| Natural Earth 1:10m | the map: land, lakes, rivers, urban areas, roads, railways, borders | Public domain |
+| GeoNames via all-the-cities | city coordinates, towns on the map; population for ranking only | CC BY 4.0 |
+| world-countries (mledoze/countries) | languages, currencies, borders, names for the clues | ODbL |
 | flag-icons | flag colors (extracted) and flag images after the reveal | MIT |
 
-### Updating the data
-
 ```bash
-npm run data      # build-countries → build-flags → build-pieces → build-cities → build-world
-npm test          # data-quality tests: completeness, symmetric borders, coordinates, no population in clues
+npm run data      # build-countries → build-cities → build-flags → build-tiles
+npm test          # includes data-quality tests (coordinates, borders, tiles around every city, no population)
 ```
 
-The Natural Earth admin-0 GeoJSON (for population estimates) is downloaded once into `scripts/.cache/`.
+Natural Earth GeoJSON layers are downloaded once into `scripts/.cache/` (git-ignored).
 
-### Difficulty ranking
-
-- **Countries:** `0.55·z(log population) + 0.45·z(log area) + 1.2 if in a hand-picked "well known" list`.
-  Ranks 1–30 feed question 1, …, the smallest and least known states feed question 5. Every country has six
-  meaningful clues (island nations get "nearest across the sea" instead of neighbours), so no question is unfair.
-- **Cities:** `log10(population) + 0.5 if capital + 1.1 × fame (0–2)`, where fame is hand-assigned.
-- Population is never written to the shipped JSON and never appears in the UI; a unit test checks this.
-
-### Special cases and choices
-
-- **Targets:** the 193 UN members, Vatican City, plus **Kosovo, Palestine and Taiwan** (widely recognised as
-  separate geographic entities; included without taking a political position).
-- **Merged geometry:** Somaliland is part of Somalia and Northern Cyprus part of Cyprus (internationally recognised
-  borders). Western Sahara is not a target and is shown as a neighbour of Morocco and Mauritania.
-- **Transcontinental:** Russia, Turkey, Kazakhstan, Azerbaijan and Georgia are "Europe and Asia"; Egypt is "Africa and
-  Asia". Practice mode files them under their first continent.
-- **Borders** come from world-countries with two corrections: China's list excludes Hong Kong and Macau, and Sri Lanka
-  has no land border with India (the dataset listed one). A test checks that all borders are symmetric.
-  Territories of other states keep their sovereign in brackets, e.g. "French Guiana (France)".
-- **Island nations** show the three nearest countries across the sea, measured between the main landmasses.
-- **Vatican City** collapses to a sliver in the 1:10m TopoJSON, so it uses a hand-traced outline of its walls.
-- **Currencies** are shown without the demonym for a country's own currency ("Swedish · Krona"); foreign currencies keep
-  their full name ("US dollar"). Bulgaria uses the euro since 1 January 2026; Zimbabwe uses the ZiG.
-- **Flag colors** are extracted by rasterising each flag, snapping pixels to nine named colors and dropping colors
-  under 2.5 % of the flag, ordered by first appearance reading left-to-right, top-to-bottom. All 197 results were
-  reviewed and 47 corrected by hand (`FLAG_OVERRIDES` in `scripts/build-flags.mjs`).
-- **Hong Kong** is a city target in China (a special administrative region), so its clues are China's.
-- **Facts:** one hand-written sentence per country and for most cities; cities where no fact could be verified
-  confidently have none.
+**Difficulty:** `log10(population) + 0.5 if capital + 1.1 × fame (0–2, hand-assigned)`. Population is never shipped or
+shown. **Special cases:** Hong Kong is a city in China (its clues are China's); Kosovo, Palestine and Taiwan count as
+countries for clues; Sri Lanka's dataset border with India is removed (it has none); Bulgaria uses the euro since
+2026; Zimbabwe uses the ZiG. Flag colors were extracted automatically and reviewed by hand (47 corrections in
+`scripts/build-flags.mjs`).
 
 ## Extending
 
 - **Add a city:** add a line to `scripts/data/cities-curated.mjs` (`[name, ISO2, GeoNames name or null, alternative
-  names, fame 0–2, fact or null]`) and run `node scripts/build-cities.mjs`.
-- **Add a country/territory:** add its `cca3` to `EXTRA` in `scripts/build-countries.mjs`, provide overrides
-  (language, currency, alt names) if needed, run `npm run data`, and add a fact to `src/data/country-facts.json`.
-- **Add an alternative name:** `ALT` in `build-countries.mjs` (countries) or the alt list in `cities-curated.mjs`.
-- **Add or change a clue type:** add a `ClueKind` in `src/game/types.ts`, produce it in `src/game/clues.ts`, and
-  update the order tests in `tests/engine.test.ts`. The UI renders any clue with a label and text (and optional swatches).
-- **Change scoring or pacing:** edit `src/game/config.ts`.
+  names, fame 0–2, fact or null]`), then run `node scripts/build-cities.mjs`, `node scripts/build-flags.mjs` and
+  `node --max-old-space-size=6000 scripts/build-tiles.mjs`.
+- **Add an alternative name:** the alt list in `cities-curated.mjs`.
+- **Add a clue type:** add a `ClueKind` in `src/game/types.ts`, produce it in `src/game/clues.ts`, update the tests.
+- **Change pacing:** `WINDOW_KM_BY_STEP`, `SEARCH_KM_BY_STEP` and points in `src/game/config.ts`.
+- **Add a map layer:** add the Natural Earth file to `LAYERS` in `scripts/build-tiles.mjs` and draw it in `AtlasView.draw`.
 
-## Privacy
+## Possible next steps
 
-No accounts, cookies, analytics or third-party requests. Progress is stored in `localStorage` only.
+- Street-level detail in the first steps by drawing OpenStreetMap vector tiles at runtime (e.g. MapLibre with a free
+  OSM tile service). This needs network access while playing and a tile provider's terms of use.
 
 ## Licenses
 
-Code: MIT. Data: see the table above (ODbL for world-countries data, CC BY 4.0 for GeoNames, public domain for
-Natural Earth, MIT for flag-icons). Fonts: Unbounded, Instrument Sans, Martian Mono (SIL OFL) via Fontsource.
+Code: MIT. Data: public domain (Natural Earth), CC BY 4.0 (GeoNames), ODbL (world-countries), MIT (flag-icons).
+Fonts: Figtree and IBM Plex Mono (SIL OFL) via Fontsource.

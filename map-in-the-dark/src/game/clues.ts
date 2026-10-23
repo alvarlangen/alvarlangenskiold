@@ -18,30 +18,12 @@ export function lettersClue(name: string): string {
 
 export const languageCurrencyText = (c: Country) => `${c.languages.join(', ')} · ${c.currency}`;
 
-export function neighborCountText(c: Country): string {
-  if (c.island) return 'Island nation, no land borders';
-  const n = c.borders.length;
-  return `${n} neighboring ${n === 1 ? 'country' : 'countries'}`;
-}
-
 export function neighborsText(c: Country): string {
   if (c.island) return `Nearest across the sea: ${c.nearest.join(', ')}`;
   return c.neighborNames.join(', ');
 }
 
 const flagText = (c: Country) => c.flag.map((f) => f.name).join(', ');
-
-/** The six clues for a country, in order. */
-export function countryClues(c: Country): Clue[] {
-  return [
-    { kind: 'continent', label: 'Continent', text: c.continentLabel },
-    { kind: 'languageCurrency', label: 'Language · Currency', text: languageCurrencyText(c) },
-    { kind: 'neighborCount', label: 'Neighbors', text: neighborCountText(c) },
-    { kind: 'flagColors', label: 'Flag colors', text: flagText(c), swatches: c.flag },
-    { kind: 'letters', label: 'Name', text: lettersClue(c.name) },
-    { kind: 'neighbors', label: c.island ? 'Across the sea' : 'Neighboring countries', text: neighborsText(c) },
-  ];
-}
 
 /** The six clues for a city, in order. */
 export function cityClues(city: City, country: Country): Clue[] {

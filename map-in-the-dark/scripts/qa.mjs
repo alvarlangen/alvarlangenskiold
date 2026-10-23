@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Visual QA: drives the production build in Chromium with Playwright, plays full rounds in both modes
+ * Visual QA: drives the production build in Chromium with Playwright, plays full daily rounds
  * and saves screenshots to qa-screens/ (mobile 390 px and desktop 1440 px, dark and light themes).
  * Usage: npm run build && node scripts/qa.mjs   (starts `vite preview` itself)
  */
@@ -12,10 +12,8 @@ import path from 'node:path';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const OUT = path.join(ROOT, 'qa-screens');
 fs.mkdirSync(OUT, { recursive: true });
-const countries = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/countries.json'), 'utf8'));
 const cities = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/cities.json'), 'utf8'));
-const nameOf = (mode, id) =>
-  (mode === 'countries' ? countries.find((c) => c.id === id) : cities.find((c) => c.id === id)).name;
+const nameOf = (id) => cities.find((c) => c.id === id).name;
 
 const PORT = 4179;
 const server = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { cwd: ROOT, stdio: 'pipe' });
@@ -47,16 +45,13 @@ async function context(kind, scheme) {
 const shot = (page, name, full = false) => page.screenshot({ path: path.join(OUT, `${name}.png`), fullPage: full });
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function round(page, mode, tag, plan) {
-  await page.goto(`${BASE}#/play/${mode}`);
+async function round(page, tag, plan) {
+  await page.goto(`${BASE}#/play`);
   await page.waitForSelector('.clue-current', { timeout: 15000 });
   await wait(1500);
   for (let q = 0; q < 5; q++) {
-    const state = await page.evaluate(
-      (m) => JSON.parse(localStorage.getItem('map-in-the-dark:v1')).modes[m].current,
-      mode,
-    );
-    const answer = nameOf(mode, state.targets[state.index]);
+    const state = await page.evaluate(() => JSON.parse(localStorage.getItem('map-in-the-dark:v2')).current);
+    const answer = nameOf(state.targets[state.index]);
     const p = plan[q];
     if (q === 0) await shot(page, `${tag}-q1-step1`);
     for (let s = 0; s < p.skips; s++) {
@@ -109,14 +104,9 @@ async function round(page, mode, tag, plan) {
   await shot(page, `${tag}-results`, true);
 }
 
-const plans = {
-  countries: [{ skips: 0 }, { skips: 1, wrong: 'France' }, { skips: 2 }, { skips: 3, typo: false }, { lose: true }],
-  cities: [{ skips: 1 }, { skips: 0 }, { skips: 2, wrong: 'Paris' }, { skips: 4 }, { skips: 2 }],
-};
+const plan = [{ skips: 0 }, { skips: 1, wrong: 'Paris' }, { skips: 2 }, { skips: 4 }, { lose: true }];
 
 for (const [kind, scheme] of [
-  ['mobile', 'dark'],
-  ['desktop', 'dark'],
   ['mobile', 'light'],
   ['desktop', 'light'],
 ]) {
@@ -127,9 +117,8 @@ for (const [kind, scheme] of [
   await wait(2500);
   await shot(page, `${tag}-landing`);
   await shot(page, `${tag}-landing-full`, true);
-  if (scheme === 'dark' || kind === 'mobile') {
-    await round(page, 'countries', `${tag}-countries`, plans.countries);
-    await round(page, 'cities', `${tag}-cities`, plans.cities);
+  if (scheme === 'light') {
+    await round(page, tag, plan);
     await page.goto(`${BASE}#/`);
     await wait(1500);
     await shot(page, `${tag}-landing-after`);
@@ -139,17 +128,16 @@ for (const [kind, scheme] of [
     await wait(700);
     await shot(page, `${tag}-${r}`, true);
   }
-  if (kind === 'mobile' && scheme === 'dark') {
-    // Bonus round with the flat map, and a check of the step-3 camera.
-    await page.goto(`${BASE}#/bonus/countries?r=qa`);
+  if (kind === 'mobile') {
+    await page.goto(`${BASE}#/bonus?r=qa`);
     await page.waitForSelector('.clue-current');
-    await page.click('[aria-label="Switch to flat map"]');
-    await wait(1200);
-    await shot(page, `${tag}-bonus-flat-step1`);
-    await page.click('.guess-actions .btn');
-    await page.click('.guess-actions .btn');
-    await wait(2200);
-    await shot(page, `${tag}-bonus-flat-step3`);
+    await wait(2500);
+    await shot(page, `${tag}-bonus-step1`);
+    for (let i = 0; i < 5; i++) {
+      await page.click('.guess-actions .btn');
+      await wait(1400);
+      await shot(page, `${tag}-bonus-step${i + 2}`);
+    }
   }
   await ctx.close();
 }

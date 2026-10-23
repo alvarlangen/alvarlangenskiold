@@ -4,10 +4,9 @@
  */
 import { QUESTIONS_PER_ROUND, STEPS } from './config';
 import { comboMultiplier, nextStreak, pointsForStep, resultSquare, xpForQuestion } from './scoring';
-import type { Mode, QuestionResult, RoundKind, RoundState } from './types';
+import type { QuestionResult, RoundKind, RoundState } from './types';
 
 export function createRound(opts: {
-  mode: Mode;
   kind: RoundKind;
   seed: string;
   dateKey: string;
@@ -17,7 +16,6 @@ export function createRound(opts: {
   continent?: string;
 }): RoundState {
   return {
-    mode: opts.mode,
     kind: opts.kind,
     seed: opts.seed,
     dateKey: opts.dateKey,

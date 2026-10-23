@@ -1,6 +1,6 @@
 import { QUESTIONS_PER_ROUND, TIER_BOUNDS } from './config';
 import { randInt, rngFrom, shuffle } from './rng';
-import type { Mode, Target } from './types';
+import type { Target } from './types';
 
 export interface Selection {
   targets: string[];
@@ -33,13 +33,13 @@ export function selectByTiers(
 }
 
 /**
- * The daily round: the same five targets for everyone on a given UTC date and mode.
+ * The daily round: the same five cities for everyone on a given UTC date.
  *
  * Each tier is walked through a seeded permutation, one target per day, so a target does not come
  * back until its whole tier has been used (no chaining on previous days is needed, so any date can be
  * computed independently and offline).
  */
-export function selectDaily(pool: readonly Target[], mode: Mode, day: number): Selection {
+export function selectDaily(pool: readonly Target[], day: number): Selection {
   const ranked = pool.slice().sort((a, b) => a.rank - b.rank);
   const n = ranked.length;
   const d = Math.max(0, day - 1);
@@ -49,10 +49,10 @@ export function selectDaily(pool: readonly Target[], mode: Mode, day: number): S
     const to = Math.max(from + 1, Math.floor(TIER_BOUNDS[q + 1] * n));
     const tier = ranked.slice(from, to);
     const cycle = Math.floor(d / tier.length);
-    const perm = shuffle(tier, rngFrom(`daily:${mode}:tier${q}:cycle${cycle}`));
+    const perm = shuffle(tier, rngFrom(`daily:cities:tier${q}:cycle${cycle}`));
     targets.push(perm[d % tier.length].id);
   }
-  const golden = randInt(rngFrom(`daily:${mode}:golden:${day}`), QUESTIONS_PER_ROUND);
+  const golden = randInt(rngFrom(`daily:cities:golden:${day}`), QUESTIONS_PER_ROUND);
   return { targets, golden };
 }
 

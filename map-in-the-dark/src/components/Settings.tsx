@@ -69,7 +69,7 @@ export function Settings() {
   return (
     <div class="page page-narrow">
       <h1>Settings</h1>
-      <section class="glass card">
+      <section class="card panel-card">
         <Toggle
           label="Sound"
           desc="Small synthesized sound effects."
@@ -95,27 +95,6 @@ export function Settings() {
           onChange={(v) => set({ suggestions: v })}
         />
         <Choice
-          label="Map"
-          desc="3D globe or flat 2D map. You can also switch during play."
-          value={settings.projection}
-          options={[
-            ['globe', '3D globe'],
-            ['flat', '2D map'],
-          ]}
-          onChange={(v) => set({ projection: v })}
-        />
-        <Choice
-          label="Theme"
-          desc="Dark, light, or follow your device."
-          value={settings.theme}
-          options={[
-            ['system', 'Auto'],
-            ['dark', 'Dark'],
-            ['light', 'Light'],
-          ]}
-          onChange={(v) => set({ theme: v })}
-        />
-        <Choice
           label="Motion"
           desc="Reduce animations, camera flights and particle effects."
           value={settings.motion}
@@ -128,7 +107,7 @@ export function Settings() {
         />
       </section>
 
-      <section class="glass card" style={{ marginTop: '18px' }}>
+      <section class="card panel-card" style={{ marginTop: '18px' }}>
         <div class="setting wrap">
           <div>
             <div class="s-l">Reset saved data</div>

@@ -1,10 +1,7 @@
-import { useState } from 'preact/hooks';
 import { CONTINENTS } from '../data/continents';
 import { addDays, utcDateKey } from '../game/dates';
 import { visibleStreak } from '../game/progress';
 import { levelFromXp } from '../game/scoring';
-import { modeLabel } from '../game/share';
-import type { Mode } from '../game/types';
 import { saveStore } from '../lib/storage';
 import { useStore } from '../lib/store';
 
@@ -56,8 +53,7 @@ function StepChart({ hist }: { hist: number[] }) {
 
 export function Stats() {
   const save = useStore(saveStore);
-  const [mode, setMode] = useState<Mode>('countries');
-  const m = save.modes[mode];
+  const m = save;
   const lvl = levelFromXp(save.xp);
   const today = utcDateKey();
   const solved = m.stepHist.slice(0, 6).reduce((a, b) => a + b, 0);
@@ -83,14 +79,6 @@ export function Stats() {
           </div>
           <div class="l">XP to level {lvl.level + 1}</div>
         </div>
-      </div>
-
-      <div class="tabs" role="tablist" aria-label="Mode">
-        {(['countries', 'cities'] as Mode[]).map((k) => (
-          <button key={k} role="tab" aria-selected={mode === k} onClick={() => setMode(k)}>
-            {modeLabel(k)}
-          </button>
-        ))}
       </div>
 
       <div class="stat-grid">
@@ -128,14 +116,14 @@ export function Stats() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
         }}
       >
-        <section class="glass card" aria-labelledby="dist-h">
+        <section class="card panel-card" aria-labelledby="dist-h">
           <h2 id="dist-h" style={{ fontSize: '1rem' }}>
             Solved in step
           </h2>
           {total ? <StepChart hist={m.stepHist} /> : <p class="lede">Play a round to see your distribution.</p>}
         </section>
 
-        <section class="glass card" aria-labelledby="cont-h">
+        <section class="card panel-card" aria-labelledby="cont-h">
           <h2 id="cont-h" style={{ fontSize: '1rem' }}>
             Hit rate by continent
           </h2>
@@ -154,7 +142,7 @@ export function Stats() {
           })}
         </section>
 
-        <section class="glass card" aria-labelledby="hist-h">
+        <section class="card panel-card" aria-labelledby="hist-h">
           <h2 id="hist-h" style={{ fontSize: '1rem' }}>
             Last 14 days
           </h2>

@@ -246,10 +246,14 @@ for (const c of countries) {
 }
 fs.writeFileSync(FILE, JSON.stringify(countries, null, 1));
 
-// Copy the flag SVGs of all targets to public/flags (shown only after the answer is revealed).
+// Copy the flags of countries that have city targets to public/flags (shown after the reveal).
+const cityFile = path.join(ROOT, 'src/data/cities.json');
+const used = fs.existsSync(cityFile)
+  ? new Set(JSON.parse(fs.readFileSync(cityFile, 'utf8')).map((c) => c.country))
+  : null;
 const outDir = path.join(ROOT, 'public/flags');
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
-for (const c of countries)
+for (const c of countries.filter((x) => !used || used.has(x.id)))
   fs.copyFileSync(path.join(FLAGS, `${c.flagFile}.svg`), path.join(outDir, `${c.flagFile}.svg`));
 console.log(`Flag colours written for ${countries.length} countries`);

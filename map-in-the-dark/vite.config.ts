@@ -5,9 +5,9 @@ import { defineConfig, type Plugin } from 'vitest/config';
 import preact from '@preact/preset-vite';
 
 /**
- * Generates dist/sw.js after the build. The service worker precaches the app shell, fonts and
- * world map on install, then caches every country's pieces and every flag in the background, so the
- * whole game works offline after the first visit.
+ * Generates dist/sw.js after the build. The service worker precaches the app shell and fonts on
+ * install, then caches every map tile and flag in the background, so the whole game works offline
+ * after the first visit.
  */
 function serviceWorker(): Plugin {
   let outDir = 'dist';
@@ -29,7 +29,7 @@ function serviceWorker(): Plugin {
       };
       walk(root);
       const all = files.filter((f) => !['sw.js', '404.html'].includes(f) && !f.endsWith('.map'));
-      const isExtra = (f: string) => f.startsWith('data/pieces/') || f.startsWith('flags/') || f === 'og-image.png';
+      const isExtra = (f: string) => f.startsWith('data/tiles/') || f.startsWith('flags/') || f === 'og-image.png';
       // Fonts: only the woff2 Latin subsets are precached; other subsets load on demand (unicode-range).
       const isLazyFont = (f: string) => /\.(woff2?)$/.test(f) && !/-latin-(?!ext)[\w-]*\.woff2$/.test(f);
       const core = ['./', ...all.filter((f) => !isExtra(f) && !isLazyFont(f))];

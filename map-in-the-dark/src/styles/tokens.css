@@ -1,129 +1,77 @@
 /*
- * Design tokens. Dark ("night operations") is the base theme; light ("daylight chart room") is
- * applied with [data-theme='light'] (set from the OS preference or the manual toggle).
- * Text/background pairs are chosen to meet WCAG AA (4.5:1 for body text).
+ * Design tokens — one calm light theme: white paper, green accent, atlas-style map colors.
+ * Layout concept: a clean single-column site; in the game, the map is the hero and the clue panel
+ * sits below it on phones and beside it on desktop.
+ * Text/background pairs meet WCAG AA (4.5:1 for body text).
  */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* Surfaces */
-  --bg: #050a14;
-  --bg-2: #08111f;
-  --bg-grad:
-    radial-gradient(1200px 700px at 70% -10%, #0e2a4a 0%, rgba(5, 10, 20, 0) 60%),
-    radial-gradient(900px 600px at -10% 110%, #102040 0%, rgba(5, 10, 20, 0) 55%);
-  --surface: rgba(12, 24, 44, 0.72);
-  --surface-solid: #0c1a30;
-  --surface-2: rgba(20, 38, 66, 0.6);
-  --surface-hover: rgba(30, 56, 92, 0.6);
-  --line: rgba(130, 200, 255, 0.16);
-  --line-strong: rgba(130, 200, 255, 0.32);
-  --blur: saturate(140%) blur(14px);
+  --bg: #ffffff;
+  --bg-2: #f4f7f3;
+  --surface: #ffffff;
+  --surface-solid: #ffffff;
+  --surface-2: #f4f7f3;
+  --surface-hover: #e8f2ea;
+  --line: #e0e7de;
+  --line-strong: #c5d1c2;
+  --blur: none;
 
   /* Text */
-  --text: #e9f2ff;
-  --text-dim: #a3b6cf; /* 8.9:1 on --bg */
-  --text-faint: #7e93b0; /* 5.6:1 on --bg */
+  --text: #15211a;
+  --text-dim: #4b5a50; /* 7.4:1 on white */
+  --text-faint: #66746a; /* 4.9:1 on white */
 
   /* Accents */
-  --accent: #36e4ff;
-  --accent-2: #2aa8ff;
-  --accent-ink: #001820;
-  --accent-soft: rgba(54, 228, 255, 0.14);
-  --accent-glow: 0 0 24px rgba(54, 228, 255, 0.45);
-  --gold: #ffc65c;
-  --gold-ink: #241500;
-  --gold-soft: rgba(255, 198, 92, 0.16);
-  --gold-glow: 0 0 22px rgba(255, 198, 92, 0.45);
-  --correct: #3ee39a;
-  --correct-soft: rgba(62, 227, 154, 0.15);
-  --wrong: #ff6b86;
-  --wrong-soft: rgba(255, 107, 134, 0.15);
-  --focus: #9ff3ff;
+  --accent: #1d7a45; /* 5.4:1 on white */
+  --accent-2: #2a9a58;
+  --accent-ink: #ffffff;
+  --accent-soft: #e5f2e9;
+  --accent-glow: 0 1px 2px rgba(20, 60, 35, 0.12);
+  --gold: #8f6100; /* 5.0:1 on white */
+  --gold-ink: #ffffff;
+  --gold-soft: #fbf1db;
+  --gold-glow: none;
+  --correct: #1d7a45;
+  --correct-soft: #e5f2e9;
+  --wrong: #b93a2b;
+  --wrong-soft: #fbeae7;
+  --focus: #1d7a45;
 
-  /* Map */
-  --map-ocean-core: #0d2140;
-  --map-ocean-edge: #030913;
-  --map-atmosphere: rgba(60, 200, 255, 0.28);
-  --map-grid: rgba(120, 200, 255, 0.11);
-  --map-land: rgba(110, 190, 255, 0.07);
-  --map-coast: rgba(140, 210, 255, 0.2);
-  --map-border: rgba(150, 215, 255, 0.32);
-  --map-lit: #36e4ff;
-  --map-lit-edge: rgba(220, 250, 255, 0.55);
-  --map-glow: rgba(54, 228, 255, 0.9);
-  --map-target: #ffc65c;
-  --map-decoy: #a8ecff;
-  --map-flash: #ffffff;
-  --map-blend: lighter;
+  /* Map (atlas palette) */
+  --map-water: #cde2e6;
+  --map-land: #f9f8f3;
+  --map-urban: #e9e0cd;
+  --map-river: #8fbccb;
+  --map-road: #dccfb7;
+  --map-major: #e2aa58;
+  --map-rail: #b5aea0;
+  --map-border: #8b877b;
+  --map-admin1: #c9c3b4;
+  --map-town: #3c443d;
+  --map-town-halo: #ffffff;
+  --map-fog: #eef2ec;
+  --map-window: #1d7a45;
+  --map-search: rgba(29, 122, 69, 0.13);
 
   /* Type */
-  --font-display: 'Unbounded', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
-  --font-body: 'Instrument Sans Variable', 'Instrument Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Martian Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+  --font-display: 'Figtree Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Figtree Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
 
   /* Shape & motion */
   --r-sm: 8px;
-  --r-md: 14px;
-  --r-lg: 22px;
+  --r-md: 12px;
+  --r-lg: 16px;
   --r-pill: 999px;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  --shadow: 0 1px 2px rgba(20, 40, 25, 0.05), 0 6px 20px rgba(20, 40, 25, 0.07);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur: 380ms;
+  --dur: 320ms;
 
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
   --header-h: 60px;
-}
-
-:root[data-theme='light'] {
-  color-scheme: light;
-  --bg: #eef3f9;
-  --bg-2: #e3ebf5;
-  --bg-grad:
-    radial-gradient(1200px 700px at 70% -10%, #d4e6f8 0%, rgba(238, 243, 249, 0) 60%),
-    radial-gradient(900px 600px at -10% 110%, #dfe3f7 0%, rgba(238, 243, 249, 0) 55%);
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-solid: #ffffff;
-  --surface-2: rgba(234, 241, 250, 0.9);
-  --surface-hover: rgba(220, 232, 247, 0.95);
-  --line: rgba(20, 60, 110, 0.14);
-  --line-strong: rgba(20, 60, 110, 0.3);
-
-  --text: #0a1830;
-  --text-dim: #3f5574; /* 7.0:1 on --bg */
-  --text-faint: #5a6d8a; /* 4.9:1 on --bg */
-
-  --accent: #006f9e; /* 5.3:1 on white */
-  --accent-2: #0a58b8;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(0, 111, 158, 0.1);
-  --accent-glow: 0 0 18px rgba(0, 140, 200, 0.28);
-  --gold: #a35c00; /* 4.8:1 on white */
-  --gold-ink: #ffffff;
-  --gold-soft: rgba(214, 140, 20, 0.14);
-  --gold-glow: 0 0 18px rgba(214, 140, 20, 0.3);
-  --correct: #077a48;
-  --correct-soft: rgba(7, 122, 72, 0.1);
-  --wrong: #c01e3d;
-  --wrong-soft: rgba(192, 30, 61, 0.09);
-  --focus: #0a58b8;
-
-  --map-ocean-core: #f4f8fd;
-  --map-ocean-edge: #c9d9ee;
-  --map-atmosphere: rgba(40, 130, 210, 0.18);
-  --map-grid: rgba(20, 70, 130, 0.1);
-  --map-land: rgba(30, 70, 130, 0.08);
-  --map-coast: rgba(30, 70, 130, 0.22);
-  --map-border: rgba(30, 70, 130, 0.35);
-  --map-lit: #0096c7;
-  --map-lit-edge: rgba(255, 255, 255, 0.7);
-  --map-glow: rgba(0, 150, 199, 0.55);
-  --map-target: #d98a00;
-  --map-decoy: #2a7fc0;
-  --map-flash: #ffffff;
-  --map-blend: source-over;
-  --shadow: 0 10px 34px rgba(20, 50, 90, 0.14);
 }

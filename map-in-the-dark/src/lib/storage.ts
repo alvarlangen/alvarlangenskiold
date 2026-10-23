@@ -3,18 +3,15 @@
  * All access is wrapped in try/catch: private mode, quotas or disabled storage fall back to memory.
  */
 import { createStore } from './store';
-import type { Mode, QuestionResult, RoundState } from '../game/types';
+import type { QuestionResult, RoundState } from '../game/types';
 import type { StreakState } from '../game/progress';
 
-export type ThemeSetting = 'system' | 'dark' | 'light';
 export type MotionSetting = 'system' | 'reduce' | 'full';
 
 export interface Settings {
   sound: boolean;
   haptics: boolean;
-  theme: ThemeSetting;
   suggestions: boolean;
-  projection: 'globe' | 'flat';
   motion: MotionSetting;
 }
 
@@ -25,7 +22,10 @@ export interface DailyRecord {
   dayNo: number;
 }
 
-export interface ModeData {
+export interface SaveData {
+  v: 2;
+  xp: number;
+  settings: Settings;
   streak: StreakState;
   combo: number;
   rounds: number;
@@ -38,26 +38,15 @@ export interface ModeData {
   current: RoundState | null;
 }
 
-export interface SaveData {
-  v: 1;
-  xp: number;
-  settings: Settings;
-  modes: Record<Mode, ModeData>;
-  seenIntro: boolean;
-}
+const KEY = 'map-in-the-dark:v2';
+const OLD_KEY = 'map-in-the-dark:v1';
 
-const KEY = 'map-in-the-dark:v1';
+export const defaultSettings = (): Settings => ({ sound: true, haptics: true, suggestions: true, motion: 'system' });
 
-export const defaultSettings = (): Settings => ({
-  sound: true,
-  haptics: true,
-  theme: 'system',
-  suggestions: true,
-  projection: 'globe',
-  motion: 'system',
-});
-
-const defaultMode = (): ModeData => ({
+export const defaultSave = (): SaveData => ({
+  v: 2,
+  xp: 0,
+  settings: defaultSettings(),
   streak: { current: 0, best: 0, lastDay: null },
   combo: 0,
   rounds: 0,
@@ -68,45 +57,38 @@ const defaultMode = (): ModeData => ({
   current: null,
 });
 
-export const defaultSave = (): SaveData => ({
-  v: 1,
-  xp: 0,
-  settings: defaultSettings(),
-  modes: { countries: defaultMode(), cities: defaultMode() },
-  seenIntro: false,
-});
-
 /** Merge a possibly older/partial save with defaults so missing fields never crash the app. */
 function hydrate(raw: unknown): SaveData {
   const d = defaultSave();
   if (!raw || typeof raw !== 'object') return d;
   const r = raw as Partial<SaveData>;
-  const mode = (m?: Partial<ModeData>): ModeData => {
-    const base = defaultMode();
-    if (!m) return base;
-    return {
-      ...base,
-      ...m,
-      streak: { ...base.streak, ...(m.streak ?? {}) },
-      stepHist: Array.isArray(m.stepHist) && m.stepHist.length === 7 ? m.stepHist : base.stepHist,
-      continents: m.continents ?? {},
-      daily: m.daily ?? {},
-      current: m.current ?? null,
-    };
-  };
   return {
-    v: 1,
+    ...d,
+    ...r,
+    v: 2,
     xp: typeof r.xp === 'number' && r.xp >= 0 ? r.xp : 0,
     settings: { ...d.settings, ...(r.settings ?? {}) },
-    modes: { countries: mode(r.modes?.countries), cities: mode(r.modes?.cities) },
-    seenIntro: !!r.seenIntro,
+    streak: { ...d.streak, ...(r.streak ?? {}) },
+    stepHist: Array.isArray(r.stepHist) && r.stepHist.length === 7 ? r.stepHist : d.stepHist,
+    continents: r.continents ?? {},
+    daily: r.daily ?? {},
+    // Rounds saved by the old (countries + cities) version are not resumed.
+    current: r.current && Array.isArray(r.current.targets) && !('mode' in r.current) ? r.current : null,
   };
+}
+
+/** One-time migration from v1, which stored separate Countries and Cities progress. */
+function migrate(): unknown {
+  const old = JSON.parse(localStorage.getItem(OLD_KEY) || 'null');
+  if (!old) return null;
+  const c = old.modes?.cities ?? {};
+  return { xp: old.xp, settings: old.settings, ...c, current: null };
 }
 
 function read(): SaveData {
   try {
     const s = localStorage.getItem(KEY);
-    return hydrate(s ? JSON.parse(s) : null);
+    return hydrate(s ? JSON.parse(s) : migrate());
   } catch {
     return defaultSave();
   }
@@ -142,13 +124,10 @@ export function updateSettings(patch: Partial<Settings>) {
   saveStore.set((s) => ({ ...s, settings: { ...s.settings, ...patch } }));
 }
 
-export function updateMode(mode: Mode, fn: (m: ModeData) => ModeData) {
-  saveStore.set((s) => ({ ...s, modes: { ...s.modes, [mode]: fn(s.modes[mode]) } }));
-}
-
 export function resetAll() {
   try {
     localStorage.removeItem(KEY);
+    localStorage.removeItem(OLD_KEY);
   } catch {
     /* ignore */
   }

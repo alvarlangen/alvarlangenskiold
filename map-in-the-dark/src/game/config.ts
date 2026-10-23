@@ -9,11 +9,17 @@ export const POINTS_BY_STEP = [100, 80, 60, 45, 30, 20] as const;
 export const STEPS = 6;
 export const QUESTIONS_PER_ROUND = 5;
 
-/** Fraction of a country's area lit at the end of step 1…6. */
-export const LIT_FRACTION_BY_STEP = [0.12, 0.28, 0.46, 0.66, 0.84, 1] as const;
+/**
+ * Radius (km) of the visible map window in step 1…6. Everything outside is hidden under fog, so the
+ * player starts with a close-up of the city's surroundings and zooms out step by step.
+ */
+export const WINDOW_KM_BY_STEP = [35, 70, 130, 230, 400, 700] as const;
 
-/** Step in which the camera first glides to the lit area (1-based). */
-export const CAMERA_FOCUS_STEP = 3;
+/**
+ * Radius (km) of the green search area that contains the target city. Its centre is offset from the
+ * city, so in early steps no single town dot gives the answer away.
+ */
+export const SEARCH_KM_BY_STEP = [20, 15, 10, 6, 3, 1.5] as const;
 
 /** XP = XP_BASE × (points / 100) × combo multiplier × (GOLDEN_MULTIPLIER if golden). */
 export const XP_BASE = 20;

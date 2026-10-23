@@ -1,4 +1,3 @@
-export type Mode = 'countries' | 'cities';
 export type RoundKind = 'daily' | 'bonus' | 'practice';
 
 export interface FlagColor {
@@ -6,6 +5,7 @@ export interface FlagColor {
   hex: string;
 }
 
+/** Country metadata, used for the city clues (language, currency, flag, neighbours). */
 export interface Country {
   id: string; // ISO 3166-1 alpha-3 (Kosovo: UNK)
   iso2: string;
@@ -25,7 +25,6 @@ export interface Country {
   rank: number;
   flag: FlagColor[];
   flagFile: string;
-  fact?: string;
 }
 
 export interface City {
@@ -36,7 +35,6 @@ export interface City {
   lonlat: [number, number];
   capital: boolean;
   fact: string | null;
-  decoys: [number, number][];
   rank: number;
 }
 
@@ -51,15 +49,7 @@ export interface Target {
   continent: string;
 }
 
-export type ClueKind =
-  | 'continent'
-  | 'languageCurrency'
-  | 'neighborCount'
-  | 'flagColors'
-  | 'letters'
-  | 'neighbors'
-  | 'cityLetters'
-  | 'countryLetters';
+export type ClueKind = 'continent' | 'languageCurrency' | 'flagColors' | 'cityLetters' | 'countryLetters' | 'neighbors';
 
 export interface Clue {
   kind: ClueKind;
@@ -83,7 +73,6 @@ export interface QuestionResult {
 }
 
 export interface RoundState {
-  mode: Mode;
   kind: RoundKind;
   /** Date key for daily rounds, seed for others. */
   seed: string;

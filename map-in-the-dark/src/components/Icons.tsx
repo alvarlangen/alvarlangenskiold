@@ -16,26 +16,18 @@ const base = (props: P) => ({
 
 export const Logo = (props: P) => (
   <svg viewBox="0 0 64 64" aria-hidden="true" {...props}>
-    <defs>
-      <radialGradient id="lg-o" cx="38%" cy="32%" r="75%">
-        <stop offset="0" stop-color="#173a66" />
-        <stop offset="1" stop-color="#040b18" />
-      </radialGradient>
-      <filter id="lg-g" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="2.2" result="b" />
-        <feMerge>
-          <feMergeNode in="b" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
-    </defs>
-    <circle cx="32" cy="32" r="27" fill="url(#lg-o)" stroke="#36e4ff" stroke-opacity=".45" stroke-width="1.2" />
-    <path d="M5.5 32h53M32 5c-9 8-9 46 0 54M32 5c9 8 9 46 0 54" stroke="#7fdcff" stroke-opacity=".22" fill="none" />
-    <path d="M30 22l7-3 6 4-1 7-6 3-6-4z" fill="#36e4ff" filter="url(#lg-g)" />
-    <path d="M37 33l5-3 3 5-3 4-5-1z" fill="#36e4ff" fill-opacity=".55" />
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="#1d7a45" />
+    <path
+      d="M10 42c8-4 12 2 20-2s10-12 18-12 6 6 6 6"
+      fill="none"
+      stroke="#bfe3cc"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <circle cx="40" cy="26" r="11" fill="#ffffff" fill-opacity=".18" stroke="#ffffff" stroke-width="2.5" />
+    <circle cx="36" cy="29" r="3.5" fill="#ffffff" />
   </svg>
 );
-
 export const IconGlobe = (p: P) => (
   <svg {...base(p)}>
     <circle cx="12" cy="12" r="9" />

@@ -1,61 +1,56 @@
 import { useEffect } from 'preact/hooks';
+import { lazy, Suspense } from 'preact/compat';
 import { Header, Footer } from './Header';
 import { Landing } from './Landing';
-import { lazy, Suspense } from 'preact/compat';
 import { Stats } from './Stats';
 import { Settings } from './Settings';
 import { About, Credits, NotFound, PracticePage, Privacy } from './Pages';
 import { LevelUpModal, Toasts } from './Overlays';
 import { CONTINENTS } from '../data/continents';
-import type { Mode } from '../game/types';
 import { useRoute } from '../lib/router';
 
 // The game, its data and the results view load on demand so the landing page stays light.
 const Game = lazy(() => import('./Game').then((m) => m.Game));
 const DailyResults = lazy(() => import('./Results').then((m) => m.DailyResults));
 
-const MODES: Mode[] = ['countries', 'cities'];
 const TITLES: Record<string, string> = {
   stats: 'Stats',
   settings: 'Settings',
-  about: 'About',
+  about: 'How to play',
   privacy: 'Privacy',
   credits: 'Credits',
   practice: 'Practice',
+  play: 'Play',
+  bonus: 'Bonus round',
+  results: 'Results',
 };
 
 export function App() {
   const route = useRoute();
   const [path, query] = route.split('?');
-  const parts = path.split('/').filter(Boolean);
-  const [a, b, c] = parts;
+  const [a, b] = path.split('/').filter(Boolean);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const name = a
-      ? (TITLES[a] ??
-        (a === 'play' || a === 'bonus' || a === 'practice' ? 'Play' : a === 'results' ? 'Results' : 'Not found'))
-      : '';
-    document.title = name ? `${name} · Map in the Dark` : 'Map in the Dark — a daily geography game';
+    const name = a ? (TITLES[a] ?? 'Not found') : '';
+    document.title = name ? `${name} · Map in the Dark` : 'Map in the Dark';
   }, [path]);
 
   let view;
   let isGame = false;
-  const mode = MODES.includes(b as Mode) ? (b as Mode) : null;
+  const continent = b ? decodeURIComponent(b) : '';
   if (!a) view = <Landing />;
-  else if (a === 'play' && mode && !c) {
-    view = <Game key={`daily-${mode}`} mode={mode} kind="daily" />;
+  else if (a === 'play' && !b) {
+    view = <Game key="daily" kind="daily" />;
     isGame = true;
-  } else if (a === 'bonus' && mode && !c) {
-    view = <Game key={`bonus-${mode}-${query}`} mode={mode} kind="bonus" />;
+  } else if (a === 'bonus' && !b) {
+    view = <Game key={`bonus-${query}`} kind="bonus" />;
     isGame = true;
-  } else if (a === 'practice' && mode && c && (CONTINENTS as readonly string[]).includes(decodeURIComponent(c))) {
-    view = (
-      <Game key={`practice-${mode}-${c}-${query}`} mode={mode} kind="practice" continent={decodeURIComponent(c)} />
-    );
+  } else if (a === 'practice' && (CONTINENTS as readonly string[]).includes(continent)) {
+    view = <Game key={`practice-${continent}-${query}`} kind="practice" continent={continent} />;
     isGame = true;
   } else if (a === 'practice' && !b) view = <PracticePage />;
-  else if (a === 'results' && mode) view = <DailyResults mode={mode} />;
+  else if (a === 'results' && !b) view = <DailyResults />;
   else if (a === 'stats') view = <Stats />;
   else if (a === 'settings') view = <Settings />;
   else if (a === 'about') view = <About />;

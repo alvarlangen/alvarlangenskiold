@@ -1,14 +1,14 @@
 {
   "name": "Map in the Dark",
   "short_name": "Map in the Dark",
-  "description": "A daily geography game: a dark map lights up piece by piece, with a new clue at every step.",
+  "description": "A daily city geography game: a real map opens up step by step around a hidden city.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#050a14",
-  "theme_color": "#050a14",
+  "background_color": "#ffffff",
+  "theme_color": "#1d7a45",
   "categories": ["games", "education"],
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },

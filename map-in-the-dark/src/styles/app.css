@@ -20,8 +20,7 @@ body {
 }
 body {
   min-height: 100dvh;
-  background-image: var(--bg-grad);
-  background-repeat: no-repeat;
+
   -webkit-font-smoothing: antialiased;
 }
 #app {
@@ -46,9 +45,10 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 750;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
   margin: 0 0 0.5em;
 }
 p {
@@ -123,7 +123,10 @@ p {
   transform: scale(0.97);
 }
 .btn[disabled] {
-  opacity: 0.5;
+  --b-bg: var(--surface-2);
+  --b-fg: var(--text-faint);
+  --b-line: var(--line);
+  box-shadow: none;
   cursor: not-allowed;
 }
 .btn-primary {
@@ -244,9 +247,7 @@ p {
   gap: 12px;
   height: calc(var(--header-h) + var(--safe-top));
   padding: var(--safe-top) max(16px, var(--safe-right)) 0 max(16px, var(--safe-left));
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -360,14 +361,34 @@ p {
   gap: 4px;
   align-items: center;
 }
-.hero-globe {
+.hero-map {
   position: relative;
-  height: clamp(190px, 30vh, 300px);
-  margin: -12px -16px -4px;
+  height: clamp(230px, 36vh, 360px);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--map-water);
+  box-shadow: var(--shadow);
 }
-.hero-globe canvas {
+.hero-map canvas {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+}
+.hero-map .demo-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+  box-shadow: var(--shadow);
 }
 .hero-copy h1 {
   font-size: clamp(1.75rem, 7.6vw, 3.6rem);
@@ -376,7 +397,6 @@ p {
 .hero-copy h1 em {
   font-style: normal;
   color: var(--accent);
-  text-shadow: 0 0 28px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 .hero-copy .lede {
   font-size: 1rem;
@@ -417,7 +437,7 @@ p {
 }
 .play-card:hover {
   border-color: var(--accent);
-  box-shadow: var(--accent-glow);
+  background: var(--surface-hover);
 }
 .play-card:active {
   transform: scale(0.985);
@@ -476,10 +496,9 @@ p {
     gap: 32px;
     min-height: min(760px, calc(100dvh - var(--header-h) - var(--safe-top) - 40px));
   }
-  .hero-globe {
+  .hero-map {
     order: 2;
-    height: min(620px, 72vh);
-    margin: 0;
+    height: min(520px, 64vh);
   }
   .play-grid {
     max-width: 560px;
@@ -516,8 +535,7 @@ p {
     filter 500ms;
 }
 .demo-cell.on {
-  fill: var(--map-lit);
-  filter: drop-shadow(0 0 6px var(--map-glow));
+  fill: var(--accent);
 }
 .demo-clue {
   position: absolute;
@@ -700,7 +718,7 @@ p {
   gap: 10px;
   padding: calc(8px + var(--safe-top)) max(12px, var(--safe-right)) 8px max(12px, var(--safe-left));
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  background: var(--bg);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
   z-index: 5;
@@ -857,7 +875,6 @@ p {
 }
 .stepbar .dot.on {
   background: var(--accent);
-  box-shadow: 0 0 10px var(--map-glow);
 }
 .stepbar .dot.now {
   animation: pulse-dot 1.6s ease-in-out infinite;
@@ -893,7 +910,7 @@ p {
   z-index: 4;
   padding: 12px max(12px, var(--safe-right)) calc(12px + var(--safe-bottom)) max(12px, var(--safe-left));
   border-top: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  background: var(--bg);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
   max-height: calc(var(--vvh, 100dvh) * 0.56);
@@ -912,8 +929,7 @@ p {
   padding: 12px 14px;
   border-radius: var(--r-md);
   border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-  background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--surface-solid);
-  box-shadow: var(--accent-glow);
+  background: var(--accent-soft);
   animation: clue-in 600ms var(--ease);
   overflow: hidden;
 }
@@ -921,7 +937,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.18) 50%, transparent 70%);
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
   transform: translateX(-100%);
   animation: sweep 1.1s var(--ease) 120ms;
   pointer-events: none;
@@ -1289,7 +1305,6 @@ p {
   font-weight: 700;
   line-height: 1;
   color: var(--accent);
-  text-shadow: 0 0 34px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 .result-hero .of {
   font-family: var(--font-mono);
@@ -1369,8 +1384,7 @@ p {
   position: absolute;
   inset: 0 auto 0 0;
   border-radius: 6px;
-  background: linear-gradient(90deg, var(--gold), color-mix(in srgb, var(--gold) 60%, white));
-  box-shadow: var(--gold-glow);
+  background: var(--accent);
   transition: width 1.2s var(--ease);
 }
 .xp-meta {
@@ -1580,7 +1594,7 @@ p {
   display: grid;
   place-items: center;
   padding: 16px;
-  background: rgba(2, 6, 14, 0.66);
+  background: rgba(20, 33, 26, 0.35);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   animation: fade-in 300ms var(--ease);
@@ -1592,9 +1606,7 @@ p {
   border-radius: var(--r-lg);
   border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
   background: var(--surface-solid);
-  box-shadow:
-    var(--shadow),
-    0 0 60px color-mix(in srgb, var(--gold) 25%, transparent);
+  box-shadow: var(--shadow);
   animation: level-pop 700ms var(--ease);
 }
 .modal .lv-ring {
@@ -1666,9 +1678,7 @@ p {
   font-size: clamp(4rem, 22vw, 9rem);
   font-weight: 700;
   line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--accent);
-  text-shadow: 0 0 40px color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--accent);
 }
 .lost-page .coords {
   font-family: var(--font-mono);
@@ -1782,4 +1792,36 @@ p {
 }
 :root[data-motion='reduce'] .next-btn .auto {
   animation-duration: var(--auto-dur) !important;
+}
+
+/* ───────────────────────── Light theme additions ───────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.continent-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.result-row .rr-country {
+  color: var(--text-faint);
+  font-weight: 400;
+}
+.site-header .brand svg {
+  width: 32px;
+  height: 32px;
+}
+.lede {
+  color: var(--text-dim);
+}
+.map-wrap {
+  background: var(--map-water);
+}
+.icon-btn {
+  box-shadow: 0 1px 2px rgba(20, 40, 25, 0.06);
+}
+.clue-num {
+  border-radius: 50%;
 }
