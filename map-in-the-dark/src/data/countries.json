@@ -1,0 +1,7072 @@
+[
+  {
+    "id": "CHN",
+    "iso2": "cn",
+    "name": "China",
+    "altNames": ["People's Republic of China", "Zhōngguó", "Zhongguo", "Zhonghua", "Zhōnghuá Rénmín Gònghéguó"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Mandarin Chinese"],
+    "currency": "Yuan",
+    "borders": ["AFG", "BTN", "MMR", "IND", "KAZ", "NPL", "PRK", "KGZ", "LAO", "MNG", "PAK", "RUS", "TJK", "VNM"],
+    "neighborNames": [
+      "Afghanistan",
+      "Bhutan",
+      "Myanmar",
+      "India",
+      "Kazakhstan",
+      "Nepal",
+      "North Korea",
+      "Kyrgyzstan",
+      "Laos",
+      "Mongolia",
+      "Pakistan",
+      "Russia",
+      "Tajikistan",
+      "Vietnam"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Beijing",
+    "latlng": [35, 105],
+    "area": 9706961,
+    "geoArea": 0.23087726759408422,
+    "rank": 1,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "cn"
+  },
+  {
+    "id": "IND",
+    "iso2": "in",
+    "name": "India",
+    "altNames": ["Republic of India", "Bharat", "Bhārat", "Bharat Ganrajya"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Hindi", "English"],
+    "currency": "Rupee",
+    "borders": ["BGD", "BTN", "MMR", "CHN", "NPL", "PAK"],
+    "neighborNames": ["Bangladesh", "Bhutan", "Myanmar", "China", "Nepal", "Pakistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "New Delhi",
+    "latlng": [20, 77],
+    "area": 3287590,
+    "geoArea": 0.07774907430697302,
+    "rank": 2,
+    "flag": [
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "in"
+  },
+  {
+    "id": "USA",
+    "iso2": "us",
+    "name": "United States",
+    "altNames": ["United States of America", "USA", "US", "U.S.", "U.S.A.", "America", "The States"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": ["CAN", "MEX"],
+    "neighborNames": ["Canada", "Mexico"],
+    "island": false,
+    "nearest": [],
+    "capital": "Washington, D.C.",
+    "latlng": [38, -97],
+    "area": 9372610,
+    "geoArea": 0.23255747687843487,
+    "rank": 3,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "us"
+  },
+  {
+    "id": "RUS",
+    "iso2": "ru",
+    "name": "Russia",
+    "altNames": ["Russian Federation"],
+    "continents": ["Europe", "Asia"],
+    "continentLabel": "Europe and Asia",
+    "languages": ["Russian"],
+    "currency": "Ruble",
+    "borders": ["AZE", "BLR", "CHN", "EST", "FIN", "GEO", "KAZ", "PRK", "LVA", "LTU", "MNG", "NOR", "POL", "UKR"],
+    "neighborNames": [
+      "Azerbaijan",
+      "Belarus",
+      "China",
+      "Estonia",
+      "Finland",
+      "Georgia",
+      "Kazakhstan",
+      "North Korea",
+      "Latvia",
+      "Lithuania",
+      "Mongolia",
+      "Norway",
+      "Poland",
+      "Ukraine"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Moscow",
+    "latlng": [60, 100],
+    "area": 17098242,
+    "geoArea": 0.415862300220971,
+    "rank": 4,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ru"
+  },
+  {
+    "id": "BRA",
+    "iso2": "br",
+    "name": "Brazil",
+    "altNames": ["Federative Republic of Brazil", "Brasil", "República Federativa do Brasil"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Portuguese"],
+    "currency": "Real",
+    "borders": ["ARG", "BOL", "COL", "GUF", "GUY", "PRY", "PER", "SUR", "URY", "VEN"],
+    "neighborNames": [
+      "Argentina",
+      "Bolivia",
+      "Colombia",
+      "French Guiana (France)",
+      "Guyana",
+      "Paraguay",
+      "Peru",
+      "Suriname",
+      "Uruguay",
+      "Venezuela"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Brasília",
+    "latlng": [-10, -55],
+    "area": 8515767,
+    "geoArea": 0.2093982595544214,
+    "rank": 5,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "br"
+  },
+  {
+    "id": "IDN",
+    "iso2": "id",
+    "name": "Indonesia",
+    "altNames": ["Republic of Indonesia", "Republik Indonesia"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Indonesian"],
+    "currency": "Rupiah",
+    "borders": ["TLS", "MYS", "PNG"],
+    "neighborNames": ["Timor-Leste", "Malaysia", "Papua New Guinea"],
+    "island": false,
+    "nearest": [],
+    "capital": "Jakarta",
+    "latlng": [-5, 120],
+    "area": 1904569,
+    "geoArea": 0.046126103495204185,
+    "rank": 6,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "id"
+  },
+  {
+    "id": "MEX",
+    "iso2": "mx",
+    "name": "Mexico",
+    "altNames": ["United Mexican States", "México", "Mexicanos", "Estados Unidos Mexicanos"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": ["BLZ", "GTM", "USA"],
+    "neighborNames": ["Belize", "Guatemala", "United States"],
+    "island": false,
+    "nearest": [],
+    "capital": "Mexico City",
+    "latlng": [23, -102],
+    "area": 1964375,
+    "geoArea": 0.04834432154717588,
+    "rank": 7,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "mx"
+  },
+  {
+    "id": "NGA",
+    "iso2": "ng",
+    "name": "Nigeria",
+    "altNames": ["Federal Republic of Nigeria", "Nijeriya", "Naíjíríà"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Naira",
+    "borders": ["BEN", "CMR", "TCD", "NER"],
+    "neighborNames": ["Benin", "Cameroon", "Chad", "Niger"],
+    "island": false,
+    "nearest": [],
+    "capital": "Abuja",
+    "latlng": [10, 8],
+    "area": 923768,
+    "geoArea": 0.022456373656782252,
+    "rank": 8,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ng"
+  },
+  {
+    "id": "CAN",
+    "iso2": "ca",
+    "name": "Canada",
+    "altNames": [],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English", "French"],
+    "currency": "Dollar",
+    "borders": ["USA"],
+    "neighborNames": ["United States"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ottawa",
+    "latlng": [60, -95],
+    "area": 9984670,
+    "geoArea": 0.24321727837107948,
+    "rank": 9,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ca"
+  },
+  {
+    "id": "IRN",
+    "iso2": "ir",
+    "name": "Iran",
+    "altNames": ["Islamic Republic of Iran", "Persia", "Iran, Islamic Republic of", "Jomhuri-ye Eslāmi-ye Irān"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Persian"],
+    "currency": "Rial",
+    "borders": ["AFG", "ARM", "AZE", "IRQ", "PAK", "TUR", "TKM"],
+    "neighborNames": ["Afghanistan", "Armenia", "Azerbaijan", "Iraq", "Pakistan", "Turkey", "Turkmenistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tehran",
+    "latlng": [32, 53],
+    "area": 1648195,
+    "geoArea": 0.03998181221276173,
+    "rank": 10,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ir"
+  },
+  {
+    "id": "EGY",
+    "iso2": "eg",
+    "name": "Egypt",
+    "altNames": ["Arab Republic of Egypt"],
+    "continents": ["Africa", "Asia"],
+    "continentLabel": "Africa and Asia",
+    "languages": ["Arabic"],
+    "currency": "Pound",
+    "borders": ["ISR", "LBY", "PSE", "SDN"],
+    "neighborNames": ["Israel", "Libya", "Palestine", "Sudan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Cairo",
+    "latlng": [27, 30],
+    "area": 1002450,
+    "geoArea": 0.024728163109567842,
+    "rank": 11,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "eg"
+  },
+  {
+    "id": "AUS",
+    "iso2": "au",
+    "name": "Australia",
+    "altNames": ["Commonwealth of Australia"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["English"],
+    "currency": "Australian dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Papua New Guinea", "Indonesia", "Timor-Leste"],
+    "capital": "Canberra",
+    "latlng": [-27, 133],
+    "area": 7692024,
+    "geoArea": 0.18985162017168491,
+    "rank": 12,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "au"
+  },
+  {
+    "id": "ARG",
+    "iso2": "ar",
+    "name": "Argentina",
+    "altNames": ["Argentine Republic", "República Argentina"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": ["BOL", "BRA", "CHL", "PRY", "URY"],
+    "neighborNames": ["Bolivia", "Brazil", "Chile", "Paraguay", "Uruguay"],
+    "island": false,
+    "nearest": [],
+    "capital": "Buenos Aires",
+    "latlng": [-34, -64],
+    "area": 2780400,
+    "geoArea": 0.06855698537925112,
+    "rank": 13,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "ar"
+  },
+  {
+    "id": "TUR",
+    "iso2": "tr",
+    "name": "Turkey",
+    "altNames": ["Türkiye", "Republic of Türkiye", "Turkiye", "Republic of Turkey", "Türkiye Cumhuriyeti"],
+    "continents": ["Asia", "Europe"],
+    "continentLabel": "Asia and Europe",
+    "languages": ["Turkish"],
+    "currency": "Lira",
+    "borders": ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"],
+    "neighborNames": ["Armenia", "Azerbaijan", "Bulgaria", "Georgia", "Greece", "Iran", "Iraq", "Syria"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ankara",
+    "latlng": [39, 35],
+    "area": 783562,
+    "geoArea": 0.01921171747941028,
+    "rank": 14,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "tr"
+  },
+  {
+    "id": "JPN",
+    "iso2": "jp",
+    "name": "Japan",
+    "altNames": ["Nippon", "Nihon"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Japanese"],
+    "currency": "Yen",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["South Korea", "Russia", "North Korea"],
+    "capital": "Tokyo",
+    "latlng": [36, 138],
+    "area": 377930,
+    "geoArea": 0.009117459504359545,
+    "rank": 15,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "jp"
+  },
+  {
+    "id": "ZAF",
+    "iso2": "za",
+    "name": "South Africa",
+    "altNames": [
+      "Republic of South Africa",
+      "Suid-Afrika",
+      "Sewula Afrika",
+      "Afrika-Borwa",
+      "Afrika Borwa",
+      "Ningizimu Afrika",
+      "Aforika Borwa",
+      "Afrika Dzonga",
+      "Afurika Tshipembe",
+      "Mzantsi Afrika"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Zulu", "Xhosa", "Afrikaans", "English", "+7 more"],
+    "currency": "Rand",
+    "borders": ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"],
+    "neighborNames": ["Botswana", "Lesotho", "Mozambique", "Namibia", "Eswatini", "Zimbabwe"],
+    "island": false,
+    "nearest": [],
+    "capital": "Pretoria, Cape Town and Bloemfontein",
+    "latlng": [-29, 24],
+    "area": 1221037,
+    "geoArea": 0.030096577986699145,
+    "rank": 16,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "za"
+  },
+  {
+    "id": "SAU",
+    "iso2": "sa",
+    "name": "Saudi Arabia",
+    "altNames": ["Kingdom of Saudi Arabia", "Saudi"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Riyal",
+    "borders": ["IRQ", "JOR", "KWT", "OMN", "QAT", "ARE", "YEM"],
+    "neighborNames": ["Iraq", "Jordan", "Kuwait", "Oman", "Qatar", "United Arab Emirates", "Yemen"],
+    "island": false,
+    "nearest": [],
+    "capital": "Riyadh",
+    "latlng": [25, 45],
+    "area": 2149690,
+    "geoArea": 0.04744735479305692,
+    "rank": 17,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "sa"
+  },
+  {
+    "id": "COL",
+    "iso2": "co",
+    "name": "Colombia",
+    "altNames": ["Republic of Colombia", "República de Colombia"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": ["BRA", "ECU", "PAN", "PER", "VEN"],
+    "neighborNames": ["Brazil", "Ecuador", "Panama", "Peru", "Venezuela"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bogotá",
+    "latlng": [4, -72],
+    "area": 1141748,
+    "geoArea": 0.028072043651481835,
+    "rank": 18,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "co"
+  },
+  {
+    "id": "PHL",
+    "iso2": "ph",
+    "name": "Philippines",
+    "altNames": ["Republic of the Philippines", "Repúblika ng Pilipinas", "Pilipinas"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Filipino", "English"],
+    "currency": "Peso",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Malaysia", "Taiwan", "Indonesia"],
+    "capital": "Manila",
+    "latlng": [13, 122],
+    "area": 342353,
+    "geoArea": 0.0071525146357387945,
+    "rank": 19,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "ph"
+  },
+  {
+    "id": "VNM",
+    "iso2": "vn",
+    "name": "Vietnam",
+    "altNames": ["Socialist Republic of Vietnam", "Viet Nam", "Cộng hòa Xã hội chủ nghĩa Việt Nam", "Việt Nam"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Vietnamese"],
+    "currency": "Dong",
+    "borders": ["KHM", "CHN", "LAO"],
+    "neighborNames": ["Cambodia", "China", "Laos"],
+    "island": false,
+    "nearest": [],
+    "capital": "Hanoi",
+    "latlng": [16.16666666, 107.83333333],
+    "area": 331212,
+    "geoArea": 0.00810451376952214,
+    "rank": 20,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "vn"
+  },
+  {
+    "id": "FRA",
+    "iso2": "fr",
+    "name": "France",
+    "altNames": ["French Republic", "République française"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["French"],
+    "currency": "Euro",
+    "borders": ["AND", "BEL", "DEU", "ITA", "LUX", "MCO", "ESP", "CHE"],
+    "neighborNames": ["Andorra", "Belgium", "Germany", "Italy", "Luxembourg", "Monaco", "Spain", "Switzerland"],
+    "island": false,
+    "nearest": [],
+    "capital": "Paris",
+    "latlng": [46, 2],
+    "area": 551695,
+    "geoArea": 0.015645963133245788,
+    "rank": 21,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "fr"
+  },
+  {
+    "id": "THA",
+    "iso2": "th",
+    "name": "Thailand",
+    "altNames": ["Kingdom of Thailand", "Siam", "Prathet", "Thai", "Ratcha Anachak Thai"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Thai"],
+    "currency": "Baht",
+    "borders": ["MMR", "KHM", "LAO", "MYS"],
+    "neighborNames": ["Myanmar", "Cambodia", "Laos", "Malaysia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bangkok",
+    "latlng": [15, 100],
+    "area": 513120,
+    "geoArea": 0.012705705579767742,
+    "rank": 22,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "th"
+  },
+  {
+    "id": "DEU",
+    "iso2": "de",
+    "name": "Germany",
+    "altNames": ["Federal Republic of Germany", "Deutschland", "Bundesrepublik Deutschland"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["German"],
+    "currency": "Euro",
+    "borders": ["AUT", "BEL", "CZE", "DNK", "FRA", "LUX", "NLD", "POL", "CHE"],
+    "neighborNames": [
+      "Austria",
+      "Belgium",
+      "Czechia",
+      "Denmark",
+      "France",
+      "Luxembourg",
+      "Netherlands",
+      "Poland",
+      "Switzerland"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Berlin",
+    "latlng": [51, 9],
+    "area": 357114,
+    "geoArea": 0.008774729230190367,
+    "rank": 23,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "de"
+  },
+  {
+    "id": "PER",
+    "iso2": "pe",
+    "name": "Peru",
+    "altNames": ["Republic of Peru", "Perú", "República del Perú", "Piruw"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish", "Quechua", "Aymara"],
+    "currency": "Sol",
+    "borders": ["BOL", "BRA", "CHL", "COL", "ECU"],
+    "neighborNames": ["Bolivia", "Brazil", "Chile", "Colombia", "Ecuador"],
+    "island": false,
+    "nearest": [],
+    "capital": "Lima",
+    "latlng": [-10, -76],
+    "area": 1285216,
+    "geoArea": 0.03193620854877616,
+    "rank": 24,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "pe"
+  },
+  {
+    "id": "KEN",
+    "iso2": "ke",
+    "name": "Kenya",
+    "altNames": ["Republic of Kenya", "Jamhuri ya Kenya"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Swahili", "English"],
+    "currency": "Shilling",
+    "borders": ["ETH", "SOM", "SSD", "TZA", "UGA"],
+    "neighborNames": ["Ethiopia", "Somalia", "South Sudan", "Tanzania", "Uganda"],
+    "island": false,
+    "nearest": [],
+    "capital": "Nairobi",
+    "latlng": [1, 38],
+    "area": 580367,
+    "geoArea": 0.014655176962557036,
+    "rank": 25,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ke"
+  },
+  {
+    "id": "UKR",
+    "iso2": "ua",
+    "name": "Ukraine",
+    "altNames": ["Ukrayina"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Ukrainian"],
+    "currency": "Hryvnia",
+    "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"],
+    "neighborNames": ["Belarus", "Hungary", "Moldova", "Poland", "Romania", "Russia", "Slovakia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kyiv",
+    "latlng": [49, 32],
+    "area": 603500,
+    "geoArea": 0.014046325364473582,
+    "rank": 26,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "ua"
+  },
+  {
+    "id": "ESP",
+    "iso2": "es",
+    "name": "Spain",
+    "altNames": ["Kingdom of Spain", "España", "Espana", "Reino de España"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Spanish"],
+    "currency": "Euro",
+    "borders": ["AND", "FRA", "GIB", "PRT", "MAR"],
+    "neighborNames": ["Andorra", "France", "Gibraltar (UK)", "Portugal", "Morocco"],
+    "island": false,
+    "nearest": [],
+    "capital": "Madrid",
+    "latlng": [40, -4],
+    "area": 505992,
+    "geoArea": 0.012470609942284896,
+    "rank": 27,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "es"
+  },
+  {
+    "id": "ITA",
+    "iso2": "it",
+    "name": "Italy",
+    "altNames": ["Italian Republic", "Italia", "Repubblica italiana"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Italian"],
+    "currency": "Euro",
+    "borders": ["AUT", "FRA", "SMR", "SVN", "CHE", "VAT"],
+    "neighborNames": ["Austria", "France", "San Marino", "Slovenia", "Switzerland", "Vatican City"],
+    "island": false,
+    "nearest": [],
+    "capital": "Rome",
+    "latlng": [42.83333333, 12.83333333],
+    "area": 301336,
+    "geoArea": 0.00739763241291825,
+    "rank": 28,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "it"
+  },
+  {
+    "id": "GBR",
+    "iso2": "gb",
+    "name": "United Kingdom",
+    "altNames": ["United Kingdom of Great Britain and Northern Ireland", "UK", "U.K.", "Great Britain", "Britain"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["English"],
+    "currency": "Pound sterling",
+    "borders": ["IRL"],
+    "neighborNames": ["Ireland"],
+    "island": false,
+    "nearest": [],
+    "capital": "London",
+    "latlng": [54, -2],
+    "area": 242900,
+    "geoArea": 0.005903370906438908,
+    "rank": 29,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "gb"
+  },
+  {
+    "id": "MAR",
+    "iso2": "ma",
+    "name": "Morocco",
+    "altNames": ["Kingdom of Morocco", "Al-Mamlakah al-Maġribiyah"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Arabic", "Berber"],
+    "currency": "Dirham",
+    "borders": ["DZA", "ESH", "ESP"],
+    "neighborNames": ["Algeria", "Western Sahara", "Spain"],
+    "island": false,
+    "nearest": [],
+    "capital": "Rabat",
+    "latlng": [32, -5],
+    "area": 446550,
+    "geoArea": 0.014347934403335913,
+    "rank": 30,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ma"
+  },
+  {
+    "id": "MDG",
+    "iso2": "mg",
+    "name": "Madagascar",
+    "altNames": ["Republic of Madagascar", "Repoblikan'i Madagasikara", "République de Madagascar", "Madagasikara"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Malagasy", "French"],
+    "currency": "Ariary",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Comoros", "Mozambique", "Tanzania"],
+    "capital": "Antananarivo",
+    "latlng": [-20, 47],
+    "area": 587041,
+    "geoArea": 0.014649590350685051,
+    "rank": 31,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "mg"
+  },
+  {
+    "id": "POL",
+    "iso2": "pl",
+    "name": "Poland",
+    "altNames": ["Republic of Poland", "Polska", "Rzeczpospolita Polska"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Polish"],
+    "currency": "Złoty",
+    "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
+    "neighborNames": ["Belarus", "Czechia", "Germany", "Lithuania", "Russia", "Slovakia", "Ukraine"],
+    "island": false,
+    "nearest": [],
+    "capital": "Warsaw",
+    "latlng": [52, 20],
+    "area": 312679,
+    "geoArea": 0.007700632399217711,
+    "rank": 32,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "pl"
+  },
+  {
+    "id": "CHL",
+    "iso2": "cl",
+    "name": "Chile",
+    "altNames": ["Republic of Chile", "República de Chile"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": ["ARG", "BOL", "PER"],
+    "neighborNames": ["Argentina", "Bolivia", "Peru"],
+    "island": false,
+    "nearest": [],
+    "capital": "Santiago",
+    "latlng": [-30, -71],
+    "area": 756102,
+    "geoArea": 0.018168238194921926,
+    "rank": 33,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "cl"
+  },
+  {
+    "id": "KOR",
+    "iso2": "kr",
+    "name": "South Korea",
+    "altNames": ["Republic of Korea", "Korea", "S Korea", "Korea, Republic of"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Korean"],
+    "currency": "Won",
+    "borders": ["PRK"],
+    "neighborNames": ["North Korea"],
+    "island": false,
+    "nearest": [],
+    "capital": "Seoul",
+    "latlng": [37, 127.5],
+    "area": 100210,
+    "geoArea": 0.0023938293954457414,
+    "rank": 34,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "kr"
+  },
+  {
+    "id": "SWE",
+    "iso2": "se",
+    "name": "Sweden",
+    "altNames": ["Kingdom of Sweden", "Sverige", "Konungariket Sverige"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Swedish"],
+    "currency": "Krona",
+    "borders": ["FIN", "NOR"],
+    "neighborNames": ["Finland", "Norway"],
+    "island": false,
+    "nearest": [],
+    "capital": "Stockholm",
+    "latlng": [62, 15],
+    "area": 450295,
+    "geoArea": 0.010913375105484369,
+    "rank": 35,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "se"
+  },
+  {
+    "id": "GRC",
+    "iso2": "gr",
+    "name": "Greece",
+    "altNames": ["Hellenic Republic", "Hellas", "Ellada", "Elláda"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Greek"],
+    "currency": "Euro",
+    "borders": ["ALB", "BGR", "TUR", "MKD"],
+    "neighborNames": ["Albania", "Bulgaria", "Turkey", "North Macedonia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Athens",
+    "latlng": [39, 22],
+    "area": 131990,
+    "geoArea": 0.0032071461833728106,
+    "rank": 36,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "gr"
+  },
+  {
+    "id": "FIN",
+    "iso2": "fi",
+    "name": "Finland",
+    "altNames": ["Republic of Finland", "Suomi", "Suomen tasavalta", "Republiken Finland"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Finnish", "Swedish"],
+    "currency": "Euro",
+    "borders": ["NOR", "SWE", "RUS"],
+    "neighborNames": ["Norway", "Sweden", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Helsinki",
+    "latlng": [64, 26],
+    "area": 338424,
+    "geoArea": 0.008142018187298058,
+    "rank": 37,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "fi"
+  },
+  {
+    "id": "CUB",
+    "iso2": "cu",
+    "name": "Cuba",
+    "altNames": ["Republic of Cuba", "República de Cuba"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Haiti", "The Bahamas", "Jamaica"],
+    "capital": "Havana",
+    "latlng": [21.5, -80],
+    "area": 109884,
+    "geoArea": 0.0026924313132546725,
+    "rank": 38,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "cu"
+  },
+  {
+    "id": "NOR",
+    "iso2": "no",
+    "name": "Norway",
+    "altNames": ["Kingdom of Norway", "Norge", "Noreg", "Kongeriket Norge", "Kongeriket Noreg", "Norgga"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Norwegian"],
+    "currency": "Krone",
+    "borders": ["FIN", "SWE", "RUS"],
+    "neighborNames": ["Finland", "Sweden", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Oslo",
+    "latlng": [62, 10],
+    "area": 323802,
+    "geoArea": 0.009467035037630444,
+    "rank": 39,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "no"
+  },
+  {
+    "id": "NLD",
+    "iso2": "nl",
+    "name": "Netherlands",
+    "altNames": ["Kingdom of the Netherlands", "Holland", "The Netherlands", "Nederland"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Dutch"],
+    "currency": "Euro",
+    "borders": ["BEL", "DEU"],
+    "neighborNames": ["Belgium", "Germany"],
+    "island": false,
+    "nearest": [],
+    "capital": "Amsterdam",
+    "latlng": [52.5, 5.75],
+    "area": 41850,
+    "geoArea": 0.0009148238278962098,
+    "rank": 40,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "nl"
+  },
+  {
+    "id": "PRT",
+    "iso2": "pt",
+    "name": "Portugal",
+    "altNames": ["Portuguese Republic", "Portuguesa", "República Portuguesa"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Portuguese"],
+    "currency": "Euro",
+    "borders": ["ESP"],
+    "neighborNames": ["Spain"],
+    "island": false,
+    "nearest": [],
+    "capital": "Lisbon",
+    "latlng": [39.5, -8],
+    "area": 92090,
+    "geoArea": 0.0022361920862779138,
+    "rank": 41,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "pt"
+  },
+  {
+    "id": "NZL",
+    "iso2": "nz",
+    "name": "New Zealand",
+    "altNames": ["Aotearoa"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["English", "Māori"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Australia", "Vanuatu", "Fiji"],
+    "capital": "Wellington",
+    "latlng": [-41, 174],
+    "area": 270467,
+    "geoArea": 0.006573806169547016,
+    "rank": 42,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "nz"
+  },
+  {
+    "id": "PAK",
+    "iso2": "pk",
+    "name": "Pakistan",
+    "altNames": ["Islamic Republic of Pakistan", "Pākistān", "Islāmī Jumhūriya'eh Pākistān"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Urdu", "English"],
+    "currency": "Rupee",
+    "borders": ["AFG", "CHN", "IND", "IRN"],
+    "neighborNames": ["Afghanistan", "China", "India", "Iran"],
+    "island": false,
+    "nearest": [],
+    "capital": "Islamabad",
+    "latlng": [30, 70],
+    "area": 881912,
+    "geoArea": 0.021526958387285414,
+    "rank": 43,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "pk"
+  },
+  {
+    "id": "CHE",
+    "iso2": "ch",
+    "name": "Switzerland",
+    "altNames": ["Swiss Confederation", "Schweiz", "Suisse", "Svizzera", "Svizra"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["German", "French", "Italian"],
+    "currency": "Franc",
+    "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"],
+    "neighborNames": ["Austria", "France", "Italy", "Liechtenstein", "Germany"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bern",
+    "latlng": [47, 8],
+    "area": 41284,
+    "geoArea": 0.0010153972821415579,
+    "rank": 44,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ch"
+  },
+  {
+    "id": "COD",
+    "iso2": "cd",
+    "name": "Democratic Republic of the Congo",
+    "altNames": [
+      "DR Congo",
+      "DRC",
+      "Congo-Kinshasa",
+      "Zaire",
+      "Democratic Republic of Congo",
+      "Congo",
+      "Congo, the Democratic Republic of the",
+      "RD Congo",
+      "Repubilika ya Kongo Demokratiki",
+      "Republiki ya Kongó Demokratiki",
+      "Ditunga dia Kongu wa Mungalaata",
+      "Jamhuri ya Kidemokrasia ya Kongo"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "Franc",
+    "borders": ["AGO", "BDI", "CAF", "COG", "RWA", "SSD", "TZA", "UGA", "ZMB"],
+    "neighborNames": [
+      "Angola",
+      "Burundi",
+      "Central African Republic",
+      "Republic of the Congo",
+      "Rwanda",
+      "South Sudan",
+      "Tanzania",
+      "Uganda",
+      "Zambia"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Kinshasa",
+    "latlng": [0, 25],
+    "area": 2344858,
+    "geoArea": 0.057519674613983225,
+    "rank": 45,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "cd"
+  },
+  {
+    "id": "IRL",
+    "iso2": "ie",
+    "name": "Ireland",
+    "altNames": ["Republic of Ireland", "Eire", "Éire", "Poblacht na hÉireann"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Irish", "English"],
+    "currency": "Euro",
+    "borders": ["GBR"],
+    "neighborNames": ["United Kingdom"],
+    "island": false,
+    "nearest": [],
+    "capital": "Dublin",
+    "latlng": [53, -8],
+    "area": 70273,
+    "geoArea": 0.0016925480731551964,
+    "rank": 46,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      }
+    ],
+    "flagFile": "ie"
+  },
+  {
+    "id": "ETH",
+    "iso2": "et",
+    "name": "Ethiopia",
+    "altNames": ["Federal Democratic Republic of Ethiopia"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Amharic"],
+    "currency": "Birr",
+    "borders": ["DJI", "ERI", "KEN", "SOM", "SSD", "SDN"],
+    "neighborNames": ["Djibouti", "Eritrea", "Kenya", "Somalia", "South Sudan", "Sudan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Addis Ababa",
+    "latlng": [8, 38],
+    "area": 1104300,
+    "geoArea": 0.02788300178369801,
+    "rank": 47,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "et"
+  },
+  {
+    "id": "DNK",
+    "iso2": "dk",
+    "name": "Denmark",
+    "altNames": ["Kingdom of Denmark", "Danmark", "Kongeriget Danmark"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Danish"],
+    "currency": "Krone",
+    "borders": ["DEU"],
+    "neighborNames": ["Germany"],
+    "island": false,
+    "nearest": [],
+    "capital": "Copenhagen",
+    "latlng": [56, 10],
+    "area": 43094,
+    "geoArea": 0.0010448668037210383,
+    "rank": 48,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "dk"
+  },
+  {
+    "id": "ISR",
+    "iso2": "il",
+    "name": "Israel",
+    "altNames": ["State of Israel", "Medīnat Yisrā'el"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Hebrew"],
+    "currency": "New shekel",
+    "borders": ["EGY", "JOR", "LBN", "PSE", "SYR"],
+    "neighborNames": ["Egypt", "Jordan", "Lebanon", "Palestine", "Syria"],
+    "island": false,
+    "nearest": [],
+    "capital": "Jerusalem (disputed internationally)",
+    "latlng": [31.47, 35.13],
+    "area": 20770,
+    "geoArea": 0.0005490083522929378,
+    "rank": 49,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "il"
+  },
+  {
+    "id": "DZA",
+    "iso2": "dz",
+    "name": "Algeria",
+    "altNames": ["People's Democratic Republic of Algeria", "Dzayer", "Algérie"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Arabic", "Berber"],
+    "currency": "Dinar",
+    "borders": ["TUN", "LBY", "NER", "ESH", "MRT", "MLI", "MAR"],
+    "neighborNames": ["Tunisia", "Libya", "Niger", "Western Sahara", "Mauritania", "Mali", "Morocco"],
+    "island": false,
+    "nearest": [],
+    "capital": "Algiers",
+    "latlng": [28, 3],
+    "area": 2381741,
+    "geoArea": 0.05722612607922892,
+    "rank": 50,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "dz"
+  },
+  {
+    "id": "SDN",
+    "iso2": "sd",
+    "name": "Sudan",
+    "altNames": ["Republic of the Sudan", "Jumhūrīyat as-Sūdān"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Arabic", "English"],
+    "currency": "Pound",
+    "borders": ["CAF", "TCD", "EGY", "ERI", "ETH", "LBY", "SSD"],
+    "neighborNames": ["Central African Republic", "Chad", "Egypt", "Eritrea", "Ethiopia", "Libya", "South Sudan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Khartoum",
+    "latlng": [15, 30],
+    "area": 1886068,
+    "geoArea": 0.04589907553743802,
+    "rank": 51,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "sd"
+  },
+  {
+    "id": "TZA",
+    "iso2": "tz",
+    "name": "Tanzania",
+    "altNames": ["United Republic of Tanzania", "Tanzania, United Republic of", "Jamhuri ya Muungano wa Tanzania"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Swahili", "English"],
+    "currency": "Shilling",
+    "borders": ["BDI", "COD", "KEN", "MWI", "MOZ", "RWA", "UGA", "ZMB"],
+    "neighborNames": [
+      "Burundi",
+      "Democratic Republic of the Congo",
+      "Kenya",
+      "Malawi",
+      "Mozambique",
+      "Rwanda",
+      "Uganda",
+      "Zambia"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Dodoma",
+    "latlng": [-6, 35],
+    "area": 945087,
+    "geoArea": 0.023301036581655672,
+    "rank": 52,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      }
+    ],
+    "flagFile": "tz"
+  },
+  {
+    "id": "BGD",
+    "iso2": "bd",
+    "name": "Bangladesh",
+    "altNames": ["People's Republic of Bangladesh", "Gônôprôjatôntri Bangladesh"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Bengali"],
+    "currency": "Taka",
+    "borders": ["MMR", "IND"],
+    "neighborNames": ["Myanmar", "India"],
+    "island": false,
+    "nearest": [],
+    "capital": "Dhaka",
+    "latlng": [24, 90],
+    "area": 147570,
+    "geoArea": 0.003342569149303918,
+    "rank": 53,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "bd"
+  },
+  {
+    "id": "MMR",
+    "iso2": "mm",
+    "name": "Myanmar",
+    "altNames": ["Republic of the Union of Myanmar", "Burma", "Pyidaunzu Thanmăda Myăma Nainngandaw"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Burmese"],
+    "currency": "Kyat",
+    "borders": ["BGD", "CHN", "IND", "LAO", "THA"],
+    "neighborNames": ["Bangladesh", "China", "India", "Laos", "Thailand"],
+    "island": false,
+    "nearest": [],
+    "capital": "Naypyidaw",
+    "latlng": [22, 98],
+    "area": 676578,
+    "geoArea": 0.016327970452182282,
+    "rank": 54,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "mm"
+  },
+  {
+    "id": "AGO",
+    "iso2": "ao",
+    "name": "Angola",
+    "altNames": ["Republic of Angola", "República de Angola", "ʁɛpublika de an'ɡɔla"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Portuguese"],
+    "currency": "Kwanza",
+    "borders": ["COG", "COD", "ZMB", "NAM"],
+    "neighborNames": ["Republic of the Congo", "Democratic Republic of the Congo", "Zambia", "Namibia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Luanda",
+    "latlng": [-12.5, 18.5],
+    "area": 1246700,
+    "geoArea": 0.030780765730780306,
+    "rank": 55,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "ao"
+  },
+  {
+    "id": "KAZ",
+    "iso2": "kz",
+    "name": "Kazakhstan",
+    "altNames": ["Republic of Kazakhstan", "Qazaqstan", "Qazaqstan Respublïkası", "Respublika Kazakhstan"],
+    "continents": ["Asia", "Europe"],
+    "continentLabel": "Asia and Europe",
+    "languages": ["Kazakh", "Russian"],
+    "currency": "Tenge",
+    "borders": ["CHN", "KGZ", "RUS", "TKM", "UZB"],
+    "neighborNames": ["China", "Kyrgyzstan", "Russia", "Turkmenistan", "Uzbekistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Astana",
+    "latlng": [48, 68],
+    "area": 2724900,
+    "geoArea": 0.06683347198595327,
+    "rank": 56,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "kz"
+  },
+  {
+    "id": "AFG",
+    "iso2": "af",
+    "name": "Afghanistan",
+    "altNames": ["Islamic Republic of Afghanistan", "Afġānistān", "Owganystan"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Dari", "Pashto"],
+    "currency": "Afghani",
+    "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+    "neighborNames": ["Iran", "Pakistan", "Turkmenistan", "Uzbekistan", "Tajikistan", "China"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kabul",
+    "latlng": [33, 65],
+    "area": 652230,
+    "geoArea": 0.015818271759337737,
+    "rank": 57,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "af"
+  },
+  {
+    "id": "NER",
+    "iso2": "ne",
+    "name": "Niger",
+    "altNames": ["Republic of Niger", "Nijar"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["DZA", "BEN", "BFA", "TCD", "LBY", "MLI", "NGA"],
+    "neighborNames": ["Algeria", "Benin", "Burkina Faso", "Chad", "Libya", "Mali", "Nigeria"],
+    "island": false,
+    "nearest": [],
+    "capital": "Niamey",
+    "latlng": [16, 8],
+    "area": 1267000,
+    "geoArea": 0.029197380650004084,
+    "rank": 58,
+    "flag": [
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ne"
+  },
+  {
+    "id": "VEN",
+    "iso2": "ve",
+    "name": "Venezuela",
+    "altNames": [
+      "Bolivarian Republic of Venezuela",
+      "Venezuela, Bolivarian Republic of",
+      "República Bolivariana de Venezuela"
+    ],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish"],
+    "currency": "Bolívar",
+    "borders": ["BRA", "COL", "GUY"],
+    "neighborNames": ["Brazil", "Colombia", "Guyana"],
+    "island": false,
+    "nearest": [],
+    "capital": "Caracas",
+    "latlng": [8, -66],
+    "area": 916445,
+    "geoArea": 0.02252570870058285,
+    "rank": 59,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ve"
+  },
+  {
+    "id": "MOZ",
+    "iso2": "mz",
+    "name": "Mozambique",
+    "altNames": ["Republic of Mozambique", "República de Moçambique", "Moçambique"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Portuguese"],
+    "currency": "Metical",
+    "borders": ["MWI", "ZAF", "SWZ", "TZA", "ZMB", "ZWE"],
+    "neighborNames": ["Malawi", "South Africa", "Eswatini", "Tanzania", "Zambia", "Zimbabwe"],
+    "island": false,
+    "nearest": [],
+    "capital": "Maputo",
+    "latlng": [-18.25, 35],
+    "area": 801590,
+    "geoArea": 0.019478927774956186,
+    "rank": 60,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "mz"
+  },
+  {
+    "id": "JAM",
+    "iso2": "jm",
+    "name": "Jamaica",
+    "altNames": [],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Cuba", "Haiti", "The Bahamas"],
+    "capital": "Kingston",
+    "latlng": [18.25, -77.5],
+    "area": 10991,
+    "geoArea": 0.0002694118986756148,
+    "rank": 61,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "jm"
+  },
+  {
+    "id": "IRQ",
+    "iso2": "iq",
+    "name": "Iraq",
+    "altNames": ["Republic of Iraq"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic", "Kurdish"],
+    "currency": "Dinar",
+    "borders": ["IRN", "JOR", "KWT", "SAU", "SYR", "TUR"],
+    "neighborNames": ["Iran", "Jordan", "Kuwait", "Saudi Arabia", "Syria", "Turkey"],
+    "island": false,
+    "nearest": [],
+    "capital": "Baghdad",
+    "latlng": [33, 44],
+    "area": 438317,
+    "geoArea": 0.01077766443256659,
+    "rank": 62,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "iq"
+  },
+  {
+    "id": "MLI",
+    "iso2": "ml",
+    "name": "Mali",
+    "altNames": ["Republic of Mali", "République du Mali"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["DZA", "BFA", "GIN", "CIV", "MRT", "NER", "SEN"],
+    "neighborNames": ["Algeria", "Burkina Faso", "Guinea", "Ivory Coast", "Mauritania", "Niger", "Senegal"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bamako",
+    "latlng": [17, -4],
+    "area": 1240192,
+    "geoArea": 0.030997675289993417,
+    "rank": 63,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ml"
+  },
+  {
+    "id": "UZB",
+    "iso2": "uz",
+    "name": "Uzbekistan",
+    "altNames": ["Republic of Uzbekistan"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Uzbek"],
+    "currency": "Som",
+    "borders": ["AFG", "KAZ", "KGZ", "TJK", "TKM"],
+    "neighborNames": ["Afghanistan", "Kazakhstan", "Kyrgyzstan", "Tajikistan", "Turkmenistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tashkent",
+    "latlng": [41, 64],
+    "area": 447400,
+    "geoArea": 0.011022042502229419,
+    "rank": 64,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "uz"
+  },
+  {
+    "id": "YEM",
+    "iso2": "ye",
+    "name": "Yemen",
+    "altNames": ["Republic of Yemen", "Yemeni Republic", "al-Jumhūriyyah al-Yamaniyyah"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Rial",
+    "borders": ["OMN", "SAU"],
+    "neighborNames": ["Oman", "Saudi Arabia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Sana'a",
+    "latlng": [15, 48],
+    "area": 527968,
+    "geoArea": 0.011188532348121474,
+    "rank": 65,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "ye"
+  },
+  {
+    "id": "TCD",
+    "iso2": "td",
+    "name": "Chad",
+    "altNames": ["Republic of Chad", "Tchad", "République du Tchad"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French", "Arabic"],
+    "currency": "CFA franc",
+    "borders": ["CMR", "CAF", "LBY", "NER", "NGA", "SDN"],
+    "neighborNames": ["Cameroon", "Central African Republic", "Libya", "Niger", "Nigeria", "Sudan"],
+    "island": false,
+    "nearest": [],
+    "capital": "N'Djamena",
+    "latlng": [15, 19],
+    "area": 1284000,
+    "geoArea": 0.031311611312382207,
+    "rank": 66,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "td"
+  },
+  {
+    "id": "UGA",
+    "iso2": "ug",
+    "name": "Uganda",
+    "altNames": ["Republic of Uganda", "Jamhuri ya Uganda"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English", "Swahili"],
+    "currency": "Shilling",
+    "borders": ["COD", "KEN", "RWA", "SSD", "TZA"],
+    "neighborNames": ["Democratic Republic of the Congo", "Kenya", "Rwanda", "South Sudan", "Tanzania"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kampala",
+    "latlng": [1, 32],
+    "area": 241550,
+    "geoArea": 0.0059761109747411825,
+    "rank": 67,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ug"
+  },
+  {
+    "id": "CMR",
+    "iso2": "cm",
+    "name": "Cameroon",
+    "altNames": ["Republic of Cameroon", "République du Cameroun", "Cameroun"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French", "English"],
+    "currency": "CFA franc",
+    "borders": ["CAF", "TCD", "COG", "GNQ", "GAB", "NGA"],
+    "neighborNames": [
+      "Central African Republic",
+      "Chad",
+      "Republic of the Congo",
+      "Equatorial Guinea",
+      "Gabon",
+      "Nigeria"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Yaoundé",
+    "latlng": [6, 12],
+    "area": 475442,
+    "geoArea": 0.011478357454264641,
+    "rank": 68,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "cm"
+  },
+  {
+    "id": "MYS",
+    "iso2": "my",
+    "name": "Malaysia",
+    "altNames": [],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Malay"],
+    "currency": "Ringgit",
+    "borders": ["BRN", "IDN", "THA"],
+    "neighborNames": ["Brunei", "Indonesia", "Thailand"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kuala Lumpur",
+    "latlng": [2.5, 112.5],
+    "area": 330803,
+    "geoArea": 0.00807154091329217,
+    "rank": 69,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "my"
+  },
+  {
+    "id": "ZMB",
+    "iso2": "zm",
+    "name": "Zambia",
+    "altNames": ["Republic of Zambia", "Northern Rhodesia"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Kwacha",
+    "borders": ["AGO", "BWA", "COD", "MWI", "MOZ", "NAM", "TZA", "ZWE"],
+    "neighborNames": [
+      "Angola",
+      "Botswana",
+      "Democratic Republic of the Congo",
+      "Malawi",
+      "Mozambique",
+      "Namibia",
+      "Tanzania",
+      "Zimbabwe"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Lusaka",
+    "latlng": [-15, 30],
+    "area": 752612,
+    "geoArea": 0.018615423320632485,
+    "rank": 70,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "zm"
+  },
+  {
+    "id": "CIV",
+    "iso2": "ci",
+    "name": "Ivory Coast",
+    "altNames": [
+      "Republic of Côte d'Ivoire",
+      "Côte d'Ivoire",
+      "Cote dIvoire",
+      "Cote d'Ivoire",
+      "République de Côte d'Ivoire"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["BFA", "GHA", "GIN", "LBR", "MLI"],
+    "neighborNames": ["Burkina Faso", "Ghana", "Guinea", "Liberia", "Mali"],
+    "island": false,
+    "nearest": [],
+    "capital": "Yamoussoukro (official), Abidjan (economic)",
+    "latlng": [8, -5],
+    "area": 322463,
+    "geoArea": 0.007940412565499821,
+    "rank": 71,
+    "flag": [
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ci"
+  },
+  {
+    "id": "BOL",
+    "iso2": "bo",
+    "name": "Bolivia",
+    "altNames": [
+      "Plurinational State of Bolivia",
+      "Buliwya",
+      "Wuliwya",
+      "Bolivia, Plurinational State of",
+      "Estado Plurinacional de Bolivia",
+      "Buliwya Mamallaqta",
+      "Wuliwya Suyu",
+      "Tetã Volívia",
+      "Volívia"
+    ],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish", "Quechua", "Aymara"],
+    "currency": "Boliviano",
+    "borders": ["ARG", "BRA", "CHL", "PRY", "PER"],
+    "neighborNames": ["Argentina", "Brazil", "Chile", "Paraguay", "Peru"],
+    "island": false,
+    "nearest": [],
+    "capital": "Sucre (constitutional), La Paz (seat of government)",
+    "latlng": [-17, -65],
+    "area": 1098581,
+    "geoArea": 0.026860808626768637,
+    "rank": 72,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "bo"
+  },
+  {
+    "id": "ISL",
+    "iso2": "is",
+    "name": "Iceland",
+    "altNames": ["Ísland", "Island", "Republic of Iceland", "Lýðveldið Ísland"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Icelandic"],
+    "currency": "Króna",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["United Kingdom", "Norway", "Ireland"],
+    "capital": "Reykjavik",
+    "latlng": [65, -18],
+    "area": 103000,
+    "geoArea": 0.0024922834999988154,
+    "rank": 73,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "is"
+  },
+  {
+    "id": "GHA",
+    "iso2": "gh",
+    "name": "Ghana",
+    "altNames": ["Republic of Ghana"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Cedi",
+    "borders": ["BFA", "CIV", "TGO"],
+    "neighborNames": ["Burkina Faso", "Ivory Coast", "Togo"],
+    "island": false,
+    "nearest": [],
+    "capital": "Accra",
+    "latlng": [8, -2],
+    "area": 238533,
+    "geoArea": 0.00590272141834884,
+    "rank": 74,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "gh"
+  },
+  {
+    "id": "SOM",
+    "iso2": "so",
+    "name": "Somalia",
+    "altNames": [
+      "Federal Republic of Somalia",
+      "aṣ-Ṣūmāl",
+      "Jamhuuriyadda Federaalka Soomaaliya",
+      "Jumhūriyyat aṣ-Ṣūmāl al-Fiderāliyya",
+      "Soomaaliya"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Somali", "Arabic"],
+    "currency": "Shilling",
+    "borders": ["DJI", "ETH", "KEN"],
+    "neighborNames": ["Djibouti", "Ethiopia", "Kenya"],
+    "island": false,
+    "nearest": [],
+    "capital": "Mogadishu",
+    "latlng": [10, 49],
+    "area": 637657,
+    "geoArea": 0.01166855057096513,
+    "rank": 75,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "so"
+  },
+  {
+    "id": "LBY",
+    "iso2": "ly",
+    "name": "Libya",
+    "altNames": ["State of Libya", "Dawlat Libya"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Arabic"],
+    "currency": "Dinar",
+    "borders": ["DZA", "TCD", "EGY", "NER", "SDN", "TUN"],
+    "neighborNames": ["Algeria", "Chad", "Egypt", "Niger", "Sudan", "Tunisia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tripoli",
+    "latlng": [25, 17],
+    "area": 1759540,
+    "geoArea": 0.040068578862092676,
+    "rank": 76,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ly"
+  },
+  {
+    "id": "BFA",
+    "iso2": "bf",
+    "name": "Burkina Faso",
+    "altNames": ["Upper Volta"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["BEN", "CIV", "GHA", "MLI", "NER", "TGO"],
+    "neighborNames": ["Benin", "Ivory Coast", "Ghana", "Mali", "Niger", "Togo"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ouagadougou",
+    "latlng": [13, -2],
+    "area": 272967,
+    "geoArea": 0.006742862854331363,
+    "rank": 77,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "bf"
+  },
+  {
+    "id": "NPL",
+    "iso2": "np",
+    "name": "Nepal",
+    "altNames": ["Federal Democratic Republic of Nepal", "Loktāntrik Ganatantra Nepāl"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Nepali"],
+    "currency": "Rupee",
+    "borders": ["CHN", "IND"],
+    "neighborNames": ["China", "India"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kathmandu",
+    "latlng": [28, 84],
+    "area": 147181,
+    "geoArea": 0.003626366304950816,
+    "rank": 78,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "np"
+  },
+  {
+    "id": "SSD",
+    "iso2": "ss",
+    "name": "South Sudan",
+    "altNames": ["Republic of South Sudan"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Pound",
+    "borders": ["CAF", "COD", "ETH", "KEN", "SDN", "UGA"],
+    "neighborNames": [
+      "Central African Republic",
+      "Democratic Republic of the Congo",
+      "Ethiopia",
+      "Kenya",
+      "Sudan",
+      "Uganda"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Juba",
+    "latlng": [7, 30],
+    "area": 619745,
+    "geoArea": 0.015373334454214942,
+    "rank": 79,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "ss"
+  },
+  {
+    "id": "ZWE",
+    "iso2": "zw",
+    "name": "Zimbabwe",
+    "altNames": ["Republic of Zimbabwe", "Rhodesia"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English", "Shona", "Ndebele", "+13 more"],
+    "currency": "Zimbabwe Gold (ZiG)",
+    "borders": ["BWA", "MOZ", "ZAF", "ZMB"],
+    "neighborNames": ["Botswana", "Mozambique", "South Africa", "Zambia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Harare",
+    "latlng": [-20, 30],
+    "area": 390757,
+    "geoArea": 0.009613338614333913,
+    "rank": 80,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "zw"
+  },
+  {
+    "id": "ROU",
+    "iso2": "ro",
+    "name": "Romania",
+    "altNames": ["Rumania", "Roumania", "România"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Romanian"],
+    "currency": "Leu",
+    "borders": ["BGR", "HUN", "MDA", "SRB", "UKR"],
+    "neighborNames": ["Bulgaria", "Hungary", "Moldova", "Serbia", "Ukraine"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bucharest",
+    "latlng": [46, 25],
+    "area": 238391,
+    "geoArea": 0.005808185951840337,
+    "rank": 81,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ro"
+  },
+  {
+    "id": "ECU",
+    "iso2": "ec",
+    "name": "Ecuador",
+    "altNames": ["Republic of Ecuador", "República del Ecuador"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish"],
+    "currency": "US dollar",
+    "borders": ["COL", "PER"],
+    "neighborNames": ["Colombia", "Peru"],
+    "island": false,
+    "nearest": [],
+    "capital": "Quito",
+    "latlng": [-2, -77.5],
+    "area": 276841,
+    "geoArea": 0.00629860159018598,
+    "rank": 82,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ec"
+  },
+  {
+    "id": "PRK",
+    "iso2": "kp",
+    "name": "North Korea",
+    "altNames": [
+      "Democratic People's Republic of Korea",
+      "DPRK",
+      "N Korea",
+      "Chosŏn Minjujuŭi Inmin Konghwaguk",
+      "Korea, Democratic People's Republic of"
+    ],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Korean"],
+    "currency": "Won",
+    "borders": ["CHN", "KOR", "RUS"],
+    "neighborNames": ["China", "South Korea", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Pyongyang",
+    "latlng": [40, 127],
+    "area": 120538,
+    "geoArea": 0.00301791808196096,
+    "rank": 83,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "kp"
+  },
+  {
+    "id": "SYR",
+    "iso2": "sy",
+    "name": "Syria",
+    "altNames": ["Syrian Arab Republic"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Pound",
+    "borders": ["IRQ", "ISR", "JOR", "LBN", "TUR"],
+    "neighborNames": ["Iraq", "Israel", "Jordan", "Lebanon", "Turkey"],
+    "island": false,
+    "nearest": [],
+    "capital": "Damascus",
+    "latlng": [35, 38],
+    "area": 185180,
+    "geoArea": 0.0045758743622134465,
+    "rank": 84,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "sy"
+  },
+  {
+    "id": "SEN",
+    "iso2": "sn",
+    "name": "Senegal",
+    "altNames": ["Republic of Senegal", "République du Sénégal", "Sénégal"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["GMB", "GIN", "GNB", "MLI", "MRT"],
+    "neighborNames": ["The Gambia", "Guinea", "Guinea-Bissau", "Mali", "Mauritania"],
+    "island": false,
+    "nearest": [],
+    "capital": "Dakar",
+    "latlng": [14, -14],
+    "area": 196722,
+    "geoArea": 0.004860836255293351,
+    "rank": 85,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "sn"
+  },
+  {
+    "id": "KHM",
+    "iso2": "kh",
+    "name": "Cambodia",
+    "altNames": ["Kingdom of Cambodia", "Kâmpŭchéa"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Khmer"],
+    "currency": "Riel",
+    "borders": ["LAO", "THA", "VNM"],
+    "neighborNames": ["Laos", "Thailand", "Vietnam"],
+    "island": false,
+    "nearest": [],
+    "capital": "Phnom Penh",
+    "latlng": [13, 105],
+    "area": 181035,
+    "geoArea": 0.004468462693122033,
+    "rank": 86,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "kh"
+  },
+  {
+    "id": "PNG",
+    "iso2": "pg",
+    "name": "Papua New Guinea",
+    "altNames": [
+      "Independent State of Papua New Guinea",
+      "PNG",
+      "Independen Stet bilong Papua Niugini",
+      "Papua Niu Gini",
+      "Papua Niugini"
+    ],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Tok Pisin", "English", "Hiri Motu"],
+    "currency": "Kina",
+    "borders": ["IDN"],
+    "neighborNames": ["Indonesia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Port Moresby",
+    "latlng": [-6, 147],
+    "area": 462840,
+    "geoArea": 0.011438171905549592,
+    "rank": 87,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "pg"
+  },
+  {
+    "id": "GIN",
+    "iso2": "gn",
+    "name": "Guinea",
+    "altNames": ["Republic of Guinea", "République de Guinée", "Guinée"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "Franc",
+    "borders": ["CIV", "GNB", "LBR", "MLI", "SEN", "SLE"],
+    "neighborNames": ["Ivory Coast", "Guinea-Bissau", "Liberia", "Mali", "Senegal", "Sierra Leone"],
+    "island": false,
+    "nearest": [],
+    "capital": "Conakry",
+    "latlng": [11, -10],
+    "area": 245857,
+    "geoArea": 0.006034485511939536,
+    "rank": 88,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "gn"
+  },
+  {
+    "id": "MWI",
+    "iso2": "mw",
+    "name": "Malawi",
+    "altNames": ["Republic of Malawi", "Malaŵi"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English", "Chichewa"],
+    "currency": "Kwacha",
+    "borders": ["MOZ", "TZA", "ZMB"],
+    "neighborNames": ["Mozambique", "Tanzania", "Zambia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Lilongwe",
+    "latlng": [-13.5, 34],
+    "area": 118484,
+    "geoArea": 0.0029505782456489696,
+    "rank": 89,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "mw"
+  },
+  {
+    "id": "MRT",
+    "iso2": "mr",
+    "name": "Mauritania",
+    "altNames": ["Islamic Republic of Mauritania"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Arabic"],
+    "currency": "Ouguiya",
+    "borders": ["DZA", "MLI", "SEN", "ESH"],
+    "neighborNames": ["Algeria", "Mali", "Senegal", "Western Sahara"],
+    "island": false,
+    "nearest": [],
+    "capital": "Nouakchott",
+    "latlng": [20, -12],
+    "area": 1030700,
+    "geoArea": 0.02558169286039703,
+    "rank": 90,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "mr"
+  },
+  {
+    "id": "MNG",
+    "iso2": "mn",
+    "name": "Mongolia",
+    "altNames": [],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Mongolian"],
+    "currency": "Tögrög",
+    "borders": ["CHN", "RUS"],
+    "neighborNames": ["China", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ulan Bator",
+    "latlng": [46, 105],
+    "area": 1564110,
+    "geoArea": 0.03844399210916718,
+    "rank": 91,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "mn"
+  },
+  {
+    "id": "GTM",
+    "iso2": "gt",
+    "name": "Guatemala",
+    "altNames": ["Republic of Guatemala"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Quetzal",
+    "borders": ["BLZ", "SLV", "HND", "MEX"],
+    "neighborNames": ["Belize", "El Salvador", "Honduras", "Mexico"],
+    "island": false,
+    "nearest": [],
+    "capital": "Guatemala City",
+    "latlng": [15.5, -90.25],
+    "area": 108889,
+    "geoArea": 0.002673578894649637,
+    "rank": 92,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "gt"
+  },
+  {
+    "id": "PRY",
+    "iso2": "py",
+    "name": "Paraguay",
+    "altNames": ["Republic of Paraguay", "República del Paraguay", "Tetã Paraguái", "Paraguái"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish", "Guaraní"],
+    "currency": "Guaraní",
+    "borders": ["ARG", "BOL", "BRA"],
+    "neighborNames": ["Argentina", "Bolivia", "Brazil"],
+    "island": false,
+    "nearest": [],
+    "capital": "Asunción",
+    "latlng": [-23, -58],
+    "area": 406752,
+    "geoArea": 0.00987690544587811,
+    "rank": 93,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "py"
+  },
+  {
+    "id": "LKA",
+    "iso2": "lk",
+    "name": "Sri Lanka",
+    "altNames": ["Democratic Socialist Republic of Sri Lanka", "Ceylon", "ilaṅkai"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Sinhala", "Tamil"],
+    "currency": "Rupee",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["India", "Maldives", "Myanmar"],
+    "capital": "Sri Jayawardenepura Kotte (official), Colombo (commercial)",
+    "latlng": [7, 81],
+    "area": 65610,
+    "geoArea": 0.0016271524469085494,
+    "rank": 94,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Maroon",
+        "hex": "#8a1538"
+      }
+    ],
+    "flagFile": "lk"
+  },
+  {
+    "id": "TKM",
+    "iso2": "tm",
+    "name": "Turkmenistan",
+    "altNames": ["Türkmenistan"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Turkmen"],
+    "currency": "Manat",
+    "borders": ["AFG", "IRN", "KAZ", "UZB"],
+    "neighborNames": ["Afghanistan", "Iran", "Kazakhstan", "Uzbekistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ashgabat",
+    "latlng": [40, 60],
+    "area": 488100,
+    "geoArea": 0.011594083181481581,
+    "rank": 95,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "tm"
+  },
+  {
+    "id": "TUN",
+    "iso2": "tn",
+    "name": "Tunisia",
+    "altNames": ["Tunisian Republic", "Republic of Tunisia", "al-Jumhūriyyah at-Tūnisiyyah"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Arabic"],
+    "currency": "Dinar",
+    "borders": ["DZA", "LBY"],
+    "neighborNames": ["Algeria", "Libya"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tunis",
+    "latlng": [34, 9],
+    "area": 163610,
+    "geoArea": 0.003859426433497715,
+    "rank": 96,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "tn"
+  },
+  {
+    "id": "CAF",
+    "iso2": "cf",
+    "name": "Central African Republic",
+    "altNames": ["CAR", "Central Africa", "République centrafricaine", "Bêafrîka"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French", "Sango"],
+    "currency": "CFA franc",
+    "borders": ["CMR", "TCD", "COD", "COG", "SSD", "SDN"],
+    "neighborNames": [
+      "Cameroon",
+      "Chad",
+      "Democratic Republic of the Congo",
+      "Republic of the Congo",
+      "South Sudan",
+      "Sudan"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Bangui",
+    "latlng": [7, 21],
+    "area": 622984,
+    "geoArea": 0.015299144462222056,
+    "rank": 97,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "cf"
+  },
+  {
+    "id": "BLR",
+    "iso2": "by",
+    "name": "Belarus",
+    "altNames": ["Republic of Belarus", "Byelorussia", "Belorussia", "Bielaruś"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Belarusian", "Russian"],
+    "currency": "Ruble",
+    "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
+    "neighborNames": ["Latvia", "Lithuania", "Poland", "Russia", "Ukraine"],
+    "island": false,
+    "nearest": [],
+    "capital": "Minsk",
+    "latlng": [53, 28],
+    "area": 207600,
+    "geoArea": 0.005092377493389178,
+    "rank": 98,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "by"
+  },
+  {
+    "id": "BEN",
+    "iso2": "bj",
+    "name": "Benin",
+    "altNames": ["Republic of Benin", "Dahomey", "République du Bénin", "Bénin"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["BFA", "NER", "NGA", "TGO"],
+    "neighborNames": ["Burkina Faso", "Niger", "Nigeria", "Togo"],
+    "island": false,
+    "nearest": [],
+    "capital": "Porto-Novo",
+    "latlng": [9.5, 2.25],
+    "area": 112622,
+    "geoArea": 0.0028714850831107934,
+    "rank": 99,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "bj"
+  },
+  {
+    "id": "LAO",
+    "iso2": "la",
+    "name": "Laos",
+    "altNames": ["Lao People's Democratic Republic", "Lao PDR", "Lao", "Sathalanalat Paxathipatai Paxaxon Lao"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Lao"],
+    "currency": "Kip",
+    "borders": ["MMR", "KHM", "CHN", "THA", "VNM"],
+    "neighborNames": ["Myanmar", "Cambodia", "China", "Thailand", "Vietnam"],
+    "island": false,
+    "nearest": [],
+    "capital": "Vientiane",
+    "latlng": [18, 105],
+    "area": 236800,
+    "geoArea": 0.00564006429628496,
+    "rank": 100,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "la"
+  },
+  {
+    "id": "TWN",
+    "iso2": "tw",
+    "name": "Taiwan",
+    "altNames": [
+      "Republic of China (Taiwan)",
+      "Republic of China",
+      "ROC",
+      "Chinese Taipei",
+      "Formosa",
+      "Táiwān",
+      "Zhōnghuá Mínguó"
+    ],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Mandarin Chinese"],
+    "currency": "New Taiwan dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["China", "Philippines", "Japan"],
+    "capital": "Taipei",
+    "latlng": [23.5, 121],
+    "area": 36193,
+    "geoArea": 0.0008870545638828735,
+    "rank": 101,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "tw"
+  },
+  {
+    "id": "COG",
+    "iso2": "cg",
+    "name": "Republic of the Congo",
+    "altNames": [
+      "Congo-Brazzaville",
+      "Congo Republic",
+      "Republic of Congo",
+      "Congo",
+      "République du Congo",
+      "Repubilika ya Kongo",
+      "Republíki ya Kongó"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["AGO", "CMR", "CAF", "COD", "GAB"],
+    "neighborNames": ["Angola", "Cameroon", "Central African Republic", "Democratic Republic of the Congo", "Gabon"],
+    "island": false,
+    "nearest": [],
+    "capital": "Brazzaville",
+    "latlng": [-1, 15],
+    "area": 342000,
+    "geoArea": 0.008545459032885979,
+    "rank": 102,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "cg"
+  },
+  {
+    "id": "TJK",
+    "iso2": "tj",
+    "name": "Tajikistan",
+    "altNames": ["Republic of Tajikistan", "Toçikiston", "Çumhuriyi Toçikiston"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Tajik"],
+    "currency": "Somoni",
+    "borders": ["AFG", "CHN", "KGZ", "UZB"],
+    "neighborNames": ["Afghanistan", "China", "Kyrgyzstan", "Uzbekistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Dushanbe",
+    "latlng": [39, 71],
+    "area": 143100,
+    "geoArea": 0.003505815826630577,
+    "rank": 103,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "tj"
+  },
+  {
+    "id": "HND",
+    "iso2": "hn",
+    "name": "Honduras",
+    "altNames": ["Republic of Honduras", "República de Honduras"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Lempira",
+    "borders": ["GTM", "SLV", "NIC"],
+    "neighborNames": ["Guatemala", "El Salvador", "Nicaragua"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tegucigalpa",
+    "latlng": [15, -86.5],
+    "area": 112492,
+    "geoArea": 0.002797051141463543,
+    "rank": 104,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "hn"
+  },
+  {
+    "id": "OMN",
+    "iso2": "om",
+    "name": "Oman",
+    "altNames": ["Sultanate of Oman"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Rial",
+    "borders": ["SAU", "ARE", "YEM"],
+    "neighborNames": ["Saudi Arabia", "United Arab Emirates", "Yemen"],
+    "island": false,
+    "nearest": [],
+    "capital": "Muscat",
+    "latlng": [21, 57],
+    "area": 309500,
+    "geoArea": 0.007687705281002399,
+    "rank": 105,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "om"
+  },
+  {
+    "id": "KGZ",
+    "iso2": "kg",
+    "name": "Kyrgyzstan",
+    "altNames": ["Kyrgyz Republic", "Kirghizia", "Kyrgyz Respublikasy"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Kyrgyz", "Russian"],
+    "currency": "Som",
+    "borders": ["CHN", "KAZ", "TJK", "UZB"],
+    "neighborNames": ["China", "Kazakhstan", "Tajikistan", "Uzbekistan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bishkek",
+    "latlng": [41, 75],
+    "area": 199951,
+    "geoArea": 0.004894382464225256,
+    "rank": 106,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "kg"
+  },
+  {
+    "id": "NAM",
+    "iso2": "na",
+    "name": "Namibia",
+    "altNames": ["Republic of Namibia", "Namibië"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": ["AGO", "BWA", "ZAF", "ZMB"],
+    "neighborNames": ["Angola", "Botswana", "South Africa", "Zambia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Windhoek",
+    "latlng": [-22, 17],
+    "area": 825615,
+    "geoArea": 0.020319235621517474,
+    "rank": 107,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "na"
+  },
+  {
+    "id": "JOR",
+    "iso2": "jo",
+    "name": "Jordan",
+    "altNames": ["Hashemite Kingdom of Jordan", "al-Mamlakah al-Urdunīyah al-Hāshimīyah"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Dinar",
+    "borders": ["IRQ", "ISR", "PSE", "SAU", "SYR"],
+    "neighborNames": ["Iraq", "Israel", "Palestine", "Saudi Arabia", "Syria"],
+    "island": false,
+    "nearest": [],
+    "capital": "Amman",
+    "latlng": [31, 36],
+    "area": 89342,
+    "geoArea": 0.0021891339305366866,
+    "rank": 108,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "jo"
+  },
+  {
+    "id": "HUN",
+    "iso2": "hu",
+    "name": "Hungary",
+    "altNames": ["Magyarország", "Magyarorszag"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Hungarian"],
+    "currency": "Forint",
+    "borders": ["AUT", "HRV", "ROU", "SRB", "SVK", "SVN", "UKR"],
+    "neighborNames": ["Austria", "Croatia", "Romania", "Serbia", "Slovakia", "Slovenia", "Ukraine"],
+    "island": false,
+    "nearest": [],
+    "capital": "Budapest",
+    "latlng": [47, 20],
+    "area": 93028,
+    "geoArea": 0.002290376210591183,
+    "rank": 109,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "hu"
+  },
+  {
+    "id": "CZE",
+    "iso2": "cz",
+    "name": "Czechia",
+    "altNames": ["Czech Republic", "Česká republika", "Česko"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Czech"],
+    "currency": "Koruna",
+    "borders": ["AUT", "DEU", "POL", "SVK"],
+    "neighborNames": ["Austria", "Germany", "Poland", "Slovakia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Prague",
+    "latlng": [49.75, 15.5],
+    "area": 78865,
+    "geoArea": 0.0019336638919912079,
+    "rank": 110,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "cz"
+  },
+  {
+    "id": "AZE",
+    "iso2": "az",
+    "name": "Azerbaijan",
+    "altNames": ["Republic of Azerbaijan", "Azərbaycan Respublikası", "Azərbaycan"],
+    "continents": ["Asia", "Europe"],
+    "continentLabel": "Asia and Europe",
+    "languages": ["Azerbaijani"],
+    "currency": "Manat",
+    "borders": ["ARM", "GEO", "IRN", "RUS", "TUR"],
+    "neighborNames": ["Armenia", "Georgia", "Iran", "Russia", "Turkey"],
+    "island": false,
+    "nearest": [],
+    "capital": "Baku",
+    "latlng": [40.5, 47.5],
+    "area": 86600,
+    "geoArea": 0.0021286254364599297,
+    "rank": 111,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "az"
+  },
+  {
+    "id": "ARE",
+    "iso2": "ae",
+    "name": "United Arab Emirates",
+    "altNames": ["UAE", "Emirates", "U.A.E."],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Dirham",
+    "borders": ["OMN", "SAU"],
+    "neighborNames": ["Oman", "Saudi Arabia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Abu Dhabi",
+    "latlng": [24, 54],
+    "area": 83600,
+    "geoArea": 0.001755734796033596,
+    "rank": 112,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "ae"
+  },
+  {
+    "id": "AUT",
+    "iso2": "at",
+    "name": "Austria",
+    "altNames": ["Republic of Austria", "Österreich", "Osterreich", "Oesterreich"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["German"],
+    "currency": "Euro",
+    "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"],
+    "neighborNames": ["Czechia", "Germany", "Hungary", "Italy", "Liechtenstein", "Slovakia", "Slovenia", "Switzerland"],
+    "island": false,
+    "nearest": [],
+    "capital": "Vienna",
+    "latlng": [47.33333333, 13.33333333],
+    "area": 83871,
+    "geoArea": 0.0020670529788518544,
+    "rank": 113,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "at"
+  },
+  {
+    "id": "NIC",
+    "iso2": "ni",
+    "name": "Nicaragua",
+    "altNames": ["Republic of Nicaragua", "República de Nicaragua"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Córdoba",
+    "borders": ["CRI", "HND"],
+    "neighborNames": ["Costa Rica", "Honduras"],
+    "island": false,
+    "nearest": [],
+    "capital": "Managua",
+    "latlng": [13, -85],
+    "area": 130373,
+    "geoArea": 0.003183691966151761,
+    "rank": 114,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ni"
+  },
+  {
+    "id": "BGR",
+    "iso2": "bg",
+    "name": "Bulgaria",
+    "altNames": ["Republic of Bulgaria"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Bulgarian"],
+    "currency": "Euro",
+    "borders": ["GRC", "MKD", "ROU", "SRB", "TUR"],
+    "neighborNames": ["Greece", "North Macedonia", "Romania", "Serbia", "Turkey"],
+    "island": false,
+    "nearest": [],
+    "capital": "Sofia",
+    "latlng": [43, 25],
+    "area": 110879,
+    "geoArea": 0.0027697677178693454,
+    "rank": 115,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "bg"
+  },
+  {
+    "id": "BWA",
+    "iso2": "bw",
+    "name": "Botswana",
+    "altNames": ["Republic of Botswana", "Lefatshe la Botswana"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English", "Tswana"],
+    "currency": "Pula",
+    "borders": ["NAM", "ZAF", "ZMB", "ZWE"],
+    "neighborNames": ["Namibia", "South Africa", "Zambia", "Zimbabwe"],
+    "island": false,
+    "nearest": [],
+    "capital": "Gaborone",
+    "latlng": [-22, 24],
+    "area": 582000,
+    "geoArea": 0.014304696272051347,
+    "rank": 116,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "bw"
+  },
+  {
+    "id": "ERI",
+    "iso2": "er",
+    "name": "Eritrea",
+    "altNames": ["State of Eritrea", "Dawlat Iritriyá", "Iritriyā"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Tigrinya", "Arabic", "English"],
+    "currency": "Nakfa",
+    "borders": ["DJI", "ETH", "SDN"],
+    "neighborNames": ["Djibouti", "Ethiopia", "Sudan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Asmara",
+    "latlng": [15, 39],
+    "area": 117600,
+    "geoArea": 0.0030470324510617924,
+    "rank": 117,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      }
+    ],
+    "flagFile": "er"
+  },
+  {
+    "id": "DOM",
+    "iso2": "do",
+    "name": "Dominican Republic",
+    "altNames": ["Dominican Rep", "DR", "República Dominicana"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": ["HTI"],
+    "neighborNames": ["Haiti"],
+    "island": false,
+    "nearest": [],
+    "capital": "Santo Domingo",
+    "latlng": [19, -70.66666666],
+    "area": 48671,
+    "geoArea": 0.0011971460693818957,
+    "rank": 118,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "do"
+  },
+  {
+    "id": "SRB",
+    "iso2": "rs",
+    "name": "Serbia",
+    "altNames": ["Republic of Serbia", "Srbija", "Republika Srbija"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Serbian"],
+    "currency": "Dinar",
+    "borders": ["BIH", "BGR", "HRV", "HUN", "UNK", "MKD", "MNE", "ROU"],
+    "neighborNames": [
+      "Bosnia and Herzegovina",
+      "Bulgaria",
+      "Croatia",
+      "Hungary",
+      "Kosovo",
+      "North Macedonia",
+      "Montenegro",
+      "Romania"
+    ],
+    "island": false,
+    "nearest": [],
+    "capital": "Belgrade",
+    "latlng": [44, 21],
+    "area": 88361,
+    "geoArea": 0.0019088983504146459,
+    "rank": 119,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "rs"
+  },
+  {
+    "id": "SLE",
+    "iso2": "sl",
+    "name": "Sierra Leone",
+    "altNames": ["Republic of Sierra Leone"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Leone",
+    "borders": ["GIN", "LBR"],
+    "neighborNames": ["Guinea", "Liberia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Freetown",
+    "latlng": [8.5, -11.5],
+    "area": 71740,
+    "geoArea": 0.001770825557719209,
+    "rank": 120,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "sl"
+  },
+  {
+    "id": "TGO",
+    "iso2": "tg",
+    "name": "Togo",
+    "altNames": ["Togolese Republic", "Togolese", "République Togolaise"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["BEN", "BFA", "GHA"],
+    "neighborNames": ["Benin", "Burkina Faso", "Ghana"],
+    "island": false,
+    "nearest": [],
+    "capital": "Lomé",
+    "latlng": [8, 1.16666666],
+    "area": 56785,
+    "geoArea": 0.0014081337925829591,
+    "rank": 121,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "tg"
+  },
+  {
+    "id": "BEL",
+    "iso2": "be",
+    "name": "Belgium",
+    "altNames": [
+      "Kingdom of Belgium",
+      "België",
+      "Belgie",
+      "Belgien",
+      "Belgique",
+      "Koninkrijk België",
+      "Royaume de Belgique",
+      "Königreich Belgien"
+    ],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Dutch", "French", "German"],
+    "currency": "Euro",
+    "borders": ["FRA", "DEU", "LUX", "NLD"],
+    "neighborNames": ["France", "Germany", "Luxembourg", "Netherlands"],
+    "island": false,
+    "nearest": [],
+    "capital": "Brussels",
+    "latlng": [50.83333333, 4],
+    "area": 30528,
+    "geoArea": 0.0007545546495678859,
+    "rank": 122,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "be"
+  },
+  {
+    "id": "RWA",
+    "iso2": "rw",
+    "name": "Rwanda",
+    "altNames": ["Republic of Rwanda", "Repubulika y'u Rwanda", "République du Rwanda"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Kinyarwanda", "French", "English"],
+    "currency": "Franc",
+    "borders": ["BDI", "COD", "TZA", "UGA"],
+    "neighborNames": ["Burundi", "Democratic Republic of the Congo", "Tanzania", "Uganda"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kigali",
+    "latlng": [-2, 30],
+    "area": 26338,
+    "geoArea": 0.0006252086867722195,
+    "rank": 123,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "rw"
+  },
+  {
+    "id": "LBR",
+    "iso2": "lr",
+    "name": "Liberia",
+    "altNames": ["Republic of Liberia"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": ["GIN", "CIV", "SLE"],
+    "neighborNames": ["Guinea", "Ivory Coast", "Sierra Leone"],
+    "island": false,
+    "nearest": [],
+    "capital": "Monrovia",
+    "latlng": [6.5, -9.5],
+    "area": 111369,
+    "geoArea": 0.0023564545360648574,
+    "rank": 124,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "lr"
+  },
+  {
+    "id": "URY",
+    "iso2": "uy",
+    "name": "Uruguay",
+    "altNames": ["Oriental Republic of Uruguay", "República Oriental del Uruguay"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Spanish"],
+    "currency": "Peso",
+    "borders": ["ARG", "BRA"],
+    "neighborNames": ["Argentina", "Brazil"],
+    "island": false,
+    "nearest": [],
+    "capital": "Montevideo",
+    "latlng": [-33, -56],
+    "area": 181034,
+    "geoArea": 0.004374740608553543,
+    "rank": 125,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "uy"
+  },
+  {
+    "id": "BDI",
+    "iso2": "bi",
+    "name": "Burundi",
+    "altNames": ["Republic of Burundi", "Republika y'Uburundi", "République du Burundi", "Uburundi"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Kirundi", "French"],
+    "currency": "Franc",
+    "borders": ["COD", "RWA", "TZA"],
+    "neighborNames": ["Democratic Republic of the Congo", "Rwanda", "Tanzania"],
+    "island": false,
+    "nearest": [],
+    "capital": "Gitega",
+    "latlng": [-3.5, 30],
+    "area": 27834,
+    "geoArea": 0.0006705343234082672,
+    "rank": 126,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "bi"
+  },
+  {
+    "id": "HTI",
+    "iso2": "ht",
+    "name": "Haiti",
+    "altNames": ["Republic of Haiti", "République d'Haïti", "Repiblik Ayiti", "Haïti", "Ayiti"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Haitian Creole", "French"],
+    "currency": "Gourde",
+    "borders": ["DOM"],
+    "neighborNames": ["Dominican Republic"],
+    "island": false,
+    "nearest": [],
+    "capital": "Port-au-Prince",
+    "latlng": [19, -72.41666666],
+    "area": 27750,
+    "geoArea": 0.0006608151304766743,
+    "rank": 127,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ht"
+  },
+  {
+    "id": "GAB",
+    "iso2": "ga",
+    "name": "Gabon",
+    "altNames": ["Gabonese Republic", "République Gabonaise"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French"],
+    "currency": "CFA franc",
+    "borders": ["CMR", "COG", "GNQ"],
+    "neighborNames": ["Cameroon", "Republic of the Congo", "Equatorial Guinea"],
+    "island": false,
+    "nearest": [],
+    "capital": "Libreville",
+    "latlng": [-1, 11.75],
+    "area": 267668,
+    "geoArea": 0.00642319633552269,
+    "rank": 128,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "ga"
+  },
+  {
+    "id": "PAN",
+    "iso2": "pa",
+    "name": "Panama",
+    "altNames": ["Republic of Panama", "República de Panamá", "Panamá"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Balboa & US dollar",
+    "borders": ["COL", "CRI"],
+    "neighborNames": ["Colombia", "Costa Rica"],
+    "island": false,
+    "nearest": [],
+    "capital": "Panama City",
+    "latlng": [9, -80],
+    "area": 75417,
+    "geoArea": 0.0018289122425595309,
+    "rank": 129,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "pa"
+  },
+  {
+    "id": "SVK",
+    "iso2": "sk",
+    "name": "Slovakia",
+    "altNames": ["Slovak Republic", "Slovenská republika", "Slovensko"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Slovak"],
+    "currency": "Euro",
+    "borders": ["AUT", "CZE", "HUN", "POL", "UKR"],
+    "neighborNames": ["Austria", "Czechia", "Hungary", "Poland", "Ukraine"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bratislava",
+    "latlng": [48.66666666, 19.5],
+    "area": 49037,
+    "geoArea": 0.0011908823401002178,
+    "rank": 130,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "sk"
+  },
+  {
+    "id": "CRI",
+    "iso2": "cr",
+    "name": "Costa Rica",
+    "altNames": ["Republic of Costa Rica", "República de Costa Rica"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "Colón",
+    "borders": ["NIC", "PAN"],
+    "neighborNames": ["Nicaragua", "Panama"],
+    "island": false,
+    "nearest": [],
+    "capital": "San José",
+    "latlng": [10, -84],
+    "area": 51100,
+    "geoArea": 0.0012690719860572039,
+    "rank": 131,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "cr"
+  },
+  {
+    "id": "GEO",
+    "iso2": "ge",
+    "name": "Georgia",
+    "altNames": ["Sakartvelo"],
+    "continents": ["Asia", "Europe"],
+    "continentLabel": "Asia and Europe",
+    "languages": ["Georgian"],
+    "currency": "Lari",
+    "borders": ["ARM", "AZE", "RUS", "TUR"],
+    "neighborNames": ["Armenia", "Azerbaijan", "Russia", "Turkey"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tbilisi",
+    "latlng": [42, 43.5],
+    "area": 69700,
+    "geoArea": 0.0017072672117431306,
+    "rank": 132,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "ge"
+  },
+  {
+    "id": "HRV",
+    "iso2": "hr",
+    "name": "Croatia",
+    "altNames": ["Republic of Croatia", "Hrvatska", "Republika Hrvatska"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Croatian"],
+    "currency": "Euro",
+    "borders": ["BIH", "HUN", "MNE", "SRB", "SVN"],
+    "neighborNames": ["Bosnia and Herzegovina", "Hungary", "Montenegro", "Serbia", "Slovenia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Zagreb",
+    "latlng": [45.16666666, 15.5],
+    "area": 56594,
+    "geoArea": 0.0013405929366524455,
+    "rank": 133,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "hr"
+  },
+  {
+    "id": "SLV",
+    "iso2": "sv",
+    "name": "El Salvador",
+    "altNames": ["Republic of El Salvador", "República de El Salvador"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["Spanish"],
+    "currency": "US dollar",
+    "borders": ["GTM", "HND"],
+    "neighborNames": ["Guatemala", "Honduras"],
+    "island": false,
+    "nearest": [],
+    "capital": "San Salvador",
+    "latlng": [13.83333333, -88.91666666],
+    "area": 21041,
+    "geoArea": 0.0005026135932384735,
+    "rank": 134,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "sv"
+  },
+  {
+    "id": "BIH",
+    "iso2": "ba",
+    "name": "Bosnia and Herzegovina",
+    "altNames": ["Bosnia", "Bosnia-Herzegovina", "Bosna i Hercegovina"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Bosnian", "Croatian", "Serbian"],
+    "currency": "Convertible mark",
+    "borders": ["HRV", "MNE", "SRB"],
+    "neighborNames": ["Croatia", "Montenegro", "Serbia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Sarajevo",
+    "latlng": [44, 18],
+    "area": 51209,
+    "geoArea": 0.0012734740972108237,
+    "rank": 135,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "ba"
+  },
+  {
+    "id": "LTU",
+    "iso2": "lt",
+    "name": "Lithuania",
+    "altNames": ["Republic of Lithuania", "Lietuvos Respublika", "Lietuva"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Lithuanian"],
+    "currency": "Euro",
+    "borders": ["BLR", "LVA", "POL", "RUS"],
+    "neighborNames": ["Belarus", "Latvia", "Poland", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Vilnius",
+    "latlng": [56, 24],
+    "area": 65300,
+    "geoArea": 0.001589543093746728,
+    "rank": 136,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "lt"
+  },
+  {
+    "id": "LBN",
+    "iso2": "lb",
+    "name": "Lebanon",
+    "altNames": ["Lebanese Republic", "Al-Jumhūrīyah Al-Libnānīyah", "Liban"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Pound",
+    "borders": ["ISR", "SYR"],
+    "neighborNames": ["Israel", "Syria"],
+    "island": false,
+    "nearest": [],
+    "capital": "Beirut",
+    "latlng": [33.83333333, 35.83333333],
+    "area": 10452,
+    "geoArea": 0.000246616270913285,
+    "rank": 137,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "lb"
+  },
+  {
+    "id": "LVA",
+    "iso2": "lv",
+    "name": "Latvia",
+    "altNames": ["Republic of Latvia", "Latvijas Republika", "Latvija"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Latvian"],
+    "currency": "Euro",
+    "borders": ["BLR", "EST", "LTU", "RUS"],
+    "neighborNames": ["Belarus", "Estonia", "Lithuania", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Riga",
+    "latlng": [57, 25],
+    "area": 64559,
+    "geoArea": 0.0015830158326785248,
+    "rank": 138,
+    "flag": [
+      {
+        "name": "Maroon",
+        "hex": "#8a1538"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "lv"
+  },
+  {
+    "id": "KWT",
+    "iso2": "kw",
+    "name": "Kuwait",
+    "altNames": ["State of Kuwait", "Dawlat al-Kuwait"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Dinar",
+    "borders": ["IRQ", "SAU"],
+    "neighborNames": ["Iraq", "Saudi Arabia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Kuwait City",
+    "latlng": [29.5, 45.75],
+    "area": 17818,
+    "geoArea": 0.0004269469198214215,
+    "rank": 139,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "kw"
+  },
+  {
+    "id": "ARM",
+    "iso2": "am",
+    "name": "Armenia",
+    "altNames": ["Republic of Armenia", "Hayastan"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Armenian"],
+    "currency": "Dram",
+    "borders": ["AZE", "GEO", "IRN", "TUR"],
+    "neighborNames": ["Azerbaijan", "Georgia", "Iran", "Turkey"],
+    "island": false,
+    "nearest": [],
+    "capital": "Yerevan",
+    "latlng": [40, 45],
+    "area": 29743,
+    "geoArea": 0.0007284495992104256,
+    "rank": 140,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      }
+    ],
+    "flagFile": "am"
+  },
+  {
+    "id": "MDA",
+    "iso2": "md",
+    "name": "Moldova",
+    "altNames": ["Republic of Moldova", "Moldavia", "Moldova, Republic of", "Republica Moldova"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Romanian"],
+    "currency": "Leu",
+    "borders": ["ROU", "UKR"],
+    "neighborNames": ["Romania", "Ukraine"],
+    "island": false,
+    "nearest": [],
+    "capital": "Chișinău",
+    "latlng": [47, 29],
+    "area": 33846,
+    "geoArea": 0.0008158364853171784,
+    "rank": 141,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "md"
+  },
+  {
+    "id": "GUY",
+    "iso2": "gy",
+    "name": "Guyana",
+    "altNames": ["Co-operative Republic of Guyana"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": ["BRA", "SUR", "VEN"],
+    "neighborNames": ["Brazil", "Suriname", "Venezuela"],
+    "island": false,
+    "nearest": [],
+    "capital": "Georgetown",
+    "latlng": [5, -59],
+    "area": 214969,
+    "geoArea": 0.005221294505620332,
+    "rank": 142,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "gy"
+  },
+  {
+    "id": "ALB",
+    "iso2": "al",
+    "name": "Albania",
+    "altNames": ["Republic of Albania", "Shqipëria", "Shqiperia", "Shqipëri", "Shqipnia"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Albanian"],
+    "currency": "Lek",
+    "borders": ["MNE", "GRC", "MKD", "UNK"],
+    "neighborNames": ["Montenegro", "Greece", "North Macedonia", "Kosovo"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tirana",
+    "latlng": [41, 20],
+    "area": 28748,
+    "geoArea": 0.0006981344257218007,
+    "rank": 143,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "al"
+  },
+  {
+    "id": "GNB",
+    "iso2": "gw",
+    "name": "Guinea-Bissau",
+    "altNames": ["Republic of Guinea-Bissau", "República da Guiné-Bissau", "Guiné-Bissau"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Portuguese"],
+    "currency": "CFA franc",
+    "borders": ["GIN", "SEN"],
+    "neighborNames": ["Guinea", "Senegal"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bissau",
+    "latlng": [12, -15],
+    "area": 36125,
+    "geoArea": 0.0007894528618324545,
+    "rank": 144,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "gw"
+  },
+  {
+    "id": "LSO",
+    "iso2": "ls",
+    "name": "Lesotho",
+    "altNames": ["Kingdom of Lesotho", "Muso oa Lesotho"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Sesotho", "English"],
+    "currency": "Loti",
+    "borders": ["ZAF"],
+    "neighborNames": ["South Africa"],
+    "island": false,
+    "nearest": [],
+    "capital": "Maseru",
+    "latlng": [-29.5, 28.5],
+    "area": 30355,
+    "geoArea": 0.0007395861038734165,
+    "rank": 145,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ls"
+  },
+  {
+    "id": "MKD",
+    "iso2": "mk",
+    "name": "North Macedonia",
+    "altNames": [
+      "Republic of North Macedonia",
+      "Macedonia",
+      "The former Yugoslav Republic of Macedonia",
+      "Macedonia, The Former Yugoslav Republic of"
+    ],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Macedonian", "Albanian"],
+    "currency": "Denar",
+    "borders": ["ALB", "BGR", "GRC", "UNK", "SRB"],
+    "neighborNames": ["Albania", "Bulgaria", "Greece", "Kosovo", "Serbia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Skopje",
+    "latlng": [41.83333333, 22],
+    "area": 25713,
+    "geoArea": 0.0006249302175732415,
+    "rank": 146,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "mk"
+  },
+  {
+    "id": "SUR",
+    "iso2": "sr",
+    "name": "Suriname",
+    "altNames": ["Republic of Suriname", "Sarnam", "Sranangron", "Republiek Suriname"],
+    "continents": ["South America"],
+    "continentLabel": "South America",
+    "languages": ["Dutch"],
+    "currency": "Dollar",
+    "borders": ["BRA", "GUF", "GUY"],
+    "neighborNames": ["Brazil", "French Guiana (France)", "Guyana"],
+    "island": false,
+    "nearest": [],
+    "capital": "Paramaribo",
+    "latlng": [4, -56],
+    "area": 163820,
+    "geoArea": 0.0035861071743675827,
+    "rank": 147,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "sr"
+  },
+  {
+    "id": "EST",
+    "iso2": "ee",
+    "name": "Estonia",
+    "altNames": ["Republic of Estonia", "Eesti", "Eesti Vabariik"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Estonian"],
+    "currency": "Euro",
+    "borders": ["LVA", "RUS"],
+    "neighborNames": ["Latvia", "Russia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Tallinn",
+    "latlng": [59, 26],
+    "area": 45227,
+    "geoArea": 0.0011195517408662827,
+    "rank": 148,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ee"
+  },
+  {
+    "id": "PSE",
+    "iso2": "ps",
+    "name": "Palestine",
+    "altNames": ["State of Palestine", "Palestinian Territories", "Palestine, State of", "Dawlat Filasṭin"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Israeli shekel & Jordanian dinar",
+    "borders": ["ISR", "EGY", "JOR"],
+    "neighborNames": ["Israel", "Egypt", "Jordan"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ramallah (administrative)",
+    "latlng": [31.9, 35.2],
+    "area": 6220,
+    "geoArea": 0.00015608942131515157,
+    "rank": 149,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "ps"
+  },
+  {
+    "id": "SVN",
+    "iso2": "si",
+    "name": "Slovenia",
+    "altNames": ["Republic of Slovenia", "Republika Slovenija", "Slovenija"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Slovene"],
+    "currency": "Euro",
+    "borders": ["AUT", "HRV", "ITA", "HUN"],
+    "neighborNames": ["Austria", "Croatia", "Italy", "Hungary"],
+    "island": false,
+    "nearest": [],
+    "capital": "Ljubljana",
+    "latlng": [46.11666666, 14.81666666],
+    "area": 20273,
+    "geoArea": 0.0004976028035326656,
+    "rank": 150,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "si"
+  },
+  {
+    "id": "QAT",
+    "iso2": "qa",
+    "name": "Qatar",
+    "altNames": ["State of Qatar", "Dawlat Qaṭar"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Riyal",
+    "borders": ["SAU"],
+    "neighborNames": ["Saudi Arabia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Doha",
+    "latlng": [25.5, 51.25],
+    "area": 11586,
+    "geoArea": 0.0002728742115211476,
+    "rank": 151,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Maroon",
+        "hex": "#8a1538"
+      }
+    ],
+    "flagFile": "qa"
+  },
+  {
+    "id": "GNQ",
+    "iso2": "gq",
+    "name": "Equatorial Guinea",
+    "altNames": [
+      "Republic of Equatorial Guinea",
+      "Eq Guinea",
+      "República de Guinea Ecuatorial",
+      "République de Guinée équatoriale",
+      "República da Guiné Equatorial",
+      "Guinée équatoriale",
+      "Guiné Equatorial",
+      "Guinea Ecuatorial"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Spanish", "French", "Portuguese"],
+    "currency": "CFA franc",
+    "borders": ["CMR", "GAB"],
+    "neighborNames": ["Cameroon", "Gabon"],
+    "island": false,
+    "nearest": [],
+    "capital": "Malabo",
+    "latlng": [2, 10],
+    "area": 28051,
+    "geoArea": 0.0006562581829278945,
+    "rank": 152,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "gq"
+  },
+  {
+    "id": "GMB",
+    "iso2": "gm",
+    "name": "The Gambia",
+    "altNames": ["Gambia", "Republic of the Gambia"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English"],
+    "currency": "Dalasi",
+    "borders": ["SEN"],
+    "neighborNames": ["Senegal"],
+    "island": false,
+    "nearest": [],
+    "capital": "Banjul",
+    "latlng": [13.46666666, -16.56666666],
+    "area": 10689,
+    "geoArea": 0.0002543421932243545,
+    "rank": 153,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "gm"
+  },
+  {
+    "id": "UNK",
+    "iso2": "xk",
+    "name": "Kosovo",
+    "altNames": ["Republic of Kosovo", "Kosova"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Albanian", "Serbian"],
+    "currency": "Euro",
+    "borders": ["ALB", "MKD", "MNE", "SRB"],
+    "neighborNames": ["Albania", "North Macedonia", "Montenegro", "Serbia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Pristina",
+    "latlng": [42.666667, 21.166667],
+    "area": 10908,
+    "geoArea": 0.0002688788881822248,
+    "rank": 154,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "xk"
+  },
+  {
+    "id": "BTN",
+    "iso2": "bt",
+    "name": "Bhutan",
+    "altNames": ["Kingdom of Bhutan"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Dzongkha"],
+    "currency": "Ngultrum",
+    "borders": ["CHN", "IND"],
+    "neighborNames": ["China", "India"],
+    "island": false,
+    "nearest": [],
+    "capital": "Thimphu",
+    "latlng": [27.5, 90.5],
+    "area": 38394,
+    "geoArea": 0.000982264597466333,
+    "rank": 155,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "bt"
+  },
+  {
+    "id": "DJI",
+    "iso2": "dj",
+    "name": "Djibouti",
+    "altNames": [
+      "Republic of Djibouti",
+      "Jabuuti",
+      "Gabuuti",
+      "République de Djibouti",
+      "Gabuutih Ummuuno",
+      "Jamhuuriyadda Jabuuti"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["French", "Arabic"],
+    "currency": "Franc",
+    "borders": ["ERI", "ETH", "SOM"],
+    "neighborNames": ["Eritrea", "Ethiopia", "Somalia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Djibouti",
+    "latlng": [11.5, 43],
+    "area": 23200,
+    "geoArea": 0.0005344354645356248,
+    "rank": 156,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "dj"
+  },
+  {
+    "id": "TLS",
+    "iso2": "tl",
+    "name": "Timor-Leste",
+    "altNames": [
+      "Democratic Republic of Timor-Leste",
+      "East Timor",
+      "Timor Leste",
+      "Timor",
+      "República Democrática de Timor-Leste",
+      "Repúblika Demokrátika Timór-Leste",
+      "Timór Lorosa'e",
+      "Timor Lorosae",
+      "Timór-Leste"
+    ],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Tetum", "Portuguese"],
+    "currency": "US dollar",
+    "borders": ["IDN"],
+    "neighborNames": ["Indonesia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Dili",
+    "latlng": [-8.83333333, 125.91666666],
+    "area": 14874,
+    "geoArea": 0.00036999806736043946,
+    "rank": 157,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "tl"
+  },
+  {
+    "id": "SWZ",
+    "iso2": "sz",
+    "name": "Eswatini",
+    "altNames": ["Kingdom of Eswatini", "Swaziland", "weSwatini", "Swatini", "Ngwane", "Umbuso weSwatini", "eSwatini"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Swazi", "English"],
+    "currency": "Lilangeni",
+    "borders": ["MOZ", "ZAF"],
+    "neighborNames": ["Mozambique", "South Africa"],
+    "island": false,
+    "nearest": [],
+    "capital": "Mbabane (administrative), Lobamba (royal and legislative)",
+    "latlng": [-26.5, 31.5],
+    "area": 17364,
+    "geoArea": 0.000419004970066641,
+    "rank": 158,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "sz"
+  },
+  {
+    "id": "SLB",
+    "iso2": "sb",
+    "name": "Solomon Islands",
+    "altNames": ["Solomons", "Solomon"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Vanuatu", "Papua New Guinea", "Nauru"],
+    "capital": "Honiara",
+    "latlng": [-8, 159],
+    "area": 28896,
+    "geoArea": 0.0006339533569417481,
+    "rank": 159,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "sb"
+  },
+  {
+    "id": "FJI",
+    "iso2": "fj",
+    "name": "Fiji",
+    "altNames": ["Republic of Fiji", "Viti", "Matanitu ko Viti", "Fijī Gaṇarājya"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["English", "Fijian", "Fiji Hindi"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Tonga", "Samoa", "Vanuatu"],
+    "capital": "Suva",
+    "latlng": [-18, 175],
+    "area": 18272,
+    "geoArea": 0.00045327649894302916,
+    "rank": 160,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      }
+    ],
+    "flagFile": "fj"
+  },
+  {
+    "id": "CYP",
+    "iso2": "cy",
+    "name": "Cyprus",
+    "altNames": ["Republic of Cyprus", "Kýpros", "Kıbrıs", "Kıbrıs Cumhuriyeti"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Greek", "Turkish"],
+    "currency": "Euro",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Turkey", "Syria", "Lebanon"],
+    "capital": "Nicosia",
+    "latlng": [35, 33],
+    "area": 9251,
+    "geoArea": 0.00014068045395200203,
+    "rank": 161,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "cy"
+  },
+  {
+    "id": "SGP",
+    "iso2": "sg",
+    "name": "Singapore",
+    "altNames": ["Republic of Singapore", "Singapura", "Republik Singapura"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["English", "Malay", "Mandarin", "Tamil"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Malaysia", "Indonesia", "Thailand"],
+    "capital": "Singapore",
+    "latlng": [1.36666666, 103.8],
+    "area": 710,
+    "geoArea": 0.000011925535899830512,
+    "rank": 162,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "sg"
+  },
+  {
+    "id": "TTO",
+    "iso2": "tt",
+    "name": "Trinidad and Tobago",
+    "altNames": ["Republic of Trinidad and Tobago", "Trinidad"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Venezuela", "Grenada", "Guyana"],
+    "capital": "Port of Spain",
+    "latlng": [11, -61],
+    "area": 5130,
+    "geoArea": 0.00012568618218559128,
+    "rank": 163,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "tt"
+  },
+  {
+    "id": "MNE",
+    "iso2": "me",
+    "name": "Montenegro",
+    "altNames": ["Crna Gora"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Montenegrin"],
+    "currency": "Euro",
+    "borders": ["ALB", "BIH", "HRV", "UNK", "SRB"],
+    "neighborNames": ["Albania", "Bosnia and Herzegovina", "Croatia", "Kosovo", "Serbia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Podgorica",
+    "latlng": [42.5, 19.3],
+    "area": 13812,
+    "geoArea": 0.00033661911548074245,
+    "rank": 164,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "me"
+  },
+  {
+    "id": "BLZ",
+    "iso2": "bz",
+    "name": "Belize",
+    "altNames": ["Belice"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": ["GTM", "MEX"],
+    "neighborNames": ["Guatemala", "Mexico"],
+    "island": false,
+    "nearest": [],
+    "capital": "Belmopan",
+    "latlng": [17.25, -88.75],
+    "area": 22966,
+    "geoArea": 0.0005609835179239753,
+    "rank": 165,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "bz"
+  },
+  {
+    "id": "BHS",
+    "iso2": "bs",
+    "name": "The Bahamas",
+    "altNames": ["Bahamas", "Commonwealth of the Bahamas"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Cuba", "Haiti", "United States"],
+    "capital": "Nassau",
+    "latlng": [24.25, -76],
+    "area": 13943,
+    "geoArea": 0.0003118376984005487,
+    "rank": 166,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "bs"
+  },
+  {
+    "id": "MUS",
+    "iso2": "mu",
+    "name": "Mauritius",
+    "altNames": ["Republic of Mauritius", "République de Maurice", "Maurice", "Moris"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["English", "French"],
+    "currency": "Rupee",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Madagascar", "Comoros", "Seychelles"],
+    "capital": "Port Louis",
+    "latlng": [-20.28333333, 57.55],
+    "area": 2040,
+    "geoArea": 0.00004632530870661028,
+    "rank": 167,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "mu"
+  },
+  {
+    "id": "VUT",
+    "iso2": "vu",
+    "name": "Vanuatu",
+    "altNames": ["Republic of Vanuatu", "Ripablik blong Vanuatu", "République de Vanuatu"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Bislama", "English", "French"],
+    "currency": "Vatu",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Solomon Islands", "Fiji", "Tuvalu"],
+    "capital": "Port Vila",
+    "latlng": [-16, 167],
+    "area": 12189,
+    "geoArea": 0.00027756166955812857,
+    "rank": 168,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "vu"
+  },
+  {
+    "id": "BHR",
+    "iso2": "bh",
+    "name": "Bahrain",
+    "altNames": ["Kingdom of Bahrain", "Mamlakat al-Baḥrayn"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Arabic"],
+    "currency": "Dinar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saudi Arabia", "Qatar", "United Arab Emirates"],
+    "capital": "Manama",
+    "latlng": [26, 50.55],
+    "area": 765,
+    "geoArea": 0.000013399273068792877,
+    "rank": 169,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "bh"
+  },
+  {
+    "id": "CPV",
+    "iso2": "cv",
+    "name": "Cape Verde",
+    "altNames": ["Republic of Cabo Verde", "Cabo Verde", "República de Cabo Verde"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Portuguese"],
+    "currency": "Escudo",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Senegal", "Mauritania", "The Gambia"],
+    "capital": "Praia",
+    "latlng": [16, -24],
+    "area": 4033,
+    "geoArea": 0.00008838118246025446,
+    "rank": 170,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "cv"
+  },
+  {
+    "id": "BRN",
+    "iso2": "bn",
+    "name": "Brunei",
+    "altNames": [
+      "Nation of Brunei, Abode of Peace",
+      "Brunei Darussalam",
+      "Nation of Brunei",
+      "the Abode of Peace",
+      "Negara Brunei Darussalam"
+    ],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Malay"],
+    "currency": "Dollar",
+    "borders": ["MYS"],
+    "neighborNames": ["Malaysia"],
+    "island": false,
+    "nearest": [],
+    "capital": "Bandar Seri Begawan",
+    "latlng": [4.5, 114.66666666],
+    "area": 5765,
+    "geoArea": 0.0001396756534083214,
+    "rank": 171,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "bn"
+  },
+  {
+    "id": "COM",
+    "iso2": "km",
+    "name": "Comoros",
+    "altNames": [
+      "Union of the Comoros",
+      "Union des Comores",
+      "Udzima wa Komori",
+      "al-Ittiḥād al-Qumurī",
+      "Comores",
+      "Komori"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Comorian", "Arabic", "French"],
+    "currency": "Franc",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Mozambique", "Tanzania", "Madagascar"],
+    "capital": "Moroni",
+    "latlng": [-12.16666666, 44.25],
+    "area": 1862,
+    "geoArea": 0.0000389857121337754,
+    "rank": 172,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "km"
+  },
+  {
+    "id": "LUX",
+    "iso2": "lu",
+    "name": "Luxembourg",
+    "altNames": [
+      "Grand Duchy of Luxembourg",
+      "Grand-Duché de Luxembourg",
+      "Großherzogtum Luxemburg",
+      "Groussherzogtum Lëtzebuerg",
+      "Luxemburg",
+      "Lëtzebuerg"
+    ],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Luxembourgish", "French", "German"],
+    "currency": "Euro",
+    "borders": ["BEL", "FRA", "DEU"],
+    "neighborNames": ["Belgium", "France", "Germany"],
+    "island": false,
+    "nearest": [],
+    "capital": "Luxembourg",
+    "latlng": [49.75, 6.16666666],
+    "area": 2586,
+    "geoArea": 0.00006439522642996149,
+    "rank": 173,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      }
+    ],
+    "flagFile": "lu"
+  },
+  {
+    "id": "WSM",
+    "iso2": "ws",
+    "name": "Samoa",
+    "altNames": ["Independent State of Samoa", "Sāmoa"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Samoan", "English"],
+    "currency": "Tālā",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Tonga", "Fiji", "Tuvalu"],
+    "capital": "Apia",
+    "latlng": [-13.58333333, -172.33333333],
+    "area": 2842,
+    "geoArea": 0.00006663250270885987,
+    "rank": 174,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ws"
+  },
+  {
+    "id": "MDV",
+    "iso2": "mv",
+    "name": "Maldives",
+    "altNames": ["Republic of the Maldives", "Maldive Islands", "Dhivehi Raajjeyge Jumhooriyya"],
+    "continents": ["Asia"],
+    "continentLabel": "Asia",
+    "languages": ["Dhivehi"],
+    "currency": "Rufiyaa",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["India", "Sri Lanka", "Seychelles"],
+    "capital": "Malé",
+    "latlng": [3.25, 73],
+    "area": 300,
+    "geoArea": 0.0000016517543794730347,
+    "rank": 175,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "mv"
+  },
+  {
+    "id": "MLT",
+    "iso2": "mt",
+    "name": "Malta",
+    "altNames": ["Republic of Malta", "Repubblika ta' Malta"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Maltese", "English"],
+    "currency": "Euro",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Italy", "Tunisia", "Libya"],
+    "capital": "Valletta",
+    "latlng": [35.83333333, 14.58333333],
+    "area": 316,
+    "geoArea": 0.000006792165212213036,
+    "rank": 176,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "mt"
+  },
+  {
+    "id": "STP",
+    "iso2": "st",
+    "name": "São Tomé and Príncipe",
+    "altNames": [
+      "Democratic Republic of São Tomé and Príncipe",
+      "Sao Tome",
+      "Sao Tome and Principe",
+      "São Tomé",
+      "República Democrática de São Tomé e Príncipe",
+      "São Tomé e Príncipe"
+    ],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Portuguese"],
+    "currency": "Dobra",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Gabon", "Equatorial Guinea", "Cameroon"],
+    "capital": "São Tomé",
+    "latlng": [1, 7],
+    "area": 964,
+    "geoArea": 0.000024127581869166356,
+    "rank": 177,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "st"
+  },
+  {
+    "id": "BRB",
+    "iso2": "bb",
+    "name": "Barbados",
+    "altNames": [],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "Dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saint Lucia", "Saint Vincent and the Grenadines", "Grenada"],
+    "capital": "Bridgetown",
+    "latlng": [13.16666666, -59.53333333],
+    "area": 430,
+    "geoArea": 0.000009570407247450516,
+    "rank": 178,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "flagFile": "bb"
+  },
+  {
+    "id": "LCA",
+    "iso2": "lc",
+    "name": "Saint Lucia",
+    "altNames": ["St Lucia", "St. Lucia"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "East Caribbean dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saint Vincent and the Grenadines", "Dominica", "Barbados"],
+    "capital": "Castries",
+    "latlng": [13.88333333, -60.96666666],
+    "area": 616,
+    "geoArea": 0.000013591273809517457,
+    "rank": 179,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "lc"
+  },
+  {
+    "id": "KIR",
+    "iso2": "ki",
+    "name": "Kiribati",
+    "altNames": ["Independent and Sovereign Republic of Kiribati", "Republic of Kiribati", "Ribaberiki Kiribati"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["English", "Gilbertese"],
+    "currency": "Australian dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Marshall Islands", "Tuvalu", "Nauru"],
+    "capital": "South Tarawa",
+    "latlng": [1.41666666, 173],
+    "area": 811,
+    "geoArea": 0.00002319483040059904,
+    "rank": 180,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      }
+    ],
+    "flagFile": "ki"
+  },
+  {
+    "id": "FSM",
+    "iso2": "fm",
+    "name": "Micronesia",
+    "altNames": ["Federated States of Micronesia", "FSM", "Micronesia, Federated States of"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["English"],
+    "currency": "US dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Palau", "Marshall Islands", "Indonesia"],
+    "capital": "Palikir",
+    "latlng": [6.91666666, 158.25],
+    "area": 702,
+    "geoArea": 0.00001291059612721634,
+    "rank": 181,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "fm"
+  },
+  {
+    "id": "TON",
+    "iso2": "to",
+    "name": "Tonga",
+    "altNames": ["Kingdom of Tonga"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Tongan", "English"],
+    "currency": "Paʻanga",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Samoa", "Fiji", "Tuvalu"],
+    "capital": "Nuku'alofa",
+    "latlng": [-20, -175],
+    "area": 747,
+    "geoArea": 0.000010622638546463299,
+    "rank": 182,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "to"
+  },
+  {
+    "id": "VCT",
+    "iso2": "vc",
+    "name": "Saint Vincent and the Grenadines",
+    "altNames": ["St Vincent and the Grenadines", "Saint Vincent", "St Vincent", "St. Vincent and the Grenadines"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "East Caribbean dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saint Lucia", "Grenada", "Barbados"],
+    "capital": "Kingstown",
+    "latlng": [13.25, -61.2],
+    "area": 389,
+    "geoArea": 0.000007696531275175968,
+    "rank": 183,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "vc"
+  },
+  {
+    "id": "DMA",
+    "iso2": "dm",
+    "name": "Dominica",
+    "altNames": ["Commonwealth of Dominica", "Dominique"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "East Caribbean dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saint Lucia", "Antigua and Barbuda", "Saint Kitts and Nevis"],
+    "capital": "Roseau",
+    "latlng": [15.41666666, -61.33333333],
+    "area": 751,
+    "geoArea": 0.0000169529612914057,
+    "rank": 184,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "dm"
+  },
+  {
+    "id": "SYC",
+    "iso2": "sc",
+    "name": "Seychelles",
+    "altNames": ["Republic of Seychelles", "Repiblik Sesel", "République des Seychelles", "Sesel"],
+    "continents": ["Africa"],
+    "continentLabel": "Africa",
+    "languages": ["Seychellois Creole", "English", "French"],
+    "currency": "Rupee",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Madagascar", "Somalia", "Comoros"],
+    "capital": "Victoria",
+    "latlng": [-4.58333333, 55.66666666],
+    "area": 452,
+    "geoArea": 0.000004241662789104594,
+    "rank": 185,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "sc"
+  },
+  {
+    "id": "ATG",
+    "iso2": "ag",
+    "name": "Antigua and Barbuda",
+    "altNames": ["Antigua"],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "East Caribbean dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saint Kitts and Nevis", "Dominica", "Saint Lucia"],
+    "capital": "Saint John's",
+    "latlng": [17.05, -61.8],
+    "area": 442,
+    "geoArea": 0.000010677900319951627,
+    "rank": 186,
+    "flag": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ag"
+  },
+  {
+    "id": "GRD",
+    "iso2": "gd",
+    "name": "Grenada",
+    "altNames": [],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "East Caribbean dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Saint Vincent and the Grenadines", "Trinidad and Tobago", "Venezuela"],
+    "capital": "St. George's",
+    "latlng": [12.11666666, -61.66666666],
+    "area": 344,
+    "geoArea": 0.000007090662798939825,
+    "rank": 187,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      }
+    ],
+    "flagFile": "gd"
+  },
+  {
+    "id": "AND",
+    "iso2": "ad",
+    "name": "Andorra",
+    "altNames": ["Principality of Andorra", "Principat d'Andorra"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Catalan"],
+    "currency": "Euro",
+    "borders": ["FRA", "ESP"],
+    "neighborNames": ["France", "Spain"],
+    "island": false,
+    "nearest": [],
+    "capital": "Andorra la Vella",
+    "latlng": [42.5, 1.5],
+    "area": 468,
+    "geoArea": 0.000010860392844024388,
+    "rank": 188,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "ad"
+  },
+  {
+    "id": "KNA",
+    "iso2": "kn",
+    "name": "Saint Kitts and Nevis",
+    "altNames": [
+      "Federation of Saint Christopher and Nevis",
+      "St Kitts and Nevis",
+      "Saint Kitts",
+      "St. Kitts and Nevis",
+      "St Kitts"
+    ],
+    "continents": ["North America"],
+    "continentLabel": "North America",
+    "languages": ["English"],
+    "currency": "East Caribbean dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Antigua and Barbuda", "Dominica", "Saint Lucia"],
+    "capital": "Basseterre",
+    "latlng": [17.33333333, -62.75],
+    "area": 261,
+    "geoArea": 0.000005762107476136609,
+    "rank": 189,
+    "flag": [
+      {
+        "name": "Green",
+        "hex": "#009a49"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "kn"
+  },
+  {
+    "id": "MHL",
+    "iso2": "mh",
+    "name": "Marshall Islands",
+    "altNames": ["Republic of the Marshall Islands", "Marshalls"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Marshallese", "English"],
+    "currency": "US dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Kiribati", "Nauru", "Micronesia"],
+    "capital": "Majuro",
+    "latlng": [9, 168],
+    "area": 181,
+    "geoArea": 0.000005811564893747802,
+    "rank": 190,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff8200"
+      }
+    ],
+    "flagFile": "mh"
+  },
+  {
+    "id": "LIE",
+    "iso2": "li",
+    "name": "Liechtenstein",
+    "altNames": ["Principality of Liechtenstein", "Fürstentum Liechtenstein"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["German"],
+    "currency": "Swiss franc",
+    "borders": ["AUT", "CHE"],
+    "neighborNames": ["Austria", "Switzerland"],
+    "island": false,
+    "nearest": [],
+    "capital": "Vaduz",
+    "latlng": [47.26666666, 9.53333333],
+    "area": 160,
+    "geoArea": 0.000003395166220177383,
+    "rank": 191,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      }
+    ],
+    "flagFile": "li"
+  },
+  {
+    "id": "PLW",
+    "iso2": "pw",
+    "name": "Palau",
+    "altNames": ["Republic of Palau", "Beluu er a Belau", "Belau"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Palauan", "English"],
+    "currency": "US dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Micronesia", "Philippines", "Indonesia"],
+    "capital": "Ngerulmud",
+    "latlng": [7.5, 134.5],
+    "area": 459,
+    "geoArea": 0.000008444495032573936,
+    "rank": 192,
+    "flag": [
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "pw"
+  },
+  {
+    "id": "SMR",
+    "iso2": "sm",
+    "name": "San Marino",
+    "altNames": ["Most Serene Republic of San Marino", "Republic of San Marino", "Repubblica di San Marino"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Italian"],
+    "currency": "Euro",
+    "borders": ["ITA"],
+    "neighborNames": ["Italy"],
+    "island": false,
+    "nearest": [],
+    "capital": "City of San Marino",
+    "latlng": [43.76666666, 12.41666666],
+    "area": 61,
+    "geoArea": 0.0000017210388985143934,
+    "rank": 193,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      }
+    ],
+    "flagFile": "sm"
+  },
+  {
+    "id": "TUV",
+    "iso2": "tv",
+    "name": "Tuvalu",
+    "altNames": [],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Tuvaluan", "English"],
+    "currency": "Australian dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Kiribati", "Fiji", "Samoa"],
+    "capital": "Funafuti",
+    "latlng": [-8, 178],
+    "area": 26,
+    "geoArea": 5.85189093723666e-7,
+    "rank": 194,
+    "flag": [
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "Light blue",
+        "hex": "#6cace4"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      }
+    ],
+    "flagFile": "tv"
+  },
+  {
+    "id": "NRU",
+    "iso2": "nr",
+    "name": "Nauru",
+    "altNames": ["Republic of Nauru", "Naoero", "Pleasant Island", "Ripublik Naoero"],
+    "continents": ["Oceania"],
+    "continentLabel": "Oceania",
+    "languages": ["Nauruan", "English"],
+    "currency": "Australian dollar",
+    "borders": [],
+    "neighborNames": [],
+    "island": true,
+    "nearest": ["Kiribati", "Marshall Islands", "Solomon Islands"],
+    "capital": "Yaren (de facto)",
+    "latlng": [-0.53333333, 166.91666666],
+    "area": 21,
+    "geoArea": 6.796145190362819e-7,
+    "rank": 195,
+    "flag": [
+      {
+        "name": "Blue",
+        "hex": "#0039a6"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "nr"
+  },
+  {
+    "id": "MCO",
+    "iso2": "mc",
+    "name": "Monaco",
+    "altNames": ["Principality of Monaco", "Principauté de Monaco"],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["French"],
+    "currency": "Euro",
+    "borders": ["FRA"],
+    "neighborNames": ["France"],
+    "island": false,
+    "nearest": [],
+    "capital": "Monaco",
+    "latlng": [43.73333333, 7.4],
+    "area": 2.02,
+    "geoArea": 2.969910828188525e-7,
+    "rank": 196,
+    "flag": [
+      {
+        "name": "Red",
+        "hex": "#d52b1e"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "mc"
+  },
+  {
+    "id": "VAT",
+    "iso2": "va",
+    "name": "Vatican City",
+    "altNames": [
+      "Vatican City State",
+      "Vatican",
+      "Holy See",
+      "Holy See (Vatican City State)",
+      "Stato della Città del Vaticano",
+      "Vaticano",
+      "Vaticanæ"
+    ],
+    "continents": ["Europe"],
+    "continentLabel": "Europe",
+    "languages": ["Italian", "Latin"],
+    "currency": "Euro",
+    "borders": ["ITA"],
+    "neighborNames": ["Italy"],
+    "island": false,
+    "nearest": [],
+    "capital": "Vatican City",
+    "latlng": [41.9, 12.45],
+    "area": 0.44,
+    "geoArea": 1.9128724825802877e-8,
+    "rank": 197,
+    "flag": [
+      {
+        "name": "Yellow",
+        "hex": "#ffd100"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ],
+    "flagFile": "va"
+  }
+]
