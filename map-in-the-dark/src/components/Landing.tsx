@@ -3,6 +3,7 @@ import { AtlasCanvas } from './AtlasCanvas';
 import { IconArrow, IconBolt, IconCheck, IconFire, IconLayers, IconStar } from './Icons';
 import type { AtlasView } from '../map/AtlasView';
 import { CONTINENTS } from '../data/continents';
+import { SATELLITE } from '../map/satellite';
 import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, WINDOW_KM_BY_STEP } from '../game/config';
 import { dailyNumber, formatCountdown, utcDateKey } from '../game/dates';
 import { visibleStreak } from '../game/progress';
@@ -104,7 +105,9 @@ const FAQ: [string, string][] = [
   ],
   [
     'What is on the map?',
-    'Real satellite images of the area around the city, with country borders drawn on top. Place names are hidden. The hidden city is always inside the green circle.',
+    SATELLITE
+      ? 'Real satellite images of the area around the city, with country borders drawn on top. Place names are hidden. The hidden city is always inside the green circle.'
+      : 'Coastlines, lakes, rivers, built-up areas, main roads, railways, borders and towns from Natural Earth and GeoNames. Place names are hidden. The hidden city is always inside the green circle.',
   ],
   ['When does a new round start?', 'Every day at midnight UTC. Everyone gets the same five cities on the same day.'],
   [
