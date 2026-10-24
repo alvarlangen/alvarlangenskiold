@@ -104,7 +104,7 @@ const FAQ: [string, string][] = [
   ],
   [
     'What is on the map?',
-    'Coastlines, lakes, rivers, built-up areas, motorways and main roads, railways, borders and towns from Natural Earth and GeoNames. Place names are hidden. The hidden city is always inside the green circle.',
+    'Real satellite images of the area around the city, with country borders drawn on top. Place names are hidden. The hidden city is always inside the green circle.',
   ],
   ['When does a new round start?', 'Every day at midnight UTC. Everyone gets the same five cities on the same day.'],
   [

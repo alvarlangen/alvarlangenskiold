@@ -5,13 +5,15 @@ gives a new clue. Name the city in as few steps as you can.
 
 - **One daily round of 5 cities × 6 steps.** The visible map grows from 70 km to 1,400 km across; a green circle,
   shrinking each step, always contains the city.
-- **Real maps**, drawn from Natural Earth 1:10m data: coastlines, lakes, rivers, built-up areas, motorways and main
-  roads, railways, country and province borders, and GeoNames towns as dots. No place names are shown.
+- **Satellite maps** from a commercial imagery provider (Esri, MapTiler or Mapbox, chosen with an environment variable),
+  without labels. Without a provider key the game uses its bundled Natural Earth map (coastlines, lakes, rivers,
+  built-up areas, roads, railways, borders and towns), so it always works.
 - **Type your answer** with tolerant matching (case, spaces, accents, one typo, exonyms such as Bombay, Peking,
   Saigon, Kiev, New York).
 - **Rewards:** points per step (100/80/60/45/30/20), XP, combo ×1–×5, a golden city with 2× XP, levels, streaks.
 - **Unlimited bonus rounds** and **practice per continent**.
-- **Static site:** no backend, no tracking, works offline after the first visit (service worker).
+- **Static site:** no backend and no tracking. With satellite imagery the map needs a connection; the bundled map works
+  offline after the first visit (service worker).
 
 ## Run locally
 
@@ -34,16 +36,61 @@ npm run dev        # http://localhost:5173
 | `npm run data` | Rebuild all game data and map tiles (see below) |
 | `npm run images` | Regenerate favicon, app icons and the Open Graph image |
 | `npm run qa` | Play full rounds in Chromium with Playwright and save screenshots to `qa-screens/` (run after `build`) |
+| `npm run qa:imagery` | Check the satellite layer with a mock imagery provider |
+
+## Satellite imagery
+
+The map shows satellite images when the build has an imagery provider and key. Set these environment variables
+(see `.env.example`); they are read at build time:
+
+| Variable | Value |
+| --- | --- |
+| `VITE_MAP_PROVIDER` | `esri`, `maptiler`, `mapbox` or `custom` |
+| `VITE_MAP_KEY` | API key / access token from the provider |
+| `VITE_MAP_URL` | `custom` only: XYZ template with `{z}`, `{x}`, `{y}` and optionally `{key}` |
+| `VITE_MAP_ATTRIBUTION` | `custom` only: the attribution text the provider requires |
+
+| Provider | Imagery | Commercial use | Account |
+| --- | --- | --- | --- |
+| **Esri** (recommended) | World Imagery (Maxar, Earthstar Geographics) | Yes, with “Powered by Esri” attribution (shown on the map) | Free ArcGIS Location Platform account, API key with the *Basemaps* privilege; free monthly tile allowance, then pay-as-you-go |
+| **MapTiler** | Satellite | Yes on a paid plan; check the plan's terms | MapTiler Cloud account, API key |
+| **Mapbox** | Satellite | Yes, with attribution | Mapbox account, public access token; free monthly allowance, then pay-as-you-go |
+
+Check each provider's current pricing and terms before launch. Google Maps satellite tiles need the Map Tiles API with
+session tokens and are not supported out of the box.
+
+The key is embedded in the website (all browser map keys are). **Restrict it to your domain** in the provider's
+dashboard (Esri: *Referrers*; MapTiler: *Allowed HTTP origins*; Mapbox: *URL restrictions*). If the provider rejects the
+key, the map automatically falls back to the bundled map. The required attribution is drawn on the map and listed on
+the Credits page; the Privacy page explains that the images are loaded from the provider.
+
+`npm run qa:imagery` tests the imagery layer without a real provider: it builds with a mock provider and renders mock
+satellite tiles from the bundled data, so overlays (pin, circles, borders) can be checked for alignment.
 
 ## Deploy
 
 The build is a static folder with relative paths and hash routing (`#/play`), so it can be served from any path on any
-static host.
+static host. `netlify.toml` and `vercel.json` are included.
 
-- **Netlify / Vercel / Cloudflare Pages:** build command `npm run build`, base directory `map-in-the-dark`, output `dist`.
-- **GitHub Pages:** build and publish `dist/` (e.g. `actions/upload-pages-artifact` + `actions/deploy-pages`).
+**Netlify**
+1. Add new site → Import from Git → choose this repository and branch.
+2. Base directory: `map-in-the-dark`. Build command: `npm run build`. Publish directory: `map-in-the-dark/dist`.
+3. Site configuration → Environment variables: add `VITE_MAP_PROVIDER` and `VITE_MAP_KEY`.
+4. Deploy, then add the site's domain to the key's allowed referrers.
+
+**Vercel**
+1. Add New Project → import the repository.
+2. Root Directory: `map-in-the-dark` (framework is detected as Vite).
+3. Environment Variables: add `VITE_MAP_PROVIDER` and `VITE_MAP_KEY`.
+4. Deploy, then add the domain to the key's allowed referrers.
+
+After changing an environment variable, redeploy so the build picks it up.
 
 ## How the map works
+
+- With a provider configured, `src/map/satellite.ts` loads labeled-free satellite tiles (Web Mercator XYZ) and
+  `AtlasView` draws them, using lower-zoom tiles as placeholders while sharper ones load. Country borders from Natural
+  Earth are drawn on top.
 
 - `scripts/build-tiles.mjs` cuts the Natural Earth 1:10m layers into 10° × 10° tiles (`public/data/tiles/{x}_{y}.json`),
   only where a city's map can reach: 272 tiles, about 12 MB raw / 4.5 MB gzipped in total, roughly 300 KB per city.
@@ -54,9 +101,8 @@ static host.
   centred slightly off the city; the circle contains the city but is offset in a seeded direction, so no single town
   dot gives the answer away early. Sizes are in `src/game/config.ts` (`WINDOW_KM_BY_STEP`, `SEARCH_KM_BY_STEP`).
 
-Natural Earth is mapped at 1:10 million, so the close-up in step 1 shows the city's built-up area, main roads,
-rivers and coast, not individual streets. Street-level maps would need OpenStreetMap tiles loaded at runtime (see
-"Possible next steps").
+Without satellite imagery, the bundled Natural Earth map (1:10 million) shows the city's built-up area, main roads,
+rivers and coast, but not individual streets.
 
 ## Project structure
 
@@ -124,11 +170,6 @@ countries for clues; Sri Lanka's dataset border with India is removed (it has no
 - **Add a clue type:** add a `ClueKind` in `src/game/types.ts`, produce it in `src/game/clues.ts`, update the tests.
 - **Change pacing:** `WINDOW_KM_BY_STEP`, `SEARCH_KM_BY_STEP` and points in `src/game/config.ts`.
 - **Add a map layer:** add the Natural Earth file to `LAYERS` in `scripts/build-tiles.mjs` and draw it in `AtlasView.draw`.
-
-## Possible next steps
-
-- Street-level detail in the first steps by drawing OpenStreetMap vector tiles at runtime (e.g. MapLibre with a free
-  OSM tile service). This needs network access while playing and a tile provider's terms of use.
 
 ## Licenses
 

@@ -356,3 +356,27 @@ describe('streaks and sharing', () => {
     expect(shareLine('daily', 1, [r(1), r(3), r(2), r(null), r(1)])).toBe('Map in the Dark #1 🟩🟨🟩🟥🟩');
   });
 });
+
+import { makeSource } from '../src/map/satellite';
+describe('satellite imagery providers', () => {
+  it('builds tile URLs for each provider', () => {
+    expect(makeSource('esri', 'K')!.url(10, 3, 7)).toBe(
+      'https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/10/7/3?token=K',
+    );
+    expect(makeSource('maptiler', 'K')!.url(10, 3, 7)).toBe(
+      'https://api.maptiler.com/tiles/satellite-v2/10/3/7.jpg?key=K',
+    );
+    expect(makeSource('mapbox', 'K')!.url(10, 3, 7)).toBe(
+      'https://api.mapbox.com/v4/mapbox.satellite/10/3/7.jpg90?access_token=K',
+    );
+    expect(makeSource('custom', '', 'https://x.test/{z}/{x}/{y}.png', 'X')!.url(1, 2, 3)).toBe(
+      'https://x.test/1/2/3.png',
+    );
+  });
+  it('falls back to the bundled map without a key or provider', () => {
+    expect(makeSource('esri', '')).toBeNull();
+    expect(makeSource('', 'K')).toBeNull();
+    expect(makeSource(undefined, undefined)).toBeNull();
+    expect(makeSource('esri', 'K')!.attribution).toMatch(/Powered by Esri/);
+  });
+});

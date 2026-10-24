@@ -1,14 +1,14 @@
 import { POINTS_BY_STEP, WINDOW_KM_BY_STEP } from '../game/config';
 import { PracticePicker } from './Landing';
+import { SATELLITE } from '../map/satellite';
 
 export function About() {
   return (
     <div class="page page-narrow prose">
       <h1>How to play</h1>
       <p>
-        Every day there are five hidden cities. For each one you see a real map of its surroundings: coastlines, lakes,
-        rivers, built-up areas, roads, railways, borders and towns, but no names. The hidden city is always inside the
-        green circle.
+        Every day there are five hidden cities. For each one you see a real map of its surroundings, without any names.
+        The hidden city is always inside the green circle.
       </p>
       <h2>Six steps</h2>
       <ol>
@@ -52,10 +52,18 @@ export function Privacy() {
         clearing your browser’s site data.
       </p>
       <h2>Network requests</h2>
-      <p>
-        All game data, maps, fonts and images are served from this website itself. The game makes no requests to
-        third-party services.
-      </p>
+      {SATELLITE ? (
+        <p>
+          The game data, fonts and images are served from this website itself. The satellite images on the map are
+          loaded from our imagery provider ({SATELLITE.attribution}). Like any website, the provider receives your IP
+          address and the page address when your browser downloads the images. Nothing else is sent.
+        </p>
+      ) : (
+        <p>
+          All game data, maps, fonts and images are served from this website itself. The game makes no requests to
+          third-party services.
+        </p>
+      )}
       <h2>Sharing</h2>
       <p>Sharing copies a short text with your emoji result. Nothing is sent by the game itself.</p>
     </div>
@@ -67,11 +75,17 @@ export function Credits() {
     <div class="page page-narrow prose">
       <h1>Credits</h1>
       <p>
-        All data is bundled with the game at build time; nothing is fetched from other services while you play. Data
-        fetched on 2026-10-23.
+        The game data is bundled with the game at build time
+        {SATELLITE ? '; the satellite images are loaded from the imagery provider while you play' : ''}. Data fetched on
+        2026-10-23.
       </p>
       <h2>Map and data sources</h2>
       <ul>
+        {SATELLITE && (
+          <li>
+            <strong>Satellite imagery</strong>: {SATELLITE.attribution}.
+          </li>
+        )}
         <li>
           <strong>Natural Earth</strong> 1:10m — land, lakes, rivers, urban areas, roads, railways, country and province
           borders. Public domain.{' '}

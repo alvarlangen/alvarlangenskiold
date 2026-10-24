@@ -4,3 +4,6 @@ scripts/.cache
 *.log
 .DS_Store
 qa-screens
+dist-imagery-qa
+.env.local
+.env

@@ -10,6 +10,7 @@
  * Only redraws while something changes. No WebGL, no external requests.
  */
 import { loadTile, mercY, TILE_DEG, unMercY, type Path, type Tile } from './tiles';
+import { SATELLITE, TileImages, type RasterSource } from './satellite';
 
 const RAD = Math.PI / 180;
 const EARTH_KM = 6371;
@@ -66,6 +67,8 @@ export interface AtlasOptions {
   interactive?: boolean;
   reducedMotion?: boolean;
   onInteract?: () => void;
+  /** Satellite imagery source; defaults to the one configured for this build (or none). */
+  imagery?: RasterSource | null;
 }
 
 interface Tween {
@@ -92,7 +95,9 @@ export class AtlasView {
   private raf = 0;
   private destroyed = false;
   private pal!: Palette;
-  private opts: Required<Omit<AtlasOptions, 'onInteract'>> & { onInteract?: () => void };
+  private opts: Required<Omit<AtlasOptions, 'onInteract' | 'imagery'>> & { onInteract?: () => void };
+  private imagery: TileImages | null = null;
+  private imagerySource: RasterSource | null = null;
   private resizeObs: ResizeObserver;
   private unbind?: () => void;
   /** Circle the camera is framing, re-fitted on resize until the user moves the map. */
@@ -111,6 +116,11 @@ export class AtlasView {
       reducedMotion: options.reducedMotion ?? false,
       onInteract: options.onInteract,
     };
+    const source = options.imagery === undefined ? SATELLITE : options.imagery;
+    if (source) {
+      this.imagerySource = source;
+      this.imagery = new TileImages(source, () => this.invalidate());
+    }
     this.readPalette();
     this.resizeObs = new ResizeObserver(() => this.resize());
     this.resizeObs.observe(canvas);
@@ -373,34 +383,45 @@ export class AtlasView {
     const zoomed = clamp(1.6 - Math.log10(kmPerPx) * 0.5, 0.8, 2);
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
-    fillLayer('land', pal.land);
-    fillLayer('urban', pal.urban);
-    fillLayer('lake', pal.water);
-    strokeLayer('river', pal.river, 1.1 * zoomed);
-    strokeLayer('admin1', pal.admin1, 0.8, [3, 3]);
-    strokeLayer('rail', pal.rail, 0.7 * zoomed, [4, 2]);
-    strokeLayer('road', pal.road, 0.9 * zoomed);
-    strokeLayer('major', pal.major, 1.5 * zoomed);
-    strokeLayer('border', pal.border, 1.3, [7, 3, 2, 3]);
-    ctx.setLineDash([]);
+    const imagery = this.imagery && !this.imagery.broken ? this.imagery : null;
+    if (imagery) {
+      this.drawImagery(imagery, k, cx, cy, x0, y0);
+      // Country borders on top of the imagery help orientation (imagery itself has no labels or lines).
+      ctx.globalAlpha = 0.7;
+      strokeLayer('border', 'rgba(0,0,0,0.45)', 2.6, [7, 3, 2, 3]);
+      strokeLayer('border', '#ffffff', 1.2, [7, 3, 2, 3]);
+      ctx.globalAlpha = 1;
+      ctx.setLineDash([]);
+    } else {
+      fillLayer('land', pal.land);
+      fillLayer('urban', pal.urban);
+      fillLayer('lake', pal.water);
+      strokeLayer('river', pal.river, 1.1 * zoomed);
+      strokeLayer('admin1', pal.admin1, 0.8, [3, 3]);
+      strokeLayer('rail', pal.rail, 0.7 * zoomed, [4, 2]);
+      strokeLayer('road', pal.road, 0.9 * zoomed);
+      strokeLayer('major', pal.major, 1.5 * zoomed);
+      strokeLayer('border', pal.border, 1.3, [7, 3, 2, 3]);
+      ctx.setLineDash([]);
 
-    // Towns: unlabeled dots sized by population class.
-    const sizes = [1.5, 2.1, 2.9, 3.7];
-    const minClass = kmPerPx > 2.5 ? 2 : kmPerPx > 0.9 ? 1 : 0;
-    ctx.fillStyle = pal.town;
-    ctx.strokeStyle = pal.townHalo;
-    ctx.lineWidth = 1.2;
-    for (const { tile, dx } of visible) {
-      const t = tile.town;
-      for (let i = 0; i < t.length; i += 3) {
-        if (t[i + 2] < minClass) continue;
-        const px = cx + k * (t[i] + dx - x0);
-        const py = cy - k * (t[i + 1] - y0);
-        if (px < -10 || py < -10 || px > w + 10 || py > h + 10) continue;
-        ctx.beginPath();
-        ctx.arc(px, py, sizes[t[i + 2]], 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.fill();
+      // Towns: unlabeled dots sized by population class.
+      const sizes = [1.5, 2.1, 2.9, 3.7];
+      const minClass = kmPerPx > 2.5 ? 2 : kmPerPx > 0.9 ? 1 : 0;
+      ctx.fillStyle = pal.town;
+      ctx.strokeStyle = pal.townHalo;
+      ctx.lineWidth = 1.2;
+      for (const { tile, dx } of visible) {
+        const t = tile.town;
+        for (let i = 0; i < t.length; i += 3) {
+          if (t[i + 2] < minClass) continue;
+          const px = cx + k * (t[i] + dx - x0);
+          const py = cy - k * (t[i + 1] - y0);
+          if (px < -10 || py < -10 || px > w + 10 || py > h + 10) continue;
+          ctx.beginPath();
+          ctx.arc(px, py, sizes[t[i + 2]], 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.fill();
+        }
       }
     }
 
@@ -421,8 +442,13 @@ export class AtlasView {
       ctx.arc(sx, sy, Math.max(r, 6), 0, Math.PI * 2);
       ctx.fillStyle = pal.accentFill;
       ctx.fill();
+      if (imagery) {
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
       ctx.strokeStyle = pal.accent;
-      ctx.lineWidth = 2;
+      ctx.lineWidth = imagery ? 2.5 : 2;
       ctx.stroke();
     }
 
@@ -494,10 +520,55 @@ export class AtlasView {
       ctx.restore();
     }
 
-    this.drawScaleBar(kmPerPx);
+    this.drawScaleBar(kmPerPx, imagery ? (this.imagerySource?.attribution ?? '') : 'Natural Earth · GeoNames');
   }
 
-  private drawScaleBar(kmPerPx: number) {
+  /** Satellite tiles in Web Mercator, with lower-zoom tiles as placeholders while loading. */
+  private drawImagery(imagery: TileImages, k: number, cx: number, cy: number, x0: number, y0: number) {
+    const { ctx, w, h } = this;
+    const TAU = 2 * Math.PI;
+    const worldPx = TAU * k;
+    const maxZ = this.imagerySource?.maxZoom ?? 19;
+    let z = clamp(Math.round(Math.log2((worldPx * this.dpr) / 256)), 1, maxZ);
+    const span = (zz: number) => {
+      const n = 2 ** zz;
+      const xL = Math.floor(((x0 - cx / k + Math.PI) / TAU) * n);
+      const xR = Math.floor(((x0 + (w - cx) / k + Math.PI) / TAU) * n);
+      const yT = clamp(Math.floor(((Math.PI - (y0 + cy / k)) / TAU) * n), 0, n - 1);
+      const yB = clamp(Math.floor(((Math.PI - (y0 - (h - cy) / k)) / TAU) * n), 0, n - 1);
+      return { n, xL, xR, yT, yB };
+    };
+    let sp = span(z);
+    while (z > 1 && (sp.xR - sp.xL + 1) * (sp.yB - sp.yT + 1) > 120) sp = span(--z);
+    const { n, xL, xR, yT, yB } = sp;
+    const tilePx = worldPx / n;
+    ctx.fillStyle = '#4b5a52';
+    ctx.fillRect(0, 0, w, h);
+    ctx.imageSmoothingQuality = 'high';
+    for (let ty = yT; ty <= yB; ty++) {
+      for (let tx = xL; tx <= xR; tx++) {
+        const wx = ((tx % n) + n) % n;
+        const sx = cx + k * ((tx / n) * TAU - Math.PI - x0);
+        const sy = cy - k * (Math.PI - (ty / n) * TAU - y0);
+        const img = imagery.get(z, wx, ty);
+        if (img) {
+          ctx.drawImage(img, sx, sy, tilePx + 0.5, tilePx + 0.5);
+          continue;
+        }
+        // Placeholder: the nearest loaded ancestor tile, cropped and scaled up.
+        for (let dz = 1; dz <= 6 && z - dz >= 0; dz++) {
+          const f = 2 ** dz;
+          const parent = imagery.peek(z - dz, Math.floor(wx / f), Math.floor(ty / f));
+          if (!parent) continue;
+          const sub = parent.naturalWidth / f;
+          ctx.drawImage(parent, (wx % f) * sub, (ty % f) * sub, sub, sub, sx, sy, tilePx + 0.5, tilePx + 0.5);
+          break;
+        }
+      }
+    }
+  }
+
+  private drawScaleBar(kmPerPx: number, attribution: string) {
     const { ctx, pal, h, w } = this;
     const nice = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000];
     const km = nice.find((n) => n / kmPerPx >= 70) ?? 2000;
@@ -521,10 +592,18 @@ export class AtlasView {
     ctx.fillStyle = pal.ink;
     ctx.textAlign = 'left';
     ctx.fillText(`${km} km`, x, y - 8);
+    // Attribution (required by the data/imagery providers), split over two lines when narrow.
     ctx.font = `10px ${pal.font}`;
     ctx.textAlign = 'right';
-    ctx.globalAlpha = 0.7;
-    ctx.fillText('Natural Earth · GeoNames', w - 10, h - 8);
+    const lines = ctx.measureText(attribution).width > w - len - 60 ? attribution.split(' · ') : [attribution];
+    const lh = 13;
+    const boxW = Math.max(...lines.map((l) => ctx.measureText(l).width)) + 12;
+    ctx.globalAlpha = 0.8;
+    ctx.fillStyle = pal.paper;
+    ctx.fillRect(w - boxW - 4, h - 8 - lines.length * lh, boxW, lines.length * lh + 6);
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = pal.ink;
+    lines.forEach((l, i) => ctx.fillText(l, w - 10, h - 9 - (lines.length - 1 - i) * lh));
     ctx.restore();
   }
 
