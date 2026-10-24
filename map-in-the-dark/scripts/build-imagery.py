@@ -54,7 +54,7 @@ ap.add_argument('--dry', action='store_true')
 ap.add_argument('--only')
 ap.add_argument('--px', type=float, default=800, help='device pixels across the shorter side of the map')
 ap.add_argument('--quality', type=int, default=60)
-ap.add_argument('--jobs', type=int, default=8)
+ap.add_argument('--jobs', type=int, default=8, help='parallel workers (each needs up to ~1 GB)')
 args = ap.parse_args()
 
 
@@ -196,7 +196,7 @@ CELLS = set()
 def dataset(name):
     ds = _datasets.get(name)
     if ds is None:
-        if len(_datasets) > 48:
+        if len(_datasets) > 12:
             old = next(iter(_datasets))
             _datasets.pop(old).close()
         for attempt in range(5):
@@ -275,6 +275,16 @@ def build_tile(job):
     return os.path.getsize(path)
 
 
+def try_build_tile(job):
+    """A failed tile (e.g. a truncated download) is skipped and reported; re-run the script to retry it."""
+    try:
+        return build_tile(job)
+    except Exception as e:
+        print(f'failed {job}: {e}', flush=True)
+        _datasets.clear()
+        return -1
+
+
 def worker_init(cells=None):
     if cells is not None:
         CELLS.update(cells)
@@ -325,13 +335,20 @@ def main():
     # Neighbouring tiles go to the same worker (shared GDAL caches): order by zoom, then by 8 x 8 block.
     todo.sort(key=lambda t: (t[0], t[1] >> 3, t[2] >> 3, t[1], t[2]))
     print(f'{len(todo)} tiles to build')
-    t0, done, size = time.time(), 0, 0
-    with Pool(args.jobs, initializer=worker_init, initargs=(cells,)) as pool:
-        for n in pool.imap_unordered(build_tile, todo, chunksize=16):
+    t0, done, size, failed = time.time(), 0, 0, 0
+    # Workers are recycled now and then to keep GDAL's memory in check (a worker killed for memory
+    # would hang the pool).
+    with Pool(args.jobs, initializer=worker_init, initargs=(cells,), maxtasksperchild=100) as pool:
+        for n in pool.imap_unordered(try_build_tile, todo, chunksize=16):
             done += 1
+            if n < 0:
+                failed += 1
+                continue
             size += n
             if done % 500 == 0 or done == len(todo):
                 print(f'{done}/{len(todo)} tiles, {size / 1e6:.1f} MB, {time.time() - t0:.0f} s', flush=True)
+    if failed:
+        print(f'{failed} tiles failed: run the script again to retry them')
     write_index()
 
 
