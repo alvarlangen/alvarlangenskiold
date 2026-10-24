@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import TILE_INDEX from '../src/data/tiles.json';
 import { CITIES, COUNTRIES, TARGETS, countryById, nameIndex } from '../src/data';
@@ -373,10 +374,45 @@ describe('satellite imagery providers', () => {
       'https://x.test/1/2/3.png',
     );
   });
-  it('falls back to the bundled map without a key or provider', () => {
+  it('uses the bundled imagery by default and the vector map without a key', () => {
+    const local = makeSource(undefined, undefined)!;
+    expect(local.id).toBe('local');
+    expect(local.url(10, 3, 7)).toBe('./imagery/10/3/7.webp');
+    expect(local.external).toBe(false);
+    expect(local.attribution).toMatch(/Copernicus Sentinel/);
+    expect(makeSource('', 'K')!.id).toBe('local');
+    expect(makeSource('none', 'K')).toBeNull();
     expect(makeSource('esri', '')).toBeNull();
-    expect(makeSource('', 'K')).toBeNull();
-    expect(makeSource(undefined, undefined)).toBeNull();
     expect(makeSource('esri', 'K')!.attribution).toMatch(/Powered by Esri/);
+    expect(makeSource('esri', 'K')!.external).toBe(true);
+  });
+});
+
+describe('bundled satellite imagery', () => {
+  const file = new URL('../public/imagery/index.json', import.meta.url);
+  const index = fs.existsSync(file)
+    ? (JSON.parse(fs.readFileSync(file, 'utf8')) as { tiles: Record<string, number[]> })
+    : null;
+  it.skipIf(!index)('covers every city at every step', () => {
+    const sets = new Map<number, Set<number>>();
+    for (const [z, deltas] of Object.entries(index!.tiles)) {
+      let id = 0;
+      sets.set(Number(z), new Set(deltas.map((d) => (id += d))));
+    }
+    const has = (z: number, lon: number, lat: number) => {
+      const n = 2 ** z;
+      const x = Math.floor(((lon + 180) / 360) * n);
+      const r = (lat * Math.PI) / 180;
+      const y = Math.floor(((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * n);
+      return !!sets.get(z)?.has(x * n + y);
+    };
+    const missing: string[] = [];
+    for (const c of CITIES) {
+      const [lon, lat] = c.lonlat;
+      // Some zoom between 5 and 11 has the city's tile; the closest steps need zoom ≥ 9.
+      const zooms = [...sets.keys()].filter((z) => has(z, lon, lat));
+      if (!zooms.some((z) => z >= 9) || !zooms.some((z) => z <= 7)) missing.push(`${c.id}: ${zooms.join(',')}`);
+    }
+    expect(missing).toEqual([]);
   });
 });

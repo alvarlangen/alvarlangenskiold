@@ -1,6 +1,8 @@
 /* Map in the Dark — service worker (generated from src/sw-template.js at build time). */
 const VERSION = '__VERSION__';
 const CACHE = `mitd-${VERSION}`;
+/** Satellite tiles are cached as they are viewed and kept across versions (they rarely change). */
+const IMAGERY_CACHE = 'imagery-v1';
 const CORE = __CORE__;
 const EXTRA = __EXTRA__;
 
@@ -55,6 +57,22 @@ self.addEventListener('fetch', (event) => {
           return res;
         })
         .catch(() => caches.match('./', { ignoreSearch: true })),
+    );
+    return;
+  }
+
+  if (/\/imagery\/\d+\/\d+\/\d+\.webp$/.test(url.pathname)) {
+    event.respondWith(
+      caches.open(IMAGERY_CACHE).then((c) =>
+        c.match(req).then(
+          (hit) =>
+            hit ||
+            fetch(req).then((res) => {
+              if (res.ok) c.put(req, res.clone());
+              return res;
+            }),
+        ),
+      ),
     );
     return;
   }

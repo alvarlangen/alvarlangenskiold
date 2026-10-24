@@ -1,13 +1,14 @@
 /**
- * Flat atlas map on a 2D canvas (Mercator), drawn from Natural Earth tiles:
- * water, land, built-up areas, lakes, rivers, railways, roads, borders and towns.
+ * Flat atlas map on a 2D canvas (Mercator): satellite imagery (bundled, or from an online provider) with
+ * country borders on top, or, without imagery, a vector map drawn from Natural Earth tiles: water, land,
+ * built-up areas, lakes, rivers, railways, roads, borders and towns.
  *
  * Game overlays:
  *  - window: everything outside a circle is hidden under a light fog; the circle grows per step
  *  - search: a green circle that contains the target city and shrinks per step
  *  - pin:    the answer, with its name, after the reveal
  *
- * Only redraws while something changes. No WebGL, no external requests.
+ * Only redraws while something changes. No WebGL.
  */
 import { loadTile, mercY, TILE_DEG, unMercY, type Path, type Tile } from './tiles';
 import { SATELLITE, TileImages, type RasterSource } from './satellite';
@@ -22,6 +23,9 @@ function withAlpha(hex: string, a: number): string {
   const n = parseInt(m[1], 16);
   return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
 }
+/** Fallback colours under the satellite imagery (match the water colour of scripts/build-imagery.py). */
+const SAT_WATER = '#1b314a';
+const SAT_LAND = '#6a7052';
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
 
 export interface Circle {
@@ -385,7 +389,12 @@ export class AtlasView {
     ctx.lineCap = 'round';
     const imagery = this.imagery && !this.imagery.broken ? this.imagery : null;
     if (imagery) {
-      this.drawImagery(imagery, k, cx, cy, x0, y0);
+      // Underneath, for areas without imagery: land and water in satellite-like colours.
+      ctx.fillStyle = SAT_WATER;
+      ctx.fillRect(0, 0, w, h);
+      fillLayer('land', SAT_LAND);
+      fillLayer('lake', SAT_WATER);
+      if (imagery.ready) this.drawImagery(imagery, k, cx, cy, x0, y0);
       // Country borders on top of the imagery help orientation (imagery itself has no labels or lines).
       ctx.globalAlpha = 0.7;
       strokeLayer('border', 'rgba(0,0,0,0.45)', 2.6, [7, 3, 2, 3]);
@@ -523,46 +532,80 @@ export class AtlasView {
     this.drawScaleBar(kmPerPx, imagery ? (this.imagerySource?.attribution ?? '') : 'Natural Earth · GeoNames');
   }
 
-  /** Satellite tiles in Web Mercator, with lower-zoom tiles as placeholders while loading. */
+  /**
+   * Satellite tiles in Web Mercator. Bundled imagery exists at one zoom per area, so the nearest zoom with
+   * a tile at the centre is used, and single missing tiles are filled from an ancestor (or children).
+   * Lower-zoom tiles also serve as placeholders while sharper ones load.
+   */
   private drawImagery(imagery: TileImages, k: number, cx: number, cy: number, x0: number, y0: number) {
     const { ctx, w, h } = this;
     const TAU = 2 * Math.PI;
     const worldPx = TAU * k;
     const maxZ = this.imagerySource?.maxZoom ?? 19;
-    let z = clamp(Math.round(Math.log2((worldPx * this.dpr) / 256)), 1, maxZ);
     const span = (zz: number) => {
       const n = 2 ** zz;
       const xL = Math.floor(((x0 - cx / k + Math.PI) / TAU) * n);
       const xR = Math.floor(((x0 + (w - cx) / k + Math.PI) / TAU) * n);
       const yT = clamp(Math.floor(((Math.PI - (y0 + cy / k)) / TAU) * n), 0, n - 1);
       const yB = clamp(Math.floor(((Math.PI - (y0 - (h - cy) / k)) / TAU) * n), 0, n - 1);
-      return { n, xL, xR, yT, yB };
+      return { z: zz, n, xL, xR, yT, yB, count: (xR - xL + 1) * (yB - yT + 1) };
     };
-    let sp = span(z);
-    while (z > 1 && (sp.xR - sp.xL + 1) * (sp.yB - sp.yT + 1) > 120) sp = span(--z);
-    const { n, xL, xR, yT, yB } = sp;
+    let sp = span(clamp(Math.round(Math.log2((worldPx * this.dpr) / 256)), 1, maxZ));
+    while (sp.z > 1 && sp.count > 120) sp = span(sp.z - 1);
+    const hasCentre = (zz: number) => {
+      const n = 2 ** zz;
+      const tx = ((Math.floor(((x0 + Math.PI) / TAU) * n) % n) + n) % n;
+      return imagery.has(zz, tx, clamp(Math.floor(((Math.PI - y0) / TAU) * n), 0, n - 1));
+    };
+    if (!hasCentre(sp.z)) {
+      for (const dz of [1, -1, -2, 2, -3]) {
+        const zz = sp.z + dz;
+        if (zz < 1 || zz > maxZ || !hasCentre(zz)) continue;
+        const alt = span(zz);
+        if (alt.count <= 240) sp = alt;
+        break;
+      }
+    }
+    const { z, n, xL, xR, yT, yB } = sp;
     const tilePx = worldPx / n;
-    ctx.fillStyle = '#4b5a52';
-    ctx.fillRect(0, 0, w, h);
     ctx.imageSmoothingQuality = 'high';
     for (let ty = yT; ty <= yB; ty++) {
       for (let tx = xL; tx <= xR; tx++) {
         const wx = ((tx % n) + n) % n;
         const sx = cx + k * ((tx / n) * TAU - Math.PI - x0);
         const sy = cy - k * (Math.PI - (ty / n) * TAU - y0);
-        const img = imagery.get(z, wx, ty);
+        const own = imagery.has(z, wx, ty);
+        const img = own ? imagery.get(z, wx, ty) : null;
         if (img) {
           ctx.drawImage(img, sx, sy, tilePx + 0.5, tilePx + 0.5);
           continue;
         }
-        // Placeholder: the nearest loaded ancestor tile, cropped and scaled up.
-        for (let dz = 1; dz <= 6 && z - dz >= 0; dz++) {
+        // The nearest ancestor: a placeholder while this tile loads, or a substitute if it does not exist.
+        let requested = own;
+        let drawn = false;
+        for (let dz = 1; dz <= 8 && z - dz >= 0; dz++) {
           const f = 2 ** dz;
-          const parent = imagery.peek(z - dz, Math.floor(wx / f), Math.floor(ty / f));
+          const px = Math.floor(wx / f);
+          const py = Math.floor(ty / f);
+          if (!imagery.has(z - dz, px, py)) continue;
+          const parent = requested ? imagery.peek(z - dz, px, py) : imagery.get(z - dz, px, py);
+          requested = true;
           if (!parent) continue;
           const sub = parent.naturalWidth / f;
           ctx.drawImage(parent, (wx % f) * sub, (ty % f) * sub, sub, sub, sx, sy, tilePx + 0.5, tilePx + 0.5);
+          drawn = true;
           break;
+        }
+        // Or the four tiles one zoom deeper.
+        if (!drawn && !own && z < maxZ) {
+          for (let i = 0; i < 4; i++) {
+            const qx = wx * 2 + (i & 1);
+            const qy = ty * 2 + (i >> 1);
+            const child = imagery.get(z + 1, qx, qy);
+            if (!child) continue;
+            const half = tilePx / 2;
+            ctx.drawImage(child, sx + (i & 1) * half, sy + (i >> 1) * half, half + 0.5, half + 0.5);
+          }
         }
       }
     }

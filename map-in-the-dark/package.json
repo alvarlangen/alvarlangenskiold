@@ -13,6 +13,7 @@
     "format": "prettier --write src tests scripts",
     "qa": "node scripts/qa.mjs",
     "qa:imagery": "node scripts/qa-imagery.mjs",
+    "imagery": "python3 scripts/build-imagery.py",
     "data": "node scripts/build-countries.mjs && node scripts/build-cities.mjs && node scripts/build-flags.mjs && node --max-old-space-size=6000 scripts/build-tiles.mjs",
     "images": "node scripts/build-images.mjs"
   },

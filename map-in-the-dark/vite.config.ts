@@ -28,7 +28,9 @@ function serviceWorker(): Plugin {
         }
       };
       walk(root);
-      const all = files.filter((f) => !['sw.js', '404.html'].includes(f) && !f.endsWith('.map'));
+      // Satellite tiles are cached on demand by the service worker (index.json is precached and versioned).
+      const isImageryTile = (f: string) => f.startsWith('imagery/') && f.endsWith('.webp');
+      const all = files.filter((f) => !['sw.js', '404.html'].includes(f) && !f.endsWith('.map') && !isImageryTile(f));
       const isExtra = (f: string) => f.startsWith('data/tiles/') || f.startsWith('flags/') || f === 'og-image.png';
       // Fonts: only the woff2 Latin subsets are precached; other subsets load on demand (unicode-range).
       const isLazyFont = (f: string) => /\.(woff2?)$/.test(f) && !/-latin-(?!ext)[\w-]*\.woff2$/.test(f);

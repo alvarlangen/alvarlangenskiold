@@ -52,7 +52,7 @@ export function Privacy() {
         clearing your browser’s site data.
       </p>
       <h2>Network requests</h2>
-      {SATELLITE ? (
+      {SATELLITE?.external ? (
         <p>
           The game data, fonts and images are served from this website itself. The satellite images on the map are
           loaded from our imagery provider ({SATELLITE.attribution}). Like any website, the provider receives your IP
@@ -76,12 +76,22 @@ export function Credits() {
       <h1>Credits</h1>
       <p>
         The game data is bundled with the game at build time
-        {SATELLITE ? '; the satellite images are loaded from the imagery provider while you play' : ''}. Data fetched on
-        2026-10-23.
+        {SATELLITE?.external ? '; the satellite images are loaded from the imagery provider while you play' : ''}. Data
+        fetched on 2026-10-23.
       </p>
       <h2>Map and data sources</h2>
       <ul>
-        {SATELLITE && (
+        {SATELLITE?.id === 'local' && (
+          <li>
+            <strong>Satellite imagery</strong>: ESA WorldCover Sentinel-2 RGBNIR yearly median composite 2021 (10 m), ©
+            ESA WorldCover project, contains modified Copernicus Sentinel data (2021) processed by the ESA WorldCover
+            consortium. Creative Commons Attribution 4.0. Colours adjusted and water areas recoloured for the game.{' '}
+            <a href="https://esa-worldcover.org/" rel="noopener">
+              esa-worldcover.org
+            </a>
+          </li>
+        )}
+        {SATELLITE?.external && (
           <li>
             <strong>Satellite imagery</strong>: {SATELLITE.attribution}.
           </li>
