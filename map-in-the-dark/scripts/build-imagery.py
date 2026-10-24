@@ -282,12 +282,14 @@ def worker_init(cells=None):
         'GDAL_DISABLE_READDIR_ON_OPEN': 'EMPTY_DIR',
         'CPL_VSIL_CURL_ALLOWED_EXTENSIONS': '.tif',
         'VSI_CACHE': 'TRUE',
-        'VSI_CACHE_SIZE': str(256 * 1024 * 1024),
-        'GDAL_CACHEMAX': '512',
+        'VSI_CACHE_SIZE': str(128 * 1024 * 1024),
+        'GDAL_CACHEMAX': '256',
         'GDAL_HTTP_MULTIRANGE': 'YES',
         'GDAL_HTTP_MERGE_CONSECUTIVE_RANGES': 'YES',
         'GDAL_HTTP_MAX_RETRY': '5',
         'GDAL_HTTP_RETRY_DELAY': '2',
+        'GDAL_HTTP_TIMEOUT': '60',
+        'GDAL_HTTP_CONNECTTIMEOUT': '20',
     })
 
 
