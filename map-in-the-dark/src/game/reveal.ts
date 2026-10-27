@@ -1,10 +1,11 @@
 /**
- * Where the map window and the search area sit for each step of a city question (pure, seeded).
+ * Where the map and the search area sit for each step of a city question (pure, seeded).
  *
- * The window (visible map) is centred slightly off the city and grows each step. The search area is a
- * circle that always contains the city, offset in a seeded direction, shrinking each step.
+ * The view (what the map shows, as a circle that fits its shorter side) is centred somewhat off the city
+ * in a seeded direction, so the city is not always in the middle, and grows each step. The search area
+ * is a circle that always contains the city, offset in another seeded direction.
  */
-import { SEARCH_KM_BY_STEP, STEPS, WINDOW_KM_BY_STEP } from './config';
+import { SEARCH_KM_BY_STEP, STEPS, VIEW_KM_BY_STEP } from './config';
 import { rngFrom } from './rng';
 
 export interface CircleKm {
@@ -31,19 +32,19 @@ export function distanceKm([lon1, lat1]: [number, number], [lon2, lat2]: [number
   return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(a)));
 }
 
-export function revealPlan(city: [number, number], seed: string): { window: CircleKm[]; search: CircleKm[] } {
+export function revealPlan(city: [number, number], seed: string): { view: CircleKm[]; search: (CircleKm | null)[] } {
   const rng = rngFrom(`${seed}:reveal`);
-  const wBearing = rng() * Math.PI * 2;
-  const wDist = (0.15 + rng() * 0.25) * WINDOW_KM_BY_STEP[0];
-  const windowCenter = offsetKm(city, wDist, wBearing);
+  const vBearing = rng() * Math.PI * 2;
+  const vShare = 0.1 + rng() * 0.2;
   const sBearing = rng() * Math.PI * 2;
   const sShare = 0.3 + rng() * 0.35;
-  const window: CircleKm[] = [];
-  const search: CircleKm[] = [];
+  const view: CircleKm[] = [];
+  const search: (CircleKm | null)[] = [];
   for (let s = 0; s < STEPS; s++) {
-    window.push({ center: windowCenter, radiusKm: WINDOW_KM_BY_STEP[s] });
+    const radiusKm = VIEW_KM_BY_STEP[s] / 2;
+    view.push({ center: offsetKm(city, radiusKm * vShare, vBearing), radiusKm });
     const r = SEARCH_KM_BY_STEP[s];
-    search.push({ center: offsetKm(city, r * sShare, sBearing), radiusKm: r });
+    search.push(r > 0 ? { center: offsetKm(city, r * sShare, sBearing), radiusKm: r } : null);
   }
-  return { window, search };
+  return { view, search };
 }

@@ -1,4 +1,4 @@
-import { POINTS_BY_STEP, WINDOW_KM_BY_STEP } from '../game/config';
+import { POINTS_BY_STEP, VIEW_KM_BY_STEP } from '../game/config';
 import { PracticePicker } from './Landing';
 import { SATELLITE } from '../map/satellite';
 
@@ -7,17 +7,17 @@ export function About() {
     <div class="page page-narrow prose">
       <h1>How to play</h1>
       <p>
-        Every day there are five hidden cities. For each one you see a real map of its surroundings, without any names.
-        The hidden city is always inside the green circle.
+        Every day there are five hidden cities. For each one you start with a satellite close-up of the city centre,
+        without any names. Each step zooms the map out; from step 3 a green circle marks where the city is.
       </p>
       <h2>Six steps</h2>
       <ol>
-        <li>Continent · map {WINDOW_KM_BY_STEP[0] * 2} km across</li>
-        <li>The country’s language and currency · {WINDOW_KM_BY_STEP[1] * 2} km</li>
-        <li>The colors of the country’s flag · {WINDOW_KM_BY_STEP[2] * 2} km</li>
-        <li>First letter and length of the city’s name · {WINDOW_KM_BY_STEP[3] * 2} km</li>
-        <li>First letter and length of the country’s name · {WINDOW_KM_BY_STEP[4] * 2} km</li>
-        <li>The country’s neighbors · {WINDOW_KM_BY_STEP[5] * 2} km</li>
+        <li>Continent · map {VIEW_KM_BY_STEP[0].toLocaleString('en')} km across</li>
+        <li>The country’s language and currency · {VIEW_KM_BY_STEP[1].toLocaleString('en')} km</li>
+        <li>The colors of the country’s flag · {VIEW_KM_BY_STEP[2].toLocaleString('en')} km</li>
+        <li>First letter and length of the city’s name · {VIEW_KM_BY_STEP[3].toLocaleString('en')} km</li>
+        <li>First letter and length of the country’s name · {VIEW_KM_BY_STEP[4].toLocaleString('en')} km</li>
+        <li>The country’s neighbors · {VIEW_KM_BY_STEP[5].toLocaleString('en')} km</li>
       </ol>
       <h2>Rules</h2>
       <ul>

@@ -4,7 +4,7 @@
  * built-up areas, lakes, rivers, railways, roads, borders and towns.
  *
  * Game overlays:
- *  - window: everything outside a circle is hidden under a light fog; the circle grows per step
+ *  - bounds: the area of the current step; the player cannot zoom out beyond it or pan away from it
  *  - search: a green circle that contains the target city and shrinks per step
  *  - pin:    the answer, with its name, after the reveal
  *
@@ -16,13 +16,6 @@ import { SATELLITE, TileImages, type RasterSource } from './satellite';
 const RAD = Math.PI / 180;
 const EARTH_KM = 6371;
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
-/** "#rrggbb" + alpha → "rgba(…)". */
-function withAlpha(hex: string, a: number): string {
-  const m = /^#([0-9a-f]{6})$/i.exec(hex.trim());
-  if (!m) return `rgba(255,255,255,${a})`;
-  const n = parseInt(m[1], 16);
-  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
-}
 /** Fallback colours under the satellite imagery (match the water colour of scripts/build-imagery.py). */
 const SAT_WATER = '#1b314a';
 const SAT_LAND = '#6a7052';
@@ -34,7 +27,8 @@ export interface Circle {
 }
 
 export interface AtlasScene {
-  window: Circle | null;
+  /** The area the map shows in this step (it fits the shorter side); null = free to explore. */
+  bounds: Circle | null;
   search: Circle | null;
   pin: { at: [number, number]; label: string } | null;
 }
@@ -58,8 +52,6 @@ interface Palette {
   admin1: string;
   town: string;
   townHalo: string;
-  fog: string;
-  windowLine: string;
   accent: string;
   accentFill: string;
   ink: string;
@@ -89,10 +81,8 @@ export class AtlasView {
   private h = 1;
   private cam: Camera = { lon: 0, lat: 20, k: 300 };
   private flight: { from: Camera; to: Camera; start: number; dur: number } | null = null;
-  private scene: AtlasScene = { window: null, search: null, pin: null };
-  private winR: Tween | null = null;
+  private scene: AtlasScene = { bounds: null, search: null, pin: null };
   private searchR: Tween | null = null;
-  private fogAlpha: Tween = { from: 1, to: 1, start: 0, dur: 1 };
   private pinTime = 0;
   private tiles = new Map<string, Tile>();
   private pending = new Set<string>();
@@ -135,7 +125,7 @@ export class AtlasView {
   // ── Public API ──────────────────────────────────────────────────────
 
   /** Pixels per radian that make a circle of `radiusKm` fill `fill` of the shorter side. */
-  fitK(lat: number, radiusKm: number, fill = 0.84): number {
+  fitK(lat: number, radiusKm: number, fill = 1): number {
     return (fill * Math.min(this.w, this.h) * 0.5 * EARTH_KM * Math.cos(lat * RAD)) / radiusKm;
   }
 
@@ -170,16 +160,10 @@ export class AtlasView {
     const prev = this.scene;
     const dur = this.opts.reducedMotion ? 1 : 900;
     const cur = (t: Tween | null, fallback: number) => (t ? this.tweenValue(t, now) : fallback);
-    if (next.window) {
-      const from = prev.window ? cur(this.winR, prev.window.radiusKm) : next.window.radiusKm * 0.6;
-      this.winR = { from, to: next.window.radiusKm, start: now, dur };
-    }
     if (next.search) {
       const from = prev.search ? cur(this.searchR, prev.search.radiusKm) : next.search.radiusKm;
       this.searchR = { from, to: next.search.radiusKm, start: now, dur };
     }
-    const fogNow = this.tweenValue(this.fogAlpha, now);
-    this.fogAlpha = { from: fogNow, to: next.window ? 1 : 0, start: now, dur: this.opts.reducedMotion ? 1 : 1200 };
     if (next.pin && !prev.pin) this.pinTime = now;
     this.scene = next;
     this.invalidate();
@@ -234,8 +218,6 @@ export class AtlasView {
       admin1: v('--map-admin1', '#c8c3b6'),
       town: v('--map-town', '#4b5148'),
       townHalo: v('--map-town-halo', '#ffffff'),
-      fog: v('--map-fog', '#eef2ec'),
-      windowLine: v('--map-window', '#1f7a45'),
       accent: v('--accent', '#1f7a45'),
       accentFill: v('--map-search', 'rgba(31,122,69,0.12)'),
       ink: v('--text', '#14201a'),
@@ -259,12 +241,35 @@ export class AtlasView {
     this.invalidate();
   }
 
+  /** Furthest zoom out: the whole world, or the current step's area. */
   private minK() {
-    return this.fitK(this.cam.lat, 2500, 1);
+    const b = this.scene.bounds;
+    if (b) return this.fitK(b.center[1], b.radiusKm) * 0.999;
+    return this.fitK(this.cam.lat, 2500);
   }
 
   private maxK() {
-    return this.fitK(this.cam.lat, 4, 1);
+    return this.fitK(this.cam.lat, 1.5);
+  }
+
+  /** Keep the camera inside the current step's area (after the player zooms or pans). */
+  private constrain() {
+    this.cam.k = clamp(this.cam.k, this.minK(), this.maxK());
+    const b = this.scene.bounds;
+    if (!b) return;
+    const cos = Math.cos(b.center[1] * RAD);
+    const viewKm = (Math.min(this.w, this.h) / 2 / this.cam.k) * EARTH_KM * Math.cos(this.cam.lat * RAD);
+    const allowed = Math.max(0, b.radiusKm - viewKm);
+    let dLon = this.cam.lon - b.center[0];
+    if (dLon > 180) dLon -= 360;
+    if (dLon < -180) dLon += 360;
+    const dx = dLon * 111.32 * cos;
+    const dy = (this.cam.lat - b.center[1]) * 111.32;
+    const d = Math.hypot(dx, dy);
+    if (d <= allowed) return;
+    const f = allowed / d;
+    this.cam.lon = b.center[0] + dLon * f;
+    this.cam.lat = b.center[1] + (this.cam.lat - b.center[1]) * f;
   }
 
   private tweenValue(t: Tween, now: number) {
@@ -275,7 +280,7 @@ export class AtlasView {
   private animating(now: number) {
     if (this.flight) return true;
     const live = (t: Tween | null) => !!t && now - t.start < t.dur;
-    if (live(this.winR) || live(this.searchR) || live(this.fogAlpha)) return true;
+    if (live(this.searchR)) return true;
     if (this.scene.pin && now - this.pinTime < 700) return true;
     return false;
   }
@@ -294,7 +299,7 @@ export class AtlasView {
       this.cam.lat = from.lat + (to.lat - from.lat) * e;
       this.cam.k = Math.exp(Math.log(from.k) + (Math.log(to.k) - Math.log(from.k)) * e);
       if (p >= 1) this.flight = null;
-    }
+    } else this.constrain();
     this.draw(now);
     if (this.animating(now)) this.invalidate();
   }
@@ -459,35 +464,6 @@ export class AtlasView {
       ctx.strokeStyle = pal.accent;
       ctx.lineWidth = imagery ? 2.5 : 2;
       ctx.stroke();
-    }
-
-    // Fog outside the window, with a soft edge.
-    const fog = this.tweenValue(this.fogAlpha, now);
-    const win = this.scene.window ?? null;
-    if (fog > 0.01) {
-      const center = win?.center ?? [this.cam.lon, this.cam.lat];
-      const rKm = this.winR ? this.tweenValue(this.winR, now) : 1e5;
-      const r = rKm * kmToPx(center[1]) * (win ? 1 : 1 + (1 - fog) * 4);
-      const [fx, fy] = toPx(center[0], center[1]);
-      ctx.save();
-      ctx.globalAlpha = fog;
-      const g = ctx.createRadialGradient(fx, fy, r * 0.9, fx, fy, r);
-      // Fade from the fog colour at zero alpha (not transparent black, which would leave a grey halo).
-      g.addColorStop(0, withAlpha(pal.fog, 0));
-      g.addColorStop(1, pal.fog);
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, w, h);
-      if (win) {
-        ctx.beginPath();
-        ctx.arc(fx, fy, r * 0.97, 0, Math.PI * 2);
-        ctx.setLineDash([2, 5]);
-        ctx.strokeStyle = pal.windowLine;
-        ctx.globalAlpha = fog * 0.55;
-        ctx.lineWidth = 1.4;
-        ctx.stroke();
-        ctx.setLineDash([]);
-      }
-      ctx.restore();
     }
 
     // Answer pin.

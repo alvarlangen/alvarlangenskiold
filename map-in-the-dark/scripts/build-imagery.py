@@ -5,9 +5,9 @@ Satellite imagery bundled with the game, cut into Web Mercator XYZ tiles around 
 Source: ESA WorldCover Sentinel-2 RGBNIR yearly median composite 2021 (10 m, cloud-free), CC BY 4.0,
 read straight from the public AWS bucket (Cloud-Optimized GeoTIFFs in 1° x 1° cells, with overviews).
 
-Only the area each city's map can show is produced: for every step the window circle (plus the
-window's offset) at the zoom a typical phone uses for it, and the area around the city after the
-reveal. Elsewhere the game falls back to lower zooms and to the bundled vector map.
+Only the area each city's map can show is produced: for every step the map's area around the city
+at the zoom a typical phone uses for it (the reveal uses step 2's area). Elsewhere the game falls back
+to lower zooms and to the bundled vector map.
 
 Output: public/imagery/{z}/{x}/{y}.webp and public/imagery/index.json (which tiles exist).
 Existing tiles are kept, so the script can be re-run to resume.
@@ -40,12 +40,12 @@ BUCKET = 'https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com'
 PREFIX = 'rgbnir/2021'
 CELL_PX = 12000  # pixels per degree at full resolution
 
-# Mirrors src/game/config.ts and the camera in Game.tsx / AtlasView.fitK.
-WINDOW_KM_BY_STEP = [35, 70, 130, 230, 400, 700]
-WINDOW_OFFSET_KM = 15  # max distance of the window centre from the city (reveal.ts)
-REVEAL_KM = 160
-REVEAL_COVER_KM = 300
-MIN_Z, MAX_Z = 3, 11
+# Mirrors VIEW_KM_BY_STEP in src/game/config.ts: the map's shorter side in km (REVEAL_VIEW_KM = step 2).
+VIEW_KM_BY_STEP = [8, 25, 120, 400, 900, 2200]
+# Area covered per step, as a radius around the city in units of half the view: the view's centre is
+# up to 0.3 half-views from the city (reveal.ts) and the longer side of the map shows a bit more.
+COVER = 1.35
+MIN_Z, MAX_Z = 3, 13
 EARTH_KM = 6371
 DEMO = {'id': 'demo-trondheim', 'lonlat': [10.395, 63.43]}  # landing page demo
 
@@ -54,15 +54,16 @@ ap.add_argument('--dry', action='store_true')
 ap.add_argument('--only')
 ap.add_argument('--px', type=float, default=800, help='device pixels across the shorter side of the map')
 ap.add_argument('--quality', type=int, default=60)
+ap.add_argument('--prune', action='store_true', help='delete tiles that are no longer needed')
 ap.add_argument('--jobs', type=int, default=8, help='parallel workers (each needs up to ~1 GB)')
 args = ap.parse_args()
 
 
 # ── Which tiles ─────────────────────────────────────────────────────
 
-def zoom_for(lat, r_km):
-    """Zoom AtlasView.drawImagery picks when a circle of radius r km fills 84 % of the shorter side."""
-    k = 0.84 * args.px * 0.5 * EARTH_KM * math.cos(math.radians(lat)) / r_km
+def zoom_for(lat, view_km):
+    """Zoom AtlasView.drawImagery picks when the shorter side of the map shows view_km."""
+    k = args.px * EARTH_KM * math.cos(math.radians(lat)) / view_km
     return min(MAX_Z, max(MIN_Z, round(math.log2(2 * math.pi * k / 256))))
 
 
@@ -113,9 +114,8 @@ def wanted_tiles():
     wanted = set()
     for p in places:
         lat = p['lonlat'][1]
-        for r in WINDOW_KM_BY_STEP:
-            tiles_in_circle(p['lonlat'], r + WINDOW_OFFSET_KM, zoom_for(lat, r), wanted)
-        tiles_in_circle(p['lonlat'], REVEAL_COVER_KM, zoom_for(lat, REVEAL_KM), wanted)
+        for view in VIEW_KM_BY_STEP:
+            tiles_in_circle(p['lonlat'], view / 2 * COVER, zoom_for(lat, view), wanted)
     return places, wanted
 
 
@@ -327,6 +327,19 @@ def main():
     for z, _, _ in wanted:
         by_zoom[z] = by_zoom.get(z, 0) + 1
     print(f'{len(places)} places -> {len(wanted)} tiles', ' '.join(f'z{z}:{n}' for z, n in sorted(by_zoom.items())))
+    if args.prune:
+        removed = 0
+        for z in [d for d in os.listdir(OUT) if d.isdigit()]:
+            for x in os.listdir(os.path.join(OUT, z)):
+                for f in os.listdir(os.path.join(OUT, z, x)):
+                    if (int(z), int(x), int(f[:-5])) not in wanted:
+                        os.remove(os.path.join(OUT, z, x, f))
+                        removed += 1
+                if not os.listdir(os.path.join(OUT, z, x)):
+                    os.rmdir(os.path.join(OUT, z, x))
+            if not os.listdir(os.path.join(OUT, z)):
+                os.rmdir(os.path.join(OUT, z))
+        print(f'pruned {removed} tiles')
     if args.dry:
         return
     cells = list_cells()

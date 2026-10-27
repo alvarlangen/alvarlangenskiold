@@ -3,8 +3,9 @@
 A daily city geography game. You see a real map around a hidden city; every step opens the map further and
 gives a new clue. Name the city in as few steps as you can.
 
-- **One daily round of 5 cities × 6 steps.** The visible map grows from 70 km to 1,400 km across; a green circle,
-  shrinking each step, always contains the city.
+- **One daily round of 5 cities × 6 steps.** Each city starts with a satellite close-up of its centre (8 km across)
+  and the map zooms out every step: 25, 120, 400, 900 and 2,200 km. From step 3 a green circle contains the city.
+  The player cannot zoom out or pan beyond the current step.
 - **Satellite maps without labels**, bundled with the game: a cloud-free Sentinel-2 composite (ESA WorldCover 2021,
   10 m) around every city. No API key, no running costs, no requests to other services. An online provider (Esri,
   MapTiler, Mapbox) can be configured instead. Outside the imagery the bundled Natural Earth map is used.
@@ -41,10 +42,10 @@ npm run dev        # http://localhost:5173
 
 ## Satellite imagery
 
-**Bundled (default).** `public/imagery/{z}/{x}/{y}.webp` holds about 24,000 Web Mercator tiles (≈130 MB) made by
+**Bundled (default).** `public/imagery/{z}/{x}/{y}.webp` holds about 33,500 Web Mercator tiles made by
 `scripts/build-imagery.py` from the **ESA WorldCover Sentinel-2 RGBNIR yearly median composite 2021** (10 m,
 cloud-free, CC BY 4.0), read directly from its public AWS bucket. For every city (and the landing page demo) the script
-produces the map window of each step at the zoom a phone uses for it, plus the area around the city after the reveal.
+produces the map area of each step at the zoom a phone uses for it (zoom 13 for the 8 km close-up down to zoom 5).
 Water is detected from the near-infrared band and drawn in one colour; open sea has no source data and gets the same
 colour. `public/imagery/index.json` lists the tiles, so the game never requests a tile that does not exist; elsewhere
 it uses a lower zoom, and finally the bundled vector map.
@@ -106,11 +107,11 @@ After changing an environment variable, redeploy so the build picks it up.
 - `scripts/build-tiles.mjs` cuts the Natural Earth 1:10m layers into 10° × 10° tiles (`public/data/tiles/{x}_{y}.json`),
   only where a city's map can reach: 272 tiles, about 12 MB raw / 4.5 MB gzipped in total, roughly 300 KB per city.
   Geometry is clipped, simplified (~200–600 m tolerance) and stored as delta-encoded integers.
-- `src/map/AtlasView.ts` draws the tiles on a 2D canvas in Mercator, with a fog that hides everything outside the
-  current window, the green search circle, a scale bar and the answer pin. It redraws only while something moves.
-- `src/game/reveal.ts` decides, per question and seed, where the window and the search circle sit. The window is
-  centred slightly off the city; the circle contains the city but is offset in a seeded direction, so no single town
-  dot gives the answer away early. Sizes are in `src/game/config.ts` (`WINDOW_KM_BY_STEP`, `SEARCH_KM_BY_STEP`).
+- `src/map/AtlasView.ts` draws the map on a 2D canvas in Mercator, with the green search circle, a scale bar and the
+  answer pin, and keeps the camera inside the current step's area. It redraws only while something moves.
+- `src/game/reveal.ts` decides, per question and seed, where the map and the search circle sit. The map is centred
+  somewhat off the city; the circle contains the city but is offset in another seeded direction. Sizes are in
+  `src/game/config.ts` (`VIEW_KM_BY_STEP`, `SEARCH_KM_BY_STEP`, `REVEAL_VIEW_KM`).
 
 Where there is no imagery (or with `VITE_MAP_PROVIDER=none`), the bundled Natural Earth map (1:10 million) shows the city's built-up area, main roads,
 rivers and coast, but not individual streets.
@@ -181,7 +182,8 @@ names, fame 0–2, fact or null]`), then run `node scripts/build-cities.mjs`, `n
   `node --max-old-space-size=6000 scripts/build-tiles.mjs`, then `python3 scripts/build-imagery.py`.
 - **Add an alternative name:** the alt list in `cities-curated.mjs`.
 - **Add a clue type:** add a `ClueKind` in `src/game/types.ts`, produce it in `src/game/clues.ts`, update the tests.
-- **Change pacing:** `WINDOW_KM_BY_STEP`, `SEARCH_KM_BY_STEP` and points in `src/game/config.ts`.
+- **Change pacing:** `VIEW_KM_BY_STEP`, `SEARCH_KM_BY_STEP` and points in `src/game/config.ts`, then mirror
+  `VIEW_KM_BY_STEP` in `scripts/build-imagery.py` and rebuild the imagery.
 - **Add a map layer:** add the Natural Earth file to `LAYERS` in `scripts/build-tiles.mjs` and draw it in `AtlasView.draw`.
 
 ## Licenses

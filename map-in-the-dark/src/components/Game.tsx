@@ -6,7 +6,7 @@ import { Results } from './Results';
 import { IconBack, IconFire, IconMinus, IconPlus, IconStar, IconTarget } from './Icons';
 import type { AtlasView } from '../map/AtlasView';
 import { TARGETS, cityById, cityName, countryOfCity, nameIndex } from '../data';
-import { AUTO_ADVANCE_SECONDS, QUESTIONS_PER_ROUND, STEPS } from '../game/config';
+import { AUTO_ADVANCE_SECONDS, QUESTIONS_PER_ROUND, REVEAL_VIEW_KM, STEPS } from '../game/config';
 import { cityClues } from '../game/clues';
 import { dailyNumber, utcDateKey } from '../game/dates';
 import { describeLocation } from '../game/describe';
@@ -137,9 +137,9 @@ export function Game({ kind, continent }: Props) {
   useEffect(() => {
     const view = viewRef.current;
     if (!view || !plan || !city || !round) return;
-    const win = plan.window[step - 1];
+    const win = plan.view[step - 1];
     view.setScene({
-      window: revealed ? null : win,
+      bounds: revealed ? null : win,
       search: revealed ? null : plan.search[step - 1],
       pin: revealed ? { at: city.lonlat, label: city.name } : null,
     });
@@ -147,10 +147,10 @@ export function Game({ kind, continent }: Props) {
     const shown = shownRef.current;
     shownRef.current = `${key}:${step}:${revealed}`;
     if (!shown.startsWith(`${key}:`)) {
-      // New question: jump straight to the first window (no flight across the fogged world).
+      // New question: jump straight to the first view (no flight across the world).
       view.fitCircle(win);
     } else if (revealed) {
-      view.flyTo(city.lonlat[0], city.lonlat[1], view.fitK(city.lonlat[1], 160), 1300);
+      view.flyTo(city.lonlat[0], city.lonlat[1], view.fitK(city.lonlat[1], REVEAL_VIEW_KM / 2), 1300);
     } else {
       view.frameCircle(win, 1000);
     }
@@ -159,10 +159,14 @@ export function Game({ kind, continent }: Props) {
   // ── Accessibility: describe what the map shows ──
   const mapLabel = useMemo(() => {
     if (!plan || !country) return 'Map';
-    const win = plan.window[step - 1];
+    const win = plan.view[step - 1];
     const where = describeLocation(win.center[0], win.center[1], country.continents[0]);
     if (revealed && city) return `Map of the area around ${city.name}, ${country.name}.`;
-    return `Real map of an area ${win.radiusKm * 2} km across in ${where}, with towns as dots. A green circle ${plan.search[step - 1].radiusKm * 2} km wide contains the city.`;
+    const search = plan.search[step - 1];
+    const circle = search
+      ? ` A green circle ${search.radiusKm * 2} km wide contains the city.`
+      : ' The city is on the map.';
+    return `Satellite map of an area ${win.radiusKm * 2} km across in ${where}.${circle}`;
   }, [plan, step, revealed, country, city]);
 
   // Announce new clues.
@@ -296,7 +300,7 @@ export function Game({ kind, continent }: Props) {
   const currentClue = clues[step - 1];
   const pastClues = clues.slice(0, revealed ? STEPS : step - 1);
   const panelProps: HTMLAttributes<HTMLElement> = { onPointerDown: () => revealed && setAutoOn(false) };
-  const win = plan?.window[step - 1];
+  const win = plan?.view[step - 1];
 
   return (
     <div class={`game${kbOpen && focused ? ' kb-open' : ''}`}>
@@ -355,7 +359,8 @@ export function Game({ kind, continent }: Props) {
             onClick={() => {
               const view = viewRef.current;
               if (!view || !win) return;
-              if (revealed) view.flyTo(city.lonlat[0], city.lonlat[1], view.fitK(city.lonlat[1], 160), 800);
+              if (revealed)
+                view.flyTo(city.lonlat[0], city.lonlat[1], view.fitK(city.lonlat[1], REVEAL_VIEW_KM / 2), 800);
               else view.frameCircle(win, 800);
             }}
           >
@@ -426,7 +431,9 @@ export function Game({ kind, continent }: Props) {
                 {feedback?.text ??
                   (step === STEPS
                     ? 'Last step: a wrong guess reveals the answer.'
-                    : 'The city is inside the green circle.')}
+                    : plan?.search[step - 1]
+                      ? 'The city is inside the green circle.'
+                      : 'The city is on this map.')}
               </div>
               <div class="guess-actions">
                 <button class="btn btn-ghost btn-sm" type="button" onClick={onSkip}>

@@ -10,16 +10,20 @@ export const STEPS = 6;
 export const QUESTIONS_PER_ROUND = 5;
 
 /**
- * Radius (km) of the visible map window in step 1…6. Everything outside is hidden under fog, so the
- * player starts with a close-up of the city's surroundings and zooms out step by step.
+ * Size (km) of the map in step 1…6: the shorter side of the map shows this distance. Each city starts
+ * with a close-up of its centre and the map zooms out every step. The player cannot zoom out further
+ * than the current step allows (or pan away from it).
  */
-export const WINDOW_KM_BY_STEP = [35, 70, 130, 230, 400, 700] as const;
+export const VIEW_KM_BY_STEP = [8, 25, 120, 400, 900, 2200] as const;
+
+/** Size (km) of the map around the city after the answer is revealed. */
+export const REVEAL_VIEW_KM = 25;
 
 /**
- * Radius (km) of the green search area that contains the target city. Its centre is offset from the
- * city, so in early steps no single town dot gives the answer away.
+ * Radius (km) of the green circle that contains the city in step 1…6, or 0 for none (in the first steps
+ * the whole map is the city). Its centre is offset from the city in a seeded direction.
  */
-export const SEARCH_KM_BY_STEP = [20, 15, 10, 6, 3, 1.5] as const;
+export const SEARCH_KM_BY_STEP = [0, 0, 12, 25, 40, 60] as const;
 
 /** XP = XP_BASE × (points / 100) × combo multiplier × (GOLDEN_MULTIPLIER if golden). */
 export const XP_BASE = 20;

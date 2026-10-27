@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import TILE_INDEX from '../src/data/tiles.json';
 import { CITIES, COUNTRIES, TARGETS, countryById, nameIndex } from '../src/data';
-import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, STEPS, WINDOW_KM_BY_STEP } from '../src/game/config';
+import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, STEPS, VIEW_KM_BY_STEP } from '../src/game/config';
 import { selectByTiers, selectDaily, selectPractice } from '../src/game/selection';
 import {
   comboMultiplier,
@@ -256,16 +256,19 @@ describe('data quality', () => {
 });
 
 describe('map reveal', () => {
-  it('keeps the city inside every window and search circle', () => {
+  it('keeps the city on the map and inside every search circle', () => {
     for (const c of CITIES.slice(0, 120)) {
       const plan = revealPlan(c.lonlat, `seed:${c.id}`);
-      plan.window.forEach((w, i) => {
-        expect(w.radiusKm).toBe(WINDOW_KM_BY_STEP[i]);
-        expect(distanceKm(w.center, c.lonlat)).toBeLessThan(w.radiusKm * 0.5);
+      plan.view.forEach((v, i) => {
+        expect(v.radiusKm).toBe(VIEW_KM_BY_STEP[i] / 2);
+        expect(distanceKm(v.center, c.lonlat)).toBeLessThan(v.radiusKm * 0.5);
       });
       plan.search.forEach((s, i) => {
-        expect(s.radiusKm).toBe(SEARCH_KM_BY_STEP[i]);
-        expect(distanceKm(s.center, c.lonlat)).toBeLessThan(s.radiusKm);
+        if (SEARCH_KM_BY_STEP[i] === 0) return expect(s).toBeNull();
+        expect(s!.radiusKm).toBe(SEARCH_KM_BY_STEP[i]);
+        expect(distanceKm(s!.center, c.lonlat)).toBeLessThan(s!.radiusKm);
+        // The circle fits on the map.
+        expect(s!.radiusKm).toBeLessThan(plan.view[i].radiusKm * 0.5);
       });
     }
   });
@@ -273,13 +276,14 @@ describe('map reveal', () => {
   it('does not centre the search circle on the city', () => {
     const c = city('paris-fr');
     const plan = revealPlan(c.lonlat, 'x');
-    expect(distanceKm(plan.search[0].center, c.lonlat)).toBeGreaterThan(SEARCH_KM_BY_STEP[0] * 0.25);
+    const i = SEARCH_KM_BY_STEP.findIndex((r) => r > 0);
+    expect(distanceKm(plan.search[i]!.center, c.lonlat)).toBeGreaterThan(SEARCH_KM_BY_STEP[i] * 0.25);
   });
 
-  it('is deterministic and the window grows every step', () => {
+  it('is deterministic and the map zooms out every step', () => {
     const c = city('lima-pe');
     expect(revealPlan(c.lonlat, 's')).toEqual(revealPlan(c.lonlat, 's'));
-    for (let i = 1; i < STEPS; i++) expect(WINDOW_KM_BY_STEP[i]).toBeGreaterThan(WINDOW_KM_BY_STEP[i - 1]);
+    for (let i = 1; i < STEPS; i++) expect(VIEW_KM_BY_STEP[i]).toBeGreaterThan(VIEW_KM_BY_STEP[i - 1]);
   });
 
   it('measures offsets in kilometres', () => {
@@ -410,9 +414,9 @@ describe('bundled satellite imagery', () => {
     const missing: string[] = [];
     for (const c of CITIES) {
       const [lon, lat] = c.lonlat;
-      // Some zoom between 5 and 11 has the city's tile; the closest steps need zoom ≥ 9.
+      // The close-up steps need zoom 12–13 at the city, the last steps zoom 6 or lower.
       const zooms = [...sets.keys()].filter((z) => has(z, lon, lat));
-      if (!zooms.some((z) => z >= 9) || !zooms.some((z) => z <= 7)) missing.push(`${c.id}: ${zooms.join(',')}`);
+      if (!zooms.some((z) => z >= 12) || !zooms.some((z) => z <= 6)) missing.push(`${c.id}: ${zooms.join(',')}`);
     }
     expect(missing).toEqual([]);
   });

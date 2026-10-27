@@ -4,7 +4,7 @@ import { IconArrow, IconBolt, IconCheck, IconFire, IconLayers, IconStar } from '
 import type { AtlasView } from '../map/AtlasView';
 import { CONTINENTS } from '../data/continents';
 import { SATELLITE } from '../map/satellite';
-import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, WINDOW_KM_BY_STEP } from '../game/config';
+import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, VIEW_KM_BY_STEP } from '../game/config';
 import { dailyNumber, formatCountdown, utcDateKey } from '../game/dates';
 import { visibleStreak } from '../game/progress';
 import { offsetKm } from '../game/reveal';
@@ -17,7 +17,6 @@ import { reducedMotion } from '../lib/theme';
 
 /** Demo area for the landing page: Trondheim, Norway, which is not one of the game's cities. */
 const DEMO_CITY: [number, number] = [10.395, 63.43];
-const DEMO_WINDOW = offsetKm(DEMO_CITY, 9, 3.6);
 
 function HeroMap() {
   const viewRef = useRef<AtlasView | null>(null);
@@ -34,9 +33,11 @@ function HeroMap() {
   useEffect(() => {
     const v = viewRef.current;
     if (!v) return;
-    const win = { center: DEMO_WINDOW, radiusKm: WINDOW_KM_BY_STEP[step - 1] };
+    const radiusKm = VIEW_KM_BY_STEP[step - 1] / 2;
+    const win = { center: offsetKm(DEMO_CITY, radiusKm * 0.2, 3.6), radiusKm };
     const r = SEARCH_KM_BY_STEP[step - 1];
-    v.setScene({ window: win, search: { center: offsetKm(DEMO_CITY, r * 0.45, 0.8), radiusKm: r }, pin: null });
+    const search = r > 0 ? { center: offsetKm(DEMO_CITY, r * 0.45, 0.8), radiusKm: r } : null;
+    v.setScene({ bounds: win, search, pin: null });
     if (step === 1) v.fitCircle(win);
     else v.frameCircle(win, 1100);
   }, [step, ready]);
@@ -52,7 +53,7 @@ function HeroMap() {
         }}
       />
       <span class="demo-tag" aria-hidden="true">
-        <strong>Step {step}</strong> · map {WINDOW_KM_BY_STEP[step - 1] * 2} km wide
+        <strong>Step {step}</strong> · map {VIEW_KM_BY_STEP[step - 1].toLocaleString('en')} km wide
       </span>
     </div>
   );
@@ -106,8 +107,8 @@ const FAQ: [string, string][] = [
   [
     'What is on the map?',
     SATELLITE
-      ? 'Real satellite images of the area around the city, with country borders drawn on top. Place names are hidden. The hidden city is always inside the green circle.'
-      : 'Coastlines, lakes, rivers, built-up areas, main roads, railways, borders and towns from Natural Earth and GeoNames. Place names are hidden. The hidden city is always inside the green circle.',
+      ? 'Real satellite images of the area around the city, with country borders drawn on top. Place names are hidden. The map zooms out each step; from step 3 a green circle marks where the city is.'
+      : 'Coastlines, lakes, rivers, built-up areas, main roads, railways, borders and towns from Natural Earth and GeoNames. Place names are hidden. The map zooms out each step; from step 3 a green circle marks where the city is.',
   ],
   ['When does a new round start?', 'Every day at midnight UTC. Everyone gets the same five cities on the same day.'],
   [
@@ -176,9 +177,10 @@ export function Landing() {
         <div class="section-head">
           <h2 id="how-h">How it works</h2>
           <p>
-            Each city starts with a close-up map about {WINDOW_KM_BY_STEP[0] * 2} km across. A wrong guess or “I don’t
-            know” opens the map further and gives the next clue. By step 6 you see {WINDOW_KM_BY_STEP[5] * 2} km of the
-            region. The hidden city is always inside the green circle.
+            Each city starts with a satellite close-up of its centre, about {VIEW_KM_BY_STEP[0]} km across. A wrong
+            guess or “I don’t know” zooms the map out and gives the next clue. By step 6 you see{' '}
+            {VIEW_KM_BY_STEP[5].toLocaleString('en')} km of the continent. From step 3 a green circle marks where the
+            city is.
           </p>
         </div>
         <ol class="step-list" aria-label="The six steps of a question">
@@ -189,7 +191,7 @@ export function Landing() {
                 <span class="t">{t}</span>
                 <br />
                 <span class="d">
-                  Map {WINDOW_KM_BY_STEP[i] * 2} km wide · e.g. {d}
+                  Map {VIEW_KM_BY_STEP[i].toLocaleString('en')} km wide · e.g. {d}
                 </span>
               </span>
               <span class="pts">{POINTS_BY_STEP[i]} pts</span>
