@@ -43,10 +43,12 @@ npm run dev        # http://localhost:5173
 
 ## Satellite imagery
 
-**Bundled (default).** `public/imagery/{z}/{x}/{y}.webp` holds about 17,000 Web Mercator tiles (≈140 MB) made by
+**Bundled (default).** `public/imagery/{z}/{x}/{y}.webp` holds about 27,000 Web Mercator tiles (≈330 MB) made by
 `scripts/build-imagery.py` from the **ESA WorldCover Sentinel-2 RGBNIR yearly median composite 2021** (10 m,
 cloud-free, CC BY 4.0), read directly from its public AWS bucket. For every city (and the landing page demo) the script
-produces the map area of each step at the zoom a phone uses for it (zoom 13 for the 8 km close-up down to zoom 5).
+produces the map area of each step at the zoom a screen uses for it: zoom 14 and 13 for the close-ups (built for large
+screens), down to zoom 5 for 2,200 km. Close-up tiles are read at the source's full 10 m resolution, resampled
+bicubically and lightly sharpened.
 Water is detected from the near-infrared band and drawn in one colour; open sea has no source data and gets the same
 colour. `public/imagery/index.json` lists the tiles, so the game never requests a tile that does not exist; elsewhere
 it uses a lower zoom, and finally the bundled vector map.

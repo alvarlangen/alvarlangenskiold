@@ -38,7 +38,7 @@ const PRESETS: Record<string, Preset> = {
   local: {
     template: './imagery/{z}/{x}/{y}.webp',
     attribution: 'Sentinel-2 composite © ESA WorldCover project · contains modified Copernicus Sentinel data (2021)',
-    maxZoom: 13,
+    maxZoom: 14,
     index: './imagery/index.json',
   },
   // ArcGIS Location Platform (basemap styles service) — World Imagery.

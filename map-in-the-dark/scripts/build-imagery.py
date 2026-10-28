@@ -29,7 +29,7 @@ from multiprocessing import Pool
 
 import numpy as np
 import rasterio
-from PIL import Image
+from PIL import Image, ImageFilter
 from rasterio.enums import Resampling
 from rasterio.windows import Window
 
@@ -45,7 +45,13 @@ VIEW_KM_BY_STEP = [8, 25, 120, 400, 900, 2200]
 # Area covered per step, as a radius around the city in units of half the view: the view's centre is
 # up to 0.3 half-views from the city (reveal.ts) and the longer side of the map shows a bit more.
 COVER = 1.35
-MIN_Z, MAX_Z = 3, 13
+# The close-up steps (1 and 2) are built for a large screen and cover a little less (corners use the next zoom).
+CLOSE_STEPS = 2
+COVER_CLOSE = 1.2
+MIN_Z, MAX_Z = 3, 14
+# From this zoom on, tiles are at or near the source's 10 m resolution: read it at full resolution,
+# resample bicubically, sharpen lightly and encode with higher quality.
+DETAIL_Z = 12
 EARTH_KM = 6371
 DEMO = {'id': 'demo-trondheim', 'lonlat': [10.395, 63.43]}  # landing page demo
 
@@ -53,17 +59,22 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--dry', action='store_true')
 ap.add_argument('--only')
 ap.add_argument('--px', type=float, default=800, help='device pixels across the shorter side of the map')
+ap.add_argument('--px-close', type=float, default=1600, help='the same for the close-up steps (large screens)')
 ap.add_argument('--quality', type=int, default=60)
+ap.add_argument('--quality-detail', type=int, default=72)
 ap.add_argument('--prune', action='store_true', help='delete tiles that are no longer needed')
+ap.add_argument('--out', help='write tiles to another folder (for comparisons)')
 ap.add_argument('--jobs', type=int, default=8, help='parallel workers (each needs up to ~1 GB)')
 args = ap.parse_args()
+if args.out:
+    OUT = os.path.abspath(args.out)
 
 
 # ── Which tiles ─────────────────────────────────────────────────────
 
-def zoom_for(lat, view_km):
-    """Zoom AtlasView.drawImagery picks when the shorter side of the map shows view_km."""
-    k = args.px * EARTH_KM * math.cos(math.radians(lat)) / view_km
+def zoom_for(lat, view_km, px):
+    """Zoom AtlasView.drawImagery picks when the shorter side of the map (px device pixels) shows view_km."""
+    k = px * EARTH_KM * math.cos(math.radians(lat)) / view_km
     return min(MAX_Z, max(MIN_Z, round(math.log2(2 * math.pi * k / 256))))
 
 
@@ -114,8 +125,10 @@ def wanted_tiles():
     wanted = set()
     for p in places:
         lat = p['lonlat'][1]
-        for view in VIEW_KM_BY_STEP:
-            tiles_in_circle(p['lonlat'], view / 2 * COVER, zoom_for(lat, view), wanted)
+        for i, view in enumerate(VIEW_KM_BY_STEP):
+            close = i < CLOSE_STEPS
+            px = args.px_close if close else args.px
+            tiles_in_circle(p['lonlat'], view / 2 * (COVER_CLOSE if close else COVER), zoom_for(lat, view, px), wanted)
     return places, wanted
 
 
@@ -189,6 +202,26 @@ def colourise(r, g, b, nir):
 
 # ── Building ────────────────────────────────────────────────────────
 
+def interp_weights(f, n, cubic):
+    """Source indices and weights for sampling positions f (in pixels) along an axis of length n."""
+    i0 = np.floor(f).astype(int)
+    t = (f - i0)[:, None]
+    if not cubic:
+        idx = np.stack([i0, i0 + 1], axis=1)
+        w = np.concatenate([1 - t, t], axis=1)
+    else:
+        # Catmull-Rom.
+        idx = np.stack([i0 - 1, i0, i0 + 1, i0 + 2], axis=1)
+        t2, t3 = t * t, t * t * t
+        w = np.concatenate([
+            -0.5 * t3 + t2 - 0.5 * t,
+            1.5 * t3 - 2.5 * t2 + 1,
+            -1.5 * t3 + 2 * t2 + 0.5 * t,
+            0.5 * t3 - 0.5 * t2,
+        ], axis=1)
+    return np.clip(idx, 0, n - 1), w.astype(np.float32)
+
+
 _datasets = {}
 CELLS = set()
 
@@ -216,9 +249,13 @@ def build_tile(job):
     cells = CELLS
     west, east = x2lon(x, z), x2lon(x + 1, z)
     north, south = y2lat(y, z), y2lat(y + 1, z)
-    # Source grid (plain lon/lat) a bit finer than the output at the tile's high-latitude edge.
+    # Source grid (plain lon/lat) a bit finer than the output at the tile's high-latitude edge, but never
+    # finer than the source itself: detail tiles read the source at full resolution, without resampling.
     res = 256 * 2 ** z / 360 * 1.15 / math.cos(math.radians(max(abs(north), abs(south))))
-    pad = 2 / res
+    detail = z >= DETAIL_Z
+    if detail or res > CELL_PX:
+        res = CELL_PX
+    pad = 3 / res
     w0, e0, n0, s0 = west - pad, east + pad, north + pad, south - pad
     W = max(2, math.ceil((e0 - w0) * res))
     H = max(2, math.ceil((n0 - s0) * res))
@@ -240,7 +277,8 @@ def build_tile(job):
                 try:
                     data = dataset(name).read(
                         [1, 2, 3, 4], window=win, out_shape=(4, r1 - r0, c1 - c0),
-                        resampling=Resampling.average, boundless=False)
+                        resampling=Resampling.nearest if res == CELL_PX else Resampling.average,
+                        boundless=False)
                     break
                 except Exception:
                     if attempt == 4:
@@ -252,26 +290,24 @@ def build_tile(job):
             filled[r0:r1, c0:c1] |= valid
     mosaic[:, ~filled] = NODATA_FILL[:, None]
 
-    # Resample to Web Mercator (bilinear).
+    # Resample to Web Mercator. Rows depend only on latitude and columns only on longitude, so the
+    # interpolation is separable: bicubic for detail tiles, bilinear otherwise.
     j = np.arange(256) + 0.5
     lats = np.degrees(np.arctan(np.sinh(np.pi * (1 - 2 * (y + j / 256) / 2 ** z))))
     lons = (x + j / 256) / 2 ** z * 360 - 180
-    fy = (n0 - lats) * res - 0.5
-    fx = (lons - w0) * res - 0.5
-    y0 = np.clip(np.floor(fy).astype(int), 0, H - 2)
-    x0 = np.clip(np.floor(fx).astype(int), 0, W - 2)
-    wy = np.clip(fy - y0, 0, 1)[:, None]
-    wx = np.clip(fx - x0, 0, 1)[None, :]
-    Y0, X0 = y0[:, None], x0[None, :]
+    iy, wy = interp_weights((n0 - lats) * res - 0.5, H, detail)
+    ix, wx = interp_weights((lons - w0) * res - 0.5, W, detail)
     bands = []
     for band in mosaic:
-        a, b = band[Y0, X0], band[Y0, X0 + 1]
-        c, d = band[Y0 + 1, X0], band[Y0 + 1, X0 + 1]
-        bands.append((a * (1 - wx) + b * wx) * (1 - wy) + (c * (1 - wx) + d * wx) * wy)
+        cols = (band[:, ix] * wx[None]).sum(axis=2)  # (H, 256)
+        bands.append((cols[iy] * wy[..., None]).sum(axis=1))  # (256, 256)
     rgb = colourise(*bands)
+    img = Image.fromarray(rgb, 'RGB')
+    if z >= DETAIL_Z - 1:
+        img = img.filter(ImageFilter.UnsharpMask(radius=1.0, percent=70, threshold=2))
     path = os.path.join(OUT, str(z), str(x), f'{y}.webp')
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    Image.fromarray(rgb, 'RGB').save(path, 'WEBP', quality=args.quality, method=5)
+    img.save(path, 'WEBP', quality=args.quality_detail if detail else args.quality, method=5)
     return os.path.getsize(path)
 
 

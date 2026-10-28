@@ -412,9 +412,9 @@ describe('bundled satellite imagery', () => {
     const missing: string[] = [];
     for (const c of CITIES) {
       const [lon, lat] = c.lonlat;
-      // The close-up steps need zoom 12–13 at the city, the last steps zoom 6 or lower.
+      // The close-up steps need zoom 13–14 at the city, the last steps zoom 6 or lower.
       const zooms = [...sets.keys()].filter((z) => has(z, lon, lat));
-      if (!zooms.some((z) => z >= 12) || !zooms.some((z) => z <= 6)) missing.push(`${c.id}: ${zooms.join(',')}`);
+      if (!zooms.some((z) => z >= 13) || !zooms.some((z) => z <= 6)) missing.push(`${c.id}: ${zooms.join(',')}`);
     }
     expect(missing).toEqual([]);
   });
