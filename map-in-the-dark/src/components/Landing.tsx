@@ -45,7 +45,7 @@ function HeroMap() {
     <div class="hero-map">
       <AtlasCanvas
         class="map"
-        label="Example: a real map that opens up step by step around a hidden city"
+        label="Example: a satellite map that zooms out step by step around a hidden capital"
         interactive={false}
         onReady={(v) => {
           viewRef.current = v;
@@ -68,8 +68,8 @@ function PlayCard() {
   const status = done
     ? `Done today · ${done.score} points`
     : cur
-      ? `${cur.results.length} of ${QUESTIONS_PER_ROUND} cities played`
-      : `${QUESTIONS_PER_ROUND} new cities today`;
+      ? `${cur.results.length} of ${QUESTIONS_PER_ROUND} capitals played`
+      : `${QUESTIONS_PER_ROUND} new capitals today`;
   return (
     <a class={`play-card${done ? ' done' : ''}`} href={done ? '#/results' : '#/play'}>
       <span class="pc-icon">{done ? <IconCheck /> : <IconArrow />}</span>
@@ -94,7 +94,7 @@ const STEPS_INFO = [
   ['Continent', 'Europe'],
   ['Country’s language · Currency', 'Norwegian · Krone'],
   ['Country’s flag colors', 'Red, White, Blue'],
-  ['City name', 'T · 9 letters'],
+  ['Capital’s name', 'O · 4 letters'],
   ['Country name', 'N · 6 letters'],
   ['Country’s neighbors', 'Finland, Sweden, Russia'],
 ];
@@ -107,17 +107,17 @@ const FAQ: [string, string][] = [
   [
     'What is on the map?',
     SATELLITE
-      ? 'Real satellite images of the area around the city, with country borders drawn on top. Place names are hidden. The map zooms out each step; from step 3 a green circle marks where the city is.'
-      : 'Coastlines, lakes, rivers, built-up areas, main roads, railways, borders and towns from Natural Earth and GeoNames. Place names are hidden. The map zooms out each step; from step 3 a green circle marks where the city is.',
+      ? 'Real satellite images of the area around the capital, with country borders drawn on top. Place names are hidden. The map zooms out each step; from step 3 a green circle marks where the capital is.'
+      : 'Coastlines, lakes, rivers, built-up areas, main roads, railways, borders and towns from Natural Earth and GeoNames. Place names are hidden. The map zooms out each step; from step 3 a green circle marks where the capital is.',
   ],
-  ['When does a new round start?', 'Every day at midnight UTC. Everyone gets the same five cities on the same day.'],
+  ['When does a new round start?', 'Every day at midnight UTC. Everyone gets the same five capitals on the same day.'],
   [
     'How is my score calculated?',
     `A correct guess in step 1 gives ${POINTS_BY_STEP[0]} points, then ${POINTS_BY_STEP.slice(1).join(', ')} for steps 2 to 6. A wrong guess in step 6 reveals the answer and gives 0. A perfect round is 500.`,
   ],
   [
-    'What are combos and golden cities?',
-    'Answer correctly several times in a row to raise your combo multiplier (one step for every three in a row, up to ×5). One city per round is golden and gives double XP. Missing a city resets the combo.',
+    'What are combos and golden capitals?',
+    'Answer correctly several times in a row to raise your combo multiplier (one step for every three in a row, up to ×5). One capital per round is golden and gives double XP. Missing one resets the combo.',
   ],
   [
     'Do I have to spell names perfectly?',
@@ -142,14 +142,14 @@ export function Landing() {
       <section class="hero" aria-labelledby="hero-h">
         <div class="hero-copy">
           <div class="eyebrow">
-            Daily #{dailyNumber(utcDateKey())} · {QUESTIONS_PER_ROUND} cities · 6 clues each
+            Daily #{dailyNumber(utcDateKey())} · {QUESTIONS_PER_ROUND} capitals · 6 clues each
           </div>
           <h1 id="hero-h">
-            Which city is <em>hiding</em> on the map?
+            Which capital is <em>hiding</em> on the map?
           </h1>
           <p class="lede">
-            You start with a small piece of a real map. Every step shows more of it and gives you a new clue. Type the
-            city’s name. The fewer steps you need, the more points you score.
+            You start with a satellite close-up of a capital city. Every step zooms out and gives you a new clue. Type
+            the capital’s name. The fewer steps you need, the more points you score.
           </p>
           <div class="play-grid">
             <PlayCard />
@@ -177,10 +177,10 @@ export function Landing() {
         <div class="section-head">
           <h2 id="how-h">How it works</h2>
           <p>
-            Each city starts with a satellite close-up of its centre, about {VIEW_KM_BY_STEP[0]} km across. A wrong
+            Each capital starts with a satellite close-up of its centre, about {VIEW_KM_BY_STEP[0]} km across. A wrong
             guess or “I don’t know” zooms the map out and gives the next clue. By step 6 you see{' '}
             {VIEW_KM_BY_STEP[5].toLocaleString('en')} km of the continent. From step 3 a green circle marks where the
-            city is.
+            capital is.
           </p>
         </div>
         <ol class="step-list" aria-label="The six steps of a question">

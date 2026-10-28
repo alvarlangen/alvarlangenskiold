@@ -7,27 +7,27 @@ export function About() {
     <div class="page page-narrow prose">
       <h1>How to play</h1>
       <p>
-        Every day there are five hidden cities. For each one you start with a satellite close-up of the city centre,
-        without any names. Each step zooms the map out; from step 3 a green circle marks where the city is.
+        Every day there are five hidden capital cities. For each one you start with a satellite close-up of its centre,
+        without any names. Each step zooms the map out; from step 3 a green circle marks where the capital is.
       </p>
       <h2>Six steps</h2>
       <ol>
         <li>Continent · map {VIEW_KM_BY_STEP[0].toLocaleString('en')} km across</li>
         <li>The country’s language and currency · {VIEW_KM_BY_STEP[1].toLocaleString('en')} km</li>
         <li>The colors of the country’s flag · {VIEW_KM_BY_STEP[2].toLocaleString('en')} km</li>
-        <li>First letter and length of the city’s name · {VIEW_KM_BY_STEP[3].toLocaleString('en')} km</li>
+        <li>First letter and length of the capital’s name · {VIEW_KM_BY_STEP[3].toLocaleString('en')} km</li>
         <li>First letter and length of the country’s name · {VIEW_KM_BY_STEP[4].toLocaleString('en')} km</li>
         <li>The country’s neighbors · {VIEW_KM_BY_STEP[5].toLocaleString('en')} km</li>
       </ol>
       <h2>Rules</h2>
       <ul>
-        <li>Type the city’s name. There are no multiple-choice options.</li>
+        <li>Type the capital’s name. There are no multiple-choice options.</li>
         <li>
           A wrong guess opens the map further and gives the next clue. A wrong guess in step 6 reveals the answer.
         </li>
         <li>“I don’t know” moves to the next step without guessing.</li>
         <li>Points per step: {POINTS_BY_STEP.join(', ')}. A perfect round is 500 points.</li>
-        <li>Cities get less famous through the round. One golden city gives double XP.</li>
+        <li>Capitals get less famous through the round. One golden capital gives double XP.</li>
         <li>The daily round is the same for everyone and changes at midnight UTC.</li>
       </ul>
       <h2>Practice</h2>
@@ -124,7 +124,9 @@ export function Credits() {
             github.com/lipis/flag-icons
           </a>
         </li>
-        <li>Hand-curated: the city list, English names and alternative spellings, and every “Did you know” fact.</li>
+        <li>
+          Hand-curated: the list of capitals, English names and alternative spellings, and every “Did you know” fact.
+        </li>
       </ul>
       <h2>Software and fonts</h2>
       <ul>

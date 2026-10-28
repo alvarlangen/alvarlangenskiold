@@ -80,26 +80,6 @@
     "rank": 8
   },
   {
-    "id": "shanghai-cn",
-    "name": "Shanghai",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [121.4581, 31.2222],
-    "capital": false,
-    "fact": "Shanghai has one of the longest metro systems in the world.",
-    "rank": 9
-  },
-  {
-    "id": "hong-kong-hk",
-    "name": "Hong Kong",
-    "altNames": ["HK", "Xianggang"],
-    "country": "CHN",
-    "lonlat": [114.1747, 22.2783],
-    "capital": true,
-    "fact": "Hong Kong has more skyscrapers than any other city in the world.",
-    "rank": 10
-  },
-  {
     "id": "bangkok-th",
     "name": "Bangkok",
     "altNames": ["Krung Thep"],
@@ -107,37 +87,17 @@
     "lonlat": [100.5014, 13.754],
     "capital": true,
     "fact": "Bangkok’s full ceremonial name is one of the longest place names in the world.",
-    "rank": 11
+    "rank": 9
   },
   {
-    "id": "istanbul-tr",
-    "name": "Istanbul",
-    "altNames": ["Constantinople", "Byzantium", "İstanbul"],
-    "country": "TUR",
-    "lonlat": [28.9497, 41.0138],
-    "capital": false,
-    "fact": "Istanbul straddles two continents, Europe and Asia, across the Bosphorus.",
-    "rank": 12
-  },
-  {
-    "id": "mumbai-in",
-    "name": "Mumbai",
-    "altNames": ["Bombay"],
-    "country": "IND",
-    "lonlat": [72.8826, 19.0728],
-    "capital": false,
-    "fact": "Mumbai is the home of Bollywood, India’s Hindi-language film industry.",
-    "rank": 13
-  },
-  {
-    "id": "delhi-in",
-    "name": "Delhi",
-    "altNames": ["New Delhi"],
-    "country": "IND",
-    "lonlat": [77.2315, 28.6519],
-    "capital": false,
-    "fact": "New Delhi, part of Delhi, was inaugurated as India’s capital in 1931.",
-    "rank": 14
+    "id": "singapore-sg",
+    "name": "Singapore",
+    "altNames": [],
+    "country": "SGP",
+    "lonlat": [103.8501, 1.2897],
+    "capital": true,
+    "fact": "Singapore is a city-state: the city and the country are one.",
+    "rank": 10
   },
   {
     "id": "berlin-de",
@@ -147,7 +107,7 @@
     "lonlat": [13.4105, 52.5244],
     "capital": true,
     "fact": "The Berlin Wall divided the city from 1961 until 1989.",
-    "rank": 15
+    "rank": 11
   },
   {
     "id": "madrid-es",
@@ -157,27 +117,7 @@
     "lonlat": [-3.7026, 40.4165],
     "capital": true,
     "fact": "Madrid is home to the Prado, one of the world’s great art museums.",
-    "rank": 16
-  },
-  {
-    "id": "sao-paulo-br",
-    "name": "São Paulo",
-    "altNames": ["Sao Paulo"],
-    "country": "BRA",
-    "lonlat": [-46.6361, -23.5475],
-    "capital": false,
-    "fact": "São Paulo is the largest city in the Southern Hemisphere.",
-    "rank": 17
-  },
-  {
-    "id": "new-york-city-us",
-    "name": "New York City",
-    "altNames": ["New York", "NYC", "NY"],
-    "country": "USA",
-    "lonlat": [-74.006, 40.7143],
-    "capital": false,
-    "fact": "New York’s Central Park is larger than the country of Monaco.",
-    "rank": 18
+    "rank": 12
   },
   {
     "id": "rome-it",
@@ -187,7 +127,7 @@
     "lonlat": [12.5113, 41.8919],
     "capital": true,
     "fact": "Rome completely surrounds Vatican City, the world’s smallest country.",
-    "rank": 19
+    "rank": 13
   },
   {
     "id": "paris-fr",
@@ -197,77 +137,7 @@
     "lonlat": [2.3488, 48.8534],
     "capital": true,
     "fact": "The Eiffel Tower was built as the entrance arch for the 1889 World’s Fair.",
-    "rank": 20
-  },
-  {
-    "id": "rio-de-janeiro-br",
-    "name": "Rio de Janeiro",
-    "altNames": ["Rio"],
-    "country": "BRA",
-    "lonlat": [-43.1822, -22.9064],
-    "capital": false,
-    "fact": "The Christ the Redeemer statue overlooks Rio de Janeiro from Corcovado mountain.",
-    "rank": 21
-  },
-  {
-    "id": "sydney-au",
-    "name": "Sydney",
-    "altNames": [],
-    "country": "AUS",
-    "lonlat": [151.2073, -33.8678],
-    "capital": false,
-    "fact": "The Sydney Opera House opened in 1973.",
-    "rank": 22
-  },
-  {
-    "id": "melbourne-au",
-    "name": "Melbourne",
-    "altNames": [],
-    "country": "AUS",
-    "lonlat": [144.9633, -37.814],
-    "capital": false,
-    "fact": "Melbourne was the seat of Australia’s government from 1901 to 1927.",
-    "rank": 23
-  },
-  {
-    "id": "los-angeles-us",
-    "name": "Los Angeles",
-    "altNames": ["LA", "L.A."],
-    "country": "USA",
-    "lonlat": [-118.2437, 34.0522],
-    "capital": false,
-    "fact": "Hollywood, the centre of the American film industry, is a neighbourhood of Los Angeles.",
-    "rank": 24
-  },
-  {
-    "id": "cape-town-za",
-    "name": "Cape Town",
-    "altNames": ["Kaapstad"],
-    "country": "ZAF",
-    "lonlat": [18.4232, -33.9258],
-    "capital": false,
-    "fact": "Table Mountain rises directly behind Cape Town.",
-    "rank": 25
-  },
-  {
-    "id": "dubai-ae",
-    "name": "Dubai",
-    "altNames": [],
-    "country": "ARE",
-    "lonlat": [55.3093, 25.0772],
-    "capital": false,
-    "fact": "Dubai’s Burj Khalifa is the tallest building in the world.",
-    "rank": 26
-  },
-  {
-    "id": "chicago-us",
-    "name": "Chicago",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-87.65, 41.85],
-    "capital": false,
-    "fact": "Chicago’s Home Insurance Building of 1885 is often called the world’s first skyscraper.",
-    "rank": 27
+    "rank": 14
   },
   {
     "id": "dhaka-bd",
@@ -277,17 +147,7 @@
     "lonlat": [90.4074, 23.7104],
     "capital": true,
     "fact": "Dhaka is famous for its cycle rickshaws.",
-    "rank": 28
-  },
-  {
-    "id": "toronto-ca",
-    "name": "Toronto",
-    "altNames": [],
-    "country": "CAN",
-    "lonlat": [-79.4163, 43.7001],
-    "capital": false,
-    "fact": "Toronto’s CN Tower was the world’s tallest free-standing structure from 1975 to 2007.",
-    "rank": 29
+    "rank": 15
   },
   {
     "id": "amsterdam-nl",
@@ -297,7 +157,7 @@
     "lonlat": [4.8897, 52.374],
     "capital": true,
     "fact": "Amsterdam has around 100 kilometres of canals.",
-    "rank": 30
+    "rank": 16
   },
   {
     "id": "jakarta-id",
@@ -307,7 +167,7 @@
     "lonlat": [106.8451, -6.2146],
     "capital": true,
     "fact": "Jakarta was known as Batavia under Dutch rule.",
-    "rank": 31
+    "rank": 17
   },
   {
     "id": "athens-gr",
@@ -317,7 +177,7 @@
     "lonlat": [23.7278, 37.9838],
     "capital": true,
     "fact": "The Parthenon has stood on the Acropolis of Athens for about 2,500 years.",
-    "rank": 32
+    "rank": 18
   },
   {
     "id": "taipei-tw",
@@ -327,7 +187,7 @@
     "lonlat": [121.5319, 25.0478],
     "capital": true,
     "fact": "Taipei 101 was the world’s tallest building from 2004 to 2010.",
-    "rank": 33
+    "rank": 19
   },
   {
     "id": "lima-pe",
@@ -337,7 +197,7 @@
     "lonlat": [-77.0282, -12.0432],
     "capital": true,
     "fact": "Lima was founded by Francisco Pizarro in 1535.",
-    "rank": 34
+    "rank": 20
   },
   {
     "id": "bogota-co",
@@ -347,7 +207,7 @@
     "lonlat": [-74.0817, 4.6097],
     "capital": true,
     "fact": "Bogotá lies about 2,600 metres above sea level.",
-    "rank": 35
+    "rank": 21
   },
   {
     "id": "washington-d-c-us",
@@ -357,7 +217,7 @@
     "lonlat": [-77.0364, 38.8951],
     "capital": true,
     "fact": "Washington, D.C. is named after George Washington and is not part of any US state.",
-    "rank": 36
+    "rank": 22
   },
   {
     "id": "baghdad-iq",
@@ -367,7 +227,7 @@
     "lonlat": [44.4009, 33.3406],
     "capital": true,
     "fact": "Baghdad was founded in 762 as the capital of the Abbasid Caliphate.",
-    "rank": 37
+    "rank": 23
   },
   {
     "id": "tehran-ir",
@@ -377,27 +237,7 @@
     "lonlat": [51.4215, 35.6944],
     "capital": true,
     "fact": "Tehran lies at the foot of the Alborz mountains.",
-    "rank": 38
-  },
-  {
-    "id": "barcelona-es",
-    "name": "Barcelona",
-    "altNames": [],
-    "country": "ESP",
-    "lonlat": [2.159, 41.3888],
-    "capital": false,
-    "fact": "Gaudí’s Sagrada Família has been under construction since 1882.",
-    "rank": 39
-  },
-  {
-    "id": "kyoto-jp",
-    "name": "Kyoto",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [135.7538, 35.0211],
-    "capital": false,
-    "fact": "Kyoto was Japan’s imperial capital for more than a thousand years.",
-    "rank": 40
+    "rank": 24
   },
   {
     "id": "santiago-cl",
@@ -407,7 +247,7 @@
     "lonlat": [-70.6483, -33.4569],
     "capital": true,
     "fact": "Santiago lies in a valley between the Andes and the Chilean Coastal Range.",
-    "rank": 41
+    "rank": 25
   },
   {
     "id": "riyadh-sa",
@@ -417,17 +257,17 @@
     "lonlat": [46.7219, 24.6877],
     "capital": true,
     "fact": null,
-    "rank": 42
+    "rank": 26
   },
   {
-    "id": "karachi-pk",
-    "name": "Karachi",
-    "altNames": [],
-    "country": "PAK",
-    "lonlat": [67.0104, 24.8608],
-    "capital": false,
-    "fact": "Karachi was Pakistan’s first capital.",
-    "rank": 43
+    "id": "new-delhi-in",
+    "name": "New Delhi",
+    "altNames": ["Delhi", "Nai Dilli"],
+    "country": "IND",
+    "lonlat": [77.2245, 28.6358],
+    "capital": true,
+    "fact": "New Delhi was inaugurated as India’s capital in 1931.",
+    "rank": 27
   },
   {
     "id": "ankara-tr",
@@ -437,47 +277,7 @@
     "lonlat": [32.8543, 39.9199],
     "capital": true,
     "fact": "Ankara replaced Istanbul as Turkey’s capital in 1923.",
-    "rank": 44
-  },
-  {
-    "id": "guangzhou-cn",
-    "name": "Guangzhou",
-    "altNames": ["Canton"],
-    "country": "CHN",
-    "lonlat": [113.25, 23.1167],
-    "capital": false,
-    "fact": "Guangzhou was historically known in English as Canton.",
-    "rank": 45
-  },
-  {
-    "id": "san-francisco-us",
-    "name": "San Francisco",
-    "altNames": ["SF", "Frisco"],
-    "country": "USA",
-    "lonlat": [-122.4194, 37.7749],
-    "capital": false,
-    "fact": "The Golden Gate Bridge opened in 1937.",
-    "rank": 46
-  },
-  {
-    "id": "shenzhen-cn",
-    "name": "Shenzhen",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [114.0683, 22.5455],
-    "capital": false,
-    "fact": "Shenzhen grew from a small town into a megacity after becoming China’s first Special Economic Zone in 1980.",
-    "rank": 47
-  },
-  {
-    "id": "lagos-ng",
-    "name": "Lagos",
-    "altNames": [],
-    "country": "NGA",
-    "lonlat": [3.3947, 6.4541],
-    "capital": false,
-    "fact": "Lagos was Nigeria’s capital until 1991, when Abuja took over.",
-    "rank": 48
+    "rank": 28
   },
   {
     "id": "kyiv-ua",
@@ -487,7 +287,7 @@
     "lonlat": [30.5238, 50.4547],
     "capital": true,
     "fact": "Kyiv’s Saint Sophia Cathedral dates from the 11th century.",
-    "rank": 49
+    "rank": 29
   },
   {
     "id": "addis-ababa-et",
@@ -497,7 +297,7 @@
     "lonlat": [38.7469, 9.025],
     "capital": true,
     "fact": "Addis Ababa hosts the headquarters of the African Union.",
-    "rank": 50
+    "rank": 30
   },
   {
     "id": "nairobi-ke",
@@ -507,17 +307,7 @@
     "lonlat": [36.8167, -1.2833],
     "capital": true,
     "fact": "Nairobi National Park lies just a few kilometres from the city centre.",
-    "rank": 51
-  },
-  {
-    "id": "chengdu-cn",
-    "name": "Chengdu",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [104.0667, 30.6667],
-    "capital": false,
-    "fact": "Chengdu is home to a famous giant panda breeding centre.",
-    "rank": 52
+    "rank": 31
   },
   {
     "id": "brasilia-br",
@@ -527,7 +317,7 @@
     "lonlat": [-47.9297, -15.7797],
     "capital": true,
     "fact": "Brasília was built from scratch and inaugurated as Brazil’s capital in 1960.",
-    "rank": 53
+    "rank": 32
   },
   {
     "id": "havana-cu",
@@ -537,27 +327,7 @@
     "lonlat": [-82.383, 23.133],
     "capital": true,
     "fact": "Old Havana is a UNESCO World Heritage Site.",
-    "rank": 54
-  },
-  {
-    "id": "xi-an-cn",
-    "name": "Xi'an",
-    "altNames": ["Xian", "Xi an", "Xi’an"],
-    "country": "CHN",
-    "lonlat": [108.9286, 34.2583],
-    "capital": false,
-    "fact": "The Terracotta Army was discovered near Xi’an in 1974.",
-    "rank": 55
-  },
-  {
-    "id": "lahore-pk",
-    "name": "Lahore",
-    "altNames": [],
-    "country": "PAK",
-    "lonlat": [74.3507, 31.558],
-    "capital": false,
-    "fact": "Lahore’s Badshahi Mosque was completed in 1673.",
-    "rank": 56
+    "rank": 33
   },
   {
     "id": "beirut-lb",
@@ -567,7 +337,7 @@
     "lonlat": [35.5016, 33.8933],
     "capital": true,
     "fact": null,
-    "rank": 57
+    "rank": 34
   },
   {
     "id": "budapest-hu",
@@ -577,7 +347,7 @@
     "lonlat": [19.0404, 47.4984],
     "capital": true,
     "fact": "Budapest was formed in 1873 by merging Buda, Óbuda and Pest.",
-    "rank": 58
+    "rank": 35
   },
   {
     "id": "warsaw-pl",
@@ -587,7 +357,7 @@
     "lonlat": [21.0118, 52.2298],
     "capital": true,
     "fact": "Warsaw’s Old Town was rebuilt after being almost entirely destroyed in World War II.",
-    "rank": 59
+    "rank": 36
   },
   {
     "id": "vienna-at",
@@ -597,17 +367,7 @@
     "lonlat": [16.3721, 48.2085],
     "capital": true,
     "fact": "Mozart, Beethoven and Haydn all lived and worked in Vienna.",
-    "rank": 60
-  },
-  {
-    "id": "bengaluru-in",
-    "name": "Bengaluru",
-    "altNames": ["Bangalore"],
-    "country": "IND",
-    "lonlat": [77.5937, 12.9719],
-    "capital": false,
-    "fact": "Bengaluru is India’s leading IT hub, often called its Silicon Valley.",
-    "rank": 61
+    "rank": 37
   },
   {
     "id": "manila-ph",
@@ -617,17 +377,7 @@
     "lonlat": [120.9822, 14.6042],
     "capital": true,
     "fact": "Manila is one of the most densely populated cities in the world.",
-    "rank": 62
-  },
-  {
-    "id": "saint-petersburg-ru",
-    "name": "Saint Petersburg",
-    "altNames": ["St Petersburg", "St. Petersburg", "Leningrad", "Petrograd", "Sankt-Peterburg"],
-    "country": "RUS",
-    "lonlat": [30.3141, 59.9386],
-    "capital": false,
-    "fact": "Saint Petersburg was founded by Peter the Great in 1703.",
-    "rank": 63
+    "rank": 38
   },
   {
     "id": "damascus-sy",
@@ -637,7 +387,7 @@
     "lonlat": [36.2913, 33.5102],
     "capital": true,
     "fact": "Damascus is one of the oldest continuously inhabited cities in the world.",
-    "rank": 64
+    "rank": 39
   },
   {
     "id": "stockholm-se",
@@ -647,17 +397,7 @@
     "lonlat": [18.0687, 59.3294],
     "capital": true,
     "fact": "Stockholm is built on 14 islands.",
-    "rank": 65
-  },
-  {
-    "id": "kolkata-in",
-    "name": "Kolkata",
-    "altNames": ["Calcutta"],
-    "country": "IND",
-    "lonlat": [88.363, 22.5626],
-    "capital": false,
-    "fact": "Kolkata was the capital of British India until 1911.",
-    "rank": 66
+    "rank": 40
   },
   {
     "id": "kuala-lumpur-my",
@@ -667,7 +407,7 @@
     "lonlat": [101.6865, 3.1412],
     "capital": true,
     "fact": "Kuala Lumpur’s Petronas Towers were the world’s tallest buildings from 1998 to 2004.",
-    "rank": 67
+    "rank": 41
   },
   {
     "id": "kathmandu-np",
@@ -677,7 +417,7 @@
     "lonlat": [85.3206, 27.7017],
     "capital": true,
     "fact": "The Kathmandu Valley has seven UNESCO-listed monument zones.",
-    "rank": 68
+    "rank": 42
   },
   {
     "id": "hanoi-vn",
@@ -687,17 +427,7 @@
     "lonlat": [105.8412, 21.0245],
     "capital": true,
     "fact": "Hanoi celebrated its 1,000th anniversary in 2010.",
-    "rank": 69
-  },
-  {
-    "id": "yangon-mm",
-    "name": "Yangon",
-    "altNames": ["Rangoon"],
-    "country": "MMR",
-    "lonlat": [96.1561, 16.8053],
-    "capital": false,
-    "fact": "Yangon’s Shwedagon Pagoda is covered in gold.",
-    "rank": 70
+    "rank": 43
   },
   {
     "id": "quito-ec",
@@ -707,27 +437,7 @@
     "lonlat": [-78.525, -0.2298],
     "capital": true,
     "fact": "Quito is one of the highest capital cities in the world, at about 2,850 metres.",
-    "rank": 71
-  },
-  {
-    "id": "chennai-in",
-    "name": "Chennai",
-    "altNames": ["Madras"],
-    "country": "IND",
-    "lonlat": [80.2785, 13.0878],
-    "capital": false,
-    "fact": "Chennai was called Madras until 1996.",
-    "rank": 72
-  },
-  {
-    "id": "alexandria-eg",
-    "name": "Alexandria",
-    "altNames": [],
-    "country": "EGY",
-    "lonlat": [29.9158, 31.2018],
-    "capital": false,
-    "fact": "Alexandria was founded by Alexander the Great around 331 BC.",
-    "rank": 73
+    "rank": 44
   },
   {
     "id": "prague-cz",
@@ -737,17 +447,7 @@
     "lonlat": [14.4208, 50.088],
     "capital": true,
     "fact": "Prague’s astronomical clock dates from 1410.",
-    "rank": 74
-  },
-  {
-    "id": "busan-kr",
-    "name": "Busan",
-    "altNames": ["Pusan"],
-    "country": "KOR",
-    "lonlat": [129.03, 35.1017],
-    "capital": false,
-    "fact": "Busan is South Korea’s largest port.",
-    "rank": 75
+    "rank": 45
   },
   {
     "id": "copenhagen-dk",
@@ -757,17 +457,7 @@
     "lonlat": [12.5655, 55.6759],
     "capital": true,
     "fact": "Copenhagen’s Little Mermaid statue is based on a fairy tale by Hans Christian Andersen.",
-    "rank": 76
-  },
-  {
-    "id": "ho-chi-minh-city-vn",
-    "name": "Ho Chi Minh City",
-    "altNames": ["Saigon", "HCMC"],
-    "country": "VNM",
-    "lonlat": [106.6296, 10.823],
-    "capital": false,
-    "fact": "Ho Chi Minh City was called Saigon until 1976.",
-    "rank": 77
+    "rank": 46
   },
   {
     "id": "dublin-ie",
@@ -777,7 +467,7 @@
     "lonlat": [-6.2489, 53.3331],
     "capital": true,
     "fact": "Trinity College Dublin holds the Book of Kells.",
-    "rank": 78
+    "rank": 47
   },
   {
     "id": "brussels-be",
@@ -787,27 +477,7 @@
     "lonlat": [4.3488, 50.8505],
     "capital": true,
     "fact": "Brussels hosts the main institutions of the European Union and the headquarters of NATO.",
-    "rank": 79
-  },
-  {
-    "id": "casablanca-ma",
-    "name": "Casablanca",
-    "altNames": [],
-    "country": "MAR",
-    "lonlat": [-7.6114, 33.5883],
-    "capital": false,
-    "fact": "Casablanca’s Hassan II Mosque has one of the tallest minarets in the world.",
-    "rank": 80
-  },
-  {
-    "id": "jaipur-in",
-    "name": "Jaipur",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [75.7878, 26.9196],
-    "capital": false,
-    "fact": "Jaipur is known as the Pink City.",
-    "rank": 81
+    "rank": 48
   },
   {
     "id": "ulaanbaatar-mn",
@@ -817,17 +487,7 @@
     "lonlat": [106.8832, 47.9077],
     "capital": true,
     "fact": "Ulaanbaatar is the coldest national capital in the world.",
-    "rank": 82
-  },
-  {
-    "id": "osaka-jp",
-    "name": "Osaka",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [135.5022, 34.6937],
-    "capital": false,
-    "fact": "Osaka has long been known as “the nation’s kitchen” for its food culture.",
-    "rank": 83
+    "rank": 49
   },
   {
     "id": "la-paz-bo",
@@ -837,7 +497,7 @@
     "lonlat": [-68.15, -16.5],
     "capital": true,
     "fact": "La Paz is the highest seat of government in the world.",
-    "rank": 84
+    "rank": 50
   },
   {
     "id": "ottawa-ca",
@@ -847,47 +507,17 @@
     "lonlat": [-75.6981, 45.4112],
     "capital": true,
     "fact": "Ottawa’s Rideau Canal becomes one of the world’s largest skating rinks in winter.",
-    "rank": 85
+    "rank": 51
   },
   {
-    "id": "houston-us",
-    "name": "Houston",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-95.3633, 29.7633],
-    "capital": false,
-    "fact": "NASA’s Mission Control is in Houston.",
-    "rank": 86
-  },
-  {
-    "id": "brisbane-au",
-    "name": "Brisbane",
-    "altNames": [],
-    "country": "AUS",
-    "lonlat": [153.0281, -27.4679],
-    "capital": false,
-    "fact": "Brisbane will host the 2032 Summer Olympics.",
-    "rank": 87
-  },
-  {
-    "id": "johannesburg-za",
-    "name": "Johannesburg",
-    "altNames": ["Joburg", "Jo'burg", "Jozi"],
-    "country": "ZAF",
-    "lonlat": [28.0436, -26.2023],
-    "capital": false,
-    "fact": "Johannesburg grew out of the 1886 gold rush on the Witwatersrand.",
-    "rank": 88
-  },
-  {
-    "id": "medellin-co",
-    "name": "Medellín",
-    "altNames": ["Medellin"],
-    "country": "COL",
-    "lonlat": [-75.5636, 6.2518],
-    "capital": false,
-    "fact": "Medellín is known as the City of Eternal Spring.",
-    "rank": 89
+    "id": "jerusalem-il",
+    "name": "Jerusalem",
+    "altNames": ["Al-Quds"],
+    "country": "ISR",
+    "lonlat": [35.2163, 31.769],
+    "capital": true,
+    "fact": "Jerusalem is sacred to Judaism, Christianity and Islam.",
+    "rank": 52
   },
   {
     "id": "kinshasa-cd",
@@ -897,7 +527,7 @@
     "lonlat": [15.3136, -4.3276],
     "capital": true,
     "fact": "Kinshasa and Brazzaville face each other across the Congo River.",
-    "rank": 90
+    "rank": 53
   },
   {
     "id": "abu-dhabi-ae",
@@ -907,27 +537,7 @@
     "lonlat": [54.397, 24.4512],
     "capital": true,
     "fact": "Abu Dhabi is the capital of the United Arab Emirates.",
-    "rank": 91
-  },
-  {
-    "id": "perth-au",
-    "name": "Perth",
-    "altNames": [],
-    "country": "AUS",
-    "lonlat": [115.8614, -31.9522],
-    "capital": false,
-    "fact": "Perth is one of the most isolated major cities in the world.",
-    "rank": 92
-  },
-  {
-    "id": "sapporo-jp",
-    "name": "Sapporo",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [141.35, 43.0667],
-    "capital": false,
-    "fact": "Sapporo hosted the 1972 Winter Olympics.",
-    "rank": 93
+    "rank": 54
   },
   {
     "id": "oslo-no",
@@ -937,7 +547,7 @@
     "lonlat": [10.7461, 59.9127],
     "capital": true,
     "fact": "The Nobel Peace Prize is awarded in Oslo.",
-    "rank": 94
+    "rank": 55
   },
   {
     "id": "helsinki-fi",
@@ -947,17 +557,7 @@
     "lonlat": [24.9354, 60.1695],
     "capital": true,
     "fact": "Helsinki became Finland’s capital in 1812, replacing Turku.",
-    "rank": 95
-  },
-  {
-    "id": "hamburg-de",
-    "name": "Hamburg",
-    "altNames": [],
-    "country": "DEU",
-    "lonlat": [9.993, 53.5507],
-    "capital": false,
-    "fact": "Hamburg has around 2,500 bridges, more than Venice.",
-    "rank": 96
+    "rank": 56
   },
   {
     "id": "lisbon-pt",
@@ -967,77 +567,7 @@
     "lonlat": [-9.1333, 38.7167],
     "capital": true,
     "fact": "Lisbon was largely rebuilt after a devastating earthquake in 1755.",
-    "rank": 97
-  },
-  {
-    "id": "montreal-ca",
-    "name": "Montreal",
-    "altNames": ["Montréal"],
-    "country": "CAN",
-    "lonlat": [-73.5878, 45.5088],
-    "capital": false,
-    "fact": "Montreal is one of the largest French-speaking cities in the world.",
-    "rank": 98
-  },
-  {
-    "id": "manaus-br",
-    "name": "Manaus",
-    "altNames": [],
-    "country": "BRA",
-    "lonlat": [-60.025, -3.1019],
-    "capital": false,
-    "fact": "Manaus lies in the heart of the Amazon rainforest.",
-    "rank": 99
-  },
-  {
-    "id": "philadelphia-us",
-    "name": "Philadelphia",
-    "altNames": ["Philly"],
-    "country": "USA",
-    "lonlat": [-75.1638, 39.9523],
-    "capital": false,
-    "fact": "The US Declaration of Independence was signed in Philadelphia in 1776.",
-    "rank": 100
-  },
-  {
-    "id": "isfahan-ir",
-    "name": "Isfahan",
-    "altNames": ["Esfahan"],
-    "country": "IRN",
-    "lonlat": [51.6746, 32.6525],
-    "capital": false,
-    "fact": "Isfahan’s Naqsh-e Jahan Square is one of the largest city squares in the world.",
-    "rank": 101
-  },
-  {
-    "id": "guadalajara-mx",
-    "name": "Guadalajara",
-    "altNames": [],
-    "country": "MEX",
-    "lonlat": [-103.3918, 20.6668],
-    "capital": false,
-    "fact": "Guadalajara is regarded as the birthplace of mariachi music.",
-    "rank": 102
-  },
-  {
-    "id": "agra-in",
-    "name": "Agra",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [78.0167, 27.1833],
-    "capital": false,
-    "fact": "Agra is home to the Taj Mahal.",
-    "rank": 103
-  },
-  {
-    "id": "mecca-sa",
-    "name": "Mecca",
-    "altNames": ["Makkah"],
-    "country": "SAU",
-    "lonlat": [39.8256, 21.4266],
-    "capital": false,
-    "fact": "Mecca is the holiest city in Islam.",
-    "rank": 104
+    "rank": 57
   },
   {
     "id": "panama-city-pa",
@@ -1047,27 +577,7 @@
     "lonlat": [-79.5197, 8.9936],
     "capital": true,
     "fact": "Panama City sits at the Pacific entrance to the Panama Canal.",
-    "rank": 105
-  },
-  {
-    "id": "munich-de",
-    "name": "Munich",
-    "altNames": ["München", "Muenchen"],
-    "country": "DEU",
-    "lonlat": [11.5755, 48.1374],
-    "capital": false,
-    "fact": "Munich’s Oktoberfest begins in September, not October.",
-    "rank": 106
-  },
-  {
-    "id": "milan-it",
-    "name": "Milan",
-    "altNames": ["Milano"],
-    "country": "ITA",
-    "lonlat": [9.1895, 45.4643],
-    "capital": false,
-    "fact": "Leonardo da Vinci’s The Last Supper is in Milan.",
-    "rank": 107
+    "rank": 58
   },
   {
     "id": "wellington-nz",
@@ -1077,17 +587,7 @@
     "lonlat": [174.7756, -41.2866],
     "capital": true,
     "fact": "Wellington is the southernmost capital of a sovereign state.",
-    "rank": 108
-  },
-  {
-    "id": "varanasi-in",
-    "name": "Varanasi",
-    "altNames": ["Benares", "Banaras"],
-    "country": "IND",
-    "lonlat": [83.0104, 25.3167],
-    "capital": false,
-    "fact": "Varanasi is one of the oldest continuously inhabited cities in the world.",
-    "rank": 109
+    "rank": 59
   },
   {
     "id": "canberra-au",
@@ -1097,17 +597,7 @@
     "lonlat": [149.1281, -35.2835],
     "capital": true,
     "fact": "Canberra was purpose-built as a compromise capital between Sydney and Melbourne.",
-    "rank": 110
-  },
-  {
-    "id": "hiroshima-jp",
-    "name": "Hiroshima",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [132.45, 34.4],
-    "capital": false,
-    "fact": "Hiroshima’s Genbaku Dome survived the 1945 atomic bombing and is now a peace memorial.",
-    "rank": 111
+    "rank": 60
   },
   {
     "id": "doha-qa",
@@ -1117,87 +607,7 @@
     "lonlat": [51.531, 25.2855],
     "capital": true,
     "fact": "Doha was the centre of the 2022 FIFA World Cup.",
-    "rank": 112
-  },
-  {
-    "id": "cologne-de",
-    "name": "Cologne",
-    "altNames": ["Köln", "Koln", "Koeln"],
-    "country": "DEU",
-    "lonlat": [6.95, 50.9333],
-    "capital": false,
-    "fact": "Cologne Cathedral took more than 600 years to complete, from 1248 to 1880.",
-    "rank": 113
-  },
-  {
-    "id": "naples-it",
-    "name": "Naples",
-    "altNames": ["Napoli"],
-    "country": "ITA",
-    "lonlat": [14.2681, 40.8522],
-    "capital": false,
-    "fact": "Naples lies near Mount Vesuvius, which buried Pompeii in 79 AD.",
-    "rank": 114
-  },
-  {
-    "id": "cartagena-co",
-    "name": "Cartagena",
-    "altNames": [],
-    "country": "COL",
-    "lonlat": [-75.5144, 10.3997],
-    "capital": false,
-    "fact": "Cartagena’s walled old town is a UNESCO World Heritage Site.",
-    "rank": 115
-  },
-  {
-    "id": "tianjin-cn",
-    "name": "Tianjin",
-    "altNames": ["Tientsin"],
-    "country": "CHN",
-    "lonlat": [117.1767, 39.1422],
-    "capital": false,
-    "fact": "Tianjin is one of northern China’s main port cities.",
-    "rank": 116
-  },
-  {
-    "id": "liverpool-gb",
-    "name": "Liverpool",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-2.9779, 53.4106],
-    "capital": false,
-    "fact": "The Beatles formed in Liverpool in 1960.",
-    "rank": 117
-  },
-  {
-    "id": "marrakesh-ma",
-    "name": "Marrakesh",
-    "altNames": ["Marrakech"],
-    "country": "MAR",
-    "lonlat": [-7.9999, 31.6342],
-    "capital": false,
-    "fact": "Marrakesh’s Jemaa el-Fnaa square fills with performers and food stalls every evening.",
-    "rank": 118
-  },
-  {
-    "id": "denpasar-id",
-    "name": "Denpasar",
-    "altNames": [],
-    "country": "IDN",
-    "lonlat": [115.2167, -8.65],
-    "capital": false,
-    "fact": "Denpasar is the capital of Bali.",
-    "rank": 119
-  },
-  {
-    "id": "valencia-es",
-    "name": "Valencia",
-    "altNames": [],
-    "country": "ESP",
-    "lonlat": [-0.3774, 39.4697],
-    "capital": false,
-    "fact": "Paella originates from the Valencia region.",
-    "rank": 120
+    "rank": 61
   },
   {
     "id": "pyongyang-kp",
@@ -1207,37 +617,7 @@
     "lonlat": [125.7543, 39.0339],
     "capital": true,
     "fact": "Pyongyang’s Ryugyong Hotel is a 105-storey pyramid-shaped skyscraper.",
-    "rank": 121
-  },
-  {
-    "id": "jerusalem-il",
-    "name": "Jerusalem",
-    "altNames": ["Al-Quds"],
-    "country": "ISR",
-    "lonlat": [35.2163, 31.769],
-    "capital": false,
-    "fact": "Jerusalem is sacred to Judaism, Christianity and Islam.",
-    "rank": 122
-  },
-  {
-    "id": "marseille-fr",
-    "name": "Marseille",
-    "altNames": ["Marseilles"],
-    "country": "FRA",
-    "lonlat": [5.3811, 43.297],
-    "capital": false,
-    "fact": "Marseille was founded by Greek settlers around 600 BC.",
-    "rank": 123
-  },
-  {
-    "id": "wuhan-cn",
-    "name": "Wuhan",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [114.2667, 30.5833],
-    "capital": false,
-    "fact": "Wuhan sits where the Han River flows into the Yangtze.",
-    "rank": 124
+    "rank": 62
   },
   {
     "id": "kabul-af",
@@ -1247,17 +627,7 @@
     "lonlat": [69.1723, 34.5281],
     "capital": true,
     "fact": null,
-    "rank": 125
-  },
-  {
-    "id": "krakow-pl",
-    "name": "Kraków",
-    "altNames": ["Krakow", "Cracow"],
-    "country": "POL",
-    "lonlat": [19.9366, 50.0614],
-    "capital": false,
-    "fact": "Kraków was Poland’s royal capital until the end of the 16th century.",
-    "rank": 126
+    "rank": 63
   },
   {
     "id": "caracas-ve",
@@ -1267,17 +637,7 @@
     "lonlat": [-66.8792, 10.488],
     "capital": true,
     "fact": "Caracas is the birthplace of Simón Bolívar.",
-    "rank": 127
-  },
-  {
-    "id": "seville-es",
-    "name": "Seville",
-    "altNames": ["Sevilla"],
-    "country": "ESP",
-    "lonlat": [-5.9732, 37.3828],
-    "capital": false,
-    "fact": "Seville Cathedral is one of the largest Gothic cathedrals in the world.",
-    "rank": 128
+    "rank": 64
   },
   {
     "id": "luanda-ao",
@@ -1287,37 +647,7 @@
     "lonlat": [13.2343, -8.8368],
     "capital": true,
     "fact": "Luanda was founded by the Portuguese in 1576.",
-    "rank": 129
-  },
-  {
-    "id": "seattle-us",
-    "name": "Seattle",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-122.3321, 47.6062],
-    "capital": false,
-    "fact": "Seattle’s Space Needle was built for the 1962 World’s Fair.",
-    "rank": 130
-  },
-  {
-    "id": "boston-us",
-    "name": "Boston",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-71.0598, 42.3584],
-    "capital": false,
-    "fact": "Boston Common, established in 1634, is the oldest public park in the United States.",
-    "rank": 131
-  },
-  {
-    "id": "frankfurt-de",
-    "name": "Frankfurt",
-    "altNames": ["Frankfurt am Main"],
-    "country": "DEU",
-    "lonlat": [8.6842, 50.1155],
-    "capital": false,
-    "fact": "Frankfurt is home to the European Central Bank.",
-    "rank": 132
+    "rank": 65
   },
   {
     "id": "mogadishu-so",
@@ -1327,37 +657,7 @@
     "lonlat": [45.3438, 2.0371],
     "capital": true,
     "fact": null,
-    "rank": 133
-  },
-  {
-    "id": "venice-it",
-    "name": "Venice",
-    "altNames": ["Venezia"],
-    "country": "ITA",
-    "lonlat": [12.3326, 45.4371],
-    "capital": false,
-    "fact": "Venice is built on more than 100 small islands in a lagoon.",
-    "rank": 134
-  },
-  {
-    "id": "cancun-mx",
-    "name": "Cancún",
-    "altNames": ["Cancun"],
-    "country": "MEX",
-    "lonlat": [-86.8466, 21.1743],
-    "capital": false,
-    "fact": "Cancún was developed as a planned resort from 1970 onwards.",
-    "rank": 135
-  },
-  {
-    "id": "las-vegas-us",
-    "name": "Las Vegas",
-    "altNames": ["Vegas"],
-    "country": "USA",
-    "lonlat": [-115.1372, 36.175],
-    "capital": false,
-    "fact": "Las Vegas lies in the Mojave Desert.",
-    "rank": 136
+    "rank": 66
   },
   {
     "id": "dakar-sn",
@@ -1367,37 +667,7 @@
     "lonlat": [-17.4441, 14.6937],
     "capital": true,
     "fact": "Dakar is the westernmost city on the African mainland.",
-    "rank": 137
-  },
-  {
-    "id": "vancouver-ca",
-    "name": "Vancouver",
-    "altNames": [],
-    "country": "CAN",
-    "lonlat": [-123.1193, 49.2497],
-    "capital": false,
-    "fact": "Vancouver hosted the 2010 Winter Olympics.",
-    "rank": 138
-  },
-  {
-    "id": "chongqing-cn",
-    "name": "Chongqing",
-    "altNames": ["Chungking"],
-    "country": "CHN",
-    "lonlat": [106.5528, 29.5628],
-    "capital": false,
-    "fact": "Chongqing was China’s wartime capital during World War II.",
-    "rank": 139
-  },
-  {
-    "id": "nanjing-cn",
-    "name": "Nanjing",
-    "altNames": ["Nanking"],
-    "country": "CHN",
-    "lonlat": [118.7778, 32.0617],
-    "capital": false,
-    "fact": "Nanjing was the capital of several Chinese dynasties and of the Republic of China.",
-    "rank": 140
+    "rank": 67
   },
   {
     "id": "santo-domingo-do",
@@ -1407,7 +677,7 @@
     "lonlat": [-69.8923, 18.4719],
     "capital": true,
     "fact": "Santo Domingo is the oldest continuously inhabited European-founded city in the Americas.",
-    "rank": 141
+    "rank": 68
   },
   {
     "id": "tashkent-uz",
@@ -1417,7 +687,7 @@
     "lonlat": [69.2163, 41.2647],
     "capital": true,
     "fact": "Tashkent was largely rebuilt after a major earthquake in 1966.",
-    "rank": 142
+    "rank": 69
   },
   {
     "id": "algiers-dz",
@@ -1427,7 +697,7 @@
     "lonlat": [3.0875, 36.7323],
     "capital": true,
     "fact": "The Casbah of Algiers is a UNESCO World Heritage Site.",
-    "rank": 143
+    "rank": 70
   },
   {
     "id": "khartoum-sd",
@@ -1437,17 +707,7 @@
     "lonlat": [32.5324, 15.5518],
     "capital": true,
     "fact": "Khartoum lies where the Blue Nile and the White Nile meet.",
-    "rank": 144
-  },
-  {
-    "id": "hangzhou-cn",
-    "name": "Hangzhou",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [120.1614, 30.2936],
-    "capital": false,
-    "fact": "Hangzhou’s West Lake is a UNESCO World Heritage Site.",
-    "rank": 145
+    "rank": 71
   },
   {
     "id": "accra-gh",
@@ -1457,7 +717,7 @@
     "lonlat": [-0.1969, 5.556],
     "capital": true,
     "fact": "Accra’s Independence Arch commemorates Ghana’s independence in 1957.",
-    "rank": 146
+    "rank": 72
   },
   {
     "id": "sanaa-ye",
@@ -1467,17 +727,7 @@
     "lonlat": [44.2067, 15.3547],
     "capital": true,
     "fact": "Sanaa’s old city is known for its multi-storey tower houses of rammed earth.",
-    "rank": 147
-  },
-  {
-    "id": "lyon-fr",
-    "name": "Lyon",
-    "altNames": ["Lyons"],
-    "country": "FRA",
-    "lonlat": [4.8467, 45.7485],
-    "capital": false,
-    "fact": "Lyon, then called Lugdunum, was the capital of Roman Gaul.",
-    "rank": 148
+    "rank": 73
   },
   {
     "id": "bucharest-ro",
@@ -1487,27 +737,7 @@
     "lonlat": [26.1063, 44.4323],
     "capital": true,
     "fact": "Bucharest’s Palace of the Parliament is one of the heaviest buildings in the world.",
-    "rank": 149
-  },
-  {
-    "id": "harbin-cn",
-    "name": "Harbin",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [126.65, 45.75],
-    "capital": false,
-    "fact": "Harbin is famous for its annual Ice and Snow Festival.",
-    "rank": 150
-  },
-  {
-    "id": "edinburgh-gb",
-    "name": "Edinburgh",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-3.1965, 55.9521],
-    "capital": false,
-    "fact": "Edinburgh Castle sits on the plug of an extinct volcano.",
-    "rank": 151
+    "rank": 74
   },
   {
     "id": "conakry-gn",
@@ -1517,17 +747,7 @@
     "lonlat": [-13.6773, 9.538],
     "capital": true,
     "fact": null,
-    "rank": 152
-  },
-  {
-    "id": "miami-us",
-    "name": "Miami",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-80.1937, 25.7743],
-    "capital": false,
-    "fact": "Miami is the only major US city founded by a woman, Julia Tuttle.",
-    "rank": 153
+    "rank": 75
   },
   {
     "id": "minsk-by",
@@ -1537,47 +757,7 @@
     "lonlat": [27.5667, 53.9],
     "capital": true,
     "fact": "Minsk was largely rebuilt after World War II.",
-    "rank": 154
-  },
-  {
-    "id": "tel-aviv-il",
-    "name": "Tel Aviv",
-    "altNames": ["Tel Aviv-Yafo", "Tel Aviv Yafo"],
-    "country": "ISR",
-    "lonlat": [34.7806, 32.0809],
-    "capital": false,
-    "fact": "Tel Aviv’s White City has thousands of Bauhaus-style buildings.",
-    "rank": 155
-  },
-  {
-    "id": "suzhou-cn",
-    "name": "Suzhou",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [120.5954, 31.3041],
-    "capital": false,
-    "fact": "Suzhou is renowned for its classical Chinese gardens.",
-    "rank": 156
-  },
-  {
-    "id": "luxor-eg",
-    "name": "Luxor",
-    "altNames": [],
-    "country": "EGY",
-    "lonlat": [32.6421, 25.6989],
-    "capital": false,
-    "fact": "Luxor is built on the site of ancient Thebes.",
-    "rank": 157
-  },
-  {
-    "id": "auckland-nz",
-    "name": "Auckland",
-    "altNames": [],
-    "country": "NZL",
-    "lonlat": [174.7635, -36.8485],
-    "capital": false,
-    "fact": "Auckland is built on a field of around 50 volcanoes.",
-    "rank": 158
+    "rank": 76
   },
   {
     "id": "rabat-ma",
@@ -1587,7 +767,7 @@
     "lonlat": [-6.8326, 34.0132],
     "capital": true,
     "fact": "Rabat, not Casablanca, is the capital of Morocco.",
-    "rank": 159
+    "rank": 77
   },
   {
     "id": "pretoria-za",
@@ -1597,17 +777,7 @@
     "lonlat": [28.1878, -25.7449],
     "capital": true,
     "fact": "Pretoria is famous for the jacaranda trees that turn the city purple every spring.",
-    "rank": 160
-  },
-  {
-    "id": "manchester-gb",
-    "name": "Manchester",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-2.2374, 53.4809],
-    "capital": false,
-    "fact": "The world’s first inter-city passenger railway linked Manchester and Liverpool in 1830.",
-    "rank": 161
+    "rank": 78
   },
   {
     "id": "phnom-penh-kh",
@@ -1617,17 +787,7 @@
     "lonlat": [104.916, 11.5625],
     "capital": true,
     "fact": "Phnom Penh lies where the Mekong meets the Tonlé Sap river.",
-    "rank": 162
-  },
-  {
-    "id": "new-orleans-us",
-    "name": "New Orleans",
-    "altNames": ["NOLA"],
-    "country": "USA",
-    "lonlat": [-90.0751, 29.9547],
-    "capital": false,
-    "fact": "New Orleans is widely considered the birthplace of jazz.",
-    "rank": 163
+    "rank": 79
   },
   {
     "id": "harare-zw",
@@ -1637,7 +797,7 @@
     "lonlat": [31.0534, -17.8277],
     "capital": true,
     "fact": "Harare was called Salisbury until 1982.",
-    "rank": 164
+    "rank": 80
   },
   {
     "id": "reykjavik-is",
@@ -1647,7 +807,7 @@
     "lonlat": [-21.8954, 64.1355],
     "capital": true,
     "fact": "Reykjavik is the northernmost capital of a sovereign state.",
-    "rank": 165
+    "rank": 81
   },
   {
     "id": "asuncion-py",
@@ -1657,17 +817,7 @@
     "lonlat": [-57.647, -25.2865],
     "capital": true,
     "fact": "Asunción, founded in 1537, is one of the oldest cities in South America.",
-    "rank": 166
-  },
-  {
-    "id": "honolulu-us",
-    "name": "Honolulu",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-157.8583, 21.3069],
-    "capital": false,
-    "fact": "Honolulu’s ʻIolani Palace is the only royal palace in the United States.",
-    "rank": 167
+    "rank": 82
   },
   {
     "id": "antananarivo-mg",
@@ -1677,27 +827,7 @@
     "lonlat": [47.5361, -18.9137],
     "capital": true,
     "fact": "The name Antananarivo means “City of the Thousand”.",
-    "rank": 168
-  },
-  {
-    "id": "florence-it",
-    "name": "Florence",
-    "altNames": ["Firenze"],
-    "country": "ITA",
-    "lonlat": [11.2463, 43.7792],
-    "capital": false,
-    "fact": "Florence is considered the birthplace of the Renaissance.",
-    "rank": 169
-  },
-  {
-    "id": "zurich-ch",
-    "name": "Zurich",
-    "altNames": ["Zürich", "Zuerich"],
-    "country": "CHE",
-    "lonlat": [8.55, 47.3667],
-    "capital": false,
-    "fact": "Zurich is Switzerland’s largest city, although Bern is the federal city.",
-    "rank": 170
+    "rank": 83
   },
   {
     "id": "kampala-ug",
@@ -1707,17 +837,7 @@
     "lonlat": [32.5822, 0.3163],
     "capital": true,
     "fact": "Kampala was originally built on seven hills.",
-    "rank": 171
-  },
-  {
-    "id": "nice-fr",
-    "name": "Nice",
-    "altNames": [],
-    "country": "FRA",
-    "lonlat": [7.2661, 43.7031],
-    "capital": false,
-    "fact": "Nice’s Promenade des Anglais runs along the Baie des Anges.",
-    "rank": 172
+    "rank": 84
   },
   {
     "id": "yaounde-cm",
@@ -1727,7 +847,7 @@
     "lonlat": [11.5167, 3.8667],
     "capital": true,
     "fact": null,
-    "rank": 173
+    "rank": 85
   },
   {
     "id": "bamako-ml",
@@ -1737,7 +857,7 @@
     "lonlat": [-8, 12.65],
     "capital": true,
     "fact": "Bamako lies on the Niger River.",
-    "rank": 174
+    "rank": 86
   },
   {
     "id": "brazzaville-cg",
@@ -1747,7 +867,7 @@
     "lonlat": [15.2832, -4.2661],
     "capital": true,
     "fact": "Brazzaville is named after the explorer Pierre Savorgnan de Brazza.",
-    "rank": 175
+    "rank": 87
   },
   {
     "id": "amman-jo",
@@ -1757,7 +877,7 @@
     "lonlat": [35.945, 31.9552],
     "capital": true,
     "fact": "Amman has a well-preserved Roman theatre in its centre.",
-    "rank": 176
+    "rank": 88
   },
   {
     "id": "belgrade-rs",
@@ -1767,17 +887,7 @@
     "lonlat": [20.4651, 44.804],
     "capital": true,
     "fact": "Belgrade lies where the Sava river flows into the Danube.",
-    "rank": 177
-  },
-  {
-    "id": "samarkand-uz",
-    "name": "Samarkand",
-    "altNames": ["Samarqand"],
-    "country": "UZB",
-    "lonlat": [66.9597, 39.6542],
-    "capital": false,
-    "fact": "Samarkand was one of the great cities of the Silk Road.",
-    "rank": 178
+    "rank": 89
   },
   {
     "id": "montevideo-uy",
@@ -1787,7 +897,7 @@
     "lonlat": [-56.1882, -34.9033],
     "capital": true,
     "fact": "Montevideo hosted the first FIFA World Cup final in 1930.",
-    "rank": 179
+    "rank": 90
   },
   {
     "id": "lusaka-zm",
@@ -1797,27 +907,7 @@
     "lonlat": [28.2871, -15.4067],
     "capital": true,
     "fact": null,
-    "rank": 180
-  },
-  {
-    "id": "cusco-pe",
-    "name": "Cusco",
-    "altNames": ["Cuzco"],
-    "country": "PER",
-    "lonlat": [-71.9673, -13.5226],
-    "capital": false,
-    "fact": "Cusco was the capital of the Inca Empire.",
-    "rank": 181
-  },
-  {
-    "id": "chittagong-bd",
-    "name": "Chittagong",
-    "altNames": ["Chattogram"],
-    "country": "BGD",
-    "lonlat": [91.8317, 22.3384],
-    "capital": false,
-    "fact": null,
-    "rank": 182
+    "rank": 91
   },
   {
     "id": "port-au-prince-ht",
@@ -1827,17 +917,7 @@
     "lonlat": [-72.3388, 18.5435],
     "capital": true,
     "fact": null,
-    "rank": 183
-  },
-  {
-    "id": "kunming-cn",
-    "name": "Kunming",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [102.7183, 25.0389],
-    "capital": false,
-    "fact": "Kunming is known as the City of Eternal Spring.",
-    "rank": 184
+    "rank": 92
   },
   {
     "id": "maputo-mz",
@@ -1847,37 +927,7 @@
     "lonlat": [32.5832, -25.9655],
     "capital": true,
     "fact": "Maputo was called Lourenço Marques until 1976.",
-    "rank": 185
-  },
-  {
-    "id": "ahmedabad-in",
-    "name": "Ahmedabad",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [72.5873, 23.0258],
-    "capital": false,
-    "fact": "Ahmedabad was India’s first city to be named a UNESCO World Heritage City, in 2017.",
-    "rank": 186
-  },
-  {
-    "id": "qingdao-cn",
-    "name": "Qingdao",
-    "altNames": ["Tsingtao"],
-    "country": "CHN",
-    "lonlat": [120.3804, 36.0649],
-    "capital": false,
-    "fact": "Qingdao is known for its beer, first brewed there by German settlers in 1903.",
-    "rank": 187
-  },
-  {
-    "id": "abidjan-ci",
-    "name": "Abidjan",
-    "altNames": [],
-    "country": "CIV",
-    "lonlat": [-4.0017, 5.3544],
-    "capital": false,
-    "fact": "Abidjan is the economic capital and largest city of Ivory Coast.",
-    "rank": 188
+    "rank": 93
   },
   {
     "id": "sofia-bg",
@@ -1887,7 +937,7 @@
     "lonlat": [23.3241, 42.6975],
     "capital": true,
     "fact": "Sofia sits at the foot of Vitosha mountain.",
-    "rank": 189
+    "rank": 94
   },
   {
     "id": "tripoli-ly",
@@ -1897,37 +947,7 @@
     "lonlat": [13.1873, 32.8874],
     "capital": true,
     "fact": "Tripoli’s old city is overlooked by the Red Castle, Assaraya al-Hamra.",
-    "rank": 190
-  },
-  {
-    "id": "kano-ng",
-    "name": "Kano",
-    "altNames": [],
-    "country": "NGA",
-    "lonlat": [8.5167, 12.0001],
-    "capital": false,
-    "fact": "Kano is one of the oldest cities in West Africa.",
-    "rank": 191
-  },
-  {
-    "id": "hyderabad-in",
-    "name": "Hyderabad",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [78.4564, 17.384],
-    "capital": false,
-    "fact": "Hyderabad’s Charminar monument was built in 1591.",
-    "rank": 192
-  },
-  {
-    "id": "yokohama-jp",
-    "name": "Yokohama",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [139.65, 35.4333],
-    "capital": false,
-    "fact": "Yokohama has Japan’s largest Chinatown.",
-    "rank": 193
+    "rank": 95
   },
   {
     "id": "baku-az",
@@ -1937,17 +957,7 @@
     "lonlat": [49.892, 40.3777],
     "capital": true,
     "fact": "Baku is the largest city on the Caspian Sea and lies below sea level.",
-    "rank": 194
-  },
-  {
-    "id": "belfast-gb",
-    "name": "Belfast",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-5.9254, 54.5968],
-    "capital": false,
-    "fact": "The Titanic was built in Belfast.",
-    "rank": 195
+    "rank": 96
   },
   {
     "id": "yerevan-am",
@@ -1957,7 +967,7 @@
     "lonlat": [44.5136, 40.1811],
     "capital": true,
     "fact": "Yerevan traces its founding to the fortress of Erebuni, built in 782 BC.",
-    "rank": 196
+    "rank": 97
   },
   {
     "id": "ouagadougou-bf",
@@ -1967,17 +977,7 @@
     "lonlat": [-1.5339, 12.3657],
     "capital": true,
     "fact": "Ouagadougou hosts FESPACO, Africa’s largest film festival.",
-    "rank": 197
-  },
-  {
-    "id": "orlando-us",
-    "name": "Orlando",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-81.3792, 28.5383],
-    "capital": false,
-    "fact": "Walt Disney World lies just outside Orlando.",
-    "rank": 198
+    "rank": 98
   },
   {
     "id": "tbilisi-ge",
@@ -1987,7 +987,7 @@
     "lonlat": [44.8337, 41.6941],
     "capital": true,
     "fact": "Tbilisi is famous for its sulphur baths.",
-    "rank": 199
+    "rank": 99
   },
   {
     "id": "guatemala-city-gt",
@@ -1997,27 +997,7 @@
     "lonlat": [-90.5133, 14.6407],
     "capital": true,
     "fact": "Guatemala City has been the country’s capital since 1776.",
-    "rank": 200
-  },
-  {
-    "id": "porto-pt",
-    "name": "Porto",
-    "altNames": ["Oporto"],
-    "country": "PRT",
-    "lonlat": [-8.611, 41.1496],
-    "capital": false,
-    "fact": "Port wine takes its name from Porto, where it has been shipped for centuries.",
-    "rank": 201
-  },
-  {
-    "id": "durban-za",
-    "name": "Durban",
-    "altNames": [],
-    "country": "ZAF",
-    "lonlat": [31.0292, -29.8579],
-    "capital": false,
-    "fact": "Durban has one of the largest communities of Indian descent outside India.",
-    "rank": 202
+    "rank": 100
   },
   {
     "id": "managua-ni",
@@ -2027,17 +1007,7 @@
     "lonlat": [-86.2504, 12.1328],
     "capital": true,
     "fact": "Managua lies on the southern shore of Lake Managua.",
-    "rank": 203
-  },
-  {
-    "id": "urumqi-cn",
-    "name": "Ürümqi",
-    "altNames": ["Urumqi", "Urumchi"],
-    "country": "CHN",
-    "lonlat": [87.6005, 43.801],
-    "capital": false,
-    "fact": "Ürümqi is often described as the city farthest from any ocean.",
-    "rank": 204
+    "rank": 101
   },
   {
     "id": "monrovia-lr",
@@ -2047,7 +1017,7 @@
     "lonlat": [-10.7969, 6.3005],
     "capital": true,
     "fact": "Monrovia is named after US President James Monroe.",
-    "rank": 205
+    "rank": 102
   },
   {
     "id": "kingston-jm",
@@ -2057,17 +1027,7 @@
     "lonlat": [-76.7936, 17.997],
     "capital": true,
     "fact": "Kingston is home to the Bob Marley Museum.",
-    "rank": 206
-  },
-  {
-    "id": "pune-in",
-    "name": "Pune",
-    "altNames": ["Poona"],
-    "country": "IND",
-    "lonlat": [73.8554, 18.5196],
-    "capital": false,
-    "fact": null,
-    "rank": 207
+    "rank": 103
   },
   {
     "id": "naypyidaw-mm",
@@ -2077,17 +1037,7 @@
     "lonlat": [96.1297, 19.745],
     "capital": true,
     "fact": "Naypyidaw replaced Yangon as Myanmar’s capital in 2006.",
-    "rank": 208
-  },
-  {
-    "id": "jeddah-sa",
-    "name": "Jeddah",
-    "altNames": ["Jiddah", "Jedda"],
-    "country": "SAU",
-    "lonlat": [39.1862, 21.4901],
-    "capital": false,
-    "fact": "Jeddah is the main gateway for pilgrims travelling to Mecca.",
-    "rank": 209
+    "rank": 104
   },
   {
     "id": "bishkek-kg",
@@ -2097,27 +1047,7 @@
     "lonlat": [74.59, 42.87],
     "capital": true,
     "fact": "Bishkek was called Frunze in Soviet times.",
-    "rank": 210
-  },
-  {
-    "id": "salvador-br",
-    "name": "Salvador",
-    "altNames": ["Salvador da Bahia"],
-    "country": "BRA",
-    "lonlat": [-38.5108, -12.9711],
-    "capital": false,
-    "fact": "Salvador was Brazil’s first capital.",
-    "rank": 211
-  },
-  {
-    "id": "dar-es-salaam-tz",
-    "name": "Dar es Salaam",
-    "altNames": ["Dar"],
-    "country": "TZA",
-    "lonlat": [39.2695, -6.8235],
-    "capital": false,
-    "fact": "Dar es Salaam is Tanzania’s largest city.",
-    "rank": 212
+    "rank": 105
   },
   {
     "id": "tegucigalpa-hn",
@@ -2127,27 +1057,7 @@
     "lonlat": [-87.2068, 14.0818],
     "capital": true,
     "fact": null,
-    "rank": 213
-  },
-  {
-    "id": "incheon-kr",
-    "name": "Incheon",
-    "altNames": [],
-    "country": "KOR",
-    "lonlat": [126.7052, 37.4565],
-    "capital": false,
-    "fact": "Incheon’s airport is South Korea’s main international gateway.",
-    "rank": 214
-  },
-  {
-    "id": "basra-iq",
-    "name": "Basra",
-    "altNames": ["Basrah"],
-    "country": "IRQ",
-    "lonlat": [47.7804, 30.5085],
-    "capital": false,
-    "fact": null,
-    "rank": 215
+    "rank": 106
   },
   {
     "id": "freetown-sl",
@@ -2157,17 +1067,7 @@
     "lonlat": [-13.2356, 8.4871],
     "capital": true,
     "fact": "Freetown was founded in 1792 as a settlement for freed slaves.",
-    "rank": 216
-  },
-  {
-    "id": "chiang-mai-th",
-    "name": "Chiang Mai",
-    "altNames": [],
-    "country": "THA",
-    "lonlat": [98.9847, 18.7904],
-    "capital": false,
-    "fact": "Chiang Mai has more than 300 Buddhist temples.",
-    "rank": 217
+    "rank": 107
   },
   {
     "id": "muscat-om",
@@ -2177,27 +1077,7 @@
     "lonlat": [58.4078, 23.5841],
     "capital": true,
     "fact": "Muscat’s Sultan Qaboos Grand Mosque has one of the world’s largest hand-woven carpets.",
-    "rank": 218
-  },
-  {
-    "id": "izmir-tr",
-    "name": "Izmir",
-    "altNames": ["İzmir", "Smyrna"],
-    "country": "TUR",
-    "lonlat": [27.1384, 38.4127],
-    "capital": false,
-    "fact": "Izmir was known in antiquity as Smyrna.",
-    "rank": 219
-  },
-  {
-    "id": "cotonou-bj",
-    "name": "Cotonou",
-    "altNames": [],
-    "country": "BEN",
-    "lonlat": [2.4183, 6.3654],
-    "capital": true,
-    "fact": "Cotonou is Benin’s largest city and seat of government, though Porto-Novo is the official capital.",
-    "rank": 220
+    "rank": 108
   },
   {
     "id": "niamey-ne",
@@ -2207,47 +1087,7 @@
     "lonlat": [2.1098, 13.5137],
     "capital": true,
     "fact": null,
-    "rank": 221
-  },
-  {
-    "id": "fortaleza-br",
-    "name": "Fortaleza",
-    "altNames": [],
-    "country": "BRA",
-    "lonlat": [-38.5431, -3.7172],
-    "capital": false,
-    "fact": null,
-    "rank": 222
-  },
-  {
-    "id": "cali-co",
-    "name": "Cali",
-    "altNames": [],
-    "country": "COL",
-    "lonlat": [-76.5225, 3.4372],
-    "capital": false,
-    "fact": "Cali is often called the salsa capital of the world.",
-    "rank": 223
-  },
-  {
-    "id": "surabaya-id",
-    "name": "Surabaya",
-    "altNames": [],
-    "country": "IDN",
-    "lonlat": [112.7508, -7.2492],
-    "capital": false,
-    "fact": null,
-    "rank": 224
-  },
-  {
-    "id": "belo-horizonte-br",
-    "name": "Belo Horizonte",
-    "altNames": [],
-    "country": "BRA",
-    "lonlat": [-43.9378, -19.9208],
-    "capital": false,
-    "fact": "Belo Horizonte, founded in 1897, was one of Brazil’s first planned modern cities.",
-    "rank": 225
+    "rank": 109
   },
   {
     "id": "lome-tg",
@@ -2257,7 +1097,7 @@
     "lonlat": [1.2215, 6.1287],
     "capital": true,
     "fact": null,
-    "rank": 226
+    "rank": 110
   },
   {
     "id": "kigali-rw",
@@ -2267,7 +1107,7 @@
     "lonlat": [30.0588, -1.95],
     "capital": true,
     "fact": null,
-    "rank": 227
+    "rank": 111
   },
   {
     "id": "riga-lv",
@@ -2277,27 +1117,7 @@
     "lonlat": [24.1059, 56.946],
     "capital": true,
     "fact": "Riga has one of the world’s largest collections of Art Nouveau buildings.",
-    "rank": 228
-  },
-  {
-    "id": "geneva-ch",
-    "name": "Geneva",
-    "altNames": ["Genève", "Genf"],
-    "country": "CHE",
-    "lonlat": [6.1457, 46.2022],
-    "capital": false,
-    "fact": "Geneva hosts the European headquarters of the United Nations.",
-    "rank": 229
-  },
-  {
-    "id": "mashhad-ir",
-    "name": "Mashhad",
-    "altNames": [],
-    "country": "IRN",
-    "lonlat": [59.568, 36.3156],
-    "capital": false,
-    "fact": null,
-    "rank": 230
+    "rank": 112
   },
   {
     "id": "ashgabat-tm",
@@ -2307,7 +1127,7 @@
     "lonlat": [58.3833, 37.95],
     "capital": true,
     "fact": "Ashgabat holds a world record for the most buildings clad in white marble.",
-    "rank": 231
+    "rank": 113
   },
   {
     "id": "n-djamena-td",
@@ -2317,17 +1137,7 @@
     "lonlat": [15.0444, 12.1067],
     "capital": true,
     "fact": "N’Djamena was known as Fort-Lamy until 1973.",
-    "rank": 232
-  },
-  {
-    "id": "maracaibo-ve",
-    "name": "Maracaibo",
-    "altNames": [],
-    "country": "VEN",
-    "lonlat": [-71.6124, 10.6666],
-    "capital": false,
-    "fact": "Maracaibo is the centre of Venezuela’s oil industry.",
-    "rank": 233
+    "rank": 114
   },
   {
     "id": "zagreb-hr",
@@ -2337,7 +1147,7 @@
     "lonlat": [15.978, 45.8144],
     "capital": true,
     "fact": "Zagreb is home to the Museum of Broken Relationships.",
-    "rank": 234
+    "rank": 115
   },
   {
     "id": "sarajevo-ba",
@@ -2347,7 +1157,7 @@
     "lonlat": [18.3564, 43.8486],
     "capital": true,
     "fact": "The 1914 assassination of Archduke Franz Ferdinand in Sarajevo set off World War I.",
-    "rank": 235
+    "rank": 116
   },
   {
     "id": "tunis-tn",
@@ -2357,27 +1167,7 @@
     "lonlat": [10.1658, 36.819],
     "capital": true,
     "fact": "The ruins of ancient Carthage lie on the outskirts of Tunis.",
-    "rank": 236
-  },
-  {
-    "id": "nagoya-jp",
-    "name": "Nagoya",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [136.9064, 35.1815],
-    "capital": false,
-    "fact": "Nagoya Castle is famous for the golden shachihoko ornaments on its roof.",
-    "rank": 237
-  },
-  {
-    "id": "oxford-gb",
-    "name": "Oxford",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-1.256, 51.7522],
-    "capital": false,
-    "fact": "The University of Oxford is the oldest university in the English-speaking world.",
-    "rank": 238
+    "rank": 117
   },
   {
     "id": "dushanbe-tj",
@@ -2387,7 +1177,7 @@
     "lonlat": [68.779, 38.5358],
     "capital": true,
     "fact": "Dushanbe means “Monday” in Tajik, after a Monday market held there.",
-    "rank": 239
+    "rank": 118
   },
   {
     "id": "nouakchott-mr",
@@ -2397,7 +1187,7 @@
     "lonlat": [-15.9785, 18.0858],
     "capital": true,
     "fact": "Nouakchott was a small village before it was chosen as the capital in 1958.",
-    "rank": 240
+    "rank": 119
   },
   {
     "id": "colombo-lk",
@@ -2407,7 +1197,7 @@
     "lonlat": [79.8487, 6.9355],
     "capital": true,
     "fact": "Colombo is Sri Lanka’s largest city and main port.",
-    "rank": 241
+    "rank": 120
   },
   {
     "id": "lilongwe-mw",
@@ -2417,7 +1207,7 @@
     "lonlat": [33.7873, -13.9669],
     "capital": true,
     "fact": null,
-    "rank": 242
+    "rank": 121
   },
   {
     "id": "chisinau-md",
@@ -2427,27 +1217,17 @@
     "lonlat": [28.8575, 47.0056],
     "capital": true,
     "fact": null,
-    "rank": 243
+    "rank": 122
   },
   {
-    "id": "almaty-kz",
-    "name": "Almaty",
-    "altNames": ["Alma-Ata", "Alma Ata"],
-    "country": "KAZ",
-    "lonlat": [76.9286, 43.2567],
-    "capital": false,
-    "fact": "Almaty was the capital of Kazakhstan until 1997.",
-    "rank": 244
-  },
-  {
-    "id": "guayaquil-ec",
-    "name": "Guayaquil",
-    "altNames": [],
-    "country": "ECU",
-    "lonlat": [-79.8862, -2.1962],
-    "capital": false,
-    "fact": "Guayaquil is Ecuador’s largest city and main port.",
-    "rank": 245
+    "id": "djibouti-dj",
+    "name": "Djibouti",
+    "altNames": ["Djibouti City"],
+    "country": "DJI",
+    "lonlat": [43.145, 11.589],
+    "capital": true,
+    "fact": null,
+    "rank": 123
   },
   {
     "id": "islamabad-pk",
@@ -2457,7 +1237,7 @@
     "lonlat": [73.0433, 33.7215],
     "capital": true,
     "fact": "Islamabad was built in the 1960s as Pakistan’s new capital.",
-    "rank": 246
+    "rank": 124
   },
   {
     "id": "abuja-ng",
@@ -2467,7 +1247,7 @@
     "lonlat": [7.4951, 9.0579],
     "capital": true,
     "fact": "Abuja was purpose-built in the 1980s as Nigeria’s new capital.",
-    "rank": 247
+    "rank": 125
   },
   {
     "id": "libreville-ga",
@@ -2477,7 +1257,7 @@
     "lonlat": [9.4536, 0.3924],
     "capital": true,
     "fact": "Libreville was founded in 1849 as a settlement for freed slaves.",
-    "rank": 248
+    "rank": 126
   },
   {
     "id": "asmara-er",
@@ -2487,27 +1267,27 @@
     "lonlat": [38.9318, 15.3381],
     "capital": true,
     "fact": "Asmara is famous for its Italian modernist architecture.",
-    "rank": 249
+    "rank": 127
   },
   {
-    "id": "siem-reap-kh",
-    "name": "Siem Reap",
-    "altNames": [],
-    "country": "KHM",
-    "lonlat": [103.8606, 13.3618],
-    "capital": false,
-    "fact": "Siem Reap is the gateway to the temples of Angkor.",
-    "rank": 250
+    "id": "pristina-xk",
+    "name": "Pristina",
+    "altNames": ["Prishtina", "Priština", "Prishtinë"],
+    "country": "UNK",
+    "lonlat": [21.1669, 42.6727],
+    "capital": true,
+    "fact": null,
+    "rank": 128
   },
   {
-    "id": "curitiba-br",
-    "name": "Curitiba",
+    "id": "bangui-cf",
+    "name": "Bangui",
     "altNames": [],
-    "country": "BRA",
-    "lonlat": [-49.2731, -25.4278],
-    "capital": false,
-    "fact": "Curitiba is known for its pioneering bus rapid transit system.",
-    "rank": 251
+    "country": "CAF",
+    "lonlat": [18.555, 4.3612],
+    "capital": true,
+    "fact": "Bangui lies on the Ubangi River, across from the Democratic Republic of the Congo.",
+    "rank": 129
   },
   {
     "id": "vilnius-lt",
@@ -2517,17 +1297,7 @@
     "lonlat": [25.2798, 54.6892],
     "capital": true,
     "fact": "Vilnius has one of the largest surviving medieval old towns in Northern Europe.",
-    "rank": 252
-  },
-  {
-    "id": "bandung-id",
-    "name": "Bandung",
-    "altNames": [],
-    "country": "IDN",
-    "lonlat": [107.6069, -6.9222],
-    "capital": false,
-    "fact": "Bandung hosted the Asian–African Conference of 1955.",
-    "rank": 253
+    "rank": 130
   },
   {
     "id": "san-salvador-sv",
@@ -2537,47 +1307,7 @@
     "lonlat": [-89.1872, 13.6893],
     "capital": true,
     "fact": null,
-    "rank": 254
-  },
-  {
-    "id": "aleppo-sy",
-    "name": "Aleppo",
-    "altNames": [],
-    "country": "SYR",
-    "lonlat": [37.1612, 36.2012],
-    "capital": false,
-    "fact": "Aleppo’s ancient citadel towers over the old city.",
-    "rank": 255
-  },
-  {
-    "id": "phoenix-us",
-    "name": "Phoenix",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-112.074, 33.4484],
-    "capital": false,
-    "fact": "Phoenix is the capital of Arizona.",
-    "rank": 256
-  },
-  {
-    "id": "kobe-jp",
-    "name": "Kobe",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [135.183, 34.6913],
-    "capital": false,
-    "fact": "Kobe gave its name to a famous Wagyu beef.",
-    "rank": 257
-  },
-  {
-    "id": "kaohsiung-tw",
-    "name": "Kaohsiung",
-    "altNames": [],
-    "country": "TWN",
-    "lonlat": [120.3133, 22.6163],
-    "capital": false,
-    "fact": "Kaohsiung is Taiwan’s largest port.",
-    "rank": 258
+    "rank": 131
   },
   {
     "id": "skopje-mk",
@@ -2587,87 +1317,7 @@
     "lonlat": [21.4314, 41.9965],
     "capital": true,
     "fact": "Mother Teresa was born in Skopje in 1910.",
-    "rank": 259
-  },
-  {
-    "id": "the-hague-nl",
-    "name": "The Hague",
-    "altNames": ["Den Haag", "Hague"],
-    "country": "NLD",
-    "lonlat": [4.2986, 52.0767],
-    "capital": true,
-    "fact": "The Hague is home to the International Court of Justice.",
-    "rank": 260
-  },
-  {
-    "id": "lhasa-cn",
-    "name": "Lhasa",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [91.1, 29.65],
-    "capital": false,
-    "fact": "Lhasa’s Potala Palace was the traditional winter residence of the Dalai Lama.",
-    "rank": 261
-  },
-  {
-    "id": "recife-br",
-    "name": "Recife",
-    "altNames": [],
-    "country": "BRA",
-    "lonlat": [-34.8811, -8.0539],
-    "capital": false,
-    "fact": "Recife is nicknamed the Venice of Brazil for its rivers and bridges.",
-    "rank": 262
-  },
-  {
-    "id": "san-antonio-us",
-    "name": "San Antonio",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-98.4936, 29.4241],
-    "capital": false,
-    "fact": "The Alamo is in San Antonio.",
-    "rank": 263
-  },
-  {
-    "id": "kumasi-gh",
-    "name": "Kumasi",
-    "altNames": [],
-    "country": "GHA",
-    "lonlat": [-1.6244, 6.6885],
-    "capital": false,
-    "fact": "Kumasi was the capital of the Ashanti Empire.",
-    "rank": 264
-  },
-  {
-    "id": "puebla-mx",
-    "name": "Puebla",
-    "altNames": [],
-    "country": "MEX",
-    "lonlat": [-98.2035, 19.0379],
-    "capital": false,
-    "fact": "Puebla is famous for mole poblano.",
-    "rank": 265
-  },
-  {
-    "id": "cordoba-ar",
-    "name": "Córdoba",
-    "altNames": ["Cordoba"],
-    "country": "ARG",
-    "lonlat": [-64.181, -31.4135],
-    "capital": false,
-    "fact": "Argentina’s Córdoba is home to one of the oldest universities in the Americas, founded in 1613.",
-    "rank": 266
-  },
-  {
-    "id": "tabriz-ir",
-    "name": "Tabriz",
-    "altNames": [],
-    "country": "IRN",
-    "lonlat": [46.2919, 38.08],
-    "capital": false,
-    "fact": "The historic bazaar of Tabriz is a UNESCO World Heritage Site.",
-    "rank": 267
+    "rank": 132
   },
   {
     "id": "juba-ss",
@@ -2677,77 +1327,7 @@
     "lonlat": [31.5825, 4.8517],
     "capital": true,
     "fact": "Juba became the capital of the world’s newest country, South Sudan, in 2011.",
-    "rank": 268
-  },
-  {
-    "id": "novosibirsk-ru",
-    "name": "Novosibirsk",
-    "altNames": [],
-    "country": "RUS",
-    "lonlat": [82.9346, 55.0415],
-    "capital": false,
-    "fact": "Novosibirsk is Russia’s third-largest city.",
-    "rank": 269
-  },
-  {
-    "id": "san-diego-us",
-    "name": "San Diego",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-117.1647, 32.7157],
-    "capital": false,
-    "fact": "San Diego lies right next to the Mexican border.",
-    "rank": 270
-  },
-  {
-    "id": "fukuoka-jp",
-    "name": "Fukuoka",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [130.4167, 33.6],
-    "capital": false,
-    "fact": null,
-    "rank": 271
-  },
-  {
-    "id": "valencia-ve",
-    "name": "Valencia",
-    "altNames": [],
-    "country": "VEN",
-    "lonlat": [-68.0076, 10.162],
-    "capital": false,
-    "fact": "Valencia in Venezuela was founded in 1555.",
-    "rank": 272
-  },
-  {
-    "id": "porto-alegre-br",
-    "name": "Porto Alegre",
-    "altNames": [],
-    "country": "BRA",
-    "lonlat": [-51.2302, -30.0328],
-    "capital": false,
-    "fact": "Porto Alegre is the southernmost state capital in Brazil.",
-    "rank": 273
-  },
-  {
-    "id": "santa-cruz-de-la-sierra-bo",
-    "name": "Santa Cruz de la Sierra",
-    "altNames": ["Santa Cruz"],
-    "country": "BOL",
-    "lonlat": [-63.1812, -17.7863],
-    "capital": false,
-    "fact": "Santa Cruz de la Sierra is Bolivia’s largest city.",
-    "rank": 274
-  },
-  {
-    "id": "yekaterinburg-ru",
-    "name": "Yekaterinburg",
-    "altNames": ["Ekaterinburg", "Sverdlovsk"],
-    "country": "RUS",
-    "lonlat": [60.6122, 56.8519],
-    "capital": false,
-    "fact": "Yekaterinburg lies just east of the Ural Mountains, the traditional boundary between Europe and Asia.",
-    "rank": 275
+    "rank": 133
   },
   {
     "id": "bratislava-sk",
@@ -2757,57 +1337,17 @@
     "lonlat": [17.1067, 48.1482],
     "capital": true,
     "fact": "Bratislava is the only national capital that borders two other countries, Austria and Hungary.",
-    "rank": 276
+    "rank": 134
   },
   {
-    "id": "douala-cm",
-    "name": "Douala",
+    "id": "monaco-mc",
+    "name": "Monaco",
     "altNames": [],
-    "country": "CMR",
-    "lonlat": [9.7043, 4.0483],
-    "capital": false,
-    "fact": "Douala is Cameroon’s largest city and main port.",
-    "rank": 277
-  },
-  {
-    "id": "tijuana-mx",
-    "name": "Tijuana",
-    "altNames": [],
-    "country": "MEX",
-    "lonlat": [-117.0037, 32.5027],
-    "capital": false,
-    "fact": "Tijuana lies directly across the border from San Diego.",
-    "rank": 278
-  },
-  {
-    "id": "dallas-us",
-    "name": "Dallas",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-96.8067, 32.7831],
-    "capital": false,
-    "fact": "President John F. Kennedy was assassinated in Dallas in 1963.",
-    "rank": 279
-  },
-  {
-    "id": "medina-sa",
-    "name": "Medina",
-    "altNames": ["Madinah"],
-    "country": "SAU",
-    "lonlat": [39.6142, 24.4686],
-    "capital": false,
-    "fact": "Medina is the second-holiest city in Islam.",
-    "rank": 280
-  },
-  {
-    "id": "shiraz-ir",
-    "name": "Shiraz",
-    "altNames": [],
-    "country": "IRN",
-    "lonlat": [52.5311, 29.6103],
-    "capital": false,
-    "fact": "Shiraz is the burial place of the poets Hafez and Saadi.",
-    "rank": 281
+    "country": "MCO",
+    "lonlat": [7.4167, 43.7333],
+    "capital": true,
+    "fact": null,
+    "rank": 135
   },
   {
     "id": "tallinn-ee",
@@ -2817,47 +1357,17 @@
     "lonlat": [24.7535, 59.437],
     "capital": true,
     "fact": "Tallinn’s medieval old town is a UNESCO World Heritage Site.",
-    "rank": 282
+    "rank": 136
   },
   {
-    "id": "adelaide-au",
-    "name": "Adelaide",
+    "id": "bissau-gw",
+    "name": "Bissau",
     "altNames": [],
-    "country": "AUS",
-    "lonlat": [138.5986, -34.9287],
-    "capital": false,
-    "fact": "Adelaide was laid out by Colonel William Light in 1837.",
-    "rank": 283
-  },
-  {
-    "id": "peshawar-pk",
-    "name": "Peshawar",
-    "altNames": [],
-    "country": "PAK",
-    "lonlat": [71.5785, 34.008],
-    "capital": false,
-    "fact": "Peshawar lies near the Khyber Pass.",
-    "rank": 284
-  },
-  {
-    "id": "davao-ph",
-    "name": "Davao",
-    "altNames": ["Davao City"],
-    "country": "PHL",
-    "lonlat": [125.6128, 7.0731],
-    "capital": false,
+    "country": "GNB",
+    "lonlat": [-15.5977, 11.8636],
+    "capital": true,
     "fact": null,
-    "rank": 285
-  },
-  {
-    "id": "mandalay-mm",
-    "name": "Mandalay",
-    "altNames": [],
-    "country": "MMR",
-    "lonlat": [96.0836, 21.9747],
-    "capital": false,
-    "fact": "Mandalay was the last royal capital of Burma.",
-    "rank": 286
+    "rank": 137
   },
   {
     "id": "tirana-al",
@@ -2867,47 +1377,7 @@
     "lonlat": [19.8189, 41.3275],
     "capital": true,
     "fact": "Tirana became the capital of Albania in 1920.",
-    "rank": 287
-  },
-  {
-    "id": "rosario-ar",
-    "name": "Rosario",
-    "altNames": [],
-    "country": "ARG",
-    "lonlat": [-60.6393, -32.9468],
-    "capital": false,
-    "fact": "Lionel Messi was born in Rosario.",
-    "rank": 288
-  },
-  {
-    "id": "monterrey-mx",
-    "name": "Monterrey",
-    "altNames": [],
-    "country": "MEX",
-    "lonlat": [-100.3185, 25.6751],
-    "capital": false,
-    "fact": "Monterrey is one of Mexico’s main industrial centres.",
-    "rank": 289
-  },
-  {
-    "id": "phuket-th",
-    "name": "Phuket",
-    "altNames": [],
-    "country": "THA",
-    "lonlat": [98.3981, 7.8906],
-    "capital": false,
-    "fact": "Phuket is Thailand’s largest island.",
-    "rank": 290
-  },
-  {
-    "id": "kazan-ru",
-    "name": "Kazan",
-    "altNames": [],
-    "country": "RUS",
-    "lonlat": [49.1221, 55.7887],
-    "capital": false,
-    "fact": "Kazan is the capital of the Republic of Tatarstan.",
-    "rank": 291
+    "rank": 138
   },
   {
     "id": "astana-kz",
@@ -2917,17 +1387,7 @@
     "lonlat": [71.446, 51.1801],
     "capital": true,
     "fact": "Astana became the capital of Kazakhstan in 1997.",
-    "rank": 292
-  },
-  {
-    "id": "amritsar-in",
-    "name": "Amritsar",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [74.8753, 31.6223],
-    "capital": false,
-    "fact": "Amritsar is home to the Golden Temple, the holiest site of Sikhism.",
-    "rank": 293
+    "rank": 139
   },
   {
     "id": "san-jose-cr",
@@ -2937,107 +1397,7 @@
     "lonlat": [-84.0833, 9.9333],
     "capital": true,
     "fact": "San José became the capital of Costa Rica in 1823.",
-    "rank": 294
-  },
-  {
-    "id": "calgary-ca",
-    "name": "Calgary",
-    "altNames": [],
-    "country": "CAN",
-    "lonlat": [-114.0853, 51.0501],
-    "capital": false,
-    "fact": "The Calgary Stampede rodeo is held every July.",
-    "rank": 295
-  },
-  {
-    "id": "odesa-ua",
-    "name": "Odesa",
-    "altNames": ["Odessa"],
-    "country": "UKR",
-    "lonlat": [30.7326, 46.4775],
-    "capital": false,
-    "fact": "Odesa’s Potemkin Stairs became world-famous through the 1925 film Battleship Potemkin.",
-    "rank": 296
-  },
-  {
-    "id": "birmingham-gb",
-    "name": "Birmingham",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-1.8998, 52.4814],
-    "capital": false,
-    "fact": "Birmingham has more miles of canal than Venice.",
-    "rank": 297
-  },
-  {
-    "id": "srinagar-in",
-    "name": "Srinagar",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [74.8055, 34.0857],
-    "capital": false,
-    "fact": "Srinagar is famous for the houseboats on Dal Lake.",
-    "rank": 298
-  },
-  {
-    "id": "pisa-it",
-    "name": "Pisa",
-    "altNames": [],
-    "country": "ITA",
-    "lonlat": [10.4036, 43.7085],
-    "capital": false,
-    "fact": "Pisa’s famous tower began to lean during its construction in the 12th century.",
-    "rank": 299
-  },
-  {
-    "id": "gqeberha-za",
-    "name": "Gqeberha",
-    "altNames": ["Port Elizabeth"],
-    "country": "ZAF",
-    "lonlat": [25.6149, -33.9611],
-    "capital": false,
-    "fact": "Port Elizabeth was officially renamed Gqeberha in 2021.",
-    "rank": 300
-  },
-  {
-    "id": "fez-ma",
-    "name": "Fez",
-    "altNames": ["Fes", "Fès"],
-    "country": "MAR",
-    "lonlat": [-5.0003, 34.0331],
-    "capital": false,
-    "fact": "Fez is home to al-Qarawiyyin, founded in 859 and often cited as the oldest existing university.",
-    "rank": 301
-  },
-  {
-    "id": "erbil-iq",
-    "name": "Erbil",
-    "altNames": ["Arbil", "Hawler"],
-    "country": "IRQ",
-    "lonlat": [44.0119, 36.1833],
-    "capital": false,
-    "fact": "Erbil’s citadel is one of the oldest continuously inhabited settlements in the world.",
-    "rank": 302
-  },
-  {
-    "id": "austin-us",
-    "name": "Austin",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-97.7431, 30.2672],
-    "capital": false,
-    "fact": "Austin is the capital of Texas.",
-    "rank": 303
-  },
-  {
-    "id": "jodhpur-in",
-    "name": "Jodhpur",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [73.0059, 26.2684],
-    "capital": false,
-    "fact": "Jodhpur is called the Blue City for its blue-painted houses.",
-    "rank": 304
+    "rank": 140
   },
   {
     "id": "port-moresby-pg",
@@ -3047,27 +1407,7 @@
     "lonlat": [147.1509, -9.4772],
     "capital": true,
     "fact": null,
-    "rank": 305
-  },
-  {
-    "id": "mendoza-ar",
-    "name": "Mendoza",
-    "altNames": [],
-    "country": "ARG",
-    "lonlat": [-68.8272, -32.8908],
-    "capital": false,
-    "fact": "Mendoza is the heart of Argentina’s wine country.",
-    "rank": 306
-  },
-  {
-    "id": "turin-it",
-    "name": "Turin",
-    "altNames": ["Torino"],
-    "country": "ITA",
-    "lonlat": [7.6868, 45.0705],
-    "capital": false,
-    "fact": "Turin hosted the 2006 Winter Olympics.",
-    "rank": 307
+    "rank": 141
   },
   {
     "id": "ljubljana-si",
@@ -3077,7 +1417,7 @@
     "lonlat": [14.5051, 46.0511],
     "capital": true,
     "fact": "Ljubljana’s Triple Bridge was designed by the architect Jože Plečnik.",
-    "rank": 308
+    "rank": 142
   },
   {
     "id": "windhoek-na",
@@ -3087,77 +1427,7 @@
     "lonlat": [17.0832, -22.5594],
     "capital": true,
     "fact": null,
-    "rank": 309
-  },
-  {
-    "id": "arequipa-pe",
-    "name": "Arequipa",
-    "altNames": [],
-    "country": "PER",
-    "lonlat": [-71.535, -16.3989],
-    "capital": false,
-    "fact": "Arequipa is called the White City for its buildings of white volcanic stone.",
-    "rank": 310
-  },
-  {
-    "id": "mombasa-ke",
-    "name": "Mombasa",
-    "altNames": [],
-    "country": "KEN",
-    "lonlat": [39.6636, -4.0547],
-    "capital": false,
-    "fact": "Mombasa’s Fort Jesus was built by the Portuguese in 1593.",
-    "rank": 311
-  },
-  {
-    "id": "cebu-city-ph",
-    "name": "Cebu City",
-    "altNames": ["Cebu"],
-    "country": "PHL",
-    "lonlat": [123.8907, 10.3167],
-    "capital": false,
-    "fact": "Cebu City was the first Spanish settlement in the Philippines, founded in 1565.",
-    "rank": 312
-  },
-  {
-    "id": "merida-mx",
-    "name": "Mérida",
-    "altNames": ["Merida"],
-    "country": "MEX",
-    "lonlat": [-89.617, 20.9754],
-    "capital": false,
-    "fact": "Mérida is the capital of the state of Yucatán.",
-    "rank": 313
-  },
-  {
-    "id": "tainan-tw",
-    "name": "Tainan",
-    "altNames": [],
-    "country": "TWN",
-    "lonlat": [120.2133, 22.9908],
-    "capital": false,
-    "fact": "Tainan is the oldest city in Taiwan.",
-    "rank": 314
-  },
-  {
-    "id": "antalya-tr",
-    "name": "Antalya",
-    "altNames": [],
-    "country": "TUR",
-    "lonlat": [30.6956, 36.9081],
-    "capital": false,
-    "fact": "Antalya is the main gateway to the Turkish Riviera.",
-    "rank": 315
-  },
-  {
-    "id": "da-nang-vn",
-    "name": "Da Nang",
-    "altNames": ["Danang"],
-    "country": "VNM",
-    "lonlat": [108.2208, 16.0678],
-    "capital": false,
-    "fact": "Da Nang’s Dragon Bridge breathes fire and water on weekend nights.",
-    "rank": 316
+    "rank": 143
   },
   {
     "id": "georgetown-gy",
@@ -3167,17 +1437,17 @@
     "lonlat": [-58.1553, 6.8045],
     "capital": true,
     "fact": "Georgetown’s St George’s Cathedral is one of the tallest wooden churches in the world.",
-    "rank": 317
+    "rank": 144
   },
   {
-    "id": "ushuaia-ar",
-    "name": "Ushuaia",
-    "altNames": [],
-    "country": "ARG",
-    "lonlat": [-68.3159, -54.8108],
-    "capital": false,
-    "fact": "Ushuaia is often called the southernmost city in the world.",
-    "rank": 318
+    "id": "porto-novo-bj",
+    "name": "Porto-Novo",
+    "altNames": ["Porto Novo"],
+    "country": "BEN",
+    "lonlat": [2.6036, 6.4965],
+    "capital": true,
+    "fact": "Porto-Novo is Benin’s official capital, while most of the government sits in Cotonou.",
+    "rank": 145
   },
   {
     "id": "nassau-bs",
@@ -3187,27 +1457,7 @@
     "lonlat": [-77.3431, 25.0582],
     "capital": true,
     "fact": "Nassau was a notorious haven for pirates in the early 18th century.",
-    "rank": 319
-  },
-  {
-    "id": "lviv-ua",
-    "name": "Lviv",
-    "altNames": ["Lvov", "Lemberg", "Lwów"],
-    "country": "UKR",
-    "lonlat": [24.0232, 49.8383],
-    "capital": false,
-    "fact": "The historic centre of Lviv is a UNESCO World Heritage Site.",
-    "rank": 320
-  },
-  {
-    "id": "edmonton-ca",
-    "name": "Edmonton",
-    "altNames": [],
-    "country": "CAN",
-    "lonlat": [-113.4687, 53.5501],
-    "capital": false,
-    "fact": "West Edmonton Mall was the largest shopping mall in the world from 1981 to 2004.",
-    "rank": 321
+    "rank": 146
   },
   {
     "id": "paramaribo-sr",
@@ -3217,37 +1467,7 @@
     "lonlat": [-55.1668, 5.8664],
     "capital": true,
     "fact": "The historic inner city of Paramaribo is a UNESCO World Heritage Site.",
-    "rank": 322
-  },
-  {
-    "id": "tangier-ma",
-    "name": "Tangier",
-    "altNames": ["Tanger", "Tangiers"],
-    "country": "MAR",
-    "lonlat": [-5.7998, 35.7673],
-    "capital": false,
-    "fact": "Tangier looks across the Strait of Gibraltar towards Spain.",
-    "rank": 323
-  },
-  {
-    "id": "denver-us",
-    "name": "Denver",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-104.9847, 39.7392],
-    "capital": false,
-    "fact": "Denver is nicknamed the Mile High City because it lies one mile above sea level.",
-    "rank": 324
-  },
-  {
-    "id": "detroit-us",
-    "name": "Detroit",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-83.0457, 42.3314],
-    "capital": false,
-    "fact": "Detroit is nicknamed the Motor City for its car industry.",
-    "rank": 325
+    "rank": 147
   },
   {
     "id": "gaborone-bw",
@@ -3257,57 +1477,7 @@
     "lonlat": [25.9086, -24.6545],
     "capital": true,
     "fact": null,
-    "rank": 326
-  },
-  {
-    "id": "memphis-us",
-    "name": "Memphis",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-90.049, 35.1495],
-    "capital": false,
-    "fact": "Elvis Presley’s Graceland mansion is in Memphis.",
-    "rank": 327
-  },
-  {
-    "id": "guilin-cn",
-    "name": "Guilin",
-    "altNames": [],
-    "country": "CHN",
-    "lonlat": [110.2864, 25.2819],
-    "capital": false,
-    "fact": "Guilin is famous for its karst limestone hills along the Li River.",
-    "rank": 328
-  },
-  {
-    "id": "palermo-it",
-    "name": "Palermo",
-    "altNames": [],
-    "country": "ITA",
-    "lonlat": [13.3356, 38.132],
-    "capital": false,
-    "fact": "Palermo is the capital of Sicily.",
-    "rank": 329
-  },
-  {
-    "id": "yogyakarta-id",
-    "name": "Yogyakarta",
-    "altNames": ["Jogjakarta", "Jogja"],
-    "country": "IDN",
-    "lonlat": [110.3647, -7.8014],
-    "capital": false,
-    "fact": "Yogyakarta is the usual base for visiting Borobudur, the world’s largest Buddhist temple.",
-    "rank": 330
-  },
-  {
-    "id": "wroc-aw-pl",
-    "name": "Wrocław",
-    "altNames": ["Wroclaw", "Breslau"],
-    "country": "POL",
-    "lonlat": [17.0333, 51.1],
-    "capital": false,
-    "fact": "Wrocław is known for hundreds of small bronze dwarf statues hidden around the city.",
-    "rank": 331
+    "rank": 148
   },
   {
     "id": "nicosia-cy",
@@ -3317,7 +1487,7 @@
     "lonlat": [33.3642, 35.1753],
     "capital": true,
     "fact": "Nicosia is the last divided capital in Europe.",
-    "rank": 332
+    "rank": 149
   },
   {
     "id": "vientiane-la",
@@ -3327,137 +1497,57 @@
     "lonlat": [102.6, 17.9667],
     "capital": true,
     "fact": "Vientiane lies on the Mekong River, across from Thailand.",
-    "rank": 333
+    "rank": 150
   },
   {
-    "id": "kochi-in",
-    "name": "Kochi",
-    "altNames": ["Cochin"],
-    "country": "IND",
-    "lonlat": [76.2602, 9.9399],
-    "capital": false,
-    "fact": "Kochi was one of the earliest European trading posts in India.",
-    "rank": 334
-  },
-  {
-    "id": "rotterdam-nl",
-    "name": "Rotterdam",
+    "id": "yamoussoukro-ci",
+    "name": "Yamoussoukro",
     "altNames": [],
-    "country": "NLD",
-    "lonlat": [4.4792, 51.9225],
-    "capital": false,
-    "fact": "Rotterdam has the largest seaport in Europe.",
-    "rank": 335
+    "country": "CIV",
+    "lonlat": [-5.2767, 6.8205],
+    "capital": true,
+    "fact": "Yamoussoukro’s Basilica of Our Lady of Peace is one of the largest churches in the world.",
+    "rank": 151
   },
   {
-    "id": "glasgow-gb",
-    "name": "Glasgow",
+    "id": "dodoma-tz",
+    "name": "Dodoma",
     "altNames": [],
-    "country": "GBR",
-    "lonlat": [-4.2576, 55.8651],
-    "capital": false,
-    "fact": "Glasgow is Scotland’s largest city.",
-    "rank": 336
+    "country": "TZA",
+    "lonlat": [35.7395, -6.1722],
+    "capital": true,
+    "fact": "Dodoma was chosen in 1973 to replace Dar es Salaam as Tanzania’s capital.",
+    "rank": 152
   },
   {
-    "id": "stuttgart-de",
-    "name": "Stuttgart",
+    "id": "malabo-gq",
+    "name": "Malabo",
     "altNames": [],
-    "country": "DEU",
-    "lonlat": [9.177, 48.7823],
-    "capital": false,
-    "fact": "Both Mercedes-Benz and Porsche have their headquarters in Stuttgart.",
-    "rank": 337
+    "country": "GNQ",
+    "lonlat": [8.7817, 3.7558],
+    "capital": true,
+    "fact": "Malabo lies on the island of Bioko, not on the African mainland.",
+    "rank": 153
   },
   {
-    "id": "vladivostok-ru",
-    "name": "Vladivostok",
+    "id": "port-louis-mu",
+    "name": "Port Louis",
     "altNames": [],
-    "country": "RUS",
-    "lonlat": [131.8735, 43.1056],
-    "capital": false,
-    "fact": "Vladivostok is the eastern terminus of the Trans-Siberian Railway.",
-    "rank": 338
+    "country": "MUS",
+    "lonlat": [57.4989, -20.1619],
+    "capital": true,
+    "fact": null,
+    "rank": 154
   },
   {
-    "id": "irkutsk-ru",
-    "name": "Irkutsk",
+    "id": "dili-tl",
+    "name": "Dili",
     "altNames": [],
-    "country": "RUS",
-    "lonlat": [104.2964, 52.2978],
-    "capital": false,
-    "fact": "Irkutsk lies about 70 kilometres from Lake Baikal.",
-    "rank": 339
-  },
-  {
-    "id": "genoa-it",
-    "name": "Genoa",
-    "altNames": ["Genova"],
-    "country": "ITA",
-    "lonlat": [8.9444, 44.4048],
-    "capital": false,
-    "fact": "Christopher Columbus was born in Genoa.",
-    "rank": 340
-  },
-  {
-    "id": "gothenburg-se",
-    "name": "Gothenburg",
-    "altNames": ["Göteborg", "Goteborg"],
-    "country": "SWE",
-    "lonlat": [11.9668, 57.7072],
-    "capital": false,
-    "fact": "Gothenburg has the largest port in Scandinavia.",
-    "rank": 341
-  },
-  {
-    "id": "malaga-es",
-    "name": "Málaga",
-    "altNames": ["Malaga"],
-    "country": "ESP",
-    "lonlat": [-4.4203, 36.7202],
-    "capital": false,
-    "fact": "Pablo Picasso was born in Málaga.",
-    "rank": 342
-  },
-  {
-    "id": "nashville-us",
-    "name": "Nashville",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-86.7844, 36.1659],
-    "capital": false,
-    "fact": "Nashville is known as Music City, the home of country music.",
-    "rank": 343
-  },
-  {
-    "id": "quebec-city-ca",
-    "name": "Quebec City",
-    "altNames": ["Québec", "Quebec", "Québec City"],
-    "country": "CAN",
-    "lonlat": [-71.2145, 46.8123],
-    "capital": false,
-    "fact": "Quebec City is the only city north of Mexico whose fortified walls still survive.",
-    "rank": 344
-  },
-  {
-    "id": "leipzig-de",
-    "name": "Leipzig",
-    "altNames": [],
-    "country": "DEU",
-    "lonlat": [12.3713, 51.3396],
-    "capital": false,
-    "fact": "Johann Sebastian Bach worked at Leipzig’s St Thomas Church for 27 years.",
-    "rank": 345
-  },
-  {
-    "id": "dresden-de",
-    "name": "Dresden",
-    "altNames": [],
-    "country": "DEU",
-    "lonlat": [13.7383, 51.0509],
-    "capital": false,
-    "fact": "Dresden’s Frauenkirche, destroyed in 1945, was rebuilt and reconsecrated in 2005.",
-    "rank": 346
+    "country": "TLS",
+    "lonlat": [125.5736, -8.5586],
+    "capital": true,
+    "fact": null,
+    "rank": 155
   },
   {
     "id": "manama-bh",
@@ -3467,57 +1557,7 @@
     "lonlat": [50.5857, 26.2279],
     "capital": true,
     "fact": null,
-    "rank": 347
-  },
-  {
-    "id": "atlanta-us",
-    "name": "Atlanta",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-84.388, 33.749],
-    "capital": false,
-    "fact": "Atlanta hosted the 1996 Summer Olympics.",
-    "rank": 348
-  },
-  {
-    "id": "gdansk-pl",
-    "name": "Gdańsk",
-    "altNames": ["Gdansk", "Danzig"],
-    "country": "POL",
-    "lonlat": [18.6491, 54.3523],
-    "capital": false,
-    "fact": "The Solidarity movement was founded in the Gdańsk shipyard in 1980.",
-    "rank": 349
-  },
-  {
-    "id": "antwerp-be",
-    "name": "Antwerp",
-    "altNames": ["Antwerpen", "Anvers"],
-    "country": "BEL",
-    "lonlat": [4.4003, 51.2205],
-    "capital": false,
-    "fact": "Antwerp is a world centre of the diamond trade.",
-    "rank": 350
-  },
-  {
-    "id": "cardiff-gb",
-    "name": "Cardiff",
-    "altNames": [],
-    "country": "GBR",
-    "lonlat": [-3.18, 51.48],
-    "capital": false,
-    "fact": "Cardiff is the capital of Wales.",
-    "rank": 351
-  },
-  {
-    "id": "toulouse-fr",
-    "name": "Toulouse",
-    "altNames": [],
-    "country": "FRA",
-    "lonlat": [1.4437, 43.6043],
-    "capital": false,
-    "fact": "Toulouse is the home of Airbus.",
-    "rank": 352
+    "rank": 156
   },
   {
     "id": "podgorica-me",
@@ -3527,47 +1567,7 @@
     "lonlat": [19.2636, 42.4411],
     "capital": true,
     "fact": "Podgorica was called Titograd from 1946 to 1992.",
-    "rank": 353
-  },
-  {
-    "id": "udaipur-in",
-    "name": "Udaipur",
-    "altNames": [],
-    "country": "IND",
-    "lonlat": [73.7135, 24.5858],
-    "capital": false,
-    "fact": "Udaipur is known as the City of Lakes.",
-    "rank": 354
-  },
-  {
-    "id": "timbuktu-ml",
-    "name": "Timbuktu",
-    "altNames": ["Tombouctou"],
-    "country": "MLI",
-    "lonlat": [-3.0074, 16.7735],
-    "capital": false,
-    "fact": "Timbuktu was a great centre of Islamic learning in the 15th and 16th centuries.",
-    "rank": 355
-  },
-  {
-    "id": "zanzibar-city-tz",
-    "name": "Zanzibar City",
-    "altNames": ["Zanzibar", "Stone Town"],
-    "country": "TZA",
-    "lonlat": [39.1979, -6.1639],
-    "capital": false,
-    "fact": "Zanzibar’s Stone Town is a UNESCO World Heritage Site.",
-    "rank": 356
-  },
-  {
-    "id": "palma-es",
-    "name": "Palma",
-    "altNames": ["Palma de Mallorca"],
-    "country": "ESP",
-    "lonlat": [2.6502, 39.5694],
-    "capital": false,
-    "fact": "Palma is the capital of the island of Mallorca.",
-    "rank": 357
+    "rank": 157
   },
   {
     "id": "bern-ch",
@@ -3577,117 +1577,27 @@
     "lonlat": [7.4474, 46.9481],
     "capital": true,
     "fact": "The old town of Bern is a UNESCO World Heritage Site.",
-    "rank": 358
+    "rank": 158
   },
   {
-    "id": "brno-cz",
-    "name": "Brno",
+    "id": "maseru-ls",
+    "name": "Maseru",
     "altNames": [],
-    "country": "CZE",
-    "lonlat": [16.608, 49.1952],
-    "capital": false,
-    "fact": "Gregor Mendel carried out his famous pea experiments in Brno.",
-    "rank": 359
+    "country": "LSO",
+    "lonlat": [27.4833, -29.3167],
+    "capital": true,
+    "fact": "Maseru is the capital of Lesotho, a country entirely surrounded by South Africa.",
+    "rank": 159
   },
   {
-    "id": "nara-jp",
-    "name": "Nara",
+    "id": "praia-cv",
+    "name": "Praia",
     "altNames": [],
-    "country": "JPN",
-    "lonlat": [135.8048, 34.685],
-    "capital": false,
-    "fact": "Nara was Japan’s capital from 710 to 784, and deer roam freely in its main park.",
-    "rank": 360
-  },
-  {
-    "id": "bologna-it",
-    "name": "Bologna",
-    "altNames": [],
-    "country": "ITA",
-    "lonlat": [11.3387, 44.4938],
-    "capital": false,
-    "fact": "The University of Bologna, founded in 1088, is the oldest university in continuous operation.",
-    "rank": 361
-  },
-  {
-    "id": "bethlehem-ps",
-    "name": "Bethlehem",
-    "altNames": [],
-    "country": "PSE",
-    "lonlat": [35.2038, 31.7049],
-    "capital": false,
-    "fact": "Bethlehem’s Church of the Nativity is one of the oldest churches in continuous use.",
-    "rank": 362
-  },
-  {
-    "id": "christchurch-nz",
-    "name": "Christchurch",
-    "altNames": [],
-    "country": "NZL",
-    "lonlat": [172.6333, -43.5333],
-    "capital": false,
-    "fact": "Christchurch is the largest city on New Zealand’s South Island.",
-    "rank": 363
-  },
-  {
-    "id": "halifax-ca",
-    "name": "Halifax",
-    "altNames": [],
-    "country": "CAN",
-    "lonlat": [-63.5729, 44.6464],
-    "capital": false,
-    "fact": "More than 100 victims of the Titanic are buried in Halifax.",
-    "rank": 364
-  },
-  {
-    "id": "dubrovnik-hr",
-    "name": "Dubrovnik",
-    "altNames": ["Ragusa"],
-    "country": "HRV",
-    "lonlat": [18.1091, 42.6412],
-    "capital": false,
-    "fact": "Dubrovnik’s city walls run for nearly 2 kilometres around the old town.",
-    "rank": 365
-  },
-  {
-    "id": "bilbao-es",
-    "name": "Bilbao",
-    "altNames": ["Bilbo"],
-    "country": "ESP",
-    "lonlat": [-2.9253, 43.2627],
-    "capital": false,
-    "fact": "Bilbao’s Guggenheim Museum was designed by Frank Gehry.",
-    "rank": 366
-  },
-  {
-    "id": "thessaloniki-gr",
-    "name": "Thessaloniki",
-    "altNames": ["Salonica", "Thessaloníki", "Salonika"],
-    "country": "GRC",
-    "lonlat": [22.9309, 40.6436],
-    "capital": false,
-    "fact": "Thessaloniki is Greece’s second-largest city.",
-    "rank": 367
-  },
-  {
-    "id": "arusha-tz",
-    "name": "Arusha",
-    "altNames": [],
-    "country": "TZA",
-    "lonlat": [36.6833, -3.3667],
-    "capital": false,
-    "fact": "Arusha is a gateway to Mount Kilimanjaro and the Serengeti.",
-    "rank": 368
-  },
-  {
-    "id": "cordoba-es",
-    "name": "Córdoba",
-    "altNames": ["Cordoba", "Cordova"],
-    "country": "ESP",
-    "lonlat": [-4.7728, 37.8916],
-    "capital": false,
-    "fact": "Córdoba’s Mezquita was built as a mosque and later became a cathedral.",
-    "rank": 369
+    "country": "CPV",
+    "lonlat": [-23.5125, 14.9315],
+    "capital": true,
+    "fact": null,
+    "rank": 160
   },
   {
     "id": "male-mv",
@@ -3697,37 +1607,7 @@
     "lonlat": [73.5092, 4.1752],
     "capital": true,
     "fact": "Malé is one of the most densely populated cities in the world.",
-    "rank": 370
-  },
-  {
-    "id": "sochi-ru",
-    "name": "Sochi",
-    "altNames": [],
-    "country": "RUS",
-    "lonlat": [39.7257, 43.5992],
-    "capital": false,
-    "fact": "Sochi hosted the 2014 Winter Olympics.",
-    "rank": 371
-  },
-  {
-    "id": "murmansk-ru",
-    "name": "Murmansk",
-    "altNames": [],
-    "country": "RUS",
-    "lonlat": [33.0925, 68.9792],
-    "capital": false,
-    "fact": "Murmansk is the largest city north of the Arctic Circle.",
-    "rank": 372
-  },
-  {
-    "id": "st-louis-us",
-    "name": "St. Louis",
-    "altNames": ["St Louis", "Saint Louis"],
-    "country": "USA",
-    "lonlat": [-90.1979, 38.6273],
-    "capital": false,
-    "fact": "St. Louis’s Gateway Arch is the tallest arch in the world.",
-    "rank": 373
+    "rank": 161
   },
   {
     "id": "thimphu-bt",
@@ -3737,107 +1617,17 @@
     "lonlat": [89.6419, 27.4661],
     "capital": true,
     "fact": "Thimphu is one of the few capitals in the world without traffic lights.",
-    "rank": 374
+    "rank": 162
   },
   {
-    "id": "pittsburgh-us",
-    "name": "Pittsburgh",
+    "id": "bridgetown-bb",
+    "name": "Bridgetown",
     "altNames": [],
-    "country": "USA",
-    "lonlat": [-79.9959, 40.4406],
-    "capital": false,
-    "fact": "Pittsburgh has more than 400 bridges.",
-    "rank": 375
-  },
-  {
-    "id": "malmo-se",
-    "name": "Malmö",
-    "altNames": ["Malmo"],
-    "country": "SWE",
-    "lonlat": [13.0007, 55.6059],
-    "capital": false,
-    "fact": "Malmö is linked to Copenhagen by the Øresund Bridge.",
-    "rank": 376
-  },
-  {
-    "id": "naha-jp",
-    "name": "Naha",
-    "altNames": [],
-    "country": "JPN",
-    "lonlat": [127.6833, 26.2167],
-    "capital": false,
-    "fact": "Naha is the capital of Okinawa.",
-    "rank": 377
-  },
-  {
-    "id": "george-town-my",
-    "name": "George Town",
-    "altNames": ["Penang", "Georgetown Penang"],
-    "country": "MYS",
-    "lonlat": [100.3354, 5.4112],
-    "capital": false,
-    "fact": "George Town in Penang is a UNESCO World Heritage Site.",
-    "rank": 378
-  },
-  {
-    "id": "anchorage-us",
-    "name": "Anchorage",
-    "altNames": [],
-    "country": "USA",
-    "lonlat": [-149.9003, 61.2181],
-    "capital": false,
-    "fact": "Anchorage is the largest city in Alaska.",
-    "rank": 379
-  },
-  {
-    "id": "hue-vn",
-    "name": "Huế",
-    "altNames": ["Hue"],
-    "country": "VNM",
-    "lonlat": [107.5955, 16.4619],
-    "capital": false,
-    "fact": "Huế was the imperial capital of Vietnam’s Nguyễn dynasty.",
-    "rank": 380
-  },
-  {
-    "id": "valparaiso-cl",
-    "name": "Valparaíso",
-    "altNames": ["Valparaiso"],
-    "country": "CHL",
-    "lonlat": [-71.6296, -33.036],
-    "capital": false,
-    "fact": "Valparaíso is famous for the funiculars that climb its steep hills.",
-    "rank": 381
-  },
-  {
-    "id": "strasbourg-fr",
-    "name": "Strasbourg",
-    "altNames": [],
-    "country": "FRA",
-    "lonlat": [7.7455, 48.5839],
-    "capital": false,
-    "fact": "Strasbourg is the official seat of the European Parliament.",
-    "rank": 382
-  },
-  {
-    "id": "haifa-il",
-    "name": "Haifa",
-    "altNames": [],
-    "country": "ISR",
-    "lonlat": [34.9885, 32.8184],
-    "capital": false,
-    "fact": "Haifa’s Bahá’í Gardens are a UNESCO World Heritage Site.",
-    "rank": 383
-  },
-  {
-    "id": "bukhara-uz",
-    "name": "Bukhara",
-    "altNames": ["Buxoro"],
-    "country": "UZB",
-    "lonlat": [64.4286, 39.7747],
-    "capital": false,
-    "fact": "The historic centre of Bukhara is a UNESCO World Heritage Site.",
-    "rank": 384
+    "country": "BRB",
+    "lonlat": [-59.6202, 13.1073],
+    "capital": true,
+    "fact": null,
+    "rank": 163
   },
   {
     "id": "suva-fj",
@@ -3847,7 +1637,7 @@
     "lonlat": [178.4415, -18.1416],
     "capital": true,
     "fact": null,
-    "rank": 385
+    "rank": 164
   },
   {
     "id": "luxembourg-city-lu",
@@ -3857,107 +1647,27 @@
     "lonlat": [6.13, 49.6117],
     "capital": true,
     "fact": "Luxembourg City is home to the Court of Justice of the European Union.",
-    "rank": 386
+    "rank": 165
   },
   {
-    "id": "aswan-eg",
-    "name": "Aswan",
+    "id": "mbabane-sz",
+    "name": "Mbabane",
     "altNames": [],
-    "country": "EGY",
-    "lonlat": [32.8994, 24.0908],
-    "capital": false,
-    "fact": "Aswan is known for the High Dam across the Nile.",
-    "rank": 387
+    "country": "SWZ",
+    "lonlat": [31.1333, -26.3167],
+    "capital": true,
+    "fact": null,
+    "rank": 166
   },
   {
-    "id": "aarhus-dk",
-    "name": "Aarhus",
-    "altNames": ["Århus"],
-    "country": "DNK",
-    "lonlat": [10.2108, 56.1567],
-    "capital": false,
-    "fact": "Aarhus is Denmark’s second-largest city.",
-    "rank": 388
-  },
-  {
-    "id": "granada-es",
-    "name": "Granada",
+    "id": "bandar-seri-begawan-bn",
+    "name": "Bandar Seri Begawan",
     "altNames": [],
-    "country": "ESP",
-    "lonlat": [-3.6067, 37.1882],
-    "capital": false,
-    "fact": "Granada’s Alhambra was the palace and fortress of the Nasrid dynasty.",
-    "rank": 389
-  },
-  {
-    "id": "bordeaux-fr",
-    "name": "Bordeaux",
-    "altNames": [],
-    "country": "FRA",
-    "lonlat": [-0.5805, 44.8404],
-    "capital": false,
-    "fact": "Bordeaux is the centre of one of the world’s most famous wine regions.",
-    "rank": 390
-  },
-  {
-    "id": "verona-it",
-    "name": "Verona",
-    "altNames": [],
-    "country": "ITA",
-    "lonlat": [10.9844, 45.4299],
-    "capital": false,
-    "fact": "Verona is the setting of Shakespeare’s Romeo and Juliet.",
-    "rank": 391
-  },
-  {
-    "id": "hobart-au",
-    "name": "Hobart",
-    "altNames": [],
-    "country": "AUS",
-    "lonlat": [147.3294, -42.8794],
-    "capital": false,
-    "fact": "Hobart, founded in 1804, is Australia’s second-oldest capital city.",
-    "rank": 392
-  },
-  {
-    "id": "bergen-no",
-    "name": "Bergen",
-    "altNames": [],
-    "country": "NOR",
-    "lonlat": [5.3242, 60.393],
-    "capital": false,
-    "fact": "Bergen’s Bryggen wharf was a trading post of the Hanseatic League.",
-    "rank": 393
-  },
-  {
-    "id": "pokhara-np",
-    "name": "Pokhara",
-    "altNames": [],
-    "country": "NPL",
-    "lonlat": [83.9685, 28.2669],
-    "capital": false,
-    "fact": "Pokhara is the starting point for treks in the Annapurna region.",
-    "rank": 394
-  },
-  {
-    "id": "salt-lake-city-us",
-    "name": "Salt Lake City",
-    "altNames": ["SLC"],
-    "country": "USA",
-    "lonlat": [-111.8911, 40.7608],
-    "capital": false,
-    "fact": "Salt Lake City hosted the 2002 Winter Olympics.",
-    "rank": 395
-  },
-  {
-    "id": "cork-ie",
-    "name": "Cork",
-    "altNames": [],
-    "country": "IRL",
-    "lonlat": [-8.4706, 51.898],
-    "capital": false,
-    "fact": "Cork is the second-largest city in the Republic of Ireland.",
-    "rank": 396
+    "country": "BRN",
+    "lonlat": [114.9401, 4.8903],
+    "capital": true,
+    "fact": null,
+    "rank": 167
   },
   {
     "id": "kuwait-city-kw",
@@ -3967,157 +1677,187 @@
     "lonlat": [47.9783, 29.3697],
     "capital": true,
     "fact": null,
-    "rank": 397
+    "rank": 168
   },
   {
-    "id": "malacca-my",
-    "name": "Malacca",
-    "altNames": ["Melaka"],
-    "country": "MYS",
-    "lonlat": [102.2405, 2.196],
-    "capital": false,
-    "fact": "Malacca was a key trading port on the strait that bears its name.",
-    "rank": 398
-  },
-  {
-    "id": "split-hr",
-    "name": "Split",
+    "id": "honiara-sb",
+    "name": "Honiara",
     "altNames": [],
-    "country": "HRV",
-    "lonlat": [16.4392, 43.5089],
-    "capital": false,
-    "fact": "Split grew up around the palace of the Roman emperor Diocletian.",
-    "rank": 399
+    "country": "SLB",
+    "lonlat": [159.95, -9.4333],
+    "capital": true,
+    "fact": "Honiara is on Guadalcanal, scene of major battles in the Second World War.",
+    "rank": 169
   },
   {
-    "id": "turku-fi",
-    "name": "Turku",
-    "altNames": ["Åbo"],
-    "country": "FIN",
-    "lonlat": [22.2687, 60.4515],
-    "capital": false,
-    "fact": "Turku is the oldest city in Finland.",
-    "rank": 400
+    "id": "sao-tome-st",
+    "name": "São Tomé",
+    "altNames": ["Sao Tome"],
+    "country": "STP",
+    "lonlat": [6.7273, 0.3365],
+    "capital": true,
+    "fact": null,
+    "rank": 170
   },
   {
-    "id": "basel-ch",
-    "name": "Basel",
-    "altNames": ["Bâle", "Basle"],
-    "country": "CHE",
-    "lonlat": [7.5733, 47.5584],
-    "capital": false,
-    "fact": "Basel lies on the Rhine where Switzerland meets France and Germany.",
-    "rank": 401
+    "id": "port-of-spain-tt",
+    "name": "Port of Spain",
+    "altNames": ["Port-of-Spain"],
+    "country": "TTO",
+    "lonlat": [-61.5189, 10.6667],
+    "capital": true,
+    "fact": null,
+    "rank": 171
   },
   {
-    "id": "cambridge-gb",
-    "name": "Cambridge",
+    "id": "moroni-km",
+    "name": "Moroni",
     "altNames": [],
-    "country": "GBR",
-    "lonlat": [0.1167, 52.2],
-    "capital": false,
-    "fact": "The University of Cambridge was founded in 1209.",
-    "rank": 402
+    "country": "COM",
+    "lonlat": [43.2551, -11.7022],
+    "capital": true,
+    "fact": null,
+    "rank": 172
   },
   {
-    "id": "salzburg-at",
-    "name": "Salzburg",
+    "id": "gitega-bi",
+    "name": "Gitega",
     "altNames": [],
-    "country": "AUT",
-    "lonlat": [13.044, 47.7994],
-    "capital": false,
-    "fact": "Salzburg is the birthplace of Wolfgang Amadeus Mozart.",
-    "rank": 403
+    "country": "BDI",
+    "lonlat": [29.9246, -3.4271],
+    "capital": true,
+    "fact": "Gitega replaced Bujumbura as Burundi’s political capital in 2019.",
+    "rank": 173
   },
   {
-    "id": "heidelberg-de",
-    "name": "Heidelberg",
+    "id": "apia-ws",
+    "name": "Apia",
     "altNames": [],
-    "country": "DEU",
-    "lonlat": [8.6908, 49.4077],
-    "capital": false,
-    "fact": "Heidelberg University, founded in 1386, is the oldest university in Germany.",
-    "rank": 404
+    "country": "WSM",
+    "lonlat": [-171.7667, -13.8333],
+    "capital": true,
+    "fact": null,
+    "rank": 174
   },
   {
-    "id": "innsbruck-at",
-    "name": "Innsbruck",
+    "id": "tarawa-ki",
+    "name": "Tarawa",
+    "altNames": ["South Tarawa"],
+    "country": "KIR",
+    "lonlat": [172.977, 1.3278],
+    "capital": true,
+    "fact": null,
+    "rank": 175
+  },
+  {
+    "id": "port-vila-vu",
+    "name": "Port Vila",
+    "altNames": ["Port-Vila"],
+    "country": "VUT",
+    "lonlat": [168.3137, -17.7365],
+    "capital": true,
+    "fact": null,
+    "rank": 176
+  },
+  {
+    "id": "banjul-gm",
+    "name": "Banjul",
     "altNames": [],
-    "country": "AUT",
-    "lonlat": [11.3945, 47.2627],
-    "capital": false,
-    "fact": "Innsbruck has hosted the Winter Olympics twice, in 1964 and 1976.",
-    "rank": 405
+    "country": "GMB",
+    "lonlat": [-16.578, 13.4527],
+    "capital": true,
+    "fact": "Banjul lies on an island at the mouth of the Gambia River.",
+    "rank": 177
   },
   {
-    "id": "darwin-au",
-    "name": "Darwin",
+    "id": "majuro-mh",
+    "name": "Majuro",
     "altNames": [],
-    "country": "AUS",
-    "lonlat": [130.8418, -12.4611],
-    "capital": false,
-    "fact": "Darwin was largely rebuilt after Cyclone Tracy in 1974.",
-    "rank": 406
+    "country": "MHL",
+    "lonlat": [171.3803, 7.0897],
+    "capital": true,
+    "fact": null,
+    "rank": 178
   },
   {
-    "id": "punta-arenas-cl",
-    "name": "Punta Arenas",
+    "id": "ramallah-ps",
+    "name": "Ramallah",
     "altNames": [],
-    "country": "CHL",
-    "lonlat": [-70.9113, -53.1548],
-    "capital": false,
-    "fact": "Punta Arenas is one of the southernmost cities in the world.",
-    "rank": 407
+    "country": "PSE",
+    "lonlat": [35.2042, 31.8996],
+    "capital": true,
+    "fact": null,
+    "rank": 179
   },
   {
-    "id": "lausanne-ch",
-    "name": "Lausanne",
+    "id": "kingstown-vc",
+    "name": "Kingstown",
     "altNames": [],
-    "country": "CHE",
-    "lonlat": [6.6328, 46.516],
-    "capital": false,
-    "fact": "Lausanne is home to the International Olympic Committee.",
-    "rank": 408
+    "country": "VCT",
+    "lonlat": [-61.2274, 13.1553],
+    "capital": true,
+    "fact": null,
+    "rank": 180
   },
   {
-    "id": "bruges-be",
-    "name": "Bruges",
-    "altNames": ["Brugge"],
-    "country": "BEL",
-    "lonlat": [3.2242, 51.2089],
-    "capital": false,
-    "fact": "The medieval centre of Bruges is a UNESCO World Heritage Site.",
-    "rank": 409
+    "id": "saint-john-s-ag",
+    "name": "Saint John’s",
+    "altNames": ["Saint John's", "St. John’s", "St. John's", "St Johns"],
+    "country": "ATG",
+    "lonlat": [-61.8433, 17.121],
+    "capital": true,
+    "fact": null,
+    "rank": 181
   },
   {
-    "id": "kandy-lk",
-    "name": "Kandy",
+    "id": "victoria-sc",
+    "name": "Victoria",
     "altNames": [],
-    "country": "LKA",
-    "lonlat": [80.6336, 7.2906],
-    "capital": false,
-    "fact": "Kandy’s Temple of the Tooth houses a relic of the Buddha.",
-    "rank": 410
+    "country": "SYC",
+    "lonlat": [55.455, -4.62],
+    "capital": true,
+    "fact": null,
+    "rank": 182
   },
   {
-    "id": "livingstone-zm",
-    "name": "Livingstone",
-    "altNames": [],
-    "country": "ZMB",
-    "lonlat": [25.8543, -17.8419],
-    "capital": false,
-    "fact": "Livingstone, near Victoria Falls, is named after the explorer David Livingstone.",
-    "rank": 411
+    "id": "nuku-alofa-to",
+    "name": "Nuku’alofa",
+    "altNames": ["Nuku'alofa", "Nukualofa", "Nuku‘alofa"],
+    "country": "TON",
+    "lonlat": [-175.2018, -21.1394],
+    "capital": true,
+    "fact": null,
+    "rank": 183
   },
   {
-    "id": "aqaba-jo",
-    "name": "Aqaba",
+    "id": "andorra-la-vella-ad",
+    "name": "Andorra la Vella",
+    "altNames": ["Andorra"],
+    "country": "AND",
+    "lonlat": [1.5211, 42.5078],
+    "capital": true,
+    "fact": null,
+    "rank": 184
+  },
+  {
+    "id": "san-marino-sm",
+    "name": "San Marino",
+    "altNames": ["City of San Marino"],
+    "country": "SMR",
+    "lonlat": [12.4464, 43.9367],
+    "capital": true,
+    "fact": null,
+    "rank": 185
+  },
+  {
+    "id": "vaduz-li",
+    "name": "Vaduz",
     "altNames": [],
-    "country": "JOR",
-    "lonlat": [35.0078, 29.5267],
-    "capital": false,
-    "fact": "Aqaba is Jordan’s only coastal city.",
-    "rank": 412
+    "country": "LIE",
+    "lonlat": [9.5215, 47.1415],
+    "capital": true,
+    "fact": null,
+    "rank": 186
   },
   {
     "id": "valletta-mt",
@@ -4127,46 +1867,96 @@
     "lonlat": [14.5148, 35.8997],
     "capital": true,
     "fact": "Valletta was built by the Knights of St John after the Great Siege of 1565.",
-    "rank": 413
+    "rank": 187
   },
   {
-    "id": "belize-city-bz",
-    "name": "Belize City",
+    "id": "basseterre-kn",
+    "name": "Basseterre",
+    "altNames": [],
+    "country": "KNA",
+    "lonlat": [-62.725, 17.2955],
+    "capital": true,
+    "fact": null,
+    "rank": 188
+  },
+  {
+    "id": "belmopan-bz",
+    "name": "Belmopan",
     "altNames": [],
     "country": "BLZ",
-    "lonlat": [-88.1976, 17.4995],
-    "capital": false,
-    "fact": "Belize City was the capital of Belize until 1970, when Belmopan took over after Hurricane Hattie.",
-    "rank": 414
+    "lonlat": [-88.7667, 17.25],
+    "capital": true,
+    "fact": "Belmopan was built inland after Hurricane Hattie devastated Belize City in 1961.",
+    "rank": 189
   },
   {
-    "id": "troms-no",
-    "name": "Tromsø",
-    "altNames": ["Tromso"],
-    "country": "NOR",
-    "lonlat": [18.9551, 69.6489],
-    "capital": false,
-    "fact": "Tromsø, far north of the Arctic Circle, is a popular base for seeing the northern lights.",
-    "rank": 415
-  },
-  {
-    "id": "luang-prabang-la",
-    "name": "Luang Prabang",
+    "id": "castries-lc",
+    "name": "Castries",
     "altNames": [],
-    "country": "LAO",
-    "lonlat": [102.135, 19.886],
-    "capital": false,
-    "fact": "The old town of Luang Prabang is a UNESCO World Heritage Site.",
-    "rank": 416
+    "country": "LCA",
+    "lonlat": [-61.0061, 13.9957],
+    "capital": true,
+    "fact": null,
+    "rank": 190
   },
   {
-    "id": "queenstown-nz",
-    "name": "Queenstown",
+    "id": "roseau-dm",
+    "name": "Roseau",
     "altNames": [],
-    "country": "NZL",
-    "lonlat": [168.6627, -45.0302],
-    "capital": false,
-    "fact": "Queenstown is known as the home of commercial bungee jumping.",
-    "rank": 417
+    "country": "DMA",
+    "lonlat": [-61.3881, 15.3017],
+    "capital": true,
+    "fact": null,
+    "rank": 191
+  },
+  {
+    "id": "st-george-s-gd",
+    "name": "St. George’s",
+    "altNames": ["Saint George's", "Saint George’s", "St. George's", "St Georges"],
+    "country": "GRD",
+    "lonlat": [-61.7523, 12.0529],
+    "capital": true,
+    "fact": null,
+    "rank": 192
+  },
+  {
+    "id": "funafuti-tv",
+    "name": "Funafuti",
+    "altNames": [],
+    "country": "TUV",
+    "lonlat": [179.1942, -8.5243],
+    "capital": true,
+    "fact": null,
+    "rank": 193
+  },
+  {
+    "id": "ngerulmud-pw",
+    "name": "Ngerulmud",
+    "altNames": [],
+    "country": "PLW",
+    "lonlat": [134.6238, 7.5008],
+    "capital": true,
+    "fact": "Ngerulmud replaced Koror as Palau’s capital in 2006.",
+    "rank": 194
+  },
+  {
+    "id": "palikir-fm",
+    "name": "Palikir",
+    "altNames": [],
+    "country": "FSM",
+    "lonlat": [158.159, 6.9248],
+    "capital": true,
+    "fact": null,
+    "rank": 195
+  },
+  {
+    "id": "yaren-nr",
+    "name": "Yaren",
+    "altNames": [],
+    "country": "NRU",
+    "lonlat": [166.9252, -0.5508],
+    "capital": true,
+    "fact": "Nauru has no official capital; government offices are in Yaren.",
+    "rank": 196
   }
 ]

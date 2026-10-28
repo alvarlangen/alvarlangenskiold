@@ -124,18 +124,14 @@ describe('name matching', () => {
 
   it('accepts alternative names and exonyms', () => {
     const cases: [string, string][] = [
-      ['Bombay', 'mumbai-in'],
+      ['Delhi', 'new-delhi-in'],
       ['Peking', 'beijing-cn'],
-      ['Saigon', 'ho-chi-minh-city-vn'],
-      ['Ho Chi Minh City', 'ho-chi-minh-city-vn'],
-      ['New York', 'new-york-city-us'],
-      ['NYC', 'new-york-city-us'],
-      ['Calcutta', 'kolkata-in'],
+      ['Washington DC', 'washington-d-c-us'],
       ['Kiev', 'kyiv-ua'],
-      ['Rangoon', 'yangon-mm'],
-      ['Sao Paulo', 'sao-paulo-br'],
-      ['zurich', 'zurich-ch'],
-      ['München', 'munich-de'],
+      ['Sao Tome', 'sao-tome-st'],
+      ["St. John's", 'saint-john-s-ag'],
+      ["Nuku'alofa", 'nuku-alofa-to'],
+      ['Prishtina', 'pristina-xk'],
       ['Lisboa', 'lisbon-pt'],
     ];
     for (const [guess, id] of cases) expect(evaluateGuess(idx, guess, id), guess).toBe(true);
@@ -143,7 +139,7 @@ describe('name matching', () => {
 
   it('allows one typo for names of at least five characters', () => {
     expect(evaluateGuess(idx, 'Stokholm', 'stockholm-se')).toBe(true);
-    expect(evaluateGuess(idx, 'Barcelonna', 'barcelona-es')).toBe(true);
+    expect(evaluateGuess(idx, 'Madrrid', 'madrid-es')).toBe(true);
     expect(matchGuess(idx, 'Lmia').status).toBe('unknown'); // short names must be exact
     expect(levenshtein('kitten', 'sitting')).toBe(3);
   });
@@ -158,13 +154,9 @@ describe('name matching', () => {
     expect(evaluateGuess(idx, 'Oslo', 'stockholm-se')).toBe(false);
   });
 
-  it('clarifies shared names in the suggestion list', () => {
-    const labels = suggest(idx, 'Valen').map((s) => s.label);
-    expect(labels).toContain('Valencia · Spain');
-    expect(labels).toContain('Valencia · Venezuela');
-    expect(evaluateGuess(idx, 'Valencia', 'valencia-ve')).toBe(true);
-    expect(evaluateGuess(idx, 'Valencia', 'valencia-es')).toBe(true);
-    expect(evaluateGuess(idx, 'Sydney', 'sydney-au')).toBe(true);
+  it('suggests matching capitals', () => {
+    const labels = suggest(idx, 'Vall').map((s) => s.label);
+    expect(labels).toContain('Valletta');
   });
 
   it('only suggests after two characters', () => {
@@ -215,9 +207,14 @@ describe('clues', () => {
 });
 
 describe('data quality', () => {
-  it('has 300–500 cities in known countries with plausible coordinates', () => {
-    expect(CITIES.length).toBeGreaterThanOrEqual(300);
-    expect(CITIES.length).toBeLessThanOrEqual(500);
+  it('has exactly one capital per country (except Vatican City) with plausible coordinates', () => {
+    const perCountry = new Map<string, number>();
+    for (const c of CITIES) perCountry.set(c.country, (perCountry.get(c.country) ?? 0) + 1);
+    for (const k of COUNTRIES) {
+      if (k.iso2.toUpperCase() === 'VA') continue;
+      expect(perCountry.get(k.id), k.name).toBe(1);
+    }
+    expect(CITIES.every((c) => c.capital)).toBe(true);
     for (const c of CITIES) {
       const country = countryById.get(c.country);
       expect(country, c.id).toBeTruthy();
@@ -239,9 +236,10 @@ describe('data quality', () => {
   it('spot-checks known values', () => {
     const near = (a: number, b: number, tol = 0.6) => Math.abs(a - b) < tol;
     expect(near(city('paris-fr').lonlat[0], 2.35) && near(city('paris-fr').lonlat[1], 48.86)).toBe(true);
-    expect(near(city('sydney-au').lonlat[1], -33.87)).toBe(true);
+    expect(near(city('canberra-au').lonlat[1], -35.28)).toBe(true);
     expect(near(city('reykjavik-is').lonlat[1], 64.14)).toBe(true);
-    expect(near(city('cape-town-za').lonlat[0], 18.42)).toBe(true);
+    expect(near(city('pretoria-za').lonlat[0], 28.19)).toBe(true);
+    expect(near(city('palikir-fm').lonlat[0], 158.16)).toBe(true);
     expect(countryById.get('LSO')!.neighborNames).toEqual(['South Africa']);
     expect(countryById.get('BGR')!.currency).toBe('Euro');
   });

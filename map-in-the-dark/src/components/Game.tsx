@@ -107,7 +107,9 @@ export function Game({ kind, continent }: Props) {
         navigate('/results', true);
         return;
       }
-      if (s.current && s.current.dateKey === today && !s.current.finished) {
+      // A saved round is resumed only if all its cities still exist (the city list can change).
+      const known = s.current?.targets.every((id) => cityById.has(id));
+      if (s.current && known && s.current.dateKey === today && !s.current.finished) {
         setRound(s.current);
         return;
       }
@@ -164,8 +166,8 @@ export function Game({ kind, continent }: Props) {
     if (revealed && city) return `Map of the area around ${city.name}, ${country.name}.`;
     const search = plan.search[step - 1];
     const circle = search
-      ? ` A green circle ${search.radiusKm * 2} km wide contains the city.`
-      : ' The city is on the map.';
+      ? ` A green circle ${search.radiusKm * 2} km wide contains the capital.`
+      : ' The capital is on the map.';
     return `Satellite map of an area ${win.radiusKm * 2} km across in ${where}.${circle}`;
   }, [plan, step, revealed, country, city]);
 
@@ -209,7 +211,7 @@ export function Game({ kind, continent }: Props) {
     const m = matchGuess(nameIndex(), text);
     if (m.status === 'empty') return;
     if (m.status === 'unknown') {
-      setFeedback({ text: 'No city by that name in the game. Try again.', tone: 'warn' });
+      setFeedback({ text: 'No capital by that name in the game. Try again.', tone: 'warn' });
       setShake((n) => n + 1);
       return;
     }
@@ -310,7 +312,7 @@ export function Game({ kind, continent }: Props) {
         </button>
         <div class="game-title">
           <div class="gt-mode">{title}</div>
-          <div class="segments" role="img" aria-label={`City ${round.index + 1} of ${QUESTIONS_PER_ROUND}`}>
+          <div class="segments" role="img" aria-label={`Capital ${round.index + 1} of ${QUESTIONS_PER_ROUND}`}>
             {Array.from({ length: QUESTIONS_PER_ROUND }, (_, i) => (
               <span key={i} class={segClass(i)} />
             ))}
@@ -347,7 +349,7 @@ export function Game({ kind, continent }: Props) {
           </div>
           {golden && !revealed && (
             <span class="golden-banner">
-              <IconStar class="icon" style={{ width: '15px', height: '15px' }} /> Golden city · 2× XP
+              <IconStar class="icon" style={{ width: '15px', height: '15px' }} /> Golden capital · 2× XP
             </span>
           )}
         </div>
@@ -419,7 +421,7 @@ export function Game({ kind, continent }: Props) {
               )}
               <GuessForm
                 index={nameIndex()}
-                placeholder="Type a city…"
+                placeholder="Type a capital…"
                 suggestionsOn={settings.suggestions}
                 shake={shake}
                 onSubmit={onGuess}
@@ -432,8 +434,8 @@ export function Game({ kind, continent }: Props) {
                   (step === STEPS
                     ? 'Last step: a wrong guess reveals the answer.'
                     : plan?.search[step - 1]
-                      ? 'The city is inside the green circle.'
-                      : 'The city is on this map.')}
+                      ? 'The capital is inside the green circle.'
+                      : 'The capital is on this map.')}
               </div>
               <div class="guess-actions">
                 <button class="btn btn-ghost btn-sm" type="button" onClick={onSkip}>
@@ -454,9 +456,7 @@ export function Game({ kind, continent }: Props) {
                     {lastResult.solvedAt ? `Correct in step ${lastResult.solvedAt}` : 'The answer was'}
                   </div>
                   <div class="reveal-name">{city.name}</div>
-                  <div class="reveal-sub">
-                    {city.capital ? 'Capital of' : 'City in'} {country.name}
-                  </div>
+                  <div class="reveal-sub">Capital of {country.name}</div>
                 </div>
               </div>
               <div class="reward-row">
@@ -485,7 +485,7 @@ export function Game({ kind, continent }: Props) {
                 onClick={onNext}
                 style={{ '--auto-dur': `${AUTO_ADVANCE_SECONDS}s` } as CSSProperties}
               >
-                {round.index + 1 >= QUESTIONS_PER_ROUND ? 'See results' : 'Next city'}
+                {round.index + 1 >= QUESTIONS_PER_ROUND ? 'See results' : 'Next capital'}
                 {autoOn && (
                   <span class="auto" style={{ animationDuration: `${AUTO_ADVANCE_SECONDS}s` }} aria-hidden="true" />
                 )}

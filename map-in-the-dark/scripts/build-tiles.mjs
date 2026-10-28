@@ -21,8 +21,8 @@ const CACHE = path.join(ROOT, 'scripts/.cache');
 const OUT = path.join(ROOT, 'public/data/tiles');
 const TILE = 10;
 const SCALE = 1000;
-/** Largest reveal radius in km (step 6) plus margin for panning. Keep in sync with src/game/config.ts. */
-const REACH_KM = 900;
+/** How far from a city its map can reach in km (step 6 shows 2,200 km plus offset). Keep in sync with VIEW_KM_BY_STEP. */
+const REACH_KM = 1800;
 
 const LAYERS = {
   land: ['ne_10m_land'],

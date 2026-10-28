@@ -11,7 +11,7 @@ All files in this folder (and `public/data/tiles/`, `public/flags/`, `public/ima
 | Country population estimates (ranking only, not shipped)                               | Natural Earth 1:10m admin-0 `POP_EST`                                                                               | Public domain | `build-countries.mjs` |
 | Flag colors and flag images                                                            | [flag-icons](https://github.com/lipis/flag-icons) v7                                                                | MIT           | `build-flags.mjs`     |
 | Cities and towns on the map; population (ranking only, not shipped)                    | [GeoNames](https://www.geonames.org/) cities1000 via [all-the-cities](https://www.npmjs.com/package/all-the-cities) | CC BY 4.0     | `build-cities.mjs`    |
-| City list, English display names, exonyms, facts                                       | Hand-curated (`scripts/data/cities-curated.mjs`)                                                                    | —             | —                     |
+| Capitals, English display names, exonyms, facts                                        | Hand-curated (`scripts/data/cities-curated.mjs`)                                                                    | —             | —                     |
 
 Satellite imagery (`public/imagery/`) is made by `scripts/build-imagery.py` from the
 [ESA WorldCover](https://esa-worldcover.org/) Sentinel-2 RGBNIR yearly median composite 2021 (10 m), read from the

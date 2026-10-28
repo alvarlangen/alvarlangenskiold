@@ -3,7 +3,8 @@
 A daily city geography game. You see a real map around a hidden city; every step opens the map further and
 gives a new clue. Name the city in as few steps as you can.
 
-- **One daily round of 5 cities × 6 steps.** Each city starts with a satellite close-up of its centre (8 km across)
+- **Capitals only: 196 targets, one per country** (Vatican City is left out because it lies inside Rome).
+- **One daily round of 5 capitals × 6 steps.** Each capital starts with a satellite close-up of its centre (8 km across)
   and the map zooms out every step: 25, 120, 400, 900 and 2,200 km. From step 3 a green circle contains the city.
   The player cannot zoom out or pan beyond the current step.
 - **Satellite maps without labels**, bundled with the game: a cloud-free Sentinel-2 composite (ESA WorldCover 2021,
@@ -42,7 +43,7 @@ npm run dev        # http://localhost:5173
 
 ## Satellite imagery
 
-**Bundled (default).** `public/imagery/{z}/{x}/{y}.webp` holds about 33,500 Web Mercator tiles made by
+**Bundled (default).** `public/imagery/{z}/{x}/{y}.webp` holds about 17,000 Web Mercator tiles (≈140 MB) made by
 `scripts/build-imagery.py` from the **ESA WorldCover Sentinel-2 RGBNIR yearly median composite 2021** (10 m,
 cloud-free, CC BY 4.0), read directly from its public AWS bucket. For every city (and the landing page demo) the script
 produces the map area of each step at the zoom a phone uses for it (zoom 13 for the 8 km close-up down to zoom 5).
@@ -53,10 +54,10 @@ it uses a lower zoom, and finally the bundled vector map.
 ```bash
 pip install rasterio numpy pillow
 python3 scripts/build-imagery.py --dry          # count tiles
-python3 scripts/build-imagery.py --jobs 16      # build (resumes; about an hour for all cities)
+python3 scripts/build-imagery.py --jobs 16      # build (resumes; adds tiles for new capitals)
 ```
 
-Rebuild after adding cities. Delete `public/imagery` first to rebuild everything (for example after changing colours).
+Rebuild after changing the capitals (add `--prune` to delete tiles that are no longer used). Delete `public/imagery` first to rebuild everything (for example after changing colours).
 
 **Online provider (optional).** Set these environment variables (see `.env.example`); they are read at build time:
 
@@ -105,7 +106,7 @@ After changing an environment variable, redeploy so the build picks it up.
   on top.
 
 - `scripts/build-tiles.mjs` cuts the Natural Earth 1:10m layers into 10° × 10° tiles (`public/data/tiles/{x}_{y}.json`),
-  only where a city's map can reach: 272 tiles, about 12 MB raw / 4.5 MB gzipped in total, roughly 300 KB per city.
+  only where a capital's map can reach (1,800 km): 289 tiles, about 11 MB raw in total.
   Geometry is clipped, simplified (~200–600 m tolerance) and stored as delta-encoded integers.
 - `src/map/AtlasView.ts` draws the map on a 2D canvas in Mercator, with the green search circle, a scale bar and the
   answer pin, and keeps the camera inside the current step's area. It redraws only while something moves.
@@ -123,7 +124,7 @@ map-in-the-dark/
   index.html            Entry, meta tags, Open Graph/Twitter cards
   public/               Icons, OG image, manifest, flags/, data/tiles/
   scripts/              Data pipeline, map tiles, images and QA (Node)
-    data/cities-curated.mjs   Hand-curated city list with exonyms and facts
+    data/cities-curated.mjs   Hand-curated capitals with exonyms and facts
   src/
     game/               Pure game engine: config, rng, selection, matching, clues, reveal, scoring, round
     map/                Tile loader and canvas atlas renderer
@@ -139,8 +140,8 @@ map-in-the-dark/
 
 All tunable values are in [`src/game/config.ts`](src/game/config.ts).
 
-- **Daily selection** (`src/game/selection.ts`): cities are ranked easiest → hardest and split into five tiers. Each
-  tier is walked through a seeded permutation, one city per day, so every player gets the same five cities on a UTC
+- **Daily selection** (`src/game/selection.ts`): capitals are ranked easiest → hardest and split into five tiers. Each
+  tier is walked through a seeded permutation, one capital per day, so every player gets the same five capitals on a UTC
   date, no city repeats on consecutive days, and any date can be computed offline. Daily #1 is 2026-10-23.
 - **Clues:** continent; country's language and currency; country's flag colors; first letter and length of the city
   name; first letter and length of the country name; the country's neighbours (or nearest countries across the sea).
@@ -169,16 +170,17 @@ npm test          # includes data-quality tests (coordinates, borders, tiles aro
 
 Natural Earth GeoJSON layers are downloaded once into `scripts/.cache/` (git-ignored).
 
-**Difficulty:** `log10(population) + 0.5 if capital + 1.1 × fame (0–2, hand-assigned)`. Population is never shipped or
-shown. **Special cases:** Hong Kong is a city in China (its clues are China's); Kosovo, Palestine and Taiwan count as
-countries for clues; Sri Lanka's dataset border with India is removed (it has none); Bulgaria uses the euro since
+**Difficulty:** `log10(population) + 1.1 × fame (0–2, hand-assigned)`. Population is never shipped or
+shown. **Special cases:** Kosovo, Palestine and Taiwan count as countries; for countries with several capitals the game
+uses Amsterdam, La Paz, Pretoria, Porto-Novo, Yamoussoukro, Dodoma and Mbabane; Palikir has
+hand-entered coordinates (it is not in GeoNames cities1000); Sri Lanka's dataset border with India is removed (it has none); Bulgaria uses the euro since
 2026; Zimbabwe uses the ZiG. Flag colors were extracted automatically and reviewed by hand (47 corrections in
 `scripts/build-flags.mjs`).
 
 ## Extending
 
-- **Add a city:** add a line to `scripts/data/cities-curated.mjs` (`[name, ISO2, GeoNames name or null, alternative
-names, fame 0–2, fact or null]`), then run `node scripts/build-cities.mjs`, `node scripts/build-flags.mjs` and
+- **Change a capital:** edit its line in `scripts/data/cities-curated.mjs` (`[name, ISO2, GeoNames name or null,
+alternative names, fame 0–2, fact or null, optional [lon, lat]]`; `build-cities.mjs` checks one capital per country), then run `node scripts/build-cities.mjs`, `node scripts/build-flags.mjs` and
   `node --max-old-space-size=6000 scripts/build-tiles.mjs`, then `python3 scripts/build-imagery.py`.
 - **Add an alternative name:** the alt list in `cities-curated.mjs`.
 - **Add a clue type:** add a `ClueKind` in `src/game/types.ts`, produce it in `src/game/clues.ts`, update the tests.

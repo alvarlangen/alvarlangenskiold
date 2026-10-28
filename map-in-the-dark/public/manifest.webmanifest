@@ -1,7 +1,7 @@
 {
   "name": "Map in the Dark",
   "short_name": "Map in the Dark",
-  "description": "A daily city geography game: a real map opens up step by step around a hidden city.",
+  "description": "A daily capital cities geography game: a satellite map zooms out step by step from a hidden capital.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",

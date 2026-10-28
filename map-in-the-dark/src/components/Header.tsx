@@ -44,7 +44,7 @@ export function Footer() {
   return (
     <footer class="site-footer">
       <div class="inner">
-        <span>Map in the Dark · A daily city geography game</span>
+        <span>Map in the Dark · A daily capital cities geography game</span>
         <nav aria-label="Footer">
           <a href="#/about">How to play</a>
           <a href="#/stats">Stats</a>

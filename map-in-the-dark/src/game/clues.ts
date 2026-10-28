@@ -31,7 +31,7 @@ export function cityClues(city: City, country: Country): Clue[] {
     { kind: 'continent', label: 'Continent', text: country.continentLabel },
     { kind: 'languageCurrency', label: 'Country’s language · Currency', text: languageCurrencyText(country) },
     { kind: 'flagColors', label: 'Country’s flag colors', text: flagText(country), swatches: country.flag },
-    { kind: 'cityLetters', label: 'City name', text: lettersClue(city.name) },
+    { kind: 'cityLetters', label: 'Capital’s name', text: lettersClue(city.name) },
     { kind: 'countryLetters', label: 'Country name', text: lettersClue(country.name) },
     {
       kind: 'neighbors',
