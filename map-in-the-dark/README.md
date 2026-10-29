@@ -76,10 +76,16 @@ Rebuild after changing the capitals (add `--prune` to delete tiles that are no l
 | **MapTiler** | Satellite                                    | Yes on a paid plan; check the plan's terms                 | MapTiler Cloud account, API key                                                                                          |
 | **Mapbox**   | Satellite                                    | Yes, with attribution                                      | Mapbox account, public access token; free monthly allowance, then pay-as-you-go                                          |
 
-Online providers are sharper when zoomed in close, but cost money at scale and need a connection. Check each
-provider's current pricing and terms. Their keys are embedded in the website: **restrict the key to your domain** (Esri:
-_Referrers_; MapTiler: _Allowed HTTP origins_; Mapbox: _URL restrictions_). If the provider rejects the key, the map
-falls back to the vector map. `npm run qa:imagery` checks the online setup with a mock provider.
+**For sharp close-ups use Esri** (`VITE_MAP_PROVIDER=esri`): the bundled 10 m imagery is soft in steps 1–2, Esri World
+Imagery shows streets and buildings. Online providers cost money at scale and need a connection; check each provider's
+current pricing and terms. Esri: 2 million tiles a month free, then $0.15 per 1,000. A city (six steps and the reveal)
+loads roughly 60–100 tiles on a phone and more on a large retina screen, so a daily round is about 300–1,500 tiles. Tiles
+are only requested when the camera stops, not during the zoom animations.
+
+Keys are embedded in the website: **restrict the key to your domain** (Esri: _Referrers_; MapTiler: _Allowed HTTP
+origins_; Mapbox: _URL restrictions_). If the provider rejects the key or is down, the map switches to the bundled
+imagery. `npm run qa:imagery` checks the online setup with a mock provider: overlay alignment, tile requests per city,
+and the fallback.
 
 ## Deploy
 

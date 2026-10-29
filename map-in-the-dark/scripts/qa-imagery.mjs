@@ -5,7 +5,9 @@
  * Builds the site with a "custom" imagery provider pointing at https://mock-imagery.test, then serves
  * that host from Playwright: each requested XYZ tile is rendered on the fly from the bundled Natural
  * Earth tiles in satellite-like colours. If the map overlays (borders, search circle, pin) line up with
- * the mock imagery, the Web Mercator tile maths is right. Screenshots go to qa-screens/imagery-*.png.
+ * the mock imagery, the Web Mercator tile maths is right. It also counts the tile requests of a round
+ * (they cost money with a real provider), and checks that a provider refusing every tile (403) falls back
+ * to the bundled imagery. Screenshots go to qa-screens/imagery-*.png.
  */
 import { chromium } from 'playwright';
 import { spawn, execSync } from 'node:child_process';
@@ -103,7 +105,9 @@ for (const [name, viewport] of [
     deviceScaleFactor: name === 'mobile' ? 2 : 1,
     serviceWorkers: 'block',
   });
+  let requests = 0;
   await ctx.route('https://mock-imagery.test/**', (route) => {
+    requests++;
     const m = route
       .request()
       .url()
@@ -130,6 +134,26 @@ for (const [name, viewport] of [
   }
   await new Promise((r) => setTimeout(r, 2500));
   await page.screenshot({ path: path.join(OUT, `imagery-${name}-reveal.png`) });
+  console.log(`${name}: ${requests} provider tile requests for one city (6 steps + reveal)`);
+  await ctx.close();
+}
+
+// Provider refuses every tile: the bundled imagery must take over.
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' });
+  await ctx.route('https://mock-imagery.test/**', (route) => route.fulfill({ status: 403 }));
+  let bundled = 0;
+  ctx.on('request', (r) => {
+    if (/\/imagery\/\d+\/\d+\/\d+\.webp$/.test(r.url())) bundled++;
+  });
+  const page = await ctx.newPage();
+  page.on('pageerror', (e) => errors.push(`fallback: ${e.message}`));
+  await page.goto(`http://localhost:${PORT}/#/bonus?r=imagery`);
+  await page.waitForSelector('.clue-current');
+  await new Promise((r) => setTimeout(r, 4000));
+  await page.screenshot({ path: path.join(OUT, 'imagery-fallback.png') });
+  console.log(`fallback: ${bundled} bundled tiles loaded after the provider refused`);
+  if (!bundled) errors.push('fallback: the bundled imagery was not used');
   await ctx.close();
 }
 await browser.close();

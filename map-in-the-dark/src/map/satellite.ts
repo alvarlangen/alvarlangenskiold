@@ -88,6 +88,9 @@ export const SATELLITE: RasterSource | null = makeSource(
   import.meta.env.VITE_MAP_ATTRIBUTION,
 );
 
+/** Used if an online provider fails (wrong key or domain, outage): the bundled imagery. */
+export const FALLBACK: RasterSource | null = SATELLITE?.external ? makeSource('local') : null;
+
 /** Tile ids (x · 2^z + y) per zoom, from an index file written by scripts/build-imagery.py. */
 type TileIndex = Map<number, Set<number>>;
 const indexes = new Map<string, Promise<TileIndex | null>>();

@@ -11,7 +11,7 @@
  * Only redraws while something changes. No WebGL.
  */
 import { loadTile, mercY, TILE_DEG, unMercY, type Path, type Tile } from './tiles';
-import { SATELLITE, TileImages, type RasterSource } from './satellite';
+import { FALLBACK, SATELLITE, TileImages, type RasterSource } from './satellite';
 
 const RAD = Math.PI / 180;
 const EARTH_KM = 6371;
@@ -92,6 +92,8 @@ export class AtlasView {
   private opts: Required<Omit<AtlasOptions, 'onInteract' | 'imagery'>> & { onInteract?: () => void };
   private imagery: TileImages | null = null;
   private imagerySource: RasterSource | null = null;
+  /** Bundled imagery to switch to if the online provider fails. */
+  private fallback: RasterSource | null = null;
   private resizeObs: ResizeObserver;
   private unbind?: () => void;
   /** Circle the camera is framing, re-fitted on resize until the user moves the map. */
@@ -111,6 +113,7 @@ export class AtlasView {
       onInteract: options.onInteract,
     };
     const source = options.imagery === undefined ? SATELLITE : options.imagery;
+    if (options.imagery === undefined) this.fallback = FALLBACK;
     if (source) {
       this.imagerySource = source;
       this.imagery = new TileImages(source, () => this.invalidate());
@@ -392,6 +395,12 @@ export class AtlasView {
     const zoomed = clamp(1.6 - Math.log10(kmPerPx) * 0.5, 0.8, 2);
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
+    if (this.imagery?.broken && this.fallback) {
+      // The online provider refuses us: continue with the bundled imagery.
+      this.imagerySource = this.fallback;
+      this.imagery = new TileImages(this.fallback, () => this.invalidate());
+      this.fallback = null;
+    }
     const imagery = this.imagery && !this.imagery.broken ? this.imagery : null;
     if (imagery) {
       // Underneath, for areas without imagery: land and water in satellite-like colours.
@@ -543,6 +552,11 @@ export class AtlasView {
       }
     }
     const { z, n, xL, xR, yT, yB } = sp;
+    // While the camera flies (step change, reveal) only already-loaded tiles are drawn; new ones are
+    // requested once it stops, so no tiles are downloaded for the zooms passed on the way.
+    const load = this.flight
+      ? (zz: number, x: number, y: number) => imagery.peek(zz, x, y)
+      : (zz: number, x: number, y: number) => imagery.get(zz, x, y);
     const tilePx = worldPx / n;
     ctx.imageSmoothingQuality = 'high';
     for (let ty = yT; ty <= yB; ty++) {
@@ -551,7 +565,7 @@ export class AtlasView {
         const sx = cx + k * ((tx / n) * TAU - Math.PI - x0);
         const sy = cy - k * (Math.PI - (ty / n) * TAU - y0);
         const own = imagery.has(z, wx, ty);
-        const img = own ? imagery.get(z, wx, ty) : null;
+        const img = own ? load(z, wx, ty) : null;
         if (img) {
           ctx.drawImage(img, sx, sy, tilePx + 0.5, tilePx + 0.5);
           continue;
@@ -564,7 +578,7 @@ export class AtlasView {
           const px = Math.floor(wx / f);
           const py = Math.floor(ty / f);
           if (!imagery.has(z - dz, px, py)) continue;
-          const parent = requested ? imagery.peek(z - dz, px, py) : imagery.get(z - dz, px, py);
+          const parent = requested ? imagery.peek(z - dz, px, py) : load(z - dz, px, py);
           requested = true;
           if (!parent) continue;
           const sub = parent.naturalWidth / f;
@@ -572,15 +586,22 @@ export class AtlasView {
           drawn = true;
           break;
         }
-        // Or the four tiles one zoom deeper.
-        if (!drawn && !own && z < maxZ) {
-          for (let i = 0; i < 4; i++) {
-            const qx = wx * 2 + (i & 1);
-            const qy = ty * 2 + (i >> 1);
-            const child = imagery.get(z + 1, qx, qy);
-            if (!child) continue;
-            const half = tilePx / 2;
-            ctx.drawImage(child, sx + (i & 1) * half, sy + (i >> 1) * half, half + 0.5, half + 0.5);
+        // Or the tiles one or two zooms deeper: a substitute if this zoom does not exist, or the sharper
+        // tiles of the previous view while zooming out.
+        if (!drawn && z < maxZ) {
+          for (let dz = 1; dz <= 2 && z + dz <= maxZ; dz++) {
+            const f = 2 ** dz;
+            const part = tilePx / f;
+            let any = false;
+            for (let i = 0; i < f * f; i++) {
+              const qx = wx * f + (i % f);
+              const qy = ty * f + Math.floor(i / f);
+              const child = !own && dz === 1 ? load(z + 1, qx, qy) : imagery.peek(z + dz, qx, qy);
+              if (!child) continue;
+              ctx.drawImage(child, sx + (i % f) * part, sy + Math.floor(i / f) * part, part + 0.5, part + 0.5);
+              any = true;
+            }
+            if (any) break;
           }
         }
       }

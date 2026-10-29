@@ -1,6 +1,6 @@
 import { POINTS_BY_STEP, VIEW_KM_BY_STEP } from '../game/config';
 import { PracticePicker } from './Landing';
-import { SATELLITE } from '../map/satellite';
+import { FALLBACK, SATELLITE } from '../map/satellite';
 
 export function About() {
   return (
@@ -81,11 +81,12 @@ export function Credits() {
       </p>
       <h2>Map and data sources</h2>
       <ul>
-        {SATELLITE?.id === 'local' && (
+        {(SATELLITE?.id === 'local' || FALLBACK) && (
           <li>
             <strong>Satellite imagery</strong>: ESA WorldCover Sentinel-2 RGBNIR yearly median composite 2021 (10 m), ©
             ESA WorldCover project, contains modified Copernicus Sentinel data (2021) processed by the ESA WorldCover
-            consortium. Creative Commons Attribution 4.0. Colours adjusted and water areas recoloured for the game.{' '}
+            consortium. Creative Commons Attribution 4.0. Colours adjusted and water areas recoloured for the game.
+            {FALLBACK ? ' Used when the online imagery is unavailable.' : ''}{' '}
             <a href="https://esa-worldcover.org/" rel="noopener">
               esa-worldcover.org
             </a>
