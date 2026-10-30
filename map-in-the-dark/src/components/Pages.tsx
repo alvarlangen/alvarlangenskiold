@@ -7,17 +7,18 @@ export function About() {
     <div class="page page-narrow prose">
       <h1>How to play</h1>
       <p>
-        Every day there are five hidden capital cities. For each one you start with a satellite close-up of its centre,
-        without any names. Each step zooms the map out; from step 3 a green circle marks where the capital is.
+        Every day there are five hidden European capitals. For each one you start with a satellite close-up of its
+        centre, without any names. Each step zooms the map out and gives a new clue; from step 3 a green circle marks
+        where the capital is.
       </p>
       <h2>Six steps</h2>
       <ol>
-        <li>Continent · map {VIEW_KM_BY_STEP[0].toLocaleString('en')} km across</li>
-        <li>The country’s language and currency · {VIEW_KM_BY_STEP[1].toLocaleString('en')} km</li>
-        <li>The colors of the country’s flag · {VIEW_KM_BY_STEP[2].toLocaleString('en')} km</li>
-        <li>First letter and length of the capital’s name · {VIEW_KM_BY_STEP[3].toLocaleString('en')} km</li>
-        <li>First letter and length of the country’s name · {VIEW_KM_BY_STEP[4].toLocaleString('en')} km</li>
-        <li>The country’s neighbors · {VIEW_KM_BY_STEP[5].toLocaleString('en')} km</li>
+        <li>A deep cut from history · map {VIEW_KM_BY_STEP[0].toLocaleString('en')} km across</li>
+        <li>Someone from the city · {VIEW_KM_BY_STEP[1].toLocaleString('en')} km</li>
+        <li>Pop culture or an event · {VIEW_KM_BY_STEP[2].toLocaleString('en')} km</li>
+        <li>Famous history · {VIEW_KM_BY_STEP[3].toLocaleString('en')} km</li>
+        <li>A landmark or tradition · {VIEW_KM_BY_STEP[4].toLocaleString('en')} km</li>
+        <li>Almost a giveaway · {VIEW_KM_BY_STEP[5].toLocaleString('en')} km</li>
       </ol>
       <h2>Rules</h2>
       <ul>
@@ -31,7 +32,7 @@ export function About() {
         <li>The daily round is the same for everyone and changes at midnight UTC.</li>
       </ul>
       <h2>Practice</h2>
-      <p>Free play, one continent at a time:</p>
+      <p>Free play with all European capitals:</p>
       <PracticePicker />
     </div>
   );
@@ -126,7 +127,8 @@ export function Credits() {
           </a>
         </li>
         <li>
-          Hand-curated: the list of capitals, English names and alternative spellings, and every “Did you know” fact.
+          Hand-written: the clues for every capital, the list of capitals, English names and alternative spellings, and
+          every “Did you know” fact.
         </li>
       </ul>
       <h2>Software and fonts</h2>
@@ -143,7 +145,7 @@ export function PracticePage() {
   return (
     <div class="page page-narrow">
       <h1>Practice</h1>
-      <p class="lede">Free play with full XP. Pick a continent.</p>
+      <p class="lede">Free play with full XP.</p>
       <PracticePicker />
     </div>
   );

@@ -3,6 +3,7 @@ import { AtlasCanvas } from './AtlasCanvas';
 import { IconArrow, IconBolt, IconCheck, IconFire, IconLayers, IconStar } from './Icons';
 import type { AtlasView } from '../map/AtlasView';
 import { CONTINENTS } from '../data/continents';
+import { TARGETS } from '../data';
 import { SATELLITE } from '../map/satellite';
 import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, VIEW_KM_BY_STEP } from '../game/config';
 import { dailyNumber, formatCountdown, utcDateKey } from '../game/dates';
@@ -90,13 +91,14 @@ function PlayCard() {
   );
 }
 
+/** What the six clues are like, with Stockholm's clues as examples. */
 const STEPS_INFO = [
-  ['Continent', 'Europe'],
-  ['Country’s language · Currency', 'Norwegian · Krone'],
-  ['Country’s flag colors', 'Red, White, Blue'],
-  ['Capital’s name', 'O · 4 letters'],
-  ['Country name', 'N · 6 letters'],
-  ['Country’s neighbors', 'Finland, Sweden, Russia'],
+  ['A deep cut from history', 'It hosted the 1912 Summer Olympics.'],
+  ['Someone from here', 'Greta Garbo was born here.'],
+  ['Pop culture or an event', 'A 1973 bank robbery here gave a syndrome its name.'],
+  ['Famous history', 'The warship Vasa sank here on her maiden voyage.'],
+  ['A landmark or tradition', 'The Nobel Prizes are awarded here.'],
+  ['Almost a giveaway', 'Built on 14 islands; home of ABBA The Museum.'],
 ];
 
 const FAQ: [string, string][] = [
@@ -129,7 +131,7 @@ const FAQ: [string, string][] = [
   ],
   [
     'Can I play more than once a day?',
-    'Yes. After the daily round you can play unlimited bonus rounds, or practice one continent at a time.',
+    'Yes. After the daily round you can play unlimited bonus rounds or practice rounds.',
   ],
 ];
 
@@ -142,14 +144,15 @@ export function Landing() {
       <section class="hero" aria-labelledby="hero-h">
         <div class="hero-copy">
           <div class="eyebrow">
-            Daily #{dailyNumber(utcDateKey())} · {QUESTIONS_PER_ROUND} capitals · 6 clues each
+            Daily #{dailyNumber(utcDateKey())} · {QUESTIONS_PER_ROUND} European capitals · 6 clues each
           </div>
           <h1 id="hero-h">
             Which capital is <em>hiding</em> on the map?
           </h1>
           <p class="lede">
-            You start with a satellite close-up of a capital city. Every step zooms out and gives you a new clue. Type
-            the capital’s name. The fewer steps you need, the more points you score.
+            You start with a satellite close-up of a European capital. Every step zooms out and gives you a new clue,
+            from deep-cut history to near giveaways. Type the capital’s name. The fewer steps you need, the more points
+            you score.
           </p>
           <div class="play-grid">
             <PlayCard />
@@ -202,7 +205,7 @@ export function Landing() {
 
       <section class="section" aria-labelledby="practice-h" id="practice">
         <div class="section-head">
-          <h2 id="practice-h">Practice one continent</h2>
+          <h2 id="practice-h">Practice</h2>
           <p>Free play with full XP.</p>
         </div>
         <PracticePicker />
@@ -226,7 +229,7 @@ export function Landing() {
 export function PracticePicker() {
   return (
     <div class="continent-grid">
-      {CONTINENTS.map((c) => (
+      {CONTINENTS.filter((c) => TARGETS.some((t) => t.continent === c)).map((c) => (
         <button
           key={c}
           class="btn"

@@ -5,6 +5,7 @@
 import countriesJson from './countries.json';
 import citiesJson from './cities.json';
 import { buildNameIndex, type NameIndex } from '../game/matching';
+import { CURATED_CLUES } from './europe-clues';
 import type { City, Country, Target } from '../game/types';
 
 export const COUNTRIES: Country[] = countriesJson as unknown as Country[];
@@ -15,7 +16,8 @@ export const cityById = new Map(CITIES.map((c) => [c.id, c]));
 
 export { CONTINENTS } from './continents';
 
-export const TARGETS: Target[] = CITIES.map((c) => {
+/** The game is played with the European capitals, which have hand-written clues. */
+export const TARGETS: Target[] = CITIES.filter((c) => CURATED_CLUES[c.id]).map((c) => {
   const country = countryById.get(c.country)!;
   return {
     id: c.id,
@@ -23,7 +25,7 @@ export const TARGETS: Target[] = CITIES.map((c) => {
     altNames: c.altNames,
     rank: c.rank,
     qualifier: country.name,
-    continent: country.continents[0],
+    continent: country.continents.includes('Europe') ? 'Europe' : country.continents[0],
   };
 });
 

@@ -49,7 +49,15 @@ export interface Target {
   continent: string;
 }
 
-export type ClueKind = 'continent' | 'languageCurrency' | 'flagColors' | 'cityLetters' | 'countryLetters' | 'neighbors';
+export type ClueKind =
+  | 'continent'
+  | 'languageCurrency'
+  | 'flagColors'
+  | 'cityLetters'
+  | 'countryLetters'
+  | 'neighbors'
+  /** Hand-written (src/data/europe-clues.ts). */
+  | 'curated';
 
 export interface Clue {
   kind: ClueKind;

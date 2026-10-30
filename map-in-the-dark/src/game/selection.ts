@@ -49,7 +49,12 @@ export function selectDaily(pool: readonly Target[], day: number): Selection {
     const to = Math.max(from + 1, Math.floor(TIER_BOUNDS[q + 1] * n));
     const tier = ranked.slice(from, to);
     const cycle = Math.floor(d / tier.length);
-    const perm = shuffle(tier, rngFrom(`daily:cities:tier${q}:cycle${cycle}`));
+    const permOf = (c: number) => shuffle(tier, rngFrom(`daily:cities:tier${q}:cycle${c}`));
+    const perm = permOf(cycle);
+    // A new cycle must not start with the city that ended the previous one (no repeat on consecutive days).
+    if (cycle > 0 && perm.length > 2 && perm[0].id === permOf(cycle - 1)[perm.length - 1].id) {
+      [perm[0], perm[1]] = [perm[1], perm[0]];
+    }
     targets.push(perm[d % tier.length].id);
   }
   const golden = randInt(rngFrom(`daily:cities:golden:${day}`), QUESTIONS_PER_ROUND);

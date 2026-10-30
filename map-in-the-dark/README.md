@@ -3,7 +3,9 @@
 A daily city geography game. You see a real map around a hidden city; every step opens the map further and
 gives a new clue. Name the city in as few steps as you can.
 
-- **Capitals only: 196 targets, one per country** (Vatican City is left out because it lies inside Rome).
+- **European capitals with hand-written clues** (49 capitals, `src/data/europe-clues.ts`): six clues each, from a deep
+  cut in history to an almost-giveaway, written so they never name the city or country (checked by a test). The data
+  still holds one capital per country (196) for later use; `TARGETS` in `src/data/index.ts` picks the ones with clues.
 - **One daily round of 5 capitals × 6 steps.** Each capital starts with a satellite close-up of its centre (8 km across)
   and the map zooms out every step: 25, 120, 400, 900 and 2,200 km. From step 3 a green circle contains the city.
   The player cannot zoom out or pan beyond the current step.

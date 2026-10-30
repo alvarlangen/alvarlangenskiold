@@ -16,6 +16,7 @@ import {
 } from '../src/game/scoring';
 import { evaluateGuess, levenshtein, matchGuess, normalizeName, suggest } from '../src/game/matching';
 import { cityClues, lettersClue } from '../src/game/clues';
+import { CURATED_CLUES } from '../src/data/europe-clues';
 import { applyGuess, createRound, nextQuestion, roundScore, skipStep } from '../src/game/round';
 import { addDays, dailyNumber, msUntilNextDaily, utcDateKey } from '../src/game/dates';
 import { completeDay, visibleStreak } from '../src/game/progress';
@@ -74,9 +75,9 @@ describe('seeded selection', () => {
   });
 
   it('practice picks only the chosen continent', () => {
-    const s = selectPractice(TARGETS, 'Oceania', 'seed');
+    const s = selectPractice(TARGETS, 'Europe', 'seed');
     expect(s.targets).toHaveLength(5);
-    for (const id of s.targets) expect(countryById.get(city(id).country)!.continents[0]).toBe('Oceania');
+    for (const id of s.targets) expect(countryById.get(city(id).country)!.continents).toContain('Europe');
   });
 });
 
@@ -124,15 +125,10 @@ describe('name matching', () => {
 
   it('accepts alternative names and exonyms', () => {
     const cases: [string, string][] = [
-      ['Delhi', 'new-delhi-in'],
-      ['Peking', 'beijing-cn'],
-      ['Washington DC', 'washington-d-c-us'],
       ['Kiev', 'kyiv-ua'],
-      ['Sao Tome', 'sao-tome-st'],
-      ["St. John's", 'saint-john-s-ag'],
-      ["Nuku'alofa", 'nuku-alofa-to'],
       ['Prishtina', 'pristina-xk'],
       ['Lisboa', 'lisbon-pt'],
+      ['Roma', 'rome-it'],
     ];
     for (const [guess, id] of cases) expect(evaluateGuess(idx, guess, id), guess).toBe(true);
   });
@@ -161,7 +157,7 @@ describe('name matching', () => {
 
   it('only suggests after two characters', () => {
     expect(suggest(idx, 's')).toEqual([]);
-    expect(suggest(idx, 'st').length).toBeGreaterThan(0);
+    expect(suggest(idx, 'va').length).toBeGreaterThan(0);
   });
 });
 
@@ -172,8 +168,8 @@ describe('clues', () => {
     expect(lettersClue('Guinea-Bissau')).toBe('G · 12 letters · 2 words');
   });
 
-  it('gives six clues in the specified order', () => {
-    const c = city('stockholm-se');
+  it('generates six clues in the specified order for capitals without hand-written clues', () => {
+    const c = city('lima-pe');
     const clues = cityClues(c, countryById.get(c.country)!);
     expect(clues.map((x) => x.kind)).toEqual([
       'continent',
@@ -183,17 +179,40 @@ describe('clues', () => {
       'countryLetters',
       'neighbors',
     ]);
-    expect(clues[0].text).toBe('Europe');
-    expect(clues[1].text).toBe('Swedish · Krona');
-    expect(clues[2].swatches!.map((s) => s.name)).toEqual(['Blue', 'Yellow']);
-    expect(clues[3].text).toBe('S · 9 letters');
-    expect(clues[4].text).toBe('S · 6 letters');
-    expect(clues[5].text).toBe('Finland, Norway');
+    expect(clues[0].text).toBe('South America');
+    expect(clues[3].text).toBe('L · 4 letters');
+    expect(cityClues(city('tokyo-jp'), countryById.get('JPN')!)[5].text).toMatch(/^Nearest across the sea: /);
   });
 
-  it('describes island countries and transcontinental countries', () => {
-    expect(cityClues(city('tokyo-jp'), countryById.get('JPN')!)[5].text).toMatch(/^Nearest across the sea: /);
-    expect(cityClues(city('moscow-ru'), countryById.get('RUS')!)[0].text).toBe('Europe and Asia');
+  it('uses the hand-written clues for the European capitals', () => {
+    const clues = cityClues(city('stockholm-se'), countryById.get('SWE')!);
+    expect(clues).toHaveLength(6);
+    expect(clues.every((c) => c.kind === 'curated')).toBe(true);
+    expect(clues[5].text).toMatch(/ABBA/);
+  });
+
+  it('plays only European capitals, each with six clues that never name the answer', () => {
+    expect(TARGETS.length).toBe(Object.keys(CURATED_CLUES).length);
+    const norm = (s: string) =>
+      s
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+    for (const t of TARGETS) {
+      expect(t.continent).toBe('Europe');
+      const c = city(t.id);
+      const country = countryById.get(c.country)!;
+      const clues = CURATED_CLUES[t.id];
+      expect(clues, t.id).toHaveLength(6);
+      // City and country names (and their alternatives), as whole words.
+      const names = [c.name, ...c.altNames, country.name, ...country.altNames]
+        .map(norm)
+        .filter((n) => n.length >= 4)
+        .map((n) => n.replace(/ city$/, ''));
+      for (const text of clues) {
+        for (const n of names) expect(norm(text), `${t.id}: ${text}`).not.toMatch(new RegExp(`\\b${n}\\b`));
+      }
+    }
   });
 
   it('never mentions population in any clue or shipped data', () => {

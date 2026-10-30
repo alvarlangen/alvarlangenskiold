@@ -1,3 +1,4 @@
+import { CURATED_CLUES } from '../data/europe-clues';
 import type { City, Clue, Country } from './types';
 
 /** Count letters only (spaces, hyphens and apostrophes are not letters). */
@@ -25,8 +26,10 @@ export function neighborsText(c: Country): string {
 
 const flagText = (c: Country) => c.flag.map((f) => f.name).join(', ');
 
-/** The six clues for a city, in order. */
+/** The six clues for a city, in order: hand-written ones where they exist, otherwise generated. */
 export function cityClues(city: City, country: Country): Clue[] {
+  const curated = CURATED_CLUES[city.id];
+  if (curated) return curated.map((text) => ({ kind: 'curated', label: 'Clue', text }));
   return [
     { kind: 'continent', label: 'Continent', text: country.continentLabel },
     { kind: 'languageCurrency', label: 'Country’s language · Currency', text: languageCurrencyText(country) },
