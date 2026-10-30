@@ -3,7 +3,7 @@ import { AtlasCanvas } from './AtlasCanvas';
 import { IconArrow, IconBolt, IconCheck, IconFire, IconLayers, IconStar } from './Icons';
 import type { AtlasView } from '../map/AtlasView';
 import { CONTINENTS } from '../data/continents';
-import { TARGETS } from '../data';
+import { TARGETS, isCurrentPool } from '../data';
 import { SATELLITE } from '../map/satellite';
 import { POINTS_BY_STEP, QUESTIONS_PER_ROUND, SEARCH_KM_BY_STEP, VIEW_KM_BY_STEP } from '../game/config';
 import { dailyNumber, formatCountdown, utcDateKey } from '../game/dates';
@@ -64,7 +64,8 @@ function PlayCard() {
   const save = useStore(saveStore);
   const today = utcDateKey();
   const done = save.daily[today];
-  const cur = save.current && save.current.dateKey === today ? save.current : null;
+  const cur =
+    save.current && save.current.dateKey === today && isCurrentPool(save.current.targets) ? save.current : null;
   const streak = visibleStreak(save.streak, today);
   const status = done
     ? `Done today · ${done.score} points`

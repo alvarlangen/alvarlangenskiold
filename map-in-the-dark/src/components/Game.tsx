@@ -5,7 +5,7 @@ import { GuessForm } from './GuessForm';
 import { Results } from './Results';
 import { IconBack, IconFire, IconMinus, IconPlus, IconStar, IconTarget } from './Icons';
 import type { AtlasView } from '../map/AtlasView';
-import { TARGETS, cityById, cityName, countryOfCity, nameIndex } from '../data';
+import { TARGETS, cityById, cityName, countryOfCity, isCurrentPool, nameIndex } from '../data';
 import { AUTO_ADVANCE_SECONDS, QUESTIONS_PER_ROUND, REVEAL_VIEW_KM, STEPS } from '../game/config';
 import { cityClues } from '../game/clues';
 import { dailyNumber, utcDateKey } from '../game/dates';
@@ -107,8 +107,8 @@ export function Game({ kind, continent }: Props) {
         navigate('/results', true);
         return;
       }
-      // A saved round is resumed only if all its cities still exist (the city list can change).
-      const known = s.current?.targets.every((id) => cityById.has(id));
+      // A saved round is resumed only if it was made from the current target pool (the pool can change).
+      const known = s.current && isCurrentPool(s.current.targets);
       if (s.current && known && s.current.dateKey === today && !s.current.finished) {
         setRound(s.current);
         return;

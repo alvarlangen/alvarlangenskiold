@@ -29,6 +29,10 @@ export const TARGETS: Target[] = CITIES.filter((c) => CURATED_CLUES[c.id]).map((
   };
 });
 
+const targetIds = new Set(TARGETS.map((t) => t.id));
+/** Whether a saved round still fits the current target pool (it may have been started with an older one). */
+export const isCurrentPool = (ids: readonly string[]) => ids.every((id) => targetIds.has(id));
+
 let index: NameIndex | null = null;
 export function nameIndex(): NameIndex {
   return (index ??= buildNameIndex(TARGETS));

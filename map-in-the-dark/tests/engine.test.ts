@@ -70,6 +70,14 @@ describe('seeded selection', () => {
     }
   });
 
+  it('daily rounds contain only European capitals', () => {
+    for (let d = 1; d <= 30; d++) {
+      for (const id of selectDaily(TARGETS, d).targets) {
+        expect(countryById.get(city(id).country)!.continents).toContain('Europe');
+      }
+    }
+  });
+
   it('bonus selection is deterministic per seed', () => {
     expect(selectByTiers(TARGETS, 'x')).toEqual(selectByTiers(TARGETS, 'x'));
   });
